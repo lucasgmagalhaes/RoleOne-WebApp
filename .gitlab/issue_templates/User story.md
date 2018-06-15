@@ -1,10 +1,10 @@
-### Author
+##### Author
 [Name of who is wrting the user story]
 
-###Version
+##### Version
 [Version of the document]
 
-###Creation date
+##### Creation date
 [Inform when the user story was created]
 
 ### Description
