@@ -23,3 +23,25 @@ to write.]
 ___
 ### Prototype
 [Put here a image of the page]
+
+___
+
+### Detailment
+[Description of how implement that user story]
+
+[Put a exemple of the structure of the object in the database if necessary]
+exemple
+```json
+{
+    "structure-name" {
+        "structure-id": "",
+        "structure-propertie1":"",
+        "structure-propertie2":"",
+    }
+}
+```
+
+### Properties Descriptions
+
+#### [structure-id]
+[description of each propertie of the structure]
