@@ -1,10 +1,21 @@
-##### Author
+# [Name of the issue]
+
+[Short description of the issue]
+
+___
+
+## Basic informations
+
+### Author
+
 [Name of who is wrting the user story]
 
-##### Version
+### Version
+
 [Version of the document]
 
-##### Creation date
+### Creation date
+
 [Inform when the user story was created]
 
 ### Description
@@ -21,6 +32,7 @@ message that the system must return.Write as many scenarios your feel need
 to write.]
 
 ___
+
 ### Prototype
 [Put here a image of the page]
 
@@ -31,6 +43,7 @@ ___
 
 [Put a exemple of the structure of the object in the database if necessary]
 exemple
+
 ```json
 {
     "structure-name" {
