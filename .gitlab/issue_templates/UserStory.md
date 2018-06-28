@@ -1,11 +1,3 @@
-# [Name of the issue]
-
-[Short description of the issue]
-
-___
-
-## Basic informations
-
 ### Author
 
 [Name of who is wrting the user story]
