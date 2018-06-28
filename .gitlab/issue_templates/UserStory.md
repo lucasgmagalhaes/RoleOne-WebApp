@@ -24,6 +24,26 @@ ___
 execute this story. Describe all variables, pre-conditions and anything 
 that you guess better to inform]
 
+[If the task is a CRUD:
+
+#### Create
+
+[Description of the create option]
+
+#### Search 
+
+[Description of the search option]
+
+#### Update
+
+[Description of the update option]
+
+#### Delete
+
+[Description of the delete option]
+
+]
+
 ___
 
 ### Scenario 1
