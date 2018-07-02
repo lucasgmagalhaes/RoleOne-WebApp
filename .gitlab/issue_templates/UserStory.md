@@ -34,8 +34,6 @@ that you guess better to inform]
 
 [Description of the delete option]
 
-]
-
 ___
 
 ### Scenario 1
