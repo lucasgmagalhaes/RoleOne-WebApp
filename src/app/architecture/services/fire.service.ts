@@ -1,5 +1,7 @@
 import { Injectable } from '@angular/core';
-import { AngularFireDatabase, AngularFireObject } from 'angularfire2/database';
+import { AngularFireDatabase, QueryFn } from "angularfire2/database";
+import { Observable } from 'rxjs';
+import { map } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
@@ -14,7 +16,7 @@ export class FireService {
    * @param object entity to be persisted
    * @param route path in the database to the entity be persisted
    */
-   createObj(object: any, route: string) {
+  createObj(object: any, route: string) {
     return this.firebase.list(route).push(object);
   }
 
@@ -26,7 +28,7 @@ export class FireService {
    */
   createObjs(objects: any[], route: string) {
     let db = this.firebase.list(route);
-    objects.forEach(function(object) {
+    objects.forEach(function (object) {
       db.push(objects)
     });
   }
@@ -38,15 +40,15 @@ export class FireService {
    * @param object entity to be persisted
    * @param route path in the database to the entity be persisted
    */
-  createObjWithKey(object: any, route: string) { 
+  createObjWithKey(object: any, route: string) {
     let db = this.firebase.list(route);
-    if(object.hasOwnProperty('key')){
+    if (object.hasOwnProperty('key')) {
       object['key'] = db.push(object);
-    } else{
+    } else {
       Object.defineProperty(object, 'key', {
         value: db.push(object).key,
         writable: true
-       });
+      });
     }
     return object;
   }
@@ -58,18 +60,34 @@ export class FireService {
    * @param objects entities to be persisted
    * @param route path in the database to the entity be persisted
    */
-  createObjsWithKey(objects: any[], route: string) { 
+  createObjsWithKey(objects: any[], route: string) {
     let path = this.firebase.list(route);
-    objects.forEach(function(object){
-      if(object.hasOwnProperty('key')){
+    objects.forEach(function (object) {
+      if (object.hasOwnProperty('key')) {
         object['key'] = path.push(object);
-      } else{
+      } else {
         Object.defineProperty(object, 'key', {
           value: path.push(object).key,
           writable: true
-         });
+        });
       }
     });
+  }
+
+  getList(route: string, query?: QueryFn): Observable<any[]> {
+    return this.firebase.list(route).snapshotChanges().pipe(map(changes => {
+      return changes.map(c => ({
+        key: c.payload.key, ...c.payload.val()
+      }));
+    }));
+  }
+
+  getEntity(route: string, key: string, query?: QueryFn): Observable<any[]> {
+    return this.firebase.list(route + `/${key}`, query).snapshotChanges().pipe(map(changes => {
+      return changes.map(c => ({
+        key: c.payload.key, ...c.payload.val()
+      }));
+    }));
   }
 
   /**
@@ -77,10 +95,9 @@ export class FireService {
    * @param object 
    * @param route 
    */
-  updateObject(object: any, route: string){
-    if(object.hasOwnProperty('key') && object['key'] !== undefined){
+  updateObject(object: any, route: string) {
+    if (object.hasOwnProperty('key') && object['key'] !== undefined) {
       console.log(this.firebase.object(`${route}/${object['key']}`))
     }
   }
-
 }

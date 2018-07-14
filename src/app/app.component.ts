@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { FireService } from './architecture/services/fire.service';
+import { AngularFireList } from "angularfire2/database";
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-root',
@@ -8,27 +10,31 @@ import { FireService } from './architecture/services/fire.service';
 })
 export class AppComponent {
   title = 'app';
+  list: any[];
 
-  constructor() { }
+  constructor(private fire: FireService) { }
 
-  public criar(){
+  public criar() {
     let person = {
-        name: "Lu",
-        age: "2110",
-        key: "-LHAbEFaMaZP82cHptzz"
-     }
+      name: "Lu",
+      age: "2110",
+      key: "-LHAbEFaMaZP82cHptzz"
+    }
 
-     let persons = [
+    let persons = [
       {
         name: "Lucas",
         age: "12"
-     },
-     {
-      name: "BTATA",
-      age: "12"
+      },
+      {
+        name: "BTATA",
+        age: "12"
       }
-     ]
-    
-    //console.log(this.fire.updateObject(person, '/person'))
+    ]
+
+    this.fire.getList('/person').subscribe(data => {
+      this.list = data
+      console.log(data)
+    });
   }
 }
