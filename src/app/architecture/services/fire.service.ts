@@ -2,7 +2,15 @@ import { Injectable } from '@angular/core';
 import { AngularFireDatabase, QueryFn } from "angularfire2/database";
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
-
+import { database } from 'firebase';
+/**
+ * @author lgMagalhaes
+ * @see angularfire2
+ * @description This class is a encapsulation of angularFire2 methods. It provides all services that
+ * the own angularFire2 does, but provides a reduction of used code for the application.
+ * For all methods, their return are the same as the primary methods. As the own encapsulation says, 
+ * this services provides firebase functions only.
+ */
 @Injectable({
   providedIn: 'root'
 })
@@ -16,7 +24,7 @@ export class FireService {
    * @param object entity to be persisted
    * @param route path in the database to the entity be persisted
    */
-  createObj(object: any, route: string) {
+  createObj(object: any, route: string): database.ThenableReference {
     return this.firebase.list(route).push(object);
   }
 
@@ -26,11 +34,13 @@ export class FireService {
    * @param objects entities to be persisted
    * @param route path in the database to the entity be persisted
    */
-  createObjs(objects: any[], route: string) {
+  createObjs(objects: any[], route: string): database.ThenableReference[] {
     let db = this.firebase.list(route);
+    let arrayReturn: database.ThenableReference[];
     objects.forEach(function (object) {
-      db.push(objects)
-    });
+      arrayReturn.push(db.push(objects))
+    })
+    return arrayReturn;
   }
 
   /**
@@ -40,7 +50,7 @@ export class FireService {
    * @param object entity to be persisted
    * @param route path in the database to the entity be persisted
    */
-  createObjWithKey(object: any, route: string) {
+  createObjWithKey(object: any, route: string): void {
     let db = this.firebase.list(route);
     if (object.hasOwnProperty('key')) {
       object['key'] = db.push(object);
@@ -60,7 +70,7 @@ export class FireService {
    * @param objects entities to be persisted
    * @param route path in the database to the entity be persisted
    */
-  createObjsWithKey(objects: any[], route: string) {
+  createObjsWithKey(objects: any[], route: string): void {
     let path = this.firebase.list(route);
     objects.forEach(function (object) {
       if (object.hasOwnProperty('key')) {
@@ -75,7 +85,7 @@ export class FireService {
   }
 
   getList(route: string, query?: QueryFn): Observable<any[]> {
-    return this.firebase.list(route).snapshotChanges().pipe(map(changes => {
+    return this.firebase.list(route, query).snapshotChanges().pipe(map(changes => {
       return changes.map(c => ({
         key: c.payload.key, ...c.payload.val()
       }));
