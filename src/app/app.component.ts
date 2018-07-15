@@ -7,7 +7,6 @@ import { FireService } from './architecture/services/fire.service';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'app';
   list: any[];
 
   constructor(private fire: FireService) { }
