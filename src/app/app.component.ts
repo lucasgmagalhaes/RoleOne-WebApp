@@ -16,9 +16,8 @@ export class AppComponent {
 
   public criar() {
     let person = {
-      name: "Lu",
-      age: "2110",
-      key: "-LHAbEFaMaZP82cHptzz"
+      name: "AhhhhhhhhhhhhhhAAAA",
+      age: "1123",
     }
 
     let persons = [
@@ -31,10 +30,7 @@ export class AppComponent {
         age: "12"
       }
     ]
-
-    this.fire.getList('/person').subscribe(data => {
-      this.list = data
-      console.log(data)
-    });
-  }
+    let ta: string;
+    console.log(ta);
+    }
 }
