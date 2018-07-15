@@ -13,8 +13,7 @@ export class AppComponent {
 
   public criar() {
     let person = {
-      name: "AhhhhhhhhhhhhhhAAAA",
-      age: "1123",
+      name: "teste2",
     }
 
     let persons = [
@@ -27,7 +26,6 @@ export class AppComponent {
         age: "12"
       }
     ]
-    let ta: string;
-    console.log(ta);
+    this.fire.create(person, 'tests');
     }
 }

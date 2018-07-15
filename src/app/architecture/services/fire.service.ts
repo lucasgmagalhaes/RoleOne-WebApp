@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
-import { AngularFireDatabase, QueryFn } from "angularfire2/database";
-import { Observable } from 'rxjs';
+import { AngularFireDatabase, QueryFn, AngularFireList } from "angularfire2/database";
 import { database } from 'firebase';
 
 /**
@@ -102,9 +101,9 @@ export class FireService {
    * @param query no required. Used to filter the entities
    * @return list of entites(Observable[])
    */
-  find(route: string, query?: QueryFn): Observable<any[]> {
+  find<T>(route: string, query?: QueryFn): AngularFireList<T> {
     if (route !== undefined) {
-      return this.firebase.list(route, query).valueChanges();
+      return this.firebase.list(route, query);
     } else {
       throw new Error("Propertie route can not be undefined");
     }
