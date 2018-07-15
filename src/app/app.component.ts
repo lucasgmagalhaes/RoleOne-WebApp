@@ -1,7 +1,5 @@
 import { Component } from '@angular/core';
 import { FireService } from './architecture/services/fire.service';
-import { AngularFireList } from "angularfire2/database";
-import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-root',

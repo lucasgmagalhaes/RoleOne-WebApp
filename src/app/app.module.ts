@@ -10,7 +10,7 @@ import { ArchitectureModule } from './architecture/architecture.module';
   ],
   imports: [
     BrowserModule,
-    ArchitectureModule
+    ArchitectureModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
