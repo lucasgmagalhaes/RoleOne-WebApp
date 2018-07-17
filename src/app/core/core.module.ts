@@ -14,4 +14,4 @@ import { AngularFireDatabase } from "angularfire2/database";
   providers: [AngularFireDatabase],
   declarations: []
 })
-export class ArchitectureModule { }
+export class CoreModule { }

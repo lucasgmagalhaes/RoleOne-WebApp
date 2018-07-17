@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { FireService } from './architecture/services/fire.service';
+import { FireService } from './core/services/fire.service';
 
 @Component({
   selector: 'app-root',
