@@ -3,19 +3,20 @@ import { AngularFireDatabase, QueryFn, AngularFireList } from "angularfire2/data
 import { database } from 'firebase';
 
 /**
- * @author lgMagalhaes
+ * @class FireService
  * @see angularfire2
- * @description This class is a encapsulation of angularFire2 methods. It provides all services that
- * the own angularFire2 does for a CRUD implementation, but provides a reduction of used code 
- * for the application. For all methods, their return are the same as the primary methods. 
- * As the own encapsulation says, this services provides firebase functions only.
+ * @description This class is a extention of angularFire2 AngularFireDatabasemethods. 
+ * It provides all services that the own angularFire2 does for a CRUD implementation, 
+ * but provides a reduction of used code for the application. For all methods, their 
+ * return are the same as the primary methods. As the own encapsulation says, this 
+ * services provides firebase functions only.
  */
 @Injectable({
   providedIn: 'root'
 })
-export class FireService {
+export class FireService extends AngularFireDatabase {
 
-  constructor(private firebase: AngularFireDatabase) { }
+  super() { }
 
   /**
    * Persists the object into the database without set the generated id in the objects
@@ -31,12 +32,12 @@ export class FireService {
 
       if (object instanceof Array) {
 
-        let db = this.firebase.list(route);
+        let db = super.list(route);
         object.forEach(obj => objSingleReturn = db.push(obj));
         return objSingleReturn;
 
       } else {
-        return this.firebase.list(route).push(object);
+        return super.list(route).push(object);
       }
     } else {
       throw new Error("Parameters object and route can not be undefined");
@@ -54,7 +55,7 @@ export class FireService {
   createWithKey(object: Object | Object[], route: string): database.ThenableReference {
     if (object !== undefined && route !== undefined) {
 
-      let db = this.firebase.list(route);
+      let db = super.list(route);
       let objReturn: database.ThenableReference;
 
       if (object instanceof Array) {
@@ -103,7 +104,7 @@ export class FireService {
    */
   find<T>(route: string, query?: QueryFn): AngularFireList<T> {
     if (route !== undefined) {
-      return this.firebase.list(route, query);
+      return super.list(route, query);
     } else {
       throw new Error("Propertie route can not be undefined");
     }
@@ -124,7 +125,7 @@ export class FireService {
 
         object.forEach((obj, index) => {
           if (obj['key'] !== undefined) { //If an object have no Id, so it can not be updated
-            promiseReturn = this.firebase.object(`${route}/${obj['key']}`).update(obj)
+            promiseReturn = super.object(`${route}/${obj['key']}`).update(obj)
           } else {
             throw new Error("Object at index" + index + "has no id");
           }
@@ -135,7 +136,7 @@ export class FireService {
       } else {
 
         if (object['key'] !== undefined) {
-          return this.firebase.object(`${route}/${object['key']}`).update(object);
+          return super.object(`${route}/${object['key']}`).update(object);
         } else {
           throw new Error("Object has no id");
         }
@@ -165,7 +166,7 @@ export class FireService {
 
         object.forEach((obj, index) => {
           if (obj['key'] !== undefined) {
-            promiseReturn = this.firebase.object(`${route}/${obj['key']}`).set(object);
+            promiseReturn = super.object(`${route}/${obj['key']}`).set(object);
           } else {
             throw new Error("Propertie 'key' is undefined for object at index" + index);
           }
@@ -176,7 +177,7 @@ export class FireService {
       } else {
 
         if (object['key'] !== undefined) {
-          return this.firebase.object(`${route}/${object['key']}`).set(object);
+          return super.object(`${route}/${object['key']}`).set(object);
         } else {
           throw new Error("Propertie 'key' is undefined");
         }
@@ -198,7 +199,7 @@ export class FireService {
   delete(route: string, key?: string | string[]): Promise<void> {
     if (route !== undefined) {
 
-      let db = this.firebase.list(route);
+      let db = super.list(route);
       let _return: Promise<void>;
 
       if (key !== undefined) {
