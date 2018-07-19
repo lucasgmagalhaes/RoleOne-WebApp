@@ -1,7 +1,5 @@
-<button type="button" (click)="criar()">CRIAR</button>
 
-<ul>
-  <li *ngFor="let item of list">
-    {{ item.name }}
+  <li *ngFor="let task of list | async tas">
+    {{task.key}}
+    {{task.name}}
   </li>
-</ul>
