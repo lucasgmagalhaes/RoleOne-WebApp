@@ -6,7 +6,7 @@ import { Component, OnInit, Input } from "@angular/core";
   styleUrls: ["./notification.component.css"]
 })
 export class NotificationComponent implements OnInit {
-  @Input() public body: string = "teste";
+  @Input() public body: string = "RoleOne";
 
   constructor() {}
 
