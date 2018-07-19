@@ -1,8 +1,9 @@
-import { Injectable } from "@angular/core";
+import { Injectable, ErrorHandler } from "@angular/core";
 import {
   AngularFireDatabase,
   QueryFn,
-  AngularFireList
+  AngularFireList,
+  AngularFireObject
 } from "angularfire2/database";
 import { database } from "firebase";
 import { map } from "rxjs/operators";
@@ -22,29 +23,47 @@ import { Observable } from "rxjs";
   providedIn: "root"
 })
 export class FireService {
+  private resource: string = "";
+
   constructor(private db: AngularFireDatabase) {}
+
+  /**
+   *  Defines the resource for all CRUD operations in Firebase database. Resource default value is ''
+   * @param resource
+   * @throws Error if resource be undefined
+   */
+  setResource(resource: string): void {
+    if (resource !== undefined) {
+      this.resource = resource;
+    }
+  }
+
+  /**
+   * Returns the actual value of the resource
+   */
+  getResource(): string {
+    return this.resource;
+  }
 
   /**
    * Persists the object into the database without set the generated key in the objects
    *
    * @param object entity to be persisted
-   * @param route path in the database to the entity be persisted
    * @return response of the database(database.ThenableReference)
    * @throws Error if object or route be undefined
    */
-  create(object: Object | Object[], route: string): database.ThenableReference {
-    if (object !== undefined && route != undefined) {
+  create(object: Object | Object[]): database.ThenableReference {
+    if (object !== undefined) {
       let objSingleReturn: database.ThenableReference;
 
       if (object instanceof Array) {
-        let db = this.db.list(route);
-        object.forEach(obj => (objSingleReturn = db.push(obj)));
+        object.forEach(obj => (objSingleReturn = this.db.list(this.resource).push(obj)));
         return objSingleReturn;
       } else {
-        return this.db.list(route).push(object);
+        return this.db.list(this.resource).push(object);
       }
     } else {
-      throw new Error("Parameters object and route can not be undefined");
+      throw new Error("Parameters object can not be undefined");
     }
   }
 
@@ -59,17 +78,13 @@ export class FireService {
    * if propertie 'key' of object isn't defined
    * if object/ object[] or route is undefined
    */
-  createWithKey(
-    object: Object | Object[],
-    route: string
-  ): database.ThenableReference {
-    if (object !== undefined && route !== undefined) {
-      let db = this.db.list(route);
+  createWithKey(object: Object | Object[]): database.ThenableReference {
+    if (object !== undefined) {
       let objReturn: database.ThenableReference;
 
       if (object instanceof Array) {
         object.forEach(function(obj) {
-          objReturn = db.push(object);
+          objReturn = this.db.list(this.resource).push(obj);
           if (object.hasOwnProperty("key")) {
             if (object["key"] === undefined) {
               object["key"] = objReturn.key;
@@ -77,14 +92,14 @@ export class FireService {
               throw new Error("Object is already registred");
             }
           } else {
-            throw new Error("Obj has no propertie key defined");
+            throw new Error("Object has no propertie key defined");
           }
         });
-
         return objReturn;
       } else {
         if (object.hasOwnProperty("key")) {
           if (object["key"] === undefined) {
+            objReturn = this.db.list(this.resource).push(object);
             object["key"] = objReturn.key;
           } else {
             throw new Error("Object is already registred");
@@ -92,43 +107,35 @@ export class FireService {
         } else {
           throw new Error("Obj has no propertie key defined");
         }
-
         return objReturn;
       }
     } else {
-      throw new Error("Properties objects and route can not be undefined");
+      throw new Error("Properties objects can not be undefined");
     }
   }
 
   /**
    * Gets a list of entities based on a route and a query, if informed.
    *
-   * @param route path to the entites
    * @param query no required. Used to filter the entities
    * @return list of entites(Observable[])
    * @throws Error if route is undefined
    * @type T
    */
-  find<T>(route: string, query?: QueryFn): AngularFireList<T> {
-    if (route !== undefined) {
-      return this.db.list<T>(route, query);
-    } else {
-      throw new Error("Propertie route can not be undefined");
-    }
+  find<T>(query?: QueryFn): AngularFireList<T> {
+      return this.db.list<T>(this.resource, query);
   }
 
   /**
    * Return a list of data with their respective key.
    *
-   * @param route Path to the data
    * @param query Not required. Used to filter the data
    * @return list of entites(Observable[])
    * @throws Error if route is undefined
    */
-  findWithKey(route: string, query?: QueryFn): Observable<any[]> {
-    if (route !== undefined) {
+  findWithKey(query?: QueryFn): Observable<any[]> {
       return this.db
-        .list(route, query)
+        .list(this.resource, query)
         .snapshotChanges()
         .pipe(
           map(changes => {
@@ -138,9 +145,6 @@ export class FireService {
             }));
           })
         );
-    } else {
-      throw new Error("Parameter route can not be undefined");
-    }
   }
 
   /**
@@ -148,22 +152,22 @@ export class FireService {
    * the entity properties or add more.
    *
    * @param object Object to be updated
-   * @param route Path to the collection of the data
    * @return Promisse of the update
    * @throws Error if object or some object of list of objects has no propertie 'key'.
    * if route is undefined.
    */
-  update(object: Object | Object[], route: string): Promise<void> {
+  update(object: Object | Object[]): Promise<void> {
     if (object.hasOwnProperty("key") && object["key"] !== undefined) {
       if (object instanceof Array) {
         let promiseReturn: Promise<void>;
 
         object.forEach((obj, index) => {
           if (obj["key"] !== undefined) {
+
             let key = obj["key"];
             delete obj["key"];
 
-            promiseReturn = this.db.object(`${route}/${key}`).update(obj);
+            promiseReturn = this.db.object(`${this.resource}/${key}`).update(obj);
           } else {
             //If an object have no key, so it can not be updated
             throw new Error("Object at index" + index + "has no key");
@@ -173,10 +177,13 @@ export class FireService {
         return promiseReturn;
       } else {
         if (object["key"] !== undefined) {
+
           let key = object["key"];
           delete object["key"];
 
-          return this.db.object(`${route}/${key}`).update(object);
+          return this.db
+            .object(`${this.resource}/${key}`)
+            .update(object);
         } else {
           throw new Error("Object has no key");
         }
@@ -196,13 +203,12 @@ export class FireService {
    * Throws a Exception if there is no key or if the object does not exists.
    *
    * @param object entitie to be replaced
-   * @param route path to the list of entities
    * @return promisse of the update
    * @throws Error if undefined for object of one object of the list.
    * <p>if the object/objects[] or route if undefined</p>
    */
-  set(object: Object | Object[], route: string): Promise<void> {
-    if (object !== undefined && route !== undefined) {
+  set(object: Object | Object[]): Promise<void> {
+    if (object !== undefined) {
       if (object instanceof Array) {
         let promiseReturn: Promise<void>;
 
@@ -211,7 +217,9 @@ export class FireService {
             let key = obj["key"];
             delete obj["key"];
 
-            promiseReturn = this.db.object(`${route}/${key}`).set(obj);
+            promiseReturn = this.db
+              .object(`${this.resource}/${key}`)
+              .set(obj);
           } else {
             throw new Error(
               "Propertie key is undefined for object at index" + index
@@ -225,7 +233,9 @@ export class FireService {
           let key = object["key"];
           delete object["key"];
 
-          return this.db.object(`${route}/${key}`).set(object);
+          return this.db
+            .object(`${this.resource}/${key}`)
+            .set(object);
         } else {
           throw new Error("Propertie key is undefined");
         }
@@ -236,17 +246,22 @@ export class FireService {
   }
 
   /**
+   * Remove the entire list of objects contained in the resource
+   */
+  deleteAll(){
+    this.db.list(this.resource).remove();
+  }
+
+  /**
    * Removes objects from database. Being these objects the entire list of the path,
    * a single object or a list of them.
    *
-   * @param route Path to the entities
-   * @param key Not required. Removes a specific object or list of objects
+   * @param key Removes a specific object or list of objects
    * @returns Promisse of the deletion
-   * @throws Error if route be undefined
+   * @throws Error if route or key be undefined
    */
-  delete(route: string, key?: string | string[] | object | object[]): any {
-    if (route !== undefined) {
-      let db = this.db.list(route);
+  delete(key: string | string[] | object | object[]): any {
+      let db = this.db.list(this.resource);
       let _return: Promise<void>;
 
       if (key !== undefined) {
@@ -257,12 +272,12 @@ export class FireService {
           */
           (key as string[]).forEach((k, i) => {
             if (typeof k === "string") {
-              _return = db.remove(`/${route}/${k}`);
+              _return = db.remove(`/${this.resource}/${k}`);
             } else if (typeof k === "object") {
               if (k["key"] !== undefined) {
-                _return = db.remove(`/${route}/${k["key"]}`);
+                _return = db.remove(`/${this.resource}/${k["key"]}`);
               } else {
-                throw new Error('Key not defined for element at index: ' + i);
+                throw new Error("Key not defined for element at index: " + i);
               }
             }
           });
@@ -270,17 +285,14 @@ export class FireService {
         } else {
           if (typeof key === "string") {
             return db.remove(key);
-          } else  if (key["key"] !== undefined) {
-            _return = db.remove(`/${route}/${key["key"]}`);
+          } else if (key["key"] !== undefined) {
+            _return = db.remove(`/${this.resource}/${key["key"]}`);
           } else {
-            throw new Error('Key not defined for object');
+            throw new Error("Key not defined for object");
           }
         }
       } else {
-        return db.remove();
+        throw new Error("Key not defined for object");
       }
-    } else {
-      throw new Error("Parameter route can not be undefined");
-    }
   }
 }
