@@ -1,15 +1,17 @@
-import { Injectable, ErrorHandler } from "@angular/core";
+import { Injectable } from "@angular/core";
 import {
   AngularFireDatabase,
   QueryFn,
-  AngularFireList,
-  AngularFireObject
+  AngularFireList
 } from "angularfire2/database";
 import { database } from "firebase";
 import { map } from "rxjs/operators";
 import { Observable } from "rxjs";
 
-enum Contansts {
+/**
+ * Container of static messages used in database services.
+ */
+export enum Contansts {
   OBJ_PARAM_UNDEFINED = "Undefined value for parameter object",
   OBJ_ALREADY_REGISTERED = "Object is already registred",
   OBJ_NO_KEY = "Object has no propertie key defined"
@@ -29,7 +31,7 @@ enum Contansts {
   providedIn: "root"
 })
 export class FireService {
-  private resource: string = "";
+  private resource: string = '/';
   private readonly KEY: string = "key";
   constructor(private db: AngularFireDatabase) {}
 
