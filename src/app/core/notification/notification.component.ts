@@ -1,7 +1,7 @@
 import { Component, OnInit, Input } from "@angular/core";
 
 @Component({
-  selector: "app-notification",
+  selector: "ro1-notification",
   templateUrl: "./notification.component.html",
   styleUrls: ["./notification.component.css"]
 })
