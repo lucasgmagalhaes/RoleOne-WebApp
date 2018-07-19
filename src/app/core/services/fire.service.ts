@@ -9,6 +9,12 @@ import { database } from "firebase";
 import { map } from "rxjs/operators";
 import { Observable } from "rxjs";
 
+enum Contansts {
+  OBJ_PARAM_UNDEFINED = "Undefined value for parameter object",
+  OBJ_ALREADY_REGISTERED = "Object is already registred",
+  OBJ_NO_KEY = "Object has no propertie key defined"
+}
+
 /**
  * @class FireService
  * @see angularfire2
@@ -24,7 +30,7 @@ import { Observable } from "rxjs";
 })
 export class FireService {
   private resource: string = "";
-
+  private readonly KEY: string = "key";
   constructor(private db: AngularFireDatabase) {}
 
   /**
@@ -57,13 +63,15 @@ export class FireService {
       let objSingleReturn: database.ThenableReference;
 
       if (object instanceof Array) {
-        object.forEach(obj => (objSingleReturn = this.db.list(this.resource).push(obj)));
+        object.forEach(
+          obj => (objSingleReturn = this.db.list(this.resource).push(obj))
+        );
         return objSingleReturn;
       } else {
         return this.db.list(this.resource).push(object);
       }
     } else {
-      throw new Error("Parameters object can not be undefined");
+      throw new Error(Contansts.OBJ_PARAM_UNDEFINED);
     }
   }
 
@@ -85,32 +93,32 @@ export class FireService {
       if (object instanceof Array) {
         object.forEach(function(obj) {
           objReturn = this.db.list(this.resource).push(obj);
-          if (object.hasOwnProperty("key")) {
-            if (object["key"] === undefined) {
-              object["key"] = objReturn.key;
+          if (object.hasOwnProperty(this.KEY)) {
+            if (object[this.KEY] === undefined) {
+              object[this.KEY] = objReturn.key;
             } else {
-              throw new Error("Object is already registred");
+              throw new Error(Contansts.OBJ_ALREADY_REGISTERED);
             }
           } else {
-            throw new Error("Object has no propertie key defined");
+            throw new Error(Contansts.OBJ_NO_KEY);
           }
         });
         return objReturn;
       } else {
-        if (object.hasOwnProperty("key")) {
-          if (object["key"] === undefined) {
+        if (object.hasOwnProperty(this.KEY)) {
+          if (object[this.KEY] === undefined) {
             objReturn = this.db.list(this.resource).push(object);
-            object["key"] = objReturn.key;
+            object[this.KEY] = objReturn.key;
           } else {
-            throw new Error("Object is already registred");
+            throw new Error(Contansts.OBJ_ALREADY_REGISTERED);
           }
         } else {
-          throw new Error("Obj has no propertie key defined");
+          throw new Error(Contansts.OBJ_NO_KEY);
         }
         return objReturn;
       }
     } else {
-      throw new Error("Properties objects can not be undefined");
+      throw new Error(Contansts.OBJ_PARAM_UNDEFINED);
     }
   }
 
@@ -123,7 +131,7 @@ export class FireService {
    * @type T
    */
   find<T>(query?: QueryFn): AngularFireList<T> {
-      return this.db.list<T>(this.resource, query);
+    return this.db.list<T>(this.resource, query);
   }
 
   /**
@@ -134,17 +142,17 @@ export class FireService {
    * @throws Error if route is undefined
    */
   findWithKey(query?: QueryFn): Observable<any[]> {
-      return this.db
-        .list(this.resource, query)
-        .snapshotChanges()
-        .pipe(
-          map(changes => {
-            return changes.map(c => ({
-              key: c.payload.key,
-              ...c.payload.val()
-            }));
-          })
-        );
+    return this.db
+      .list(this.resource, query)
+      .snapshotChanges()
+      .pipe(
+        map(changes => {
+          return changes.map(c => ({
+            key: c.payload.key,
+            ...c.payload.val()
+          }));
+        })
+      );
   }
 
   /**
@@ -157,41 +165,37 @@ export class FireService {
    * if route is undefined.
    */
   update(object: Object | Object[]): Promise<void> {
-    if (object.hasOwnProperty("key") && object["key"] !== undefined) {
+    if (object.hasOwnProperty(this.KEY) && object[this.KEY] !== undefined) {
       if (object instanceof Array) {
         let promiseReturn: Promise<void>;
 
         object.forEach((obj, index) => {
-          if (obj["key"] !== undefined) {
+          if (obj[this.KEY] !== undefined) {
+            let key = obj[this.KEY];
+            delete obj[this.KEY];
 
-            let key = obj["key"];
-            delete obj["key"];
-
-            promiseReturn = this.db.object(`${this.resource}/${key}`).update(obj);
+            promiseReturn = this.db
+              .object(`${this.resource}/${key}`)
+              .update(obj);
           } else {
             //If an object have no key, so it can not be updated
-            throw new Error("Object at index" + index + "has no key");
+            throw new Error(Contansts.OBJ_NO_KEY + 'at index: ' + index);
           }
         });
 
         return promiseReturn;
       } else {
-        if (object["key"] !== undefined) {
+        if (object[this.KEY] !== undefined) {
+          let key = object[this.KEY];
+          delete object[this.KEY];
 
-          let key = object["key"];
-          delete object["key"];
-
-          return this.db
-            .object(`${this.resource}/${key}`)
-            .update(object);
+          return this.db.object(`${this.resource}/${key}`).update(object);
         } else {
-          throw new Error("Object has no key");
+          throw new Error(Contansts.OBJ_NO_KEY);
         }
       }
     } else {
-      throw new Error(
-        "Parameter key not defined for entity to be updated:" + object
-      );
+      throw new Error(Contansts.OBJ_NO_KEY + 'for ' + object);
     }
   }
 
@@ -213,42 +217,36 @@ export class FireService {
         let promiseReturn: Promise<void>;
 
         object.forEach((obj, index) => {
-          if (obj["key"] !== undefined) {
-            let key = obj["key"];
-            delete obj["key"];
+          if (obj[this.KEY] !== undefined) {
+            let key = obj[this.KEY];
+            delete obj[this.KEY];
 
-            promiseReturn = this.db
-              .object(`${this.resource}/${key}`)
-              .set(obj);
+            promiseReturn = this.db.object(`${this.resource}/${key}`).set(obj);
           } else {
-            throw new Error(
-              "Propertie key is undefined for object at index" + index
-            );
+            throw new Error(Contansts.OBJ_NO_KEY + 'at index: ' + index);
           }
         });
 
         return promiseReturn;
       } else {
-        if (object["key"] !== undefined) {
-          let key = object["key"];
-          delete object["key"];
+        if (object[this.KEY] !== undefined) {
+          let key = object[this.KEY];
+          delete object[this.KEY];
 
-          return this.db
-            .object(`${this.resource}/${key}`)
-            .set(object);
+          return this.db.object(`${this.resource}/${key}`).set(object);
         } else {
-          throw new Error("Propertie key is undefined");
+          throw new Error(Contansts.OBJ_NO_KEY);
         }
       }
     } else {
-      throw new Error("Properties key, object and route can not be undefined");
+      throw new Error(Contansts.OBJ_PARAM_UNDEFINED);
     }
   }
 
   /**
    * Remove the entire list of objects contained in the resource
    */
-  deleteAll(){
+  deleteAll() {
     this.db.list(this.resource).remove();
   }
 
@@ -261,38 +259,38 @@ export class FireService {
    * @throws Error if route or key be undefined
    */
   delete(key: string | string[] | object | object[]): any {
-      let db = this.db.list(this.resource);
-      let _return: Promise<void>;
+    let db = this.db.list(this.resource);
+    let _return: Promise<void>;
 
-      if (key !== undefined) {
-        if (key instanceof Array) {
-          /*
+    if (key !== undefined) {
+      if (key instanceof Array) {
+        /*
           * For avoid cast compatibility exception
           * the array of 'any' is converted to array of string
           */
-          (key as string[]).forEach((k, i) => {
-            if (typeof k === "string") {
-              _return = db.remove(`/${this.resource}/${k}`);
-            } else if (typeof k === "object") {
-              if (k["key"] !== undefined) {
-                _return = db.remove(`/${this.resource}/${k["key"]}`);
-              } else {
-                throw new Error("Key not defined for element at index: " + i);
-              }
+        (key as string[]).forEach((k, index) => {
+          if (typeof k === "string") {
+            _return = db.remove(`/${this.resource}/${k}`);
+          } else if (typeof k === "object") {
+            if (k[this.KEY] !== undefined) {
+              _return = db.remove(`/${this.resource}/${k[this.KEY]}`);
+            } else {
+              throw new Error(Contansts.OBJ_NO_KEY + "at index: " + index);
             }
-          });
-          return _return;
-        } else {
-          if (typeof key === "string") {
-            return db.remove(key);
-          } else if (key["key"] !== undefined) {
-            _return = db.remove(`/${this.resource}/${key["key"]}`);
-          } else {
-            throw new Error("Key not defined for object");
           }
-        }
+        });
+        return _return;
       } else {
-        throw new Error("Key not defined for object");
+        if (typeof key === "string") {
+          return db.remove(key);
+        } else if (key[this.KEY] !== undefined) {
+          _return = db.remove(`/${this.resource}/${key[this.KEY]}`);
+        } else {
+          throw new Error(Contansts.OBJ_NO_KEY);
+        }
       }
+    } else {
+      throw new Error(Contansts.OBJ_NO_KEY);
+    }
   }
 }
