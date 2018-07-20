@@ -132,8 +132,12 @@ export class FireService {
    * @throws Error if route is undefined
    * @type T
    */
-  find<T>(query?: QueryFn): AngularFireList<T> {
-    return this.db.list<T>(this.resource, query);
+  find<T>(route?: string, query?: QueryFn): AngularFireList<T> {
+    if(route !== undefined){
+      return this.db.list<T>(route, query);
+    } else {
+      return this.db.list<T>(this.resource, query);
+    }
   }
 
   /**

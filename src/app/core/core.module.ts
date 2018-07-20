@@ -4,10 +4,10 @@ import { environment } from "../../environments/environment";
 import { AngularFireModule } from "angularfire2";
 import { AngularFirestoreModule } from "angularfire2/firestore";
 import { AngularFireDatabase } from "angularfire2/database";
-import { NotificationComponent } from './notification/notification.component';
+import { NotificationComponent } from "./notification/notification.component";
 import { BrowserModule } from "@angular/platform-browser";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
-
+import { NotificationService } from "./notification/notification.service";
 @NgModule({
   imports: [
     CommonModule,
@@ -19,7 +19,7 @@ import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
     BrowserModule,
     BrowserAnimationsModule
   ],
-  providers: [AngularFireDatabase],
+  providers: [AngularFireDatabase, NotificationService],
   declarations: [NotificationComponent],
   exports: [NotificationComponent]
 })

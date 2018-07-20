@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from "@angular/core";
+import { Component, OnInit } from "@angular/core";
 import {
   trigger,
   state,
@@ -6,7 +6,9 @@ import {
   animate,
   transition
 } from "@angular/animations";
-
+import { NotificationService } from "./notification.service";
+import { timer } from 'rxjs';
+import { switchMap } from 'rxjs/operators';
 @Component({
   selector: "ro1-notification",
   templateUrl: "./notification.component.html",
@@ -16,27 +18,39 @@ import {
       state(
         "hidden",
         style({
-          right: 0,
-          opacity: "0px"
+          "margin-right": "-400px"
         })
       ),
       state(
         "visible",
         style({
-          right: "30px",
-          opacity: 1
+          "margin-right": "0px"
         })
       ),
-      transition("hidden => visible", animate("500ms 0s ease-in")),
-      transition("visible => hidden", animate("500ms 0s ease-out"))
+      transition("visible <=> hidden", animate("300ms 0s ease-out"))
     ])
   ]
 })
 export class NotificationComponent implements OnInit {
-  @Input() public body: string = "RoleOne";
-  public notificationShow = 'visible';
+  message: string = "";
+  notificationShow = "hidden";
 
-  constructor() {}
+  constructor(private notificationService: NotificationService) {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.notificationService.notifier
+    .subscribe(msg => {
+      this.message = msg;
+      console.log(msg);
+      this.notificationShow = "visible";
+    });
+    //.pipe(switchMap(() => timer(2000)))
+    //.subscribe(this.notificationShow = "hidden")
+  }
+
+  closeNotification() {
+    this.notificationShow =
+      this.notificationShow === "hidden" ? "visible" : "hidden";
+  
+  }
 }

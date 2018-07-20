@@ -1,8 +1,55 @@
 <div class="columns is-narrow" [@notificationShow]="notificationShow">
   <div class="column is-4 is-offset-8">
-    <div class="notification is-danger">
-      <button class="delete"></button>
+    <div class="notification is-danger spacing">
+      <button (click)="closeNotification()" class="delete"></button>
       {{body}}
     </div>
   </div>
 </div>
+
+<div class="columns is-narrow" [@notificationShow]="notificationShow">
+  <div class="column is-4 is-offset-8">
+    <div class="notification is-primary spacing">
+      <button (click)="closeNotification()" class="delete"></button>
+      {{body}}
+    </div>
+  </div>
+</div>
+
+<div class="columns is-narrow" [@notificationShow]="notificationShow">
+  <div class="column is-4 is-offset-8">
+    <div class="notification is-link spacing">
+      <button (click)="closeNotification()" class="delete"></button>
+      {{body}}
+    </div>
+  </div>
+</div>
+
+<div class="columns is-narrow" [@notificationShow]="notificationShow">
+  <div class="column is-4 is-offset-8">
+    <div class="notification is-info spacing">
+      <button (click)="closeNotification()" class="delete"></button>
+      {{body}}
+    </div>
+  </div>
+</div>
+
+<div class="columns is-narrow" [@notificationShow]="notificationShow">
+  <div class="column is-4 is-offset-8">
+    <div class="notification is-success spacing">
+      <button (click)="closeNotification()" class="delete"></button>
+      {{body}}
+    </div>
+  </div>
+</div>
+
+<div class="columns is-narrow" [@notificationShow]="notificationShow">
+  <div class="column is-4 is-offset-8">
+    <div class="notification is-warning spacing">
+      <button (click)="closeNotification()" class="delete"></button>
+      {{body}}
+    </div>
+  </div>
+</div>
+
+<button (click)="closeNotification()" class="delete"></button>
