@@ -7,8 +7,8 @@ import {
   transition
 } from "@angular/animations";
 import { NotificationService } from "./notification.service";
-import { timer } from 'rxjs';
-import { switchMap } from 'rxjs/operators';
+import { subscribeOn } from "../../../../node_modules/rxjs/operators";
+
 @Component({
   selector: "ro1-notification",
   templateUrl: "./notification.component.html",
@@ -38,12 +38,10 @@ export class NotificationComponent implements OnInit {
   constructor(private notificationService: NotificationService) {}
 
   ngOnInit() {
-    this.notificationService.notifier
-    .subscribe(msg => {
-      this.message = msg;
-      console.log(msg);
-      this.notificationShow = "visible";
-    });
+    this.notificationService.getNotification().subscribe(val => {
+      console.log(val)
+      this.message = val;
+    })
     //.pipe(switchMap(() => timer(2000)))
     //.subscribe(this.notificationShow = "hidden")
   }
@@ -51,6 +49,6 @@ export class NotificationComponent implements OnInit {
   closeNotification() {
     this.notificationShow =
       this.notificationShow === "hidden" ? "visible" : "hidden";
-  
+
   }
 }

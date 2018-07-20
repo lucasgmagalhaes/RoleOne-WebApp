@@ -1,23 +1,27 @@
-import { Injectable, EventEmitter } from '@angular/core';
+import { Injectable } from "@angular/core";
+import { BehaviorSubject, Observable } from "rxjs";
 
 /**
  * Responsable to send the messages to notification component
  */
 @Injectable({
-  providedIn: 'root'
+  providedIn: "root"
 })
 export class NotificationService {
   /**
    * Responsable to send a message for who subscribe it
    */
-  notifier = new EventEmitter<string>();
-  constructor() { }
+   notifier = new BehaviorSubject('');
+  constructor() {}
 
   /**
-   * Send a message for who subscribe the EventEmitter
+   * it is publishing this value to all the subscribers that have already subscribed to this message
    */
-   notify(message: string){
-    this.notifier.emit(message);
-    this.notifier.subscribe(val => console.log(val))
+  setNotification(message: string) {
+    this.notifier.next(message);
+  }
+
+  getNotification(): Observable<string> {
+    return this.notifier.asObservable();
   }
 }

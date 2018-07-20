@@ -6,12 +6,12 @@ import { NotificationService } from '../notification/notification.service';
  * Component display can be disabled.
  */
 export class GlobalErrorHandle implements ErrorHandler {
-  
+
   constructor(private notificationService: NotificationService) {}
 
   handleError(error: Error): void {
     console.error(error.name + error.message + error.stack);
-    this.notificationService.notify(error.message);
+    this.notificationService.setNotification(error.message);
   }
 
 }
