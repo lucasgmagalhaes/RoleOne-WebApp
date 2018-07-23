@@ -1,4 +1,4 @@
-import { ErrorHandler } from "../../../../node_modules/@angular/core";
+import { ErrorHandler } from "@angular/core";
 import { NotificationService } from '../notification/notification.service';
 /**
  * Responsable for the last treatment of erros invocation of the application.

@@ -7,16 +7,7 @@ import {
 import { database } from "firebase";
 import { map } from "rxjs/operators";
 import { Observable } from "rxjs";
-
-/**
- * Container of static messages used in database services.
- */
-export enum Contansts {
-  OBJ_PARAM_UNDEFINED = "Undefined value for parameter object",
-  OBJ_ALREADY_REGISTERED = "Object is already registred",
-  OBJ_NO_KEY = "Object has no propertie key defined"
-}
-
+import { Contansts } from '../enums/fire.service.enum';
 /**
  * @class FireService
  * @see angularfire2
