@@ -1,7 +1,5 @@
-
-  <li *ngFor="let task of list | async tas">
-    {{task.key}}
-    {{task.name}}
-  </li>
-
+<li *ngFor="let task of list | async tas">
+  {{task.key}} {{task.name}}
+</li>
 <ro1-notification></ro1-notification>
+<a class="button" (click)="send()">Button</a>

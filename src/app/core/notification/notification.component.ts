@@ -7,8 +7,8 @@ import {
   transition
 } from "@angular/animations";
 import { NotificationService } from "./notification.service";
-import { timer } from "rxjs";
 import { NotificationType } from "../enums/notification.enum";
+import { NotificationStructure } from "../interfaces/notification.structure";
 
 @Component({
   selector: "ro1-notification",
@@ -36,28 +36,18 @@ export class NotificationComponent implements OnInit {
   message: string = "";
   notificationShow = "hidden";
   classStyle: NotificationType;
-  hide: boolean = true;
-  private time = timer(2000);
-
+  notifications: NotificationStructure[] = [];
   constructor(private notificationService: NotificationService) {}
 
   ngOnInit() {
     this.notificationService.getNotification().subscribe(val => {
       this.notificationShow = "visible";
-      this.message = val["message"];
-      this.classStyle = val["type"];
-      console.log(this.hide);
-
+      this.notifications.push(val);
     });
   }
 
-  sethide(val: boolean) {
-    if (val) this.notificationShow = "hidden";
-    else this.notificationShow = "visible";
-  }
+  closeNotification(index: number) {
+    this.notificationShow = "hidden";
 
-  closeNotification() {
-    this.notificationShow =
-      this.notificationShow === "hidden" ? "visible" : "hidden";
   }
 }

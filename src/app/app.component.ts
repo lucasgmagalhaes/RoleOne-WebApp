@@ -14,4 +14,8 @@ export class AppComponent {
   constructor(private notificationService: NotificationService) {
     this.notificationService.setNotification('Sua mãe');
   }
+
+  send(){
+    this.notificationService.setNotification('sa');
+  }
 }

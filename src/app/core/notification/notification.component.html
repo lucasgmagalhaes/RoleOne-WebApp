@@ -1,8 +1,6 @@
-<div class="columns is-narrow" [@notificationShow]="notificationShow">
-  <div class="column is-4 is-offset-8">
-    <div class="notification spacing" (mouseover)="sethide(false)" (mouseleave)="sethide(true)" [ngClass]=" classStyle ">
-      <button (click)="closeNotification()" class="delete"></button>
-      {{message}}
-    </div>
+<aside *ngFor="let not of notifications; index as i">
+  <div class="notification" [ngClass]="not.classStyle ">
+    <button (click)="closeNotification(i)" class="delete"></button>
+    {{not.message}}
   </div>
-</div>
+</aside>
