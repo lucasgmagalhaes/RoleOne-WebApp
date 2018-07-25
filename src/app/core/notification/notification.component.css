@@ -1,6 +1,17 @@
 .spacing {
-  margin-top: 20px;
-  max-width: 500px;
+  position: relative;
   float: right;
+  top: 5px;
   width: 300px;
+  margin-top: 10px;
+  margin-bottom: 0px;
+  margin-right: 15px;
+}
+
+.note-block{
+  height: 100%;
+  width: 330px;
+  right: 0;
+  top: 0;
+  position: absolute;
 }

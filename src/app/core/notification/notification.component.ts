@@ -7,7 +7,7 @@ import {
   transition
 } from "@angular/animations";
 import { NotificationService } from "./notification.service";
-import { timer } from "rxjs";
+import { NotificationStructure } from "../interfaces/notification.structure";
 import { NotificationType } from "../enums/notification.enum";
 
 @Component({
@@ -16,48 +16,35 @@ import { NotificationType } from "../enums/notification.enum";
   styleUrls: ["./notification.component.css"],
   animations: [
     trigger("notificationShow", [
-      state(
-        "hidden",
-        style({
-          "margin-right": "-400px"
-        })
-      ),
-      state(
-        "visible",
-        style({
-          "margin-right": "0px"
-        })
-      ),
-      transition("visible <=> hidden", animate("300ms 0s ease-out"))
+      state("visible", style({ transform: "translateX(0)" })),
+      transition("void => *", [
+        style({ transform: "translateX(100%)" }),
+        animate(100)
+      ]),
+      transition("* => void", [
+        animate(100),
+        style({ transform: "translateX(100%)" })
+      ])
     ])
   ]
 })
 export class NotificationComponent implements OnInit {
   message: string = "";
-  notificationShow = "hidden";
-  classStyle: NotificationType;
   hide: boolean = true;
-  private time = timer(2000);
+  notifications: NotificationStructure[] = [];
 
   constructor(private notificationService: NotificationService) {}
 
   ngOnInit() {
     this.notificationService.getNotification().subscribe(val => {
-      this.notificationShow = "visible";
-      this.message = val["message"];
-      this.classStyle = val["type"];
-      console.log(this.hide);
-
+      this.notifications.push(val);
+      this.notifications.push({message: "Oo", type: NotificationType.ERROR});
+      this.notifications.push({ message: "Oo", type: NotificationType.INFO });
+      this.notifications.push({ message: "Oo", type: NotificationType.LIGHT_INFO });
     });
   }
 
-  sethide(val: boolean) {
-    if (val) this.notificationShow = "hidden";
-    else this.notificationShow = "visible";
-  }
-
-  closeNotification() {
-    this.notificationShow =
-      this.notificationShow === "hidden" ? "visible" : "hidden";
+  closeNotification(notification: NotificationStructure) {
+    this.notifications.splice(this.notifications.indexOf(notification), 1);
   }
 }
