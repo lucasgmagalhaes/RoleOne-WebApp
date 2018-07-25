@@ -7,8 +7,8 @@ import {
   transition
 } from "@angular/animations";
 import { NotificationService } from "./notification.service";
-import { NotificationStructure } from "../interfaces/notification.structure";
 import { NotificationType } from "../enums/notification.enum";
+import { NotificationStructure } from "../interfaces/notification.structure";
 
 @Component({
   selector: "ro1-notification",
