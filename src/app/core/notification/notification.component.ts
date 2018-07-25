@@ -19,18 +19,16 @@ import { NotificationType } from "../enums/notification.enum";
       state("visible", style({ transform: "translateX(0)" })),
       transition("void => *", [
         style({ transform: "translateX(100%)" }),
-        animate(100)
+        animate(150)
       ]),
       transition("* => void", [
-        animate(100),
+        animate(150),
         style({ transform: "translateX(100%)" })
       ])
     ])
   ]
 })
 export class NotificationComponent implements OnInit {
-  message: string = "";
-  hide: boolean = true;
   notifications: NotificationStructure[] = [];
 
   constructor(private notificationService: NotificationService) {}
@@ -39,8 +37,6 @@ export class NotificationComponent implements OnInit {
     this.notificationService.getNotification().subscribe(val => {
       this.notifications.push(val);
       this.notifications.push({message: "Oo", type: NotificationType.ERROR});
-      this.notifications.push({ message: "Oo", type: NotificationType.INFO });
-      this.notifications.push({ message: "Oo", type: NotificationType.LIGHT_INFO });
     });
   }
 
