@@ -7,11 +7,12 @@ import {
 import { database } from "firebase";
 import { map } from "rxjs/operators";
 import { Observable } from "rxjs";
-import { ErrorMessages } from "../enums/fire.service.enum";
+import { ErrorMessages } from "../enums/core.enums";
 /**
  * @class FireService
  * @see angularfire2
  * @private AngularFireDatabase
+ * @constructor AngularFire2: v5.0.0-rc.11
  * @description This class is a abstraction of angularFire2 AngularFireDatabasemethods.
  * It provkeyes all services that the own angularFire2 does for a CRUD implementation,
  * but provkeyes a reduction of used code for the application. For all methods, their

@@ -9,6 +9,7 @@ import { BrowserModule } from "@angular/platform-browser";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { NotificationService } from "./notification/notification.service";
 import { GlobalErrorHandle } from "./exception/global-error-handle";
+import { AngularFireAuth } from 'angularfire2/auth';
 @NgModule({
   imports: [
     CommonModule,
@@ -22,6 +23,7 @@ import { GlobalErrorHandle } from "./exception/global-error-handle";
   ],
   providers: [
     AngularFireDatabase,
+    AngularFireAuth,
     NotificationService,
     {
       provide: ErrorHandler,

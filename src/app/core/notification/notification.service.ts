@@ -1,7 +1,7 @@
 import { Injectable } from "@angular/core";
 import { BehaviorSubject, Observable } from "rxjs";
-import { NotificationType } from "../enums/notification.enum";
-import { NotificationStructure } from '../interfaces/notification.structure';
+import { NotificationType } from "../enums/core.enums";
+import { NotificationStructure } from '../interfaces/core.interfaces';
 
 /**
  * Responsable to send the messages to notification component
