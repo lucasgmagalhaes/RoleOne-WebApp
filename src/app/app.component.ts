@@ -1,8 +1,6 @@
 import { Component } from "@angular/core";
-import { FireService } from "./core/database/fire.service";
-import {NotificationService} from './core/notification/notification.service';
-import { nextTick } from "q";
-import { Subject, Observable } from "rxjs";
+import { NotificationService } from './core/notification/notification.service';
+import { Observable } from "rxjs";
 @Component({
   selector: "app-root",
   templateUrl: "./app.component.html",

@@ -1,9 +1,6 @@
 import { TestBed, inject } from "@angular/core/testing";
 import { FireService } from "./fire.service";
-import {
-  AngularFireDatabase,
-  AngularFireDatabaseModule
-} from "angularfire2/database";
+import { AngularFireDatabaseModule } from "angularfire2/database";
 import { AngularFirestoreModule } from "angularfire2/firestore";
 import { AngularFireModule } from "angularfire2";
 import { environment } from "../../../environments/environment";
