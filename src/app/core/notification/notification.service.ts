@@ -13,7 +13,7 @@ export class NotificationService {
   /**
    * Responsable to send a message for who subscribe it
    */
-  notifier = new BehaviorSubject<NotificationStructure>({message: ''});
+  notifier = new BehaviorSubject<NotificationStructure>({message: '', type: NotificationType.DEFAULT});
   constructor() {}
 
   /**

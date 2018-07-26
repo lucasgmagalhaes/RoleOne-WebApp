@@ -14,6 +14,6 @@ export class AppComponent {
   }
 
   send(){
-   throw new Error("TAAA");
+   throw new Error("TA");
   }
 }
