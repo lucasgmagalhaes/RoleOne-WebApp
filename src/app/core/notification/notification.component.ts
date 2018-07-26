@@ -7,7 +7,6 @@ import {
   transition
 } from "@angular/animations";
 import { NotificationService } from "./notification.service";
-import { NotificationType } from "../enums/notification.enum";
 import { NotificationStructure } from "../interfaces/notification.structure";
 
 @Component({
@@ -30,13 +29,15 @@ import { NotificationStructure } from "../interfaces/notification.structure";
 })
 export class NotificationComponent implements OnInit {
   notifications: NotificationStructure[] = [];
-
+  animate = "";
   constructor(private notificationService: NotificationService) {}
 
   ngOnInit() {
     this.notificationService.getNotification().subscribe(val => {
       this.notifications.push(val);
-      this.notifications.push({message: "Oo", type: NotificationType.ERROR});
+      setTimeout(() => {
+        this.notifications.splice(0, 1);
+      }, 2000);
     });
   }
 

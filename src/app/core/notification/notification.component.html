@@ -1,6 +1,6 @@
 <div class="note-block">
-    <div *ngFor="let notification of notifications" class="notification spacing" [@notificationShow]="notifications.length" [ngClass]="notification.type">
-      <button (click)="closeNotification(notification)" class="delete"></button>
-      {{notification.message}}
-    </div>
+  <div *ngFor="let notification of notifications" class="notification spacing" [@notificationShow]="notifications.length" [ngClass]="notification.type">
+    <button (click)="closeNotification(notification)" class="delete"></button>
+    {{notification.message}}
+  </div>
 </div>
