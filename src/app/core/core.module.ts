@@ -1,4 +1,4 @@
-import { NgModule } from "@angular/core";
+import { NgModule, ErrorHandler } from "@angular/core";
 import { CommonModule } from "@angular/common";
 import { environment } from "../../environments/environment";
 import { AngularFireModule } from "angularfire2";
@@ -8,6 +8,7 @@ import { NotificationComponent } from "./notification/notification.component";
 import { BrowserModule } from "@angular/platform-browser";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { NotificationService } from "./notification/notification.service";
+import { GlobalErrorHandle } from "./exception/global-error-handle";
 @NgModule({
   imports: [
     CommonModule,
@@ -19,7 +20,15 @@ import { NotificationService } from "./notification/notification.service";
     BrowserModule,
     BrowserAnimationsModule
   ],
-  providers: [AngularFireDatabase, NotificationService],
+  providers: [
+    AngularFireDatabase,
+    NotificationService,
+    {
+      provide: ErrorHandler,
+      useClass: GlobalErrorHandle,
+      deps: [NotificationService]
+    }
+  ],
   declarations: [NotificationComponent],
   exports: [NotificationComponent]
 })

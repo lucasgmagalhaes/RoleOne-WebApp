@@ -14,6 +14,6 @@ export class AppComponent {
   }
 
   send(){
-    this.notificationService.setNotification('sa');
+   throw new Error("TAAA");
   }
 }

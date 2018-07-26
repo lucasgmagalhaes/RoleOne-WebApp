@@ -7,7 +7,7 @@ import {
 import { database } from "firebase";
 import { map } from "rxjs/operators";
 import { Observable } from "rxjs";
-import { Contansts } from '../enums/fire.service.enum';
+import { ErrorMessages } from "../enums/fire.service.enum";
 /**
  * @class FireService
  * @see angularfire2
@@ -17,6 +17,7 @@ import { Contansts } from '../enums/fire.service.enum';
  * but provkeyes a reduction of used code for the application. For all methods, their
  * return are the same as the primary methods. As the own encapsulation says, this
  * services provkeyes firebase functions only.
+ *
  */
 @Injectable({
   providedIn: "root"
@@ -60,11 +61,11 @@ export class FireService {
           obj => (objSingleReturn = this.db.list(this.resource).push(obj))
         );
         return objSingleReturn;
-      } else {
+      } else { //Object isn't an array
         return this.db.list(this.resource).push(object);
       }
-    } else {
-      throw new Error(Contansts.OBJ_PARAM_UNDEFINED);
+    } else { //Object undefined
+      throw new SyntaxError(ErrorMessages.OBJ_PARAM_UNDEFINED);
     }
   }
 
@@ -89,11 +90,11 @@ export class FireService {
           if (object.hasOwnProperty(this.KEY)) {
             if (object[this.KEY] === undefined) {
               object[this.KEY] = objReturn.key;
-            } else {
-              throw new Error(Contansts.OBJ_ALREADY_REGISTERED);
+            } else { //Key already defined
+              throw new Error(ErrorMessages.OBJ_ALREADY_REGISTERED);
             }
           } else {
-            throw new Error(Contansts.OBJ_NO_KEY);
+            throw new Error(ErrorMessages.OBJ_NO_KEY);
           }
         });
         return objReturn;
@@ -103,15 +104,15 @@ export class FireService {
             objReturn = this.db.list(this.resource).push(object);
             object[this.KEY] = objReturn.key;
           } else {
-            throw new Error(Contansts.OBJ_ALREADY_REGISTERED);
+            throw new Error(ErrorMessages.OBJ_ALREADY_REGISTERED);
           }
         } else {
-          throw new Error(Contansts.OBJ_NO_KEY);
+          throw new Error(ErrorMessages.OBJ_NO_KEY);
         }
         return objReturn;
       }
     } else {
-      throw new Error(Contansts.OBJ_PARAM_UNDEFINED);
+      throw new Error(ErrorMessages.OBJ_PARAM_UNDEFINED);
     }
   }
 
@@ -176,7 +177,7 @@ export class FireService {
               .update(obj);
           } else {
             //If an object have no key, so it can not be updated
-            throw new Error(Contansts.OBJ_NO_KEY + 'at index: ' + index);
+            throw new Error(ErrorMessages.OBJ_NO_KEY + 'at index: ' + index);
           }
         });
 
@@ -188,11 +189,11 @@ export class FireService {
 
           return this.db.object(`${this.resource}/${key}`).update(object);
         } else {
-          throw new Error(Contansts.OBJ_NO_KEY);
+          throw new Error(ErrorMessages.OBJ_NO_KEY);
         }
       }
     } else {
-      throw new Error(Contansts.OBJ_NO_KEY + 'for ' + object);
+      throw new Error(ErrorMessages.OBJ_NO_KEY + 'for ' + object);
     }
   }
 
@@ -220,7 +221,7 @@ export class FireService {
 
             promiseReturn = this.db.object(`${this.resource}/${key}`).set(obj);
           } else {
-            throw new Error(Contansts.OBJ_NO_KEY + 'at index: ' + index);
+            throw new Error(ErrorMessages.OBJ_NO_KEY + 'at index: ' + index);
           }
         });
 
@@ -232,11 +233,11 @@ export class FireService {
 
           return this.db.object(`${this.resource}/${key}`).set(object);
         } else {
-          throw new Error(Contansts.OBJ_NO_KEY);
+          throw new Error(ErrorMessages.OBJ_NO_KEY);
         }
       }
     } else {
-      throw new Error(Contansts.OBJ_PARAM_UNDEFINED);
+      throw new Error(ErrorMessages.OBJ_PARAM_UNDEFINED);
     }
   }
 
@@ -272,7 +273,7 @@ export class FireService {
             if (k[this.KEY] !== undefined) {
               _return = db.remove(`/${this.resource}/${k[this.KEY]}`);
             } else {
-              throw new Error(Contansts.OBJ_NO_KEY + "at index: " + index);
+              throw new Error(ErrorMessages.OBJ_NO_KEY + "at index: " + index);
             }
           }
         });
@@ -283,11 +284,11 @@ export class FireService {
         } else if (key[this.KEY] !== undefined) {
           _return = db.remove(`/${this.resource}/${key[this.KEY]}`);
         } else {
-          throw new Error(Contansts.OBJ_NO_KEY);
+          throw new Error(ErrorMessages.OBJ_NO_KEY);
         }
       }
     } else {
-      throw new Error(Contansts.OBJ_NO_KEY);
+      throw new Error(ErrorMessages.OBJ_NO_KEY);
     }
   }
 }
