@@ -17,9 +17,9 @@ import { AngularFireAuth } from 'angularfire2/auth';
       environment.fireSettings,
       environment.apiName
     ),
-    AngularFirestoreModule, // imports firebase/firestore, only needed for database features
+    AngularFirestoreModule,
     BrowserModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
   ],
   providers: [
     AngularFireDatabase,

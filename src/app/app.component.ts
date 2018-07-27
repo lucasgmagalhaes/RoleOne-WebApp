@@ -12,4 +12,7 @@ export class AppComponent {
   constructor() {
   }
 
+  uploadFile(event){
+    console.log(event.type);
+  }
 }
