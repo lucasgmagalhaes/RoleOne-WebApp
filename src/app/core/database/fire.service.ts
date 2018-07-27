@@ -10,21 +10,22 @@ import { Observable } from "rxjs";
 import { ErrorMessages } from "../enums/core.enums";
 /**
  * @class FireService
- * @see angularfire2
- * @private AngularFireDatabase
- * @constructor AngularFire2: v5.0.0-rc.11
+ * @see angularfire2 - AngularFireDatabase
+ * @link none
+ * @constructor AngularFire2 version: v5.0.0-rc.11
  * @description This class is a abstraction of angularFire2 AngularFireDatabasemethods.
  * It provkeyes all services that the own angularFire2 does for a CRUD implementation,
  * but provkeyes a reduction of used code for the application. For all methods, their
  * return are the same as the primary methods. As the own encapsulation says, this
  * services provkeyes firebase functions only.
- *
+ * 
+ * **Obs: This methods do not alter the primary methods of angularfire authentication.**
  */
 @Injectable({
   providedIn: "root"
 })
 export class FireService {
-  private resource: string = '/';
+  private resource: string = "/";
   private readonly KEY: string = "key";
   constructor(private db: AngularFireDatabase) {}
 
@@ -62,10 +63,12 @@ export class FireService {
           obj => (objSingleReturn = this.db.list(this.resource).push(obj))
         );
         return objSingleReturn;
-      } else { //Object isn't an array
+      } else {
+        //Object isn't an array
         return this.db.list(this.resource).push(object);
       }
-    } else { //Object undefined
+    } else {
+      //Object undefined
       throw new SyntaxError(ErrorMessages.OBJ_PARAM_UNDEFINED);
     }
   }
@@ -91,7 +94,8 @@ export class FireService {
           if (object.hasOwnProperty(this.KEY)) {
             if (object[this.KEY] === undefined) {
               object[this.KEY] = objReturn.key;
-            } else { //Key already defined
+            } else {
+              //Key already defined
               throw new Error(ErrorMessages.OBJ_ALREADY_REGISTERED);
             }
           } else {
@@ -126,7 +130,7 @@ export class FireService {
    * @type T
    */
   find<T>(route?: string, query?: QueryFn): AngularFireList<T> {
-    if(route !== undefined){
+    if (route !== undefined) {
       return this.db.list<T>(route, query);
     } else {
       return this.db.list<T>(this.resource, query);
@@ -178,7 +182,7 @@ export class FireService {
               .update(obj);
           } else {
             //If an object have no key, so it can not be updated
-            throw new Error(ErrorMessages.OBJ_NO_KEY + 'at index: ' + index);
+            throw new Error(ErrorMessages.OBJ_NO_KEY + "at index: " + index);
           }
         });
 
@@ -194,7 +198,7 @@ export class FireService {
         }
       }
     } else {
-      throw new Error(ErrorMessages.OBJ_NO_KEY + 'for ' + object);
+      throw new Error(ErrorMessages.OBJ_NO_KEY + "for " + object);
     }
   }
 
@@ -222,7 +226,7 @@ export class FireService {
 
             promiseReturn = this.db.object(`${this.resource}/${key}`).set(obj);
           } else {
-            throw new Error(ErrorMessages.OBJ_NO_KEY + 'at index: ' + index);
+            throw new Error(ErrorMessages.OBJ_NO_KEY + "at index: " + index);
           }
         });
 
