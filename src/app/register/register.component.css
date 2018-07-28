@@ -1,0 +1,18 @@
+.hover {
+  cursor: pointer;
+}
+
+.fb-color {
+  color: #5061A6;
+}
+
+.twitter-color {
+  color: #1DA1F2;
+}
+
+.github-color {
+    color: black;
+}
+.shadowed {
+    box-shadow: 2px rgba(0,0,0,0.19);
+}

@@ -1,6 +1,4 @@
 import { Routes } from "@angular/router";
-import { SingupComponent } from './singup/singup.component';
+import { RegisterComponent } from "./register/register.component";
 
-export const ROUTES: Routes = [
-{ path: '', component: SingupComponent }
-];
+export const ROUTES: Routes = [{ path: "", component: RegisterComponent }];
