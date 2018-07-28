@@ -27,7 +27,7 @@
                   <label class="has-text-grey label is-small">USERNAME</label>
                 </div>
                 <div class="control">
-                  <input class="input" type="text" placeholder="Text input">
+                  <input class="input" type="text">
                 </div>
                 <!--<p class="help is-danger">This username is invalid</p>-->
               </div>
@@ -37,7 +37,7 @@
                   <label class="has-text-grey label is-small">PASSWORD</label>
                 </div>
                 <div class="control">
-                  <input class="input" type="password" placeholder="Your Password">
+                  <input class="input" type="password">
                 </div>
                 <!--<p class="help is-danger">This passowrd is invalid</p>-->
               </div>
@@ -69,6 +69,14 @@
               </div>
 
               <button class="button is-block is-link is-fullwidth">Register</button>
+
+              <div class="field">
+                  <div class="control field-label is-small">
+                    <label class="is-small">
+                      <a [routerLink]="['/login']">Already have an account?</a>
+                    </label>
+                  </div>
+                </div>
 
               <div class="field">
                 <div class="control field-label is-small">
