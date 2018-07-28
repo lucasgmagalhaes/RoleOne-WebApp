@@ -34,10 +34,12 @@ export class NotificationComponent implements OnInit {
 
   ngOnInit() {
     this.notificationService.getNotification().subscribe(val => {
-      this.notifications.push(val);
-      setTimeout(() => {
-        this.notifications.splice(0, 1);
-      }, 2000);
+      if (val.message !== "") {
+        this.notifications.push(val);
+        setTimeout(() => {
+          this.notifications.splice(0, 1);
+        }, 2000);
+      }
     });
   }
 
