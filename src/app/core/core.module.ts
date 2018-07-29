@@ -9,14 +9,11 @@ import { BrowserModule } from "@angular/platform-browser";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { NotificationService } from "./notification/notification.service";
 import { GlobalErrorHandle } from "./exception/global-error-handle";
-import { AngularFireAuth } from 'angularfire2/auth';
+import { AngularFireAuth } from "angularfire2/auth";
 @NgModule({
   imports: [
     CommonModule,
-    AngularFireModule.initializeApp(
-      environment.fireSettings,
-      environment.apiName
-    ),
+    AngularFireModule.initializeApp(environment.fireSettings),
     AngularFirestoreModule,
     BrowserModule,
     BrowserAnimationsModule,
