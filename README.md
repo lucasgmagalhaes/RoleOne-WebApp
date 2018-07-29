@@ -7,3 +7,9 @@
 ```shell
 npm install
 ```
+
+### Running SonarQube
+
+```shell
+tslint --project tsconfig.json -c tslint.json 'src/**/*.ts'
+```
