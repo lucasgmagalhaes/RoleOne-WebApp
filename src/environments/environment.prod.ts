@@ -8,5 +8,4 @@ export const environment = {
     storageBucket: "roleone-api.appspot.com",
     messagingSenderId: "308763801877"
   },
-  apiName: "cms-api"
 };

@@ -12,7 +12,6 @@ export const environment = {
     storageBucket: "",
     messagingSenderId: "921086529784"
   },
-  apiName: "cms-api-teste"
 };
 
 /*
