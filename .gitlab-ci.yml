@@ -1,5 +1,5 @@
 .node: &node
-  image: node:7
+  image: node:8.9
   before_script:
     - npm install
   cache:
@@ -16,7 +16,7 @@ deploy_develop:
     name: develop
   <<: *node
   script:
-    - npm run build 
+    - npm run build -- -e $CI_ENVIRONMENT_SLUG
     - npm run deploy
   only:
     - develop
@@ -27,7 +27,7 @@ deploy_production:
     name: production
   <<: *node
   script:
-    - npm run build --prod
+    - npm run build -- -e $CI_ENVIRONMENT_SLUG
     - npm run deploy
   only:
     - master
