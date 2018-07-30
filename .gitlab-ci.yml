@@ -10,16 +10,16 @@
 stages:
   - deploy
 
-deploy_develop:
+deploy_dev:
   stage: deploy
   environment:
-    name: develop
+    name: dev
   <<: *node
   script:
     - npm run build -- -e $CI_ENVIRONMENT_SLUG
     - npm run deploy
   only:
-    - develop
+    - dev
 
 deploy_production:
   stage: deploy
