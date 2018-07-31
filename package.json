@@ -8,6 +8,8 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
+    "buildprod":"ng build --configuration=production",
+    "builddev":"ng build --configuration=dev",
     "compodoc": "./node_modules/.bin/compodoc -p src/tsconfig.app.json",
     "predeploy": "firebase use --token $FIREBASE_DEPLOY_KEY $CI_ENVIRONMENT_SLUG",
     "deploy": "firebase deploy --non-interactive --token $FIREBASE_DEPLOY_KEY"
