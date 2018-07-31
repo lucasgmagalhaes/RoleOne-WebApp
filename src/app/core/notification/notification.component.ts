@@ -8,7 +8,10 @@ import {
 } from "@angular/animations";
 import { NotificationService } from "./notification.service";
 import { NotificationStructure } from "../interfaces/core.interfaces";
-
+/**
+ * @constructor NotificationService
+ * @description Responsable to display a message setted in NotificationService in the screen for the final user. Use AngularAnimations in notifications
+ */
 @Component({
   selector: "ro1-notification",
   templateUrl: "./notification.component.html",
@@ -36,6 +39,7 @@ export class NotificationComponent implements OnInit {
     this.notificationService.getNotification().subscribe(val => {
       if (val.message !== "") {
         this.notifications.push(val);
+        //Remove the notification after 2secs
         setTimeout(() => {
           this.notifications.splice(0, 1);
         }, 2000);
