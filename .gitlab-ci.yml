@@ -16,7 +16,7 @@ deploy_dev:
     name: dev
   <<: *node
   script:
-    - npm run build builddev
+    - npm run builddev
     - npm run deploy
   only:
     - dev
@@ -27,7 +27,7 @@ deploy_production:
     name: production
   <<: *node
   script:
-    - npm run build buildprod 
+    - npm run buildprod 
     - npm run deploy
   only:
     - master
