@@ -3,7 +3,6 @@
   before_script:
     - npm install
   cache:
-    key: "$CI_COMMIT_REF_NAME"
     paths:
     - node_modules/
 
@@ -16,7 +15,6 @@ deploy_dev:
     name: dev
   <<: *node
   script:
-    - npm run builddev
     - npm run deploy
   only:
     - dev
