@@ -1,15 +1,16 @@
-import { TestBed, inject } from '@angular/core/testing';
+import { TestBed, inject } from "@angular/core/testing";
 
-import { AuthService } from './auth.service';
+import { AuthService } from "./auth.service";
 
-describe('AuthService', () => {
+describe("AuthService", () => {
+  let fireStub = { find: () => {} };
   beforeEach(() => {
     TestBed.configureTestingModule({
-      providers: [AuthService]
+      providers: [AuthService, { provide: AuthService, useValue: fireStub }]
     });
   });
 
-  it('should be created', inject([AuthService], (service: AuthService) => {
+  it("should be created", inject([AuthService], (service: AuthService) => {
     expect(service).toBeTruthy();
   }));
 });

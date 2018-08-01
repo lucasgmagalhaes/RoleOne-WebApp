@@ -16,10 +16,7 @@ describe("FireService", () => {
 
     TestBed.configureTestingModule({
       imports: [
-        AngularFireModule.initializeApp(
-          environment.fireSettings,
-          environment.apiName
-        ),
+        AngularFireModule.initializeApp(environment.fireSettings),
         AngularFirestoreModule,
         AngularFireDatabaseModule
       ],
