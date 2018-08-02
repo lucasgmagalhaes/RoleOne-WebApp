@@ -1,47 +1,32 @@
 #Help: https://docs.gitlab.com/ee/ci/yaml/
+#Validation: https://gitlab.com/roleone/webapp/-/ci/lint
 .node: &node
   image: node:latest
-  before_script:
-    - npm install
   cache:
     key: "$CI_COMMIT_REF_SLUG"
     paths:
     - node_modules/
 
-# Only development will not have deployment stage
 stages:
   - build
   - test
   - deploy
 
-# Script 'builddev' was created to be runned in Angular 6
-# do ng build --prod, I.E do not work for another environment.
-# Instead, must be used 'ng build --configuration=dev' for development, i.e
-build_dev:
+build:
   stage: build
   environment:
     name: dev
   <<: *node
   script:
-    - npm run builddev
-  only:
-    - dev
-
-build_prod:
-  stage: build
-  environment:
-    name: production
-  <<: *node
-  script:
-    - npm run buildprod
-  only:
-    - master
+    - npm install
+    - npm run build
 
 test_build:
   stage: test
   script:
-    - npm test
-    - npm e2e
+    - npm install
+    - ./node_modules/@angular/cli/bin/ng test --progress false --single-run=true --watch=false
+    - ./node_modules/@angular/cli/bin/ng e2e --progress false --watch=false
 
 deploy_production:
   stage: deploy
@@ -49,6 +34,7 @@ deploy_production:
     name: production
   <<: *node
   script:
+    - npm install
     - npm run deploy
   only:
     - master
