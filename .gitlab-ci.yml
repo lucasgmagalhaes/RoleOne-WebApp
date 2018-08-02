@@ -27,21 +27,21 @@ build_dev:
   only:
     - dev
 
-test_build:
-  stage: test
-  script:
-    - npm test
-    - npm e2e
-
-build_production:
+build_prod:
   stage: build
   environment:
     name: production
   <<: *node
   script:
     - npm run buildprod
-    only: 
-      - master
+  only:
+    - master
+
+test_build:
+  stage: test
+  script:
+    - npm test
+    - npm e2e
 
 deploy_production:
   stage: deploy
