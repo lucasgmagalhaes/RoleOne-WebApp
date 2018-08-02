@@ -25,8 +25,8 @@ test_build:
   stage: test
   script:
     - npm install
-    - ./node_modules/@angular/cli/bin/ng test --progress false --single-run=true --watch=false
-    - ./node_modules/@angular/cli/bin/ng e2e --progress false --watch=false
+    - ng test --progress false --single-run=true --watch=false
+    - ng e2e --progress false --watch=false
 
 deploy_production:
   stage: deploy
