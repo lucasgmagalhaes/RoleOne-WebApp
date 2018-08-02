@@ -40,7 +40,8 @@ build_production:
   <<: *node
   script:
     - npm run buildprod
-    only: master
+    only: 
+      - master
 
 deploy_production:
   stage: deploy
