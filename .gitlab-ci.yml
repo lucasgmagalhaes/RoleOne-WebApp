@@ -34,15 +34,21 @@ build_master:
   only:
     - master
 
-protactor_and_karma_test:
+karma_test:
   stage: test
   script:
     - rm ./package-lock.json
     - npm install
     - ./node_modules/@angular/cli/bin/ng test --progress false --single-run=true  --watch=false
+
+protactor_test:
+  stage: test
+  script:
+    - rm ./package-lock.json
+    - npm install
     - ./node_modules/@angular/cli/bin/ng e2e --progress false --watch=false
 
-deploy_production_firebase:
+deploy_firebase:
   stage: deploy
   environment:
     name: production
