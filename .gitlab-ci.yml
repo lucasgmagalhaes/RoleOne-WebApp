@@ -12,23 +12,34 @@ stages:
   - test
   - deploy
 
-build:
+build_dev:
   stage: build
   environment:
     name: dev
   <<: *node
   script:
     - npm install
-    - npm run build
+    - npm run builddev
 
-test_build:
+build_master:
+  stage: build
+  environment:
+    name: production
+  <<: *node
+  script:
+    - npm install
+    - npm run build
+  only:
+    - master
+
+protactor_and_karma_test:
   stage: test
   script:
     - npm install
-    - ng test --progress false --single-run=true --watch=false
-    - ng e2e --progress false --watch=false
+    - npm test --progress false --single-run=true --watch=false
+    - npm e2e --progress false --watch=false
 
-deploy_production:
+deploy_production_firebase:
   stage: deploy
   environment:
     name: production
