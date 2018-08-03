@@ -90,9 +90,10 @@ export class FireService {
 
       if (object instanceof Array) {
         object.forEach(function(obj) {
+          delete obj[this.KEY];
           objReturn = this.db.list(this.resource).push(obj);
           if (object.hasOwnProperty(this.KEY)) {
-            if (object[this.KEY] === undefined) {
+            if (object[this.KEY] === undefined || object[this.KEY] === "") {
               object[this.KEY] = objReturn.key;
             } else {
               //Key already defined
@@ -105,7 +106,8 @@ export class FireService {
         return objReturn;
       } else {
         if (object.hasOwnProperty(this.KEY)) {
-          if (object[this.KEY] === undefined) {
+          if (object[this.KEY] === undefined || object[this.KEY] === "") {
+            delete object[this.KEY];
             objReturn = this.db.list(this.resource).push(object);
             object[this.KEY] = objReturn.key;
           } else {
@@ -129,7 +131,7 @@ export class FireService {
    * @throws Error if route is undefined
    * @type T
    */
-  find<T>(route?: string, query?: QueryFn): AngularFireList<T> {
+  find<T>(query?: QueryFn, route?: string): AngularFireList<T> {
     if (route !== undefined) {
       return this.db.list<T>(route, query);
     } else {

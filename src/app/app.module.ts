@@ -11,6 +11,7 @@ import { RegisterComponent } from "./register/register.component";
 import { ForgotPasswordComponent } from "./forgot-password/forgot-password.component";
 import { HomeComponent } from "./home/home.component";
 import { APP_BASE_HREF } from "@angular/common";
+import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 
 @NgModule({
   declarations: [
@@ -22,7 +23,13 @@ import { APP_BASE_HREF } from "@angular/common";
     ForgotPasswordComponent,
     HomeComponent
   ],
-  imports: [BrowserModule, CoreModule, RouterModule.forRoot(ROUTES)],
+  imports: [
+    BrowserModule,
+    CoreModule,
+    RouterModule.forRoot(ROUTES),
+    FormsModule,
+    ReactiveFormsModule
+  ],
   providers: [],
   bootstrap: [AppComponent]
 })

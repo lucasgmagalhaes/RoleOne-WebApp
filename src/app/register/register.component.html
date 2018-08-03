@@ -6,7 +6,7 @@
           <div class="has-text-centered">
             <p class="subtitle has-text-grey">Create an account</p>
           </div>
-          <form>
+          <form [formGroup]="userForm" novalidate>
             <div class="column">
               <div class="field">
                 <div class="control field-label is-small">
@@ -14,7 +14,7 @@
                 </div>
                 <div class="control">
                   <!--class="is-danger"-->
-                  <input class="input" type="text">
+                  <input formControlName="email" class="input" [class.is-danger]="!userForm.controls.email.valid && userForm.controls.email.touched" required type="text">
                 </div>
                 <!--
                   To invalid on email
@@ -27,7 +27,7 @@
                   <label class="has-text-grey label is-small">USERNAME</label>
                 </div>
                 <div class="control">
-                  <input class="input" type="text">
+                  <input formControlName="username" class="input" required type="text">
                 </div>
                 <!--<p class="help is-danger">This username is invalid</p>-->
               </div>
@@ -37,20 +37,20 @@
                   <label class="has-text-grey label is-small">PASSWORD</label>
                 </div>
                 <div class="control">
-                  <input class="input" type="password">
+                  <input formControlName="password" class="input" required type="password">
                 </div>
                 <!--<p class="help is-danger">This passowrd is invalid</p>-->
               </div>
 
-              <button class="button is-block is-link is-fullwidth">Register</button>
+              <button (click)="registerUser(userForm.value)" class="button is-block is-link is-fullwidth" [disabled]="!userForm.valid" >Register</button>
 
               <div class="field">
-                  <div class="control field-label is-small">
-                    <label class="is-small">
-                      <a [routerLink]="['/login']">Already have an account?</a>
-                    </label>
-                  </div>
+                <div class="control field-label is-small">
+                  <label class="is-small">
+                    <a [routerLink]="['/login']">Already have an account?</a>
+                  </label>
                 </div>
+              </div>
 
               <div class="field">
                 <div class="control field-label is-small">
