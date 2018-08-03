@@ -2,10 +2,6 @@
 #Validation: https://gitlab.com/roleone/webapp/-/ci/lint
 image: trion/ng-cli-karma
 
-cache:
-  paths:
-    - node_modules/
-    
 .node: &node
   image: node:latest
   cache:
@@ -18,14 +14,14 @@ stages:
   - test
   - deploy
 
-build_dev:
-  stage: build
-  environment:
-    name: dev
-  <<: *node
-  script:
-    - npm install
-    - npm run builddev
+#build_dev:
+#  stage: build
+#  environment:
+#    name: dev
+#  <<: *node
+#  script:
+#    - npm install
+#    - npm run builddev
 
 build_master:
   stage: build
@@ -59,12 +55,12 @@ coverage:
       - public
     expire_in: 30 days
 
-protactor_test:
-  stage: test
-  script:
-    - rm ./package-lock.json
-    - npm install
-    - ./node_modules/@angular/cli/bin/ng e2e --progress false --watch=false
+#protactor_test:
+#  stage: test
+#  script:
+#    - rm ./package-lock.json
+#    - npm install
+#    - ./node_modules/@angular/cli/bin/ng e2e --progress false --watch=false
 
 deploy_firebase:
   stage: deploy
