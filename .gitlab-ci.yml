@@ -2,6 +2,10 @@
 #Validation: https://gitlab.com/roleone/webapp/-/ci/lint
 image: trion/ng-cli-karma
 
+cache:
+  paths:
+    - node_modules/
+    
 .node: &node
   image: node:latest
   cache:
@@ -40,6 +44,20 @@ karma_test:
     - rm ./package-lock.json
     - npm install
     - ./node_modules/@angular/cli/bin/ng test --watch=false --code-coverage
+
+coverage:
+  image: alpine
+  stage: deploy
+  dependencies:
+    - karma_test
+  before_script:
+    - echo 'deploying code coverage stats'
+  script:
+    - mv coverage/ public/
+  artifacts:
+    paths:
+      - public
+    expire_in: 30 days
 
 protactor_test:
   stage: test
