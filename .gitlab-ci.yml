@@ -25,9 +25,7 @@ stages:
 #  stage: build
 #  environment:
 #    name: dev
-#  <<: *node
 #  script:
-#    - npm install
 #    - npm run builddev
 
 build_master:
@@ -45,7 +43,7 @@ karma_test:
   script:
     - rm ./package-lock.json
     - echo 'running tests with code coverage'
-    - ./node_modules/@angular/cli/bin/ng test --watch=false --code-coverage
+    - ng test --watch=false --code-coverage
   artifacts:
     paths:
       - coverage/
@@ -68,7 +66,7 @@ coverage:
 #  stage: test
 #  script:
 #    - rm ./package-lock.json
-#    - ./node_modules/@angular/cli/bin/ng e2e --progress false --watch=false
+#    - ng e2e --progress false --watch=false
 
 deploy_firebase:
   stage: deploy
