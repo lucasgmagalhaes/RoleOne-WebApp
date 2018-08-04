@@ -1,33 +1,74 @@
+#Help: https://docs.gitlab.com/ee/ci/yaml/
+#Validation: https://gitlab.com/roleone/webapp/-/ci/lint
+image: trion/ng-cli-karma
+
 .node: &node
-  image: node:8.9
-  before_script:
-    - npm install
+  image: node:latest
   cache:
-    key: "$CI_COMMIT_REF_NAME"
+    key: "$CI_COMMIT_REF_SLUG"
     paths:
     - node_modules/
 
 stages:
+  - build
+  - test
   - deploy
 
-deploy_develop:
-  stage: deploy
+#build_dev:
+#  stage: build
+#  environment:
+#    name: dev
+#  <<: *node
+#  script:
+#    - npm install
+#    - npm run builddev
+
+build_master:
+  stage: build
   environment:
-    name: develop
+    name: production
   <<: *node
   script:
-    - npm run build -- -e $CI_ENVIRONMENT_SLUG
-    - npm run deploy
+    - npm install
+    - npm run buildprod
   only:
-    - develop
+    - master
 
-deploy_production:
+karma_test:
+  stage: test
+  script:
+    - rm ./package-lock.json
+    - npm install
+    - ./node_modules/@angular/cli/bin/ng test --watch=false --code-coverage
+
+coverage:
+  image: alpine
+  stage: deploy
+  dependencies:
+    - karma_test
+  before_script:
+    - echo 'deploying code coverage stats'
+  script:
+    - mv coverage/ public/
+  artifacts:
+    paths:
+      - public
+    expire_in: 30 days
+
+#protactor_test:
+#  stage: test
+#  script:
+#    - rm ./package-lock.json
+#    - npm install
+#    - ./node_modules/@angular/cli/bin/ng e2e --progress false --watch=false
+
+deploy_firebase:
   stage: deploy
   environment:
     name: production
   <<: *node
   script:
-    - npm run build -- -e $CI_ENVIRONMENT_SLUG
+    - npm install
     - npm run deploy
   only:
     - master

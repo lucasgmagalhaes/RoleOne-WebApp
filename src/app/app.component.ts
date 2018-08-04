@@ -1,5 +1,4 @@
 import { Component } from "@angular/core";
-import { Observable } from "rxjs";
 
 @Component({
   selector: "app-root",
@@ -7,12 +6,7 @@ import { Observable } from "rxjs";
   styleUrls: ["./app.component.css"]
 })
 export class AppComponent {
-  list: Observable<any[]>;
 
   constructor() {
-  }
-
-  uploadFile(event){
-    console.log(event.type);
   }
 }

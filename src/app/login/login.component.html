@@ -1,0 +1,85 @@
+<section class="hero is-fullheight">
+  <div class="hero-body">
+    <div class="container">
+      <div class="column is-5 is-offset-4">
+        <div class="box shadowed">
+          <div class="has-text-centered">
+            <p class="subtitle has-text-grey">Wellcome back</p>
+          </div>
+          <form>
+            <div class="column">
+              <div class="field">
+                <div class="control field-label is-small">
+                  <label class="has-text-grey label is-small">EMAIL</label>
+                </div>
+                <div class="control">
+                  <!--class="is-danger"-->
+                  <input class="input" type="email">
+                </div>
+                <!--
+                    To invalid on email
+                    <p class="help is-danger">This email is invalid</p>
+                  -->
+              </div>
+
+              <div class="field">
+                <div class="control field-label is-small">
+                  <label class="has-text-grey label is-small">PASSWORD</label>
+                </div>
+                <div class="control">
+                  <input class="input" type="password">
+                </div>
+                <!--<p class="help is-danger">This passowrd is invalid</p>-->
+              </div>
+
+              <div class="field is-grouped">
+
+                <div class="control">
+                  <label>Or with:</label>
+                </div>
+
+                <p class="control hover">
+                  <span class="icon">
+                    <i class="fab fa-google "></i>
+                  </span>
+                </p>
+
+                <!--                <p class="control hover">
+                  <span class="icon">
+                    <i class="fab fa-twitter twitter-color"></i>
+                  </span>
+                </p>
+
+                <p class="control hover">
+                  <span class="icon">
+                    <i class="fab fa-facebook-f  fb-color"></i>
+                  </span>
+                </p> -->
+
+              </div>
+
+              <div class="field">
+                <div class="control field-label is-small">
+                  <label class="is-small">
+                    <a [routerLink]="['/recover']">Forgot your password ?</a>
+                  </label>
+                </div>
+              </div>
+
+              <button class="button is-block is-link is-fullwidth">Login</button>
+
+              <div class="field">
+                <div class="control field-label is-small">
+                  <label class="is-small">Need an account?
+                    <a [routerLink]="['']">Register</a>
+                  </label>
+                </div>
+              </div>
+
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
