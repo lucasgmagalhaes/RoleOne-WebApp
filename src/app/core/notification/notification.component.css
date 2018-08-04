@@ -1,11 +1,12 @@
 .spacing {
   position: relative;
   float: right;
-  top: 5px;
+  top: 50px;
   width: 300px;
   margin-top: 10px;
   margin-bottom: 0px;
   margin-right: 15px;
+  z-index: 100;
 }
 
 .note-block{

@@ -1,10 +1,10 @@
 import { async, ComponentFixture, TestBed } from "@angular/core/testing";
-import { NotificationComponent } from "./notification.component";
-import { AppModuleForTest } from "../../app.module";
+import { LoginComponent } from "./login.component";
+import { AppModuleForTest } from "../app.module";
 
-describe("NotificationComponent", () => {
-  let component: NotificationComponent;
-  let fixture: ComponentFixture<NotificationComponent>;
+describe("LoginComponent", () => {
+  let component: LoginComponent;
+  let fixture: ComponentFixture<LoginComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
@@ -13,7 +13,7 @@ describe("NotificationComponent", () => {
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(NotificationComponent);
+    fixture = TestBed.createComponent(LoginComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

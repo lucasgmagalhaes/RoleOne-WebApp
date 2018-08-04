@@ -16,7 +16,7 @@ import { AngularFireAuth } from "angularfire2/auth";
     AngularFireModule.initializeApp(environment.fireSettings),
     AngularFirestoreModule,
     BrowserModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
   ],
   providers: [
     AngularFireDatabase,

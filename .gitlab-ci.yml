@@ -1,33 +1,78 @@
-.node: &node
-  image: node:8.9
-  before_script:
-    - npm install
-  cache:
-    key: "$CI_COMMIT_REF_NAME"
-    paths:
+# Help: https://docs.gitlab.com/ee/ci/yaml/
+# Validation: https://gitlab.com/roleone/webapp/-/ci/lint
+
+# The goal is to run the tests in a docker container. Because if you try running
+# in just a node:latest container, it won’t work since Karma is looking for Chrome.
+# Luckily someone has already done the hard work in solving that problem.
+# A huge shout out to this docker container and it’s maintainer.
+image: trion/ng-cli-karma
+
+cache:
+  paths:
     - node_modules/
 
+before_script:
+    - npm i -g @angular/cli
+    - node -v
+    - npm install
+
 stages:
+  - build
+  - test
   - deploy
 
-deploy_develop:
-  stage: deploy
+build_dev:
+  stage: build
   environment:
-    name: develop
-  <<: *node
+    name: dev
   script:
-    - npm run build -- -e $CI_ENVIRONMENT_SLUG
-    - npm run deploy
-  only:
-    - develop
+    - npm run builddev
 
-deploy_production:
+build_master:
+  stage: build
+  environment:
+    name: production
+  script:
+    - npm run buildprod
+  only:
+    - master
+
+karma_test:
+  image: trion/ng-cli-karma
+  stage: test
+  script:
+    - rm ./package-lock.json
+    - echo 'running tests with code coverage'
+    - ng test --watch=false --code-coverage
+  artifacts:
+    paths:
+      - coverage/
+
+coverage:
+  image: alpine
+  stage: deploy
+  dependencies:
+    - karma_test
+  before_script:
+    - echo 'deploying code coverage stats'
+  script:
+    - mv coverage/ public/
+  artifacts:
+    paths:
+      - public
+    expire_in: 30 days
+
+protactor_test:
+  stage: test
+  script:
+    - rm ./package-lock.json
+    - ng e2e --progress false --watch=false
+
+deploy_firebase:
   stage: deploy
   environment:
     name: production
-  <<: *node
   script:
-    - npm run build -- -e $CI_ENVIRONMENT_SLUG
     - npm run deploy
   only:
     - master
