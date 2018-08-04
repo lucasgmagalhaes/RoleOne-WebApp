@@ -9,6 +9,9 @@ image: trion/ng-cli-karma
     paths:
     - node_modules/
 
+before_script:
+    - npm i -g @angular/cli
+
 stages:
   - build
   - test
@@ -35,11 +38,16 @@ build_master:
     - master
 
 karma_test:
+  image: trion/ng-cli-karma
   stage: test
   script:
     - rm ./package-lock.json
     - npm install
+    - echo 'running tests with code coverage'
     - ./node_modules/@angular/cli/bin/ng test --watch=false --code-coverage
+  artifacts:
+    paths:
+      - coverage/
 
 coverage:
   image: alpine
