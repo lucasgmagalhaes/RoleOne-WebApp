@@ -11,6 +11,7 @@ image: trion/ng-cli-karma
 
 before_script:
     - npm i -g @angular/cli
+    - npm install
 
 stages:
   - build
@@ -32,7 +33,6 @@ build_master:
     name: production
   <<: *node
   script:
-    - npm install
     - npm run buildprod
   only:
     - master
@@ -42,7 +42,6 @@ karma_test:
   stage: test
   script:
     - rm ./package-lock.json
-    - npm install
     - echo 'running tests with code coverage'
     - ./node_modules/@angular/cli/bin/ng test --watch=false --code-coverage
   artifacts:
@@ -67,7 +66,6 @@ coverage:
 #  stage: test
 #  script:
 #    - rm ./package-lock.json
-#    - npm install
 #    - ./node_modules/@angular/cli/bin/ng e2e --progress false --watch=false
 
 deploy_firebase:
@@ -76,7 +74,6 @@ deploy_firebase:
     name: production
   <<: *node
   script:
-    - npm install
     - npm run deploy
   only:
     - master
