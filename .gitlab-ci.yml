@@ -21,12 +21,12 @@ stages:
   - test
   - deploy
 
-#build_dev:
-#  stage: build
-#  environment:
-#    name: dev
-#  script:
-#    - npm run builddev
+build_dev:
+  stage: build
+  environment:
+    name: dev
+  script:
+    - npm run builddev
 
 build_master:
   stage: build
@@ -62,11 +62,11 @@ coverage:
       - public
     expire_in: 30 days
 
-#protactor_test:
-#  stage: test
-#  script:
-#    - rm ./package-lock.json
-#    - ng e2e --progress false --watch=false
+protactor_test:
+  stage: test
+  script:
+    - rm ./package-lock.json
+    - ng e2e --progress false --watch=false
 
 deploy_firebase:
   stage: deploy
