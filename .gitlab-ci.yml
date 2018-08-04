@@ -1,16 +1,19 @@
-#Help: https://docs.gitlab.com/ee/ci/yaml/
-#Validation: https://gitlab.com/roleone/webapp/-/ci/lint
+# Help: https://docs.gitlab.com/ee/ci/yaml/
+# Validation: https://gitlab.com/roleone/webapp/-/ci/lint
+
+# The goal is to run the tests in a docker container. Because if you try running
+# in just a node:latest container, it won’t work since Karma is looking for Chrome.
+# Luckily someone has already done the hard work in solving that problem.
+# A huge shout out to this docker container and it’s maintainer.
 image: trion/ng-cli-karma
 
-.node: &node
-  image: node:latest
-  cache:
-    key: "$CI_COMMIT_REF_SLUG"
-    paths:
+cache:
+  paths:
     - node_modules/
 
 before_script:
     - npm i -g @angular/cli
+    - echo 'node -v'
     - npm install
 
 stages:
