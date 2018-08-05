@@ -1,7 +1,8 @@
 import { Injectable } from "@angular/core";
 import { AngularFireAuth } from "angularfire2/auth";
-import { auth, User } from "firebase";
+import { auth } from "firebase";
 import { Observable } from "rxjs";
+import { User } from "../../auth/model/user";
 /**
  * @class AuthService
  * @see angularfire2 - AngularFireAuth
@@ -13,7 +14,7 @@ import { Observable } from "rxjs";
 @Injectable({
   providedIn: "root"
 })
-export class AuthService {
+export class FireAuthService {
   private authenticated: any = undefined;
 
   constructor(private localAuth: AngularFireAuth) {
@@ -58,8 +59,12 @@ export class AuthService {
     return this.localAuth.auth.signInWithPopup(new auth.TwitterAuthProvider());
   }
 
-  loginWithEmail(): Promise<auth.UserCredential> {
-    return this.localAuth.auth.signInWithPopup(new auth.EmailAuthProvider());
+  loginWithEmail(email: string, password: string): Promise<auth.UserCredential> {
+    return this.localAuth.auth.signInWithEmailAndPassword(email, password);
+  }
+
+  createUserWithEmailPassword(user: User): Promise<any> {
+    return this.localAuth.auth.createUserWithEmailAndPassword(user.email, user.password);
   }
 
   /*||||||||||||||||||||||||||||||||||||||||||||*/

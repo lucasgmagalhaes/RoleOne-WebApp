@@ -6,29 +6,22 @@ import { HeaderComponent } from "./static/header/header.component";
 import { RouterModule } from "@angular/router";
 import { ROUTES } from "./app.routes";
 import { FooterComponent } from "./static/footer/footer.component";
-import { LoginComponent } from "./login/login.component";
-import { RegisterComponent } from "./register/register.component";
-import { ForgotPasswordComponent } from "./forgot-password/forgot-password.component";
 import { HomeComponent } from "./home/home.component";
 import { APP_BASE_HREF } from "@angular/common";
-import { FormsModule, ReactiveFormsModule } from "@angular/forms";
+import { AuthModule } from "./auth/auth.module";
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     FooterComponent,
-    LoginComponent,
-    RegisterComponent,
-    ForgotPasswordComponent,
     HomeComponent
   ],
   imports: [
     BrowserModule,
     CoreModule,
-    RouterModule.forRoot(ROUTES),
-    FormsModule,
-    ReactiveFormsModule
+    AuthModule,
+    RouterModule.forRoot(ROUTES)
   ],
   providers: [],
   bootstrap: [AppComponent]
