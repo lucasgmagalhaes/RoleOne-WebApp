@@ -15,7 +15,7 @@ import { NotificationStructure } from "../interfaces/core.interfaces";
 @Component({
   selector: "ro1-notification",
   templateUrl: "./notification.component.html",
-  styleUrls: ["./notification.component.css"],
+  styleUrls: ["./notification.component.scss"],
   animations: [
     trigger("notificationShow", [
       state("visible", style({ transform: "translateX(0)" })),
