@@ -17,11 +17,11 @@ export class RegisterComponent implements OnInit {
   ngOnInit() {
     this.userForm = this.fb.group({
       email: this.fb.control("", [Validators.required, Validators.email]),
-      username: this.fb.control("lucasteste", [
+      username: this.fb.control("", [
         Validators.required,
         Validators.minLength(5)
       ]),
-      password: this.fb.control("lucastestesas", [
+      password: this.fb.control("", [
         Validators.required,
         Validators.minLength(8)
       ])
