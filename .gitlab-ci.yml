@@ -37,17 +37,6 @@ build_master:
   only:
     - master
 
-karma_test:
-  image: trion/ng-cli-karma
-  stage: test
-  script:
-    - rm ./package-lock.json
-    - echo 'running tests with code coverage'
-    - ng test --watch=false --code-coverage
-  artifacts:
-    paths:
-      - coverage/
-
 coverage:
   image: alpine
   stage: deploy
@@ -61,6 +50,17 @@ coverage:
     paths:
       - public
     expire_in: 30 days
+
+karma_test:
+  image: trion/ng-cli-karma
+  stage: test
+  script:
+    - rm ./package-lock.json
+    - echo 'running tests with code coverage'
+    - ng test --watch=false --code-coverage
+  artifacts:
+    paths:
+      - coverage/
 
 protactor_test:
   stage: test

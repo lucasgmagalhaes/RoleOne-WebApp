@@ -14,12 +14,9 @@
                 </div>
                 <div class="control">
                   <!--class="is-danger"-->
-                  <input formControlName="email" class="input" [class.is-danger]="!userForm.controls.email.valid && userForm.controls.email.touched" required type="text">
+                  <input formControlName="email" class="input" [class.is-danger]="!isEmailValid() || emailAlreadyRegistered()" required type="text">
                 </div>
-                <!--
-                  To invalid on email
-                  <p class="help is-danger">This email is invalid</p>
-                -->
+                <p *ngIf="!isEmailValid() || emailAlreadyRegistered()" class="help is-danger">{{emailErrorMessage}}</p>
               </div>
 
               <div class="field">
@@ -27,9 +24,9 @@
                   <label class="has-text-grey label is-small">USERNAME</label>
                 </div>
                 <div class="control">
-                  <input formControlName="username" class="input" required type="text">
+                  <input formControlName="username" class="input" [class.is-danger]="isUserNameValid()" required type="text">
                 </div>
-                <!--<p class="help is-danger">This username is invalid</p>-->
+                <p *ngIf="isUserNameValid()" class="help is-danger">This username is invalid</p>
               </div>
 
               <div class="field">
@@ -37,12 +34,12 @@
                   <label class="has-text-grey label is-small">PASSWORD</label>
                 </div>
                 <div class="control">
-                  <input formControlName="password" class="input" required type="password">
+                  <input formControlName="password" class="input" [class.is-danger]="isPasswordValid()" required type="password">
                 </div>
-                <!--<p class="help is-danger">This passowrd is invalid</p>-->
+                <p *ngIf="isPasswordValid()" class="help is-danger">This passowrd is invalid</p>
               </div>
 
-              <button (click)="registerUser(userForm.value)" class="button is-block is-link is-fullwidth" [disabled]="!userForm.valid" >Register</button>
+              <button (click)="registerUser(userForm.value)" class="button is-block is-link is-fullwidth" [disabled]="!userForm.valid">Register</button>
 
               <div class="field">
                 <div class="control field-label is-small">

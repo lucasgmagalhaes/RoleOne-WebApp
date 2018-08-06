@@ -18,7 +18,7 @@ import { ErrorMessages } from "../enums/core.enums";
  * but provkeyes a reduction of used code for the application. For all methods, their
  * return are the same as the primary methods. As the own encapsulation says, this
  * services provkeyes firebase functions only.
- * 
+ *
  * **Obs: This methods do not alter the primary methods of angularfire authentication.**
  */
 @Injectable({
@@ -54,23 +54,52 @@ export class FireService {
    * @return response of the database(database.ThenableReference)
    * @throws Error if object or route be undefined
    */
-  create(object: Object | Object[]): database.ThenableReference {
+  create(
+    object: Object | Object[],
+    _resource?: string
+  ): database.ThenableReference {
     if (object !== undefined) {
-      let objSingleReturn: database.ThenableReference;
-
       if (object instanceof Array) {
-        object.forEach(
-          obj => (objSingleReturn = this.db.list(this.resource).push(obj))
-        );
-        return objSingleReturn;
+        return this.insertList(object, _resource);
       } else {
-        //Object isn't an array
-        return this.db.list(this.resource).push(object);
+        return this.insertObj(object, _resource);
       }
     } else {
       //Object undefined
       throw new SyntaxError(ErrorMessages.OBJ_PARAM_UNDEFINED);
     }
+  }
+
+  private insertObj(
+    object: Object,
+    _resource?: string
+  ): database.ThenableReference {
+    if (_resource === undefined) {
+      delete object[this.KEY];
+      return this.db.list(this.resource).push(object);
+    } else {
+      delete object[this.KEY];
+      return this.db.list(_resource).push(object);
+    }
+  }
+
+  private insertList(
+    object: Object[],
+    _resource?: string
+  ): database.ThenableReference {
+    let objSingleReturn: database.ThenableReference;
+    if (_resource === undefined) {
+      object.forEach(obj => {
+        delete obj[this.KEY];
+        objSingleReturn = this.db.list(this.resource).push(obj);
+      });
+    } else {
+      object.forEach(obj => {
+        delete obj[this.KEY];
+        objSingleReturn = this.db.list(_resource).push(obj);
+      });
+    }
+    return objSingleReturn;
   }
 
   /**
@@ -91,25 +120,33 @@ export class FireService {
       if (object instanceof Array) {
         object.forEach(function(obj) {
           delete obj[this.KEY];
-          objReturn = this.db.list(this.resource).push(obj);
-          if (object.hasOwnProperty(this.KEY)) {
-            if (object[this.KEY] === undefined || object[this.KEY] === "") {
-              object[this.KEY] = objReturn.key;
-            } else {
-              //Key already defined
-              throw new Error(ErrorMessages.OBJ_ALREADY_REGISTERED);
-            }
-          } else {
-            throw new Error(ErrorMessages.OBJ_NO_KEY);
-          }
+          objReturn = this.db
+            .list(this.resource)
+            .push(obj)
+            .then(creation => {
+              if (object.hasOwnProperty(this.KEY)) {
+                if (object[this.KEY] === undefined || object[this.KEY] === "") {
+                  object[this.KEY] = creation.key;
+                } else {
+                  //Key already defined
+                  throw new Error(ErrorMessages.OBJ_ALREADY_REGISTERED);
+                }
+              } else {
+                throw new Error(ErrorMessages.OBJ_NO_KEY);
+              }
+            });
         });
         return objReturn;
       } else {
         if (object.hasOwnProperty(this.KEY)) {
           if (object[this.KEY] === undefined || object[this.KEY] === "") {
             delete object[this.KEY];
-            objReturn = this.db.list(this.resource).push(object);
-            object[this.KEY] = objReturn.key;
+            this.db
+              .list(this.resource)
+              .push(object)
+              .then(response => {
+                object[this.KEY] = response.key;
+              });
           } else {
             throw new Error(ErrorMessages.OBJ_ALREADY_REGISTERED);
           }
@@ -216,38 +253,51 @@ export class FireService {
    * @throws Error if undefined for object of one object of the list.
    * <p>if the object/objects[] or route if undefined</p>
    */
-  set(object: Object | Object[]): Promise<void> {
+  set(object: Object | Object[], _resource?: string): Promise<void> {
     if (object !== undefined) {
       if (object instanceof Array) {
         let promiseReturn: Promise<void>;
-
-        object.forEach((obj, index) => {
-          if (obj[this.KEY] !== undefined) {
-            let key = obj[this.KEY];
-            delete obj[this.KEY];
-
-            promiseReturn = this.db.object(`${this.resource}/${key}`).set(obj);
-          } else {
-            throw new Error(ErrorMessages.OBJ_NO_KEY + "at index: " + index);
-          }
-        });
-
+        this.setList(object, _resource);
         return promiseReturn;
       } else {
-        if (object[this.KEY] !== undefined) {
-          let key = object[this.KEY];
-          delete object[this.KEY];
-
-          return this.db.object(`${this.resource}/${key}`).set(object);
-        } else {
-          throw new Error(ErrorMessages.OBJ_NO_KEY);
-        }
+        return this.setObj(object, _resource);
       }
     } else {
       throw new Error(ErrorMessages.OBJ_PARAM_UNDEFINED);
     }
   }
 
+  private setList(object: Object[], _resource?: string): Promise<void> {
+    let promiseReturn: Promise<void>;
+    object.forEach((obj, index) => {
+      if (obj[this.KEY] !== undefined) {
+        let key = obj[this.KEY];
+        delete obj[this.KEY];
+        if (_resource === undefined) {
+          promiseReturn = this.db.object(`${this.resource}/${key}`).set(obj);
+        } else {
+          promiseReturn = this.db.object(_resource).set(obj);
+        }
+      } else {
+        throw new Error(ErrorMessages.OBJ_NO_KEY + "at index: " + index);
+      }
+    });
+    return promiseReturn;
+  }
+
+  private setObj(object: Object, _resource?: string): Promise<void> {
+    let key = object[this.KEY];
+    delete object[this.KEY];
+    if (_resource === undefined) {
+      if (object[this.KEY] !== undefined) {
+        return this.db.object(`${this.resource}/${key}`).set(object);
+      } else {
+        throw new Error(ErrorMessages.OBJ_NO_KEY);
+      }
+    } else {
+      return this.db.object(_resource).set(object);
+    }
+  }
   /**
    * Remove the entire list of objects contained in the resource
    */

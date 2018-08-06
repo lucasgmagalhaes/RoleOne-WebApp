@@ -6,7 +6,7 @@
           <div class="has-text-centered">
             <p class="subtitle has-text-grey">Wellcome back</p>
           </div>
-          <form>
+          <form [formGroup]="userForm" novalidate>
             <div class="column">
               <div class="field">
                 <div class="control field-label is-small">
@@ -14,7 +14,7 @@
                 </div>
                 <div class="control">
                   <!--class="is-danger"-->
-                  <input class="input" type="email">
+                  <input formControlName="email" class="input" type="email">
                 </div>
                 <!--
                     To invalid on email
@@ -27,7 +27,7 @@
                   <label class="has-text-grey label is-small">PASSWORD</label>
                 </div>
                 <div class="control">
-                  <input class="input" type="password">
+                  <input formControlName="password" class="input" type="password">
                 </div>
                 <!--<p class="help is-danger">This passowrd is invalid</p>-->
               </div>
@@ -40,7 +40,7 @@
 
                 <p class="control hover">
                   <span class="icon">
-                    <i class="fab fa-google "></i>
+                    <i class="fa fa-google "></i>
                   </span>
                 </p>
 
@@ -66,7 +66,7 @@
                 </div>
               </div>
 
-              <button class="button is-block is-link is-fullwidth">Login</button>
+              <button (click)="login(userForm.value)" class="button is-block is-link is-fullwidth">Login</button>
 
               <div class="field">
                 <div class="control field-label is-small">
