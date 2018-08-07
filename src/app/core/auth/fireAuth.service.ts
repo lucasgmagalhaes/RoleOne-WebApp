@@ -43,31 +43,31 @@ export class FireAuthService {
 
   /*|||||||||| Social Authentications ||||||||||*/
 
-  loginWithPopup(provider: firebase.auth.AuthProvider): Promise<auth.UserCredential>{
+  singInWithPopup(provider: firebase.auth.AuthProvider): Promise<auth.UserCredential>{
     return this.localAuth.auth.signInWithPopup(provider);
   }
 
-  loginWithGoogle(): Promise<auth.UserCredential> {
+  singInWithGoogle(): Promise<auth.UserCredential> {
     return this.localAuth.auth.signInWithPopup(new auth.GoogleAuthProvider());
   }
 
-  loginWithFacebook(): Promise<auth.UserCredential> {
+  singInWithFacebook(): Promise<auth.UserCredential> {
     return this.localAuth.auth.signInWithPopup(new auth.FacebookAuthProvider());
   }
 
-  loginWithGitHub(): Promise<auth.UserCredential> {
+  singInWithGitHub(): Promise<auth.UserCredential> {
     return this.localAuth.auth.signInWithPopup(new auth.GithubAuthProvider());
   }
 
-  loginWithTwitter(): Promise<auth.UserCredential> {
+  singInWithTwitter(): Promise<auth.UserCredential> {
     return this.localAuth.auth.signInWithPopup(new auth.TwitterAuthProvider());
   }
 
-  loginWithEmail(email: string, password: string): Promise<auth.UserCredential> {
+  singInWithEmailAndPassword(email: string, password: string): Promise<auth.UserCredential> {
     return this.localAuth.auth.signInWithEmailAndPassword(email, password);
   }
 
-  createUserWithEmailPassword(user: User): Promise<any> {
+  singUpUserWithEmailPassword(user: User): Promise<any> {
     return this.localAuth.auth.createUserWithEmailAndPassword(user.email, user.password);
   }
 

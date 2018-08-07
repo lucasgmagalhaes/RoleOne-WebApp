@@ -3,11 +3,10 @@ import { Injectable } from "@angular/core";
 import { FireService } from "../../core/database/fire.service";
 import { Router } from "@angular/router";
 import { LocationService } from "./location.service";
-import { AngularFireAuth } from "angularfire2/auth";
-import { auth } from "firebase";
 import { FireError } from "../models/fireError.model";
 import { Observable, BehaviorSubject } from "rxjs";
 import { Location } from "../models/location.model";
+import { FireAuthService } from "../../core/auth/fireAuth.service";
 @Injectable({
   providedIn: "root"
 })
@@ -15,8 +14,8 @@ export class AuthService {
   constructor(
     private db: FireService,
     private router: Router,
-    private angularAuth: AngularFireAuth,
-    private location: LocationService
+    private location: LocationService,
+    private auth: FireAuthService
   ) {}
 
   /**
@@ -47,7 +46,7 @@ export class AuthService {
    * Disconnect the logged user Returning him do the root page
    */
   logout() {
-    this.angularAuth.auth.signOut().then(() => {
+    this.auth.logout().then(() => {
       localStorage.removeItem("idToken");
       //this.token_id = undefined;
       this.router.navigate(["/"]);
@@ -93,8 +92,7 @@ export class AuthService {
    */
   createNewUser(user: User): Observable<string> {
     let errorResponse = new BehaviorSubject<string>(undefined);
-    this.angularAuth.auth
-      .createUserWithEmailAndPassword(user.email, user.password)
+    this.auth.singUpUserWithEmailPassword(user)
       .then(() => {
         this.getUserState().subscribe(userget => {
           if (userget) {
@@ -117,7 +115,7 @@ export class AuthService {
    * Returns the status of the authenticated user
    */
   getUserState(): Observable<firebase.User> {
-    return this.angularAuth.authState;
+    return this.auth.getAuthState();
   }
 
   /**
@@ -128,7 +126,7 @@ export class AuthService {
    * @returns Promisse of the login
    */
   login(email: string, senha: string): Promise<any> {
-    return this.angularAuth.auth.signInWithEmailAndPassword(email, senha);
+    return this.auth.singInWithEmailAndPassword(email, senha);
   }
 
   /**
@@ -138,8 +136,7 @@ export class AuthService {
    */
   loginWithGoogle(): Observable<string> {
     let errorReturn = new BehaviorSubject<string>(undefined);
-    this.angularAuth.auth
-      .signInWithPopup(new auth.GoogleAuthProvider())
+    this.auth.singInWithGoogle()
       .then(() => {
         this.getUserState().subscribe(user => {
           if (user) {
