@@ -29,17 +29,10 @@ export class RegisterComponent implements OnInit {
   }
 
   registerUser(user: User) {
-    this.auth
-      .createNewUser(user)
-      .then(() => {
-        this.auth.createUserDetail(user);
-        this.auth.goToHomeScreen();
-      })
-      .catch((error: Error) => {
-        console.log(error);
-        this.emailErrorMessage = "Email already exists";
-        this.emailExists = true;
-      });
+    this.auth.createNewUser(user).subscribe(error => {
+      this.emailErrorMessage = error;
+      this.emailExists = true;
+    });
   }
 
   emailAlreadyRegistered(): boolean {

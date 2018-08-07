@@ -3,7 +3,6 @@ import { AuthService } from "../../services/auth.service";
 import { FormGroup, FormBuilder, Validators } from "@angular/forms";
 import { User } from "../../models/user.model";
 import { FireError } from "../../models/fireError.model";
-import { ResourceLoader } from "@angular/compiler";
 
 @Component({
   selector: "ro1-login",
@@ -29,7 +28,7 @@ export class LoginComponent implements OnInit {
     this.auth
       .login(user.email, user.password)
       .then(() => {
-        this.msgError = true;
+        this.msgError = false;
         this.auth.goToHomeScreen();
       })
       .catch((error: FireError) => {
@@ -63,17 +62,9 @@ export class LoginComponent implements OnInit {
   }
 
   loginWithGoogle(): void {
-    this.auth
-      .loginWithGoogle()
-      .then(() => {
-        this.auth.goToHomeScreen();
-        location.reload();
-      })
-      .catch((error: FireError) => {
-        console.log(error);
-        this.blockAccountMessage =
-          "Was not possible to authenticate with Gooogle account";
-      });
+    this.auth.loginWithGoogle().subscribe(response => {
+      this.blockAccountMessage = response;
+    });
   }
 
   isPasswordValid(): boolean {
