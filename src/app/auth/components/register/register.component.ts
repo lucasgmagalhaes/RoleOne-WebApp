@@ -1,6 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { AuthService } from "../../services/auth.service";
-import { User } from "../../model/user";
+import { User } from "../../models/user.model";
 import { FormGroup, FormBuilder, Validators } from "@angular/forms";
 
 @Component({
@@ -36,6 +36,7 @@ export class RegisterComponent implements OnInit {
         this.auth.goToHomeScreen();
       })
       .catch((error: Error) => {
+        console.log(error);
         this.emailErrorMessage = "Email already exists";
         this.emailExists = true;
       });

@@ -8,18 +8,15 @@
           </div>
           <form [formGroup]="userForm" novalidate>
             <div class="column">
+              <p *ngIf="tooManyAttempts()" class="help is-danger">{{blockAccountMessage}}</p>
               <div class="field">
                 <div class="control field-label is-small">
                   <label class="has-text-grey label is-small">EMAIL</label>
                 </div>
                 <div class="control">
-                  <!--class="is-danger"-->
-                  <input formControlName="email" class="input" type="email">
+                  <input [class.is-danger]="!isEmailValid() || emailHttpError()" formControlName="email" class="input" type="email">
                 </div>
-                <!--
-                    To invalid on email
-                    <p class="help is-danger">This email is invalid</p>
-                  -->
+                <p *ngIf="!isEmailValid() || emailHttpError()" class="help is-danger">{{emailMessage}}</p>
               </div>
 
               <div class="field">
@@ -27,9 +24,9 @@
                   <label class="has-text-grey label is-small">PASSWORD</label>
                 </div>
                 <div class="control">
-                  <input formControlName="password" class="input" type="password">
+                  <input [class.is-danger]="!isPasswordValid()" formControlName="password" class="input" type="password">
                 </div>
-                <!--<p class="help is-danger">This passowrd is invalid</p>-->
+                <p *ngIf="!isPasswordValid()" class="help is-danger">{{passwordMessage}}</p>
               </div>
 
               <div class="field is-grouped">
@@ -40,22 +37,9 @@
 
                 <p class="control hover">
                   <span class="icon">
-                    <i class="fa fa-google "></i>
+                    <i (click)="loginWithGoogle()" class="fa fa-google is-hand"></i>
                   </span>
                 </p>
-
-                <!--                <p class="control hover">
-                  <span class="icon">
-                    <i class="fab fa-twitter twitter-color"></i>
-                  </span>
-                </p>
-
-                <p class="control hover">
-                  <span class="icon">
-                    <i class="fab fa-facebook-f  fb-color"></i>
-                  </span>
-                </p> -->
-
               </div>
 
               <div class="field">
@@ -66,7 +50,7 @@
                 </div>
               </div>
 
-              <button (click)="login(userForm.value)" class="button is-block is-link is-fullwidth">Login</button>
+              <button (click)="login(userForm.value)" class="button is-block is-link is-fullwidth" [disabled]="!userForm.valid">Login</button>
 
               <div class="field">
                 <div class="control field-label is-small">
