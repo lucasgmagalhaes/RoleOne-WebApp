@@ -75,6 +75,7 @@ deploy_firebase:
   environment:
     name: production
   script:
+    - npm run predeploy
     - npm run deploy
   only:
     - master
