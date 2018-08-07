@@ -197,6 +197,20 @@ export class FireService {
       );
   }
 
+  get(route?: string): Observable<any[]> {
+    return this.db
+      .list(route)
+      .snapshotChanges()
+      .pipe(
+        map(changes => {
+          return changes.map(c => ({
+            key: c.payload.key,
+            ...c.payload.val()
+          }));
+        })
+      );
+  }
+
   /**
    * Update a object in the database based in his key. the object in parameter will replace values of
    * the entity properties or add more.
@@ -206,41 +220,46 @@ export class FireService {
    * @throws Error if object or some object of list of objects has no propertie 'key'.
    * if route is undefined.
    */
-  update(object: Object | Object[]): Promise<void> {
-    if (object.hasOwnProperty(this.KEY) && object[this.KEY] !== undefined) {
+  update(object: Object | Object[], route?: string): Promise<void> {
+    if (object !== undefined) {
       if (object instanceof Array) {
-        let promiseReturn: Promise<void>;
-
-        object.forEach((obj, index) => {
-          if (obj[this.KEY] !== undefined) {
-            let key = obj[this.KEY];
-            delete obj[this.KEY];
-
-            promiseReturn = this.db
-              .object(`${this.resource}/${key}`)
-              .update(obj);
-          } else {
-            //If an object have no key, so it can not be updated
-            throw new Error(ErrorMessages.OBJ_NO_KEY + "at index: " + index);
-          }
-        });
-
-        return promiseReturn;
+        return this.updateList(object, route);
       } else {
-        if (object[this.KEY] !== undefined) {
-          let key = object[this.KEY];
-          delete object[this.KEY];
-
-          return this.db.object(`${this.resource}/${key}`).update(object);
-        } else {
-          throw new Error(ErrorMessages.OBJ_NO_KEY);
-        }
+        this.updateObj(object, route);
       }
     } else {
-      throw new Error(ErrorMessages.OBJ_NO_KEY + "for " + object);
+      throw new Error(ErrorMessages.OBJ_PARAM_UNDEFINED);
     }
   }
 
+  private updateList(object: Object[], route?: string) {
+    let promiseReturn: Promise<void>;
+    if (object === undefined) {
+      throw new Error(ErrorMessages.OBJ_PARAM_UNDEFINED);
+    } //Case the object isn't undefined
+    object.forEach((obj, index) => {
+      if (route === undefined) {
+        if (obj !== undefined) {
+          promiseReturn = this.db.object(this.resource).update(obj);
+        } else {
+          throw new Error(
+            ErrorMessages.OBJ_PARAM_UNDEFINED + "at index " + index
+          );
+        }
+      } else {
+        promiseReturn = this.db.object(route).update(obj);
+      }
+    });
+    return promiseReturn;
+  }
+
+  private updateObj(object: Object, route?: string) {
+    if (route === undefined) {
+      return this.db.object(this.resource).update(object);
+    } else {
+      return this.db.object(route).update(object);
+    }
+  }
   /**
    * Set a object in the database based in his key. The object will replace all informations in the database.
    * If the object has 3 properties in the database, and the object sent to update this objetct has only 2,

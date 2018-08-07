@@ -6,12 +6,15 @@ import { ForgotPasswordComponent } from "./components/forgot-password/forgot-pas
 import { AuthService } from "./services/auth.service";
 import { RouterModule } from "@angular/router";
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
+import { HttpClientModule } from '@angular/common/http';
+
 @NgModule({
   imports: [
     CommonModule,
     RouterModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   declarations: [
     LoginComponent,

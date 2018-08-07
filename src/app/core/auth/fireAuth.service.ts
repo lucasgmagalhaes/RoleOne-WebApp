@@ -43,6 +43,10 @@ export class FireAuthService {
 
   /*|||||||||| Social Authentications ||||||||||*/
 
+  loginWithPopup(provider: firebase.auth.AuthProvider): Promise<auth.UserCredential>{
+    return this.localAuth.auth.signInWithPopup(provider);
+  }
+
   loginWithGoogle(): Promise<auth.UserCredential> {
     return this.localAuth.auth.signInWithPopup(new auth.GoogleAuthProvider());
   }
