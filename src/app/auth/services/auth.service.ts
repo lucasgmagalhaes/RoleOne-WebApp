@@ -1,4 +1,4 @@
-import { User } from "../model/user";
+import { User } from "../models/user.model";
 import { Injectable } from "@angular/core";
 import { FireService } from "../../core/database/fire.service";
 import { FireAuthService } from "../../core/auth/fireAuth.service";
@@ -8,7 +8,11 @@ import { Router } from "@angular/router";
   providedIn: "root"
 })
 export class AuthService {
-  constructor(private db: FireService, private auth: FireAuthService, private router: Router) {
+  constructor(
+    private db: FireService,
+    private auth: FireAuthService,
+    private router: Router
+  ) {
     this.db.setResource("users/");
   }
 
@@ -17,8 +21,8 @@ export class AuthService {
     return this.db.set(user, `users_detail/${btoa(user.email)}`);
   }
 
-  goToHomeScreen(){
-    this.router.navigate(['/home']);
+  goToHomeScreen() {
+    this.router.navigate(["/home"]);
   }
   /**
    * Creates a new user IF his email be unique.
@@ -30,6 +34,11 @@ export class AuthService {
   }
 
   login(email: string, senha: string): Promise<any> {
-    return this.auth.loginWithEmail(email,senha);
-}
+    return this.auth.loginWithEmail(email, senha);
+  }
+
+  loginWithGoogle(): Promise<any> {
+    return this.auth.loginWithGoogle();
+  }
+
 }

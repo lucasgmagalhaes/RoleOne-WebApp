@@ -3,19 +3,23 @@
     <div class="container">
       <div class="column is-5 is-offset-4">
         <div class="box shadowed">
+
           <div class="has-text-centered">
             <p class="subtitle has-text-grey">Create an account</p>
           </div>
+
           <form [formGroup]="userForm" novalidate>
             <div class="column">
               <div class="field">
+
                 <div class="control field-label is-small">
                   <label class="has-text-grey label is-small">EMAIL</label>
                 </div>
+
                 <div class="control">
-                  <!--class="is-danger"-->
                   <input formControlName="email" class="input" [class.is-danger]="!isEmailValid() || emailAlreadyRegistered()" required type="text">
                 </div>
+
                 <p *ngIf="!isEmailValid() || emailAlreadyRegistered()" class="help is-danger">{{emailErrorMessage}}</p>
               </div>
 
@@ -33,9 +37,11 @@
                 <div class="control field-label is-small">
                   <label class="has-text-grey label is-small">PASSWORD</label>
                 </div>
+
                 <div class="control">
                   <input formControlName="password" class="input" [class.is-danger]="isPasswordValid()" required type="password">
                 </div>
+
                 <p *ngIf="isPasswordValid()" class="help is-danger">This passowrd is invalid</p>
               </div>
 
@@ -51,10 +57,12 @@
 
               <div class="field">
                 <div class="control field-label is-small">
+
                   <label class="is-small">By signing up you agree to our
                     <a href="#">Privacy Policy</a> and
                     <a href="#">Terms of Use</a>
                   </label>
+
                 </div>
               </div>
 
