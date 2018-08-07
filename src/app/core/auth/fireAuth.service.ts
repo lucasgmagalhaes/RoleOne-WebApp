@@ -2,7 +2,7 @@ import { Injectable } from "@angular/core";
 import { AngularFireAuth } from "angularfire2/auth";
 import { auth } from "firebase";
 import { Observable } from "rxjs";
-import { User } from "../../auth/model/user.model";
+import { User } from "../../auth/models/user.model";
 /**
  * @class AuthService
  * @see angularfire2 - AngularFireAuth

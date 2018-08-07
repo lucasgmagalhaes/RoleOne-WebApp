@@ -27,6 +27,8 @@ build_dev:
     name: dev
   script:
     - npm run builddev
+  only:
+    - dev
 
 build_master:
   stage: build
