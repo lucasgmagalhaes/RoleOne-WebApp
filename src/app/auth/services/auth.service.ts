@@ -20,7 +20,8 @@ export class AuthService {
   ) {}
 
   /**
-   *
+   * Gived a user, search for him at database, updating his email and username IF
+   * the user exists. If don't, create all information about him.
    * @param authUser
    */
   createOrUpdateUserDetail(authUser: AuthUser): void {
@@ -35,7 +36,7 @@ export class AuthService {
         //User exists. So is updated his email and name
       } else {
         this.db.update(
-          { email: authUser.email, username: authUser.name },
+          { email: authUser.email },
           `users_detail/${authUser.id}`
         );
       }
