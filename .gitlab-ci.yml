@@ -75,7 +75,7 @@ deploy_firebase:
   environment:
     name: production
   script:
-    - npm run build -- -e $CI_ENVIRONMENT_SLUG
+    - npm run buildprod
     - npm run deploy
   allow_failure: true
   only:
