@@ -77,5 +77,6 @@ deploy_firebase:
   script:
     - npm run build -- -e $CI_ENVIRONMENT_SLUG
     - npm run deploy
+  allow_failure: true
   only:
     - master
