@@ -11,12 +11,7 @@ import { APP_BASE_HREF } from "@angular/common";
 import { AuthModule } from "./auth/auth.module";
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    HeaderComponent,
-    FooterComponent,
-    HomeComponent
-  ],
+  declarations: [AppComponent, HeaderComponent, FooterComponent, HomeComponent],
   imports: [
     BrowserModule,
     CoreModule,

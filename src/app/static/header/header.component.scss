@@ -1,7 +1,13 @@
+$paddingExpand: 20px;
+
 #nav-toggle-state {
   display: none;
 }
 
 #nav-toggle-state:checked ~ .nav-menu {
   display: block;
+}
+
+.nav-spacing {
+  padding: $paddingExpand $paddingExpand $paddingExpand 5px;
 }

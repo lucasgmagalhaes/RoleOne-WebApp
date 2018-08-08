@@ -3,11 +3,10 @@ import { Injectable } from "@angular/core";
 import { FireService } from "../../core/database/fire.service";
 import { Router } from "@angular/router";
 import { LocationService } from "./location.service";
-import { AngularFireAuth } from "angularfire2/auth";
-import { auth } from "firebase";
 import { FireError } from "../models/fireError.model";
 import { Observable, BehaviorSubject } from "rxjs";
 import { Location } from "../models/location.model";
+import { FireAuthService } from "../../core/auth/fireAuth.service";
 @Injectable({
   providedIn: "root"
 })
@@ -15,12 +14,21 @@ export class AuthService {
   constructor(
     private db: FireService,
     private router: Router,
-    private angularAuth: AngularFireAuth,
-    private location: LocationService
-  ) {}
+    private location: LocationService,
+    private auth: FireAuthService
+  ) {
+    this.db.setResource("user_detail");
+  }
 
   /**
-   *
+   * @returns The super service of the AuthService
+   */
+  getFireAuth(): FireAuthService {
+    return this.auth;
+  }
+  /**
+   * Gived a user, search for him at database, updating his email and username IF
+   * the user exists. If don't, create all information about him.
    * @param authUser
    */
   createOrUpdateUserDetail(authUser: AuthUser): void {
@@ -35,7 +43,7 @@ export class AuthService {
         //User exists. So is updated his email and name
       } else {
         this.db.update(
-          { email: authUser.email, username: authUser.name },
+          { email: authUser.email },
           `users_detail/${authUser.id}`
         );
       }
@@ -46,7 +54,7 @@ export class AuthService {
    * Disconnect the logged user Returning him do the root page
    */
   logout() {
-    this.angularAuth.auth.signOut().then(() => {
+    this.auth.logout().then(() => {
       localStorage.removeItem("idToken");
       //this.token_id = undefined;
       this.router.navigate(["/"]);
@@ -92,8 +100,8 @@ export class AuthService {
    */
   createNewUser(user: User): Observable<string> {
     let errorResponse = new BehaviorSubject<string>(undefined);
-    this.angularAuth.auth
-      .createUserWithEmailAndPassword(user.email, user.password)
+    this.auth
+      .singUpUserWithEmailPassword(user)
       .then(() => {
         this.getUserState().subscribe(userget => {
           if (userget) {
@@ -112,11 +120,25 @@ export class AuthService {
     return errorResponse;
   }
 
+  storeVariablesInSession(name: string, uid: string) {
+    localStorage.setItem("name", name);
+    localStorage.setItem("uid", uid);
+  }
   /**
    * Returns the status of the authenticated user
    */
   getUserState(): Observable<firebase.User> {
-    return this.angularAuth.authState;
+    return this.auth.getAuthState();
+  }
+
+  private getUserName(key: string): Observable<string> {
+    let userName = new BehaviorSubject<string>("");
+    this.db.get(`users_detail/${key}`).subscribe((val: User[]) => {
+      if (val.length > 0) {
+        userName.next(val[0].username);
+      }
+    });
+    return userName.asObservable();
   }
 
   /**
@@ -127,7 +149,7 @@ export class AuthService {
    * @returns Promisse of the login
    */
   login(email: string, senha: string): Promise<any> {
-    return this.angularAuth.auth.signInWithEmailAndPassword(email, senha);
+    return this.auth.singInWithEmailAndPassword(email, senha);
   }
 
   /**
@@ -137,8 +159,8 @@ export class AuthService {
    */
   loginWithGoogle(): Observable<string> {
     let errorReturn = new BehaviorSubject<string>(undefined);
-    this.angularAuth.auth
-      .signInWithPopup(new auth.GoogleAuthProvider())
+    this.auth
+      .singInWithGoogle()
       .then(() => {
         this.getUserState().subscribe(user => {
           if (user) {
@@ -148,8 +170,11 @@ export class AuthService {
               name: user.displayName,
               email: user.email
             });
-            this.goToHomeScreen();
-            location.reload();
+            this.getUserName(user.uid).subscribe(name => {
+              this.storeVariablesInSession(name, user.uid);
+              this.goToHomeScreen();
+              location.reload();
+            });
           }
         });
       })
