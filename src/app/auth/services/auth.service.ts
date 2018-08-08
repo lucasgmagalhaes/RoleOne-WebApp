@@ -16,8 +16,16 @@ export class AuthService {
     private router: Router,
     private location: LocationService,
     private auth: FireAuthService
-  ) {}
+  ) {
+    this.db.setResource("user_detail");
+  }
 
+  /**
+   * @returns The super service of the AuthService
+   */
+  getFireAuth(): FireAuthService {
+    return this.auth;
+  }
   /**
    * Gived a user, search for him at database, updating his email and username IF
    * the user exists. If don't, create all information about him.
@@ -92,7 +100,8 @@ export class AuthService {
    */
   createNewUser(user: User): Observable<string> {
     let errorResponse = new BehaviorSubject<string>(undefined);
-    this.auth.singUpUserWithEmailPassword(user)
+    this.auth
+      .singUpUserWithEmailPassword(user)
       .then(() => {
         this.getUserState().subscribe(userget => {
           if (userget) {
@@ -111,11 +120,25 @@ export class AuthService {
     return errorResponse;
   }
 
+  storeVariablesInSession(name: string, uid: string) {
+    localStorage.setItem("name", name);
+    localStorage.setItem("uid", uid);
+  }
   /**
    * Returns the status of the authenticated user
    */
   getUserState(): Observable<firebase.User> {
     return this.auth.getAuthState();
+  }
+
+  private getUserName(key: string): Observable<string> {
+    let userName = new BehaviorSubject<string>("");
+    this.db.get(`users_detail/${key}`).subscribe((val: User[]) => {
+      if (val.length > 0) {
+        userName.next(val[0].username);
+      }
+    });
+    return userName.asObservable();
   }
 
   /**
@@ -136,7 +159,8 @@ export class AuthService {
    */
   loginWithGoogle(): Observable<string> {
     let errorReturn = new BehaviorSubject<string>(undefined);
-    this.auth.singInWithGoogle()
+    this.auth
+      .singInWithGoogle()
       .then(() => {
         this.getUserState().subscribe(user => {
           if (user) {
@@ -146,8 +170,11 @@ export class AuthService {
               name: user.displayName,
               email: user.email
             });
-            this.goToHomeScreen();
-            location.reload();
+            this.getUserName(user.uid).subscribe(name => {
+              this.storeVariablesInSession(name, user.uid);
+              this.goToHomeScreen();
+              location.reload();
+            });
           }
         });
       })

@@ -12,7 +12,36 @@
   <!--Right corner of the menu-->
   <div id="navbarBody" class="navbar-menu">
     <div class="navbar-end">
-      <div class="navbar-item">
+      <div *ngIf="userLogged" class="navbar-item has-dropdown is-hoverable">
+        <a class="navbar-link" href="/documentation/overview/start/">
+          <figure class="image is-24x24">
+            <img class="is-rounded" src="https://bulma.io/images/placeholders/128x128.png">
+          </figure>
+        </a>
+        <div class="navbar-dropdown is-boxed">
+          <div class="nav-spacing">
+            <div class="card-media">
+              <div class="media">
+                <div class="media-left">
+                  <figure class="image is-48x48">
+                    <img class="is-rounded" src="https://bulma.io/images/placeholders/128x128.png">
+                  </figure>
+                </div>
+                <div class="media-content">
+                  <p class="title is-6">{{userName}}</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <a class="navbar-item" href="">
+            PROFILE
+          </a>
+          <a (click)="logout()" class="navbar-item" href="">
+            SIGN OUT
+          </a>
+        </div>
+      </div>
+      <div *ngIf="!userLogged" class="navbar-item">
         <div class="field is-grouped">
           <p class="control">
             <a class="button is-info is-rounded is-small" [routerLink]="['/login']">Login</a>
