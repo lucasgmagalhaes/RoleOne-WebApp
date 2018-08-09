@@ -5,17 +5,18 @@ import { CoreModule } from "./core/core.module";
 import { HeaderComponent } from "./static/header/header.component";
 import { appRoutesModule } from "./app.routes";
 import { FooterComponent } from "./static/footer/footer.component";
-import { HomeComponent } from "./home/home.component";
 import { APP_BASE_HREF } from "@angular/common";
 import { AuthModule } from "./auth/auth.module";
+import { HomeContainerModule } from "./home-container/home-container.module";
 
 @NgModule({
-  declarations: [AppComponent, HeaderComponent, FooterComponent, HomeComponent],
+  declarations: [AppComponent, HeaderComponent, FooterComponent],
   imports: [
     BrowserModule,
     CoreModule,
     AuthModule,
-    appRoutesModule
+    appRoutesModule,
+    HomeContainerModule
   ],
   providers: [],
   bootstrap: [AppComponent]
