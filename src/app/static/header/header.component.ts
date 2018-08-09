@@ -23,14 +23,18 @@ export class HeaderComponent implements OnInit {
     this.subscribeLogged();
   }
 
+  /**
+   * Clear all session variables and sign out the user from the authentication.
+   */
   logout() {
+    localStorage.clear();
     this.auth.logout();
   }
 
   subscribeLogged(): void {
     this.auth.getAuthState().subscribe(user => {
       if (user) {
-        this.userName = user.displayName;
+        this.userName = localStorage.getItem("name");
         this.userLogged = true;
       } else {
         this.userLogged = false;

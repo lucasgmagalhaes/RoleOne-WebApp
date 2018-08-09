@@ -29,6 +29,6 @@ describe("FireService", () => {
   }));
 
   it("find() All data", inject([FireService], (service: FireService) => {
-    expect(service.find(undefined,"test")["value"]).toEqual(objects);
+    expect(service.find("test")["value"]).toEqual(objects);
   }));
 });

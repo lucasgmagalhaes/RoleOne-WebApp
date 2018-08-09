@@ -7,6 +7,7 @@ import { FireError } from "../models/fireError.model";
 import { Observable, BehaviorSubject } from "rxjs";
 import { Location } from "../models/location.model";
 import { FireAuthService } from "../../core/auth/fireAuth.service";
+import { reject } from "q";
 @Injectable({
   providedIn: "root"
 })
@@ -101,7 +102,7 @@ export class AuthService {
   createNewUser(user: User): Observable<string> {
     let errorResponse = new BehaviorSubject<string>(undefined);
     this.auth
-      .singUpUserWithEmailPassword(user)
+      .signUpUserWithEmailPassword(user)
       .then(() => {
         this.getUserState().subscribe(userget => {
           if (userget) {
@@ -122,6 +123,7 @@ export class AuthService {
 
   storeVariablesInSession(name: string, uid: string) {
     localStorage.setItem("name", name);
+    console.log(localStorage.getItem("name"));
     localStorage.setItem("uid", uid);
   }
   /**
@@ -131,14 +133,19 @@ export class AuthService {
     return this.auth.getAuthState();
   }
 
-  private getUserName(key: string): Observable<string> {
-    let userName = new BehaviorSubject<string>("");
-    this.db.get(`users_detail/${key}`).subscribe((val: User[]) => {
-      if (val.length > 0) {
-        userName.next(val[0].username);
-      }
+  private getUserName(key: string): Promise<string> {
+    return new Promise<string>((resolve, reject) => {
+      this.db
+        .find(`users_detail/${key}`)
+        .valueChanges()
+        .subscribe((val: User) => {
+          resolve(val.username);
+        }),
+        error => {
+          console.log(error);
+          reject(error);
+        };
     });
-    return userName.asObservable();
   }
 
   /**
@@ -149,7 +156,14 @@ export class AuthService {
    * @returns Promisse of the login
    */
   login(email: string, senha: string): Promise<any> {
-    return this.auth.singInWithEmailAndPassword(email, senha);
+    return this.auth.signInWithEmailAndPassword(email, senha).then(() => {
+      this.getUserState().subscribe(user => {
+        this.getUserName(user.uid).then(name => {
+          this.storeVariablesInSession(name, user.uid);
+          this.goToHomeScreen();
+        });
+      });
+    });
   }
 
   /**
@@ -160,7 +174,7 @@ export class AuthService {
   loginWithGoogle(): Observable<string> {
     let errorReturn = new BehaviorSubject<string>(undefined);
     this.auth
-      .singInWithGoogle()
+      .signInWithGoogle()
       .then(() => {
         this.getUserState().subscribe(user => {
           if (user) {
@@ -170,10 +184,9 @@ export class AuthService {
               name: user.displayName,
               email: user.email
             });
-            this.getUserName(user.uid).subscribe(name => {
+            this.getUserName(user.uid).then(name => {
               this.storeVariablesInSession(name, user.uid);
               this.goToHomeScreen();
-              location.reload();
             });
           }
         });
