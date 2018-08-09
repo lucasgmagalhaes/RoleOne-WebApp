@@ -12,7 +12,7 @@
   <!--Right corner of the menu-->
   <div id="navbarBody" class="navbar-menu">
     <div class="navbar-end">
-      <div class="navbar-item has-dropdown is-hoverable">
+      <div *ngIf="userName !== null" class="navbar-item has-dropdown is-hoverable">
         <a class="navbar-link">
           <figure class="image is-32x32">
             <img class="is-rounded" src="https://bulma.io/images/placeholders/32x32.png">
@@ -45,7 +45,7 @@
         </div>
       </div>
     </div>
-    <div *ngIf="!userLogged" class="navbar-item">
+    <div *ngIf="userName === null" class="navbar-item">
       <div class="field is-grouped">
         <p class="control">
           <a class="button is-info is-rounded is-small" [routerLink]="['/login']">Login</a>

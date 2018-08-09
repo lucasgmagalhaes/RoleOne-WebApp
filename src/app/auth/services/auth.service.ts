@@ -7,7 +7,6 @@ import { FireError } from "../models/fireError.model";
 import { Observable, BehaviorSubject } from "rxjs";
 import { Location } from "../models/location.model";
 import { FireAuthService } from "../../core/auth/fireAuth.service";
-import { reject } from "q";
 @Injectable({
   providedIn: "root"
 })
@@ -27,6 +26,7 @@ export class AuthService {
   getFireAuth(): FireAuthService {
     return this.auth;
   }
+
   /**
    * Gived a user, search for him at database, updating his email and username IF
    * the user exists. If don't, create all information about him.
@@ -34,7 +34,6 @@ export class AuthService {
    */
   createOrUpdateUserDetail(authUser: AuthUser): void {
     this.db.get(`users_detail/${authUser.id}`).subscribe(vals => {
-      console.log(vals.length);
       if (vals.length === 0) {
         //User do not exists. So is created a 'user_detail' from scratch
         this.location.getLocation().subscribe(local => {
@@ -56,8 +55,8 @@ export class AuthService {
    */
   logout() {
     this.auth.logout().then(() => {
-      localStorage.removeItem("idToken");
-      //this.token_id = undefined;
+      localStorage.removeItem("uid");
+      localStorage.removeItem("username");
       this.router.navigate(["/"]);
     });
   }
@@ -121,9 +120,14 @@ export class AuthService {
     return errorResponse;
   }
 
+  /**
+   * Store the name and the id of the user in localSession
+   * using a framework for make the varable an observable
+   * @param name auhenticated user's name
+   * @param uid authenticated user's id
+   */
   storeVariablesInSession(name: string, uid: string) {
-    localStorage.setItem("name", name);
-    console.log(localStorage.getItem("name"));
+    localStorage.setItem("username", name);
     localStorage.setItem("uid", uid);
   }
   /**
@@ -133,6 +137,11 @@ export class AuthService {
     return this.auth.getAuthState();
   }
 
+  /**
+   * Find the loged user in database, returning his name.
+   * Throw an error in console if something wrong happen
+   * @param key user's key(id)
+   */
   private getUserName(key: string): Promise<string> {
     return new Promise<string>((resolve, reject) => {
       this.db
@@ -168,7 +177,8 @@ export class AuthService {
 
   /**
    * Make login with a google account returning a error message in a Observable if some error appear.
-   * If the login was successfull, update the informations of the user and redirectione him to the hom page
+   * If the login was successfull, update the informations of the user and redirectione him to
+   * the hom page.
    * @returns Observable error message
    */
   loginWithGoogle(): Observable<string> {

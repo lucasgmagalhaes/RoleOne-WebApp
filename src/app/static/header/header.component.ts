@@ -1,6 +1,6 @@
 import { Component, OnInit } from "@angular/core";
-import { FireAuthService } from "../../core/auth/fireAuth.service";
 import { Router } from "@angular/router";
+import { AuthService } from "../../auth/services/auth.service";
 
 @Component({
   selector: "ro1-header",
@@ -9,8 +9,7 @@ import { Router } from "@angular/router";
 })
 export class HeaderComponent implements OnInit {
   userLogged: boolean = false;
-  userName: string = "";
-  constructor(private auth: FireAuthService, private route: Router) {}
+  constructor(private auth: AuthService, private route: Router) {}
   ngOnInit() {
     //Creates a event for nav burger display
     let navbar: HTMLElement = document.querySelector(".navbar-burger");
@@ -20,25 +19,15 @@ export class HeaderComponent implements OnInit {
       navbar.classList.toggle("is-active");
       $target.classList.toggle("is-active");
     });
-    this.subscribeLogged();
   }
 
+  get userName(): string {
+    return localStorage.getItem("username");
+  }
   /**
    * Clear all session variables and sign out the user from the authentication.
    */
   logout() {
-    localStorage.clear();
     this.auth.logout();
-  }
-
-  subscribeLogged(): void {
-    this.auth.getAuthState().subscribe(user => {
-      if (user) {
-        this.userName = localStorage.getItem("name");
-        this.userLogged = true;
-      } else {
-        this.userLogged = false;
-      }
-    });
   }
 }
