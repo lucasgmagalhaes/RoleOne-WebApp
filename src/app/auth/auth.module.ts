@@ -16,6 +16,7 @@ import { AuthRouteModule } from "./auth.routes";
     AuthRouteModule
   ],
   declarations: [LoginComponent, ForgotPasswordComponent, RegisterComponent],
+  exports: [LoginComponent, ForgotPasswordComponent, RegisterComponent],
   providers: [AuthService]
 })
 export class AuthModule {}
