@@ -8,6 +8,7 @@ import { Router } from "@angular/router";
 })
 export class AppComponent {
   constructor(private router: Router) {
+    //User is logged
     if (localStorage.getItem("username")) {
       this.router.navigate(["/home"]);
     }
