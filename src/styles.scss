@@ -16,3 +16,29 @@ $fa-font-path: "~font-awesome/fonts";
 .top-spacing {
   margin-top: 5%;
 }
+
+.image-max {
+  width: 250px;
+  display: block;
+  height: auto;
+  max-width: 300px;
+}
+
+//Use in parent element
+.center {
+  text-align: center;
+}
+
+//Use in child element
+.center-content {
+  margin: auto;
+}
+
+//Block content to be selected(Offen used in labels or paragraphs)
+.no-selection {
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -o-user-select: none;
+}
