@@ -8,13 +8,13 @@ import {
 import { Observable } from "rxjs";
 
 /**
- * Responsable for verify if the user is logged in. If he is not, he is redirected to
- * login page
+ * Responsable for verify if the user is logged in. In that case, routes like **register**, **login** 
+ * and **forgot_Password** 
  */
 @Injectable({
   providedIn: "root"
 })
-export class AuthGuard implements CanActivate {
+export class LoggedGuard implements CanActivate {
   constructor(private router: Router) {}
   canActivate(
     next: ActivatedRouteSnapshot,
@@ -22,11 +22,11 @@ export class AuthGuard implements CanActivate {
   ): Observable<boolean> | Promise<boolean> | boolean {
     if (localStorage.getItem("username")) {
       //If there is an 'username' to the user is logged in
-      return true;
-    } else {
-      //If not, he will be redirected to login page with the return url
-      this.router.navigate(["/login"]);
+      console.log("OO")
+      this.router.navigate(["/home"]);
       return false;
+    } else {
+      return true;
     }
   }
 }

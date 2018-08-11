@@ -9,9 +9,6 @@ import { Location } from "@angular/common";
 })
 export class AppComponent {
   constructor(private router: Router, private location: Location) {
-    //User is logged
-    if (localStorage.getItem("username") && this.location.path() === "/") {
-      this.router.navigate(["/home"]);
-    }
+
   }
 }
