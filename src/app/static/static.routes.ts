@@ -1,8 +1,8 @@
 import { Routes, RouterModule } from "@angular/router";
-import { LoginComponent } from "../auth/components/login/login.component";
+import { ProfileComponent } from "../detail/components/profile/profile.component";
 
 export const ROUTES: Routes = [
-  //Routes of header
+  {path: "profile", component: ProfileComponent}
 ];
 
 export const StaticRoutesModule = RouterModule.forChild(ROUTES);

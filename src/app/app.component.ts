@@ -1,5 +1,6 @@
 import { Component } from "@angular/core";
 import { Router } from "@angular/router";
+import { Location } from "@angular/common";
 
 @Component({
   selector: "app-root",
@@ -7,9 +8,9 @@ import { Router } from "@angular/router";
   styleUrls: ["./app.component.scss"]
 })
 export class AppComponent {
-  constructor(private router: Router) {
+  constructor(private router: Router, private location: Location) {
     //User is logged
-    if (localStorage.getItem("username")) {
+    if (localStorage.getItem("username") && this.location.path() === "/") {
       this.router.navigate(["/home"]);
     }
   }

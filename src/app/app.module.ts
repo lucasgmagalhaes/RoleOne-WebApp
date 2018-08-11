@@ -7,6 +7,7 @@ import { APP_BASE_HREF } from "@angular/common";
 import { AuthModule } from "./auth/auth.module";
 import { HomeContainerModule } from "./home-container/home-container.module";
 import { StaticModule } from "./static/static.module";
+import { DetailModule } from "./detail/detail.module";
 
 @NgModule({
   declarations: [AppComponent],
@@ -16,7 +17,8 @@ import { StaticModule } from "./static/static.module";
     AuthModule,
     AppRoutesModule,
     HomeContainerModule,
-    StaticModule
+    StaticModule,
+    DetailModule
   ],
   providers: [],
   bootstrap: [AppComponent]
