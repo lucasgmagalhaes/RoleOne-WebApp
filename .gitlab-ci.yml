@@ -70,12 +70,26 @@ protactor_test:
     - rm ./package-lock.json
     - ng e2e --progress false --watch=false
 
-deploy_firebase:
+#For final user tests
+deploy_firebase_dev:
+  stage: deploy
+  environment:
+    name: dev
+  script:
+    - npm run builddev
+    - npm run deploy
+  allow_failure: true
+  only:
+    - master
+
+#Production application
+deploy_firebase_prod:
   stage: deploy
   environment:
     name: production
   script:
-    - npm run predeploy
+    - npm run buildprod
     - npm run deploy
+  allow_failure: true
   only:
     - master
