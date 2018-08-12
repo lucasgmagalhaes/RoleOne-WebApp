@@ -3,9 +3,10 @@ import { FireService } from "./fire.service";
 import { AngularFireDatabaseModule } from "angularfire2/database";
 import { AngularFirestoreModule } from "angularfire2/firestore";
 import { AngularFireModule } from "angularfire2";
-import { environment } from "../../../environments/environment";
+
 import { async } from "@angular/core/testing";
 import { of } from "rxjs";
+import { environment } from "../../../../environments/environment.prod";
 
 describe("FireService", () => {
   let objects = [{ class: "warrior" }, { class: "mage" }, { class: "archer" }];
@@ -29,6 +30,6 @@ describe("FireService", () => {
   }));
 
   it("find() All data", inject([FireService], (service: FireService) => {
-    expect(service.find(undefined,"test")["value"]).toEqual(objects);
+    expect(service.find("test")["value"]).toEqual(objects);
   }));
 });

@@ -1,6 +1,6 @@
 import { Component, OnInit } from "@angular/core";
-import { FireAuthService } from "../../core/auth/fireAuth.service";
 import { Router } from "@angular/router";
+import { AuthService } from "../../auth/services/auth.service";
 
 @Component({
   selector: "ro1-header",
@@ -9,32 +9,46 @@ import { Router } from "@angular/router";
 })
 export class HeaderComponent implements OnInit {
   userLogged: boolean = false;
-  userName: string = "";
-  constructor(private auth: FireAuthService, private route: Router) {}
+  constructor(private auth: AuthService, private route: Router) {}
   ngOnInit() {
-    //Creates a event for nav burger display
-    let navbar: HTMLElement = document.querySelector(".navbar-burger");
-    navbar.addEventListener("click", function() {
-      let target = navbar.dataset.target;
-      let $target = document.getElementById(target);
-      navbar.classList.toggle("is-active");
-      $target.classList.toggle("is-active");
-    });
-    this.subscribeLogged();
+    this.createNavBarEvent();
   }
 
-  logout() {
-    this.auth.logout();
-  }
-
-  subscribeLogged(): void {
-    this.auth.getAuthState().subscribe(user => {
-      if (user) {
-        this.userName = user.displayName;
-        this.userLogged = true;
-      } else {
-        this.userLogged = false;
+  /**
+   * Method from Bulma.io
+   * @link https://bulma.io/documentation/components/navbar/
+   */
+  createNavBarEvent(): void {
+    document.addEventListener("DOMContentLoaded", () => {
+      // Get all "navbar-burger" elements
+      const $navbarBurgers = Array.prototype.slice.call(
+        document.querySelectorAll(".navbar-burger"),
+        0
+      );
+      // Check if there are any navbar burgers
+      if ($navbarBurgers.length > 0) {
+        // Add a click event on each of them
+        $navbarBurgers.forEach(el => {
+          el.addEventListener("click", () => {
+            // Get the target from the "data-target" attribute
+            const target = el.dataset.target;
+            const $target = document.getElementById(target);
+            // Toggle the "is-active" class on both the "navbar-burger" and the "navbar-menu"
+            el.classList.toggle("is-active");
+            $target.classList.toggle("is-active");
+          });
+        });
       }
     });
+  }
+
+  get userName(): string {
+    return localStorage.getItem("username");
+  }
+  /**
+   * Clear all session variables and sign out the user from the authentication.
+   */
+  logout() {
+    this.auth.logout();
   }
 }

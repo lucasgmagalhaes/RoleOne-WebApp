@@ -1,0 +1,25 @@
+.field-padding {
+  padding-right: 4px;
+}
+
+.border {
+  background-color: #fff;
+  border-radius: 6px;
+  box-shadow: 0 2px 3px rgba(10, 10, 10, 0.1), 0 0 0 1px rgba(10, 10, 10, 0.1);
+  color: #4a4a4a;
+  width: 100%;
+  height: 100%;
+}
+
+.online {
+  background-color: hsl(141, 71%, 48%);
+}
+
+.offline {
+  background-color: hsl(348, 100%, 61%);
+}
+
+.acess-font {
+  font-weight: 400;
+  color: white;
+}

@@ -1,4 +1,4 @@
-<nav class="navbar is-dark is-fixed-top">
+<nav class="navbar is-dark is-fixed-top" role="navigation" aria-label="dropdown navigation">
   <div class="navbar-brand">
 
     <!--Nav bar toggle-->
@@ -12,41 +12,46 @@
   <!--Right corner of the menu-->
   <div id="navbarBody" class="navbar-menu">
     <div class="navbar-end">
-      <div *ngIf="userLogged" class="navbar-item has-dropdown is-hoverable">
-        <a class="navbar-link" href="/documentation/overview/start/">
-          <figure class="image is-24x24">
-            <img class="is-rounded" src="https://bulma.io/images/placeholders/128x128.png">
+      <div *ngIf="userName !== null" class="navbar-item has-dropdown is-hoverable">
+        <a class="navbar-link">
+          <figure class="image is-32x32">
+            <img class="is-rounded" src="https://bulma.io/images/placeholders/32x32.png">
           </figure>
         </a>
-        <div class="navbar-dropdown is-boxed">
-          <div class="nav-spacing">
-            <div class="card-media">
-              <div class="media">
-                <div class="media-left">
-                  <figure class="image is-48x48">
-                    <img class="is-rounded" src="https://bulma.io/images/placeholders/128x128.png">
-                  </figure>
-                </div>
-                <div class="media-content">
-                  <p class="title is-6">{{userName}}</p>
-                </div>
-              </div>
+
+        <div class="navbar-dropdown is-right is-boxed">
+          <a class="navbar-item">
+            <div class="media-left">
+              <figure class="image adjust-img">
+                <img src="https://bulma.io/images/placeholders/96x96.png" alt="Placeholder image">
+              </figure>
             </div>
-          </div>
-          <a class="navbar-item" href="">
+            <div class="media-content">
+              <p class="title is-6">{{userName}}</p>
+              <p class="subtitle is-6">
+                <progress class="progress is-small" value="15" max="100">15%</progress>
+                1</p>
+            </div>
+          </a>
+          <a class="navbar-item" [routerLink]="['profile']">
             PROFILE
           </a>
-          <a (click)="logout()" class="navbar-item" href="">
-            SIGN OUT
+          <a class="navbar-item">
+            SETTINGS
+          </a>
+          <hr class="navbar-divider">
+          <a (click)="logout()" class="navbar-item">
+            LOG OUT
           </a>
         </div>
+
       </div>
-      <div *ngIf="!userLogged" class="navbar-item">
-        <div class="field is-grouped">
-          <p class="control">
-            <a class="button is-info is-rounded is-small" [routerLink]="['/login']">Login</a>
-          </p>
-        </div>
+    </div>
+    <div *ngIf="userName === null" class="navbar-item">
+      <div class="field is-grouped">
+        <p class="control">
+          <a class="button is-info is-rounded is-small" [routerLink]="['/login']">Login</a>
+        </p>
       </div>
     </div>
   </div>

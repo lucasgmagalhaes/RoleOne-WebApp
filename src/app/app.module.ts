@@ -2,23 +2,29 @@ import { BrowserModule } from "@angular/platform-browser";
 import { NgModule } from "@angular/core";
 import { AppComponent } from "./app.component";
 import { CoreModule } from "./core/core.module";
-import { HeaderComponent } from "./static/header/header.component";
-import { RouterModule } from "@angular/router";
-import { ROUTES } from "./app.routes";
-import { FooterComponent } from "./static/footer/footer.component";
-import { HomeComponent } from "./home/home.component";
-import { APP_BASE_HREF } from "@angular/common";
+import { AppRoutesModule } from "./app-routing.module";
+import {
+  APP_BASE_HREF,
+  LocationStrategy,
+  HashLocationStrategy
+} from "@angular/common";
 import { AuthModule } from "./auth/auth.module";
+import { HomeContainerModule } from "./home-container/home-container.module";
+import { StaticModule } from "./static/static.module";
+import { DetailModule } from "./detail/detail.module";
 
 @NgModule({
-  declarations: [AppComponent, HeaderComponent, FooterComponent, HomeComponent],
+  declarations: [AppComponent],
   imports: [
     BrowserModule,
     CoreModule,
     AuthModule,
-    RouterModule.forRoot(ROUTES)
+    AppRoutesModule,
+    HomeContainerModule,
+    StaticModule,
+    DetailModule
   ],
-  providers: [],
+  providers: [{ provide: LocationStrategy, useClass: HashLocationStrategy }],
   bootstrap: [AppComponent]
 })
 export class AppModule {}

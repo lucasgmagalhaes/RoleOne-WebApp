@@ -2,12 +2,14 @@ import { Injectable } from "@angular/core";
 import {
   AngularFireDatabase,
   QueryFn,
-  AngularFireList
+  AngularFireList,
+  AngularFireObject
 } from "angularfire2/database";
 import { database } from "firebase";
+import 'firebase/database';
 import { map } from "rxjs/operators";
 import { Observable } from "rxjs";
-import { ErrorMessages } from "../enums/core.enums";
+import { ErrorMessages } from "../../enums/core.enums";
 /**
  * @class FireService
  * @see angularfire2 - AngularFireDatabase
@@ -168,11 +170,11 @@ export class FireService {
    * @throws Error if route is undefined
    * @type T
    */
-  find<T>(query?: QueryFn, route?: string): AngularFireList<T> {
+  find<T>(route?: string): AngularFireObject<T> {
     if (route !== undefined) {
-      return this.db.list<T>(route, query);
+      return this.db.object<T>(route);
     } else {
-      return this.db.list<T>(this.resource, query);
+      return this.db.object<T>(this.resource);
     }
   }
 

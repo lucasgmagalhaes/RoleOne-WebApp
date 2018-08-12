@@ -2,7 +2,7 @@ import { Injectable } from "@angular/core";
 import { AngularFireAuth } from "angularfire2/auth";
 import { auth } from "firebase";
 import { Observable } from "rxjs";
-import { User } from "../../auth/models/user.model";
+import { User } from "../../../auth/models/user.model";
 /**
  * @class AuthService
  * @see angularfire2 - AngularFireAuth
@@ -43,31 +43,31 @@ export class FireAuthService {
 
   /*|||||||||| Social Authentications ||||||||||*/
 
-  singInWithPopup(provider: firebase.auth.AuthProvider): Promise<auth.UserCredential>{
+  signInWithPopup(provider: firebase.auth.AuthProvider): Promise<auth.UserCredential>{
     return this.localAuth.auth.signInWithPopup(provider);
   }
 
-  singInWithGoogle(): Promise<auth.UserCredential> {
+  signInWithGoogle(): Promise<auth.UserCredential> {
     return this.localAuth.auth.signInWithPopup(new auth.GoogleAuthProvider());
   }
 
-  singInWithFacebook(): Promise<auth.UserCredential> {
+  signInWithFacebook(): Promise<auth.UserCredential> {
     return this.localAuth.auth.signInWithPopup(new auth.FacebookAuthProvider());
   }
 
-  singInWithGitHub(): Promise<auth.UserCredential> {
+  signInWithGitHub(): Promise<auth.UserCredential> {
     return this.localAuth.auth.signInWithPopup(new auth.GithubAuthProvider());
   }
 
-  singInWithTwitter(): Promise<auth.UserCredential> {
+  signInWithTwitter(): Promise<auth.UserCredential> {
     return this.localAuth.auth.signInWithPopup(new auth.TwitterAuthProvider());
   }
 
-  singInWithEmailAndPassword(email: string, password: string): Promise<auth.UserCredential> {
+  signInWithEmailAndPassword(email: string, password: string): Promise<auth.UserCredential> {
     return this.localAuth.auth.signInWithEmailAndPassword(email, password);
   }
 
-  singUpUserWithEmailPassword(user: User): Promise<any> {
+  signUpUserWithEmailPassword(user: User): Promise<any> {
     return this.localAuth.auth.createUserWithEmailAndPassword(user.email, user.password);
   }
 
