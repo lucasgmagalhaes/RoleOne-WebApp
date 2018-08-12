@@ -6,7 +6,7 @@ import { ForgotPasswordComponent } from "./components/forgot-password/forgot-pas
 import { AuthService } from "./services/auth.service";
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { HttpClientModule } from "@angular/common/http";
-import { AuthRouteModule } from "./auth.routes";
+import { AuthRouteModule } from "./auth-routing.module";
 @NgModule({
   imports: [
     CommonModule,

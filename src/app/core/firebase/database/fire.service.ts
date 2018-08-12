@@ -5,11 +5,11 @@ import {
   AngularFireList,
   AngularFireObject
 } from "angularfire2/database";
-import { database } from "firebase/app";
+import { database } from "firebase";
 import 'firebase/database';
 import { map } from "rxjs/operators";
 import { Observable } from "rxjs";
-import { ErrorMessages } from "../enums/core.enums";
+import { ErrorMessages } from "../../enums/core.enums";
 /**
  * @class FireService
  * @see angularfire2 - AngularFireDatabase

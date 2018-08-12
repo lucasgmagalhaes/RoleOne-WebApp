@@ -2,7 +2,7 @@ import { BrowserModule } from "@angular/platform-browser";
 import { NgModule } from "@angular/core";
 import { AppComponent } from "./app.component";
 import { CoreModule } from "./core/core.module";
-import { AppRoutesModule } from "./app.routes";
+import { AppRoutesModule } from "./app-routing.module";
 import {
   APP_BASE_HREF,
   LocationStrategy,

@@ -1,12 +1,12 @@
 import { User, AuthUser } from "../models/user.model";
 import { Injectable } from "@angular/core";
-import { FireService } from "../../core/database/fire.service";
+import { FireService } from "../../core/firebase/database/fire.service";
 import { Router } from "@angular/router";
 import { LocationService } from "./location.service";
 import { FireError } from "../models/fireError.model";
 import { Observable, BehaviorSubject } from "rxjs";
 import { Location } from "../models/location.model";
-import { FireAuthService } from "../../core/auth/fireAuth.service";
+import { FireAuthService } from "../../core/firebase/auth/fireAuth.service";
 @Injectable({
   providedIn: "root"
 })
