@@ -8,8 +8,8 @@ import {
 import { Observable } from "rxjs";
 
 /**
- * Responsable for verify if the user is logged in. In that case, routes like **register**, **login** 
- * and **forgot_Password** 
+ * Responsable for verify if the user is logged in. In that case, routes like **register**, **login**
+ * and **forgot_Password**
  */
 @Injectable({
   providedIn: "root"
@@ -22,7 +22,6 @@ export class LoggedGuard implements CanActivate {
   ): Observable<boolean> | Promise<boolean> | boolean {
     if (localStorage.getItem("username")) {
       //If there is an 'username' to the user is logged in
-      console.log("OO")
       this.router.navigate(["/home"]);
       return false;
     } else {
