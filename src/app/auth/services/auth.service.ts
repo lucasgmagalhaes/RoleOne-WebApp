@@ -36,7 +36,7 @@ export class AuthService {
     this.db.get(`users_detail/${authUser.id}`).subscribe(vals => {
       if (vals.length === 0) {
         //User do not exists. So is created a 'user_detail' from scratch
-        this.location.getLocation().subscribe(local => {
+        this.location.getLocation().then(local => {
           let user = this.createUserObject(authUser, local);
           this.db.set(user, `users_detail/${authUser.id}`);
         });
