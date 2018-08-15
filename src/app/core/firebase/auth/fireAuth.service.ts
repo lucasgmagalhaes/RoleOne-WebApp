@@ -66,18 +66,12 @@ export class FireAuthService {
     return this.localAuth.auth.signInWithPopup(new auth.TwitterAuthProvider());
   }
 
-  signInWithEmailAndPassword(
-    email: string,
-    password: string
-  ): Promise<auth.UserCredential> {
+  signInWithEmailAndPassword(email: string, password: string): Promise<auth.UserCredential> {
     return this.localAuth.auth.signInWithEmailAndPassword(email, password);
   }
 
   signUpUserWithEmailPassword(user: User): Promise<any> {
-    return this.localAuth.auth.createUserWithEmailAndPassword(
-      user.email,
-      user.password
-    );
+    return this.localAuth.auth.createUserWithEmailAndPassword(user.email, user.password);
   }
 
   /*||||||||||||||||||||||||||||||||||||||||||||*/

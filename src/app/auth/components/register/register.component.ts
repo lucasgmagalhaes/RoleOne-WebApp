@@ -12,6 +12,8 @@ export class RegisterComponent implements OnInit {
   userForm: FormGroup;
   emailErrorMessage: string = "";
   emailExists = false;
+  registering: boolean = false;
+
   constructor(private auth: AuthService, private fb: FormBuilder) {}
 
   ngOnInit() {
@@ -29,8 +31,25 @@ export class RegisterComponent implements OnInit {
   }
 
   registerUser(user: User) {
-    this.auth.createNewUser(user).subscribe(error => {
-      this.emailErrorMessage = error;
+    this.registering = true;
+    this.auth.createNewUser(user).then(() => {
+      this.auth.getUserState().subscribe(userget => {
+        if (userget) {
+          this.auth.createOrUpdateUserDetail({
+            id: userget.uid,
+            name: user.username,
+            email: userget.email
+          }).then(storeduser => {
+            this.registering = false;
+            this.auth.storeVariablesInSession(storeduser.username, userget.uid);
+            this.auth.goToHomeScreen();
+          });
+        }
+      });
+    })
+    .catch(() => {
+      this.registering = false;
+      this.emailErrorMessage = "Email already exists";
       this.emailExists = true;
     });
   }

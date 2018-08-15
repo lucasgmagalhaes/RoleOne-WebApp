@@ -227,7 +227,7 @@ export class FireService {
       if (object instanceof Array) {
         return this.updateList(object, route);
       } else {
-        this.updateObj(object, route);
+        return this.updateObj(object, route);
       }
     } else {
       throw new Error(ErrorMessages.OBJ_PARAM_UNDEFINED);
