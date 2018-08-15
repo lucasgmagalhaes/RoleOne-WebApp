@@ -9,7 +9,6 @@ describe("ConquestsComponent", () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ConquestsComponent],
       imports: [AppModuleForTest]
     }).compileComponents();
   }));

@@ -1,6 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { ConquestComponent } from './conquest.component';
+import { AppModuleForTest } from '../../../../app.module';
 
 describe('ConquestComponent', () => {
   let component: ConquestComponent;
@@ -8,7 +9,7 @@ describe('ConquestComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ConquestComponent ]
+      imports: [AppModuleForTest]
     })
     .compileComponents();
   }));

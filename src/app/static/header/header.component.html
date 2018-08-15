@@ -1,6 +1,10 @@
 <nav class="navbar is-dark is-fixed-top" role="navigation" aria-label="dropdown navigation">
   <div class="navbar-brand">
 
+    <a class="navbar-item" [routerLink]="['home']">
+      <img src="https://bulma.io/images/bulma-logo.png" alt="Bulma: a modern CSS framework based on Flexbox" width="112" height="28">
+    </a>
+
     <!--Nav bar toggle-->
     <div class="navbar-burger burger" data-target="navbarBody">
       <span></span>
@@ -11,8 +15,19 @@
 
   <!--Right corner of the menu-->
   <div id="navbarBody" class="navbar-menu">
+    <div class="navbar-start">
+
+      <a class="navbar-item" [routerLink]="['profile']">
+        MY PROFILE
+      </a>
+      <a class="navbar-item">
+        RANK
+      </a>
+
+    </div>
     <div class="navbar-end">
       <div *ngIf="userName !== null" class="navbar-item has-dropdown is-hoverable">
+
         <a class="navbar-link">
           <figure class="image is-32x32">
             <img class="is-rounded" src="https://bulma.io/images/placeholders/32x32.png">
@@ -21,38 +36,47 @@
 
         <div class="navbar-dropdown is-right is-boxed">
           <a class="navbar-item">
+
             <div class="media-left">
               <figure class="image adjust-img">
                 <img src="https://bulma.io/images/placeholders/96x96.png" alt="Placeholder image">
               </figure>
             </div>
+
             <div class="media-content">
               <p class="title is-6">{{userName}}</p>
               <p class="subtitle is-6">
                 <progress class="progress is-small" value="15" max="100">15%</progress>
                 1</p>
             </div>
+
           </a>
           <a class="navbar-item" [routerLink]="['profile']">
             PROFILE
           </a>
+
+
           <a class="navbar-item">
             SETTINGS
           </a>
           <hr class="navbar-divider">
+
           <a (click)="logout()" class="navbar-item">
             LOG OUT
           </a>
+
         </div>
 
       </div>
     </div>
     <div *ngIf="userName === null" class="navbar-item">
+
       <div class="field is-grouped">
         <p class="control">
           <a class="button is-info is-rounded is-small" [routerLink]="['/login']">Login</a>
         </p>
       </div>
+
     </div>
   </div>
 </nav>
