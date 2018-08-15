@@ -1,20 +1,28 @@
-import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { Injectable } from "@angular/core";
+import { HttpClient, HttpHeaders } from "@angular/common/http";
+import { Observable } from "rxjs";
 import { Location } from "../models/location.model";
+import { map } from "rxjs/operators";
+
 @Injectable({
-  providedIn: 'root'
+  providedIn: "root"
 })
 export class LocationService {
-
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {}
 
   /**
    * Provide all informations about the location of the user.
    * Uses http://ip-api.com/ for consult the information
    */
-  getLocation(): Observable<Location> {
-    return this.http.get<Location>("http://ip-api.com/json");
+  getLocation(): Promise<Location> {
+    let header = new HttpHeaders();
+    header.append("Access-Control-Allow-Origin", "*");
+    return this.http
+      .get<Location>(`https://ipapi.co/json/`, { headers: header })
+      .toPromise();
   }
 
+  getIp(): Promise<string> {
+    return this.http.get<string>("https://ip4.seeip.org").toPromise();
+  }
 }

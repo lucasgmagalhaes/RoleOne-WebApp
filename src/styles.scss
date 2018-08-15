@@ -1,3 +1,5 @@
+$img-achiev: 130px;
+$img-demo: 80px;
 .is-hand {
   cursor: pointer;
 }
@@ -22,13 +24,29 @@
 }
 
 .achievement {
-  width: 80px;
+  width: $img-achiev;
+  height: $img-achiev;
+  min-width: $img-achiev;
   display: block;
   height: auto;
-  max-width: 300px;
   display: inline-block;
-  padding: 0px 5px;
+  margin: 16px;
 }
+
+.achievement-demo {
+  width: $img-demo;
+  height: $img-demo;
+  min-width: $img-demo;
+  display: block;
+  height: auto;
+  display: inline-block;
+  margin: 5px 10px;
+}
+
+.achiev-name {
+  padding-top: 8px;
+}
+
 //Use in parent element
 .center {
   text-align: center;

@@ -4,10 +4,12 @@ import { ProfileEditionComponent } from "./components/profile-edition/profile-ed
 import { ProfileComponent } from './components/profile/profile.component';
 import { DetailRoutingModule } from "./detail-routing.module";
 import { HomeContainerModule } from "../home-container/home-container.module";
+import { ConquestsComponent } from './components/conquests/conquests.component';
+import { ConquestComponent } from './components/conquests/conquest/conquest.component';
 
 @NgModule({
   imports: [CommonModule, DetailRoutingModule, HomeContainerModule],
-  declarations: [ProfileEditionComponent, ProfileComponent],
-  exports: [ProfileEditionComponent, ProfileComponent]
+  declarations: [ProfileEditionComponent, ProfileComponent, ConquestsComponent, ConquestComponent],
+  exports: [ProfileEditionComponent, ProfileComponent, ConquestsComponent]
 })
 export class DetailModule {}

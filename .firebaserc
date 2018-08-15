@@ -1,6 +1,7 @@
 {
   "projects": {
-    "default": "roleone-api",
+    "default": "roleone-api-test",
+    "development": "roleone-api-test"
     "production": "roleone-api"
   }
 }

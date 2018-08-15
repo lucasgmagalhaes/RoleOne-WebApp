@@ -5,8 +5,8 @@ import {
   AngularFireList,
   AngularFireObject
 } from "angularfire2/database";
-import { database } from "firebase";
-import 'firebase/database';
+import { database } from "firebase/app";
+import "firebase/database";
 import { map } from "rxjs/operators";
 import { Observable } from "rxjs";
 import { ErrorMessages } from "../../enums/core.enums";
@@ -227,7 +227,7 @@ export class FireService {
       if (object instanceof Array) {
         return this.updateList(object, route);
       } else {
-        this.updateObj(object, route);
+        return this.updateObj(object, route);
       }
     } else {
       throw new Error(ErrorMessages.OBJ_PARAM_UNDEFINED);

@@ -31,22 +31,28 @@ export class AuthService {
    * Gived a user, search for him at database, updating his email and username IF
    * the user exists. If don't, create all information about him.
    * @param authUser
+   * @returns Conclusion of the operation
    */
-  createOrUpdateUserDetail(authUser: AuthUser): void {
-    this.db.get(`users_detail/${authUser.id}`).subscribe(vals => {
-      if (vals.length === 0) {
-        //User do not exists. So is created a 'user_detail' from scratch
-        this.location.getLocation().subscribe(local => {
-          let user = this.createUserObject(authUser, local);
-          this.db.set(user, `users_detail/${authUser.id}`);
-        });
-        //User exists. So is updated his email and name
-      } else {
-        this.db.update(
-          { email: authUser.email },
-          `users_detail/${authUser.id}`
-        );
-      }
+  createOrUpdateUserDetail(authUser: AuthUser): Promise<User> {
+    return new Promise((resolve, reject) => {
+      this.db.find(`users_detail/${authUser.id}`).valueChanges().subscribe((vals: User) => {
+        if (vals === null) {
+          //User do not exists. So is created a 'user_detail' from scratch
+          this.location.getLocation().then(local => {
+            let user = this.createUserObject(authUser, local);
+            this.db
+              .set(user, `users_detail/${authUser.id}`)
+              .then(() => resolve(user))
+              .catch(error => reject(error));
+          });
+          //User exists. So is updated his email and name
+        } else {
+          this.db
+            .update({ email: authUser.email }, `users_detail/${authUser.id}`)
+            .then(() => resolve(vals))
+            .catch(error => reject(error));
+        }
+      });
     });
   }
 
@@ -98,26 +104,8 @@ export class AuthService {
    * his generated key.
    * @return Observable error message
    */
-  createNewUser(user: User): Observable<string> {
-    let errorResponse = new BehaviorSubject<string>(undefined);
-    this.auth
-      .signUpUserWithEmailPassword(user)
-      .then(() => {
-        this.getUserState().subscribe(userget => {
-          if (userget) {
-            this.createOrUpdateUserDetail({
-              id: userget.uid,
-              name: user.username,
-              email: userget.email
-            });
-            this.goToHomeScreen();
-          }
-        });
-      })
-      .catch(() => {
-        errorResponse.next("Email already exists");
-      });
-    return errorResponse;
+  createNewUser(user: User): Promise<any> {
+    return this.auth.signUpUserWithEmailPassword(user);
   }
 
   /**
@@ -167,10 +155,14 @@ export class AuthService {
   login(email: string, senha: string): Promise<any> {
     return this.auth.signInWithEmailAndPassword(email, senha).then(() => {
       this.getUserState().subscribe(user => {
-        this.getUserName(user.uid).then(name => {
-          this.storeVariablesInSession(name, user.uid);
-          this.goToHomeScreen();
-        });
+          this.createOrUpdateUserDetail({
+            id: user.uid,
+            name: user.displayName,
+            email: user.email
+          }).then(storeduser => {
+            this.storeVariablesInSession(storeduser.username, user.uid);
+            this.goToHomeScreen();
+          });
       });
     });
   }
@@ -193,11 +185,12 @@ export class AuthService {
               id: user.uid,
               name: user.displayName,
               email: user.email
-            });
-            this.getUserName(user.uid).then(name => {
-              this.storeVariablesInSession(name, user.uid);
+            }).then(storeduser => {
+              this.storeVariablesInSession(storeduser.username, user.uid);
               this.goToHomeScreen();
             });
+          } else {
+            throw new Error("Was not possible to get user state");
           }
         });
       })

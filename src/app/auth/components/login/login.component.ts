@@ -15,6 +15,7 @@ export class LoginComponent implements OnInit {
   passwordMessage: string = "";
   blockAccountMessage: string = "";
   msgError: boolean = false;
+  loading: boolean = false;
   constructor(private auth: AuthService, private fb: FormBuilder) {}
 
   ngOnInit() {
@@ -25,14 +26,16 @@ export class LoginComponent implements OnInit {
   }
 
   login(user: User) {
+    this.loading = true;
     this.auth
       .login(user.email, user.password)
       .then(() => {
         this.msgError = false;
         this.auth.goToHomeScreen();
+        this.loading = false;
       })
       .catch((error: FireError) => {
-        console.log(error);
+        this.loading = false;
         if (error.code === "auth/wrong-password") {
           this.passwordMessage = "Passwrod invalid";
         } else if (error.code === "auth/too-many-requests") {

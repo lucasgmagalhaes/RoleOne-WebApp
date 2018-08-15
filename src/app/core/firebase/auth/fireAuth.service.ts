@@ -1,6 +1,7 @@
 import { Injectable } from "@angular/core";
 import { AngularFireAuth } from "angularfire2/auth";
-import { auth } from "firebase";
+import { auth } from "firebase/app";
+import "firebase/auth";
 import { Observable } from "rxjs";
 import { User } from "../../../auth/models/user.model";
 /**
@@ -43,7 +44,9 @@ export class FireAuthService {
 
   /*|||||||||| Social Authentications ||||||||||*/
 
-  signInWithPopup(provider: firebase.auth.AuthProvider): Promise<auth.UserCredential>{
+  signInWithPopup(
+    provider: firebase.auth.AuthProvider
+  ): Promise<auth.UserCredential> {
     return this.localAuth.auth.signInWithPopup(provider);
   }
 

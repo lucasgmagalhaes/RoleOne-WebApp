@@ -45,7 +45,8 @@
                 <p *ngIf="isPasswordValid()" class="help is-danger">This passowrd is invalid</p>
               </div>
 
-              <button (click)="registerUser(userForm.value)" class="button is-block is-link is-fullwidth" [disabled]="!userForm.valid">Register</button>
+              <button (click)="registerUser(userForm.value)" [class.is-loading]="registering" class="button is-block is-link is-fullwidth"
+                [disabled]="!userForm.valid || registering">Register</button>
 
               <div class="field">
                 <div class="control field-label is-small">

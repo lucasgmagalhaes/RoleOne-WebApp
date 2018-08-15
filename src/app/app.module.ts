@@ -6,7 +6,7 @@ import { AppRoutesModule } from "./app-routing.module";
 import {
   APP_BASE_HREF,
   LocationStrategy,
-  HashLocationStrategy
+  PathLocationStrategy
 } from "@angular/common";
 import { AuthModule } from "./auth/auth.module";
 import { HomeContainerModule } from "./home-container/home-container.module";
@@ -24,7 +24,7 @@ import { DetailModule } from "./detail/detail.module";
     StaticModule,
     DetailModule
   ],
-  providers: [{ provide: LocationStrategy, useClass: HashLocationStrategy }],
+  providers: [{ provide: LocationStrategy, useClass: PathLocationStrategy }],
   bootstrap: [AppComponent]
 })
 export class AppModule {}

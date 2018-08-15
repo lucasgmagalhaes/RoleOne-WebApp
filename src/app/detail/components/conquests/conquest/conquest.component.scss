@@ -1,0 +1,81 @@
+/* Tooltip container */
+.tooltip-achiev {
+  position: relative;
+  display: inline-block;
+}
+
+/* Tooltip text */
+.tooltip-achiev .tooltiptext-achiev {
+  visibility: hidden;
+  width: 250px;
+  background-color: rgb(255, 255, 255);
+  color: #555;
+  text-align: center;
+  padding: 5px 0;
+  border-radius: 4px;
+  border: 1px solid #dadada;
+  /* Position the tooltip text */
+  position: absolute;
+  z-index: 1;
+  bottom: 125%;
+  left: 50%;
+  margin-left: -60px;
+
+  /* Fade in tooltip */
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+/* Tooltip arrow */
+.tooltip-achiev .tooltiptext-achiev::after {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #555 transparent transparent transparent;
+}
+
+/* Show the tooltip text when you mouse over the tooltip container */
+.tooltip-achiev:hover .tooltiptext-achiev {
+  visibility: visible;
+  opacity: 1;
+}
+
+.content-block {
+  display: block;
+}
+
+.tooltip-padding {
+  padding: 6px 7px;
+}
+
+.tooltip-bar {
+  padding-top: 10px;
+}
+
+.achiev-name {
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+  letter-spacing: 0;
+  font-weight: bold;
+}
+
+.locked {
+  img {
+    opacity: 0.35;
+  }
+
+  .achiev-name {
+    font-family: "Roboto", sans-serif;
+    font-size: 16px;
+    letter-spacing: 0;
+    font-weight: 100;
+  }
+}
+
+img {
+  height: 110px;
+  width: 120px;
+}
