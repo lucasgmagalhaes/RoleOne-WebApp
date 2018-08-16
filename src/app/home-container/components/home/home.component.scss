@@ -1,5 +1,15 @@
-
 .gradient {
-  background: linear-gradient(to bottom right, rgb(16, 88, 170) 0%,
-  #A445FF 100%);
+  background: linear-gradient(
+    to bottom right,
+    rgb(16, 88, 170) 0%,
+    #a445ff 100%
+  );
+}
+
+#tab-content p {
+  display: none;
+}
+
+#tab-content p.is-active {
+  display: block;
 }
