@@ -3,7 +3,7 @@ import { RouterModule, Routes } from "../../../node_modules/@angular/router";
 import { SelectionComponent } from "../play/components/selection/selection.component";
 
 export const ROUTES: Routes = [
-  { path: "play/selection", component: SelectionComponent }
+  { path: "play", component: SelectionComponent }
 ];
 
 @NgModule({

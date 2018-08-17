@@ -30,6 +30,7 @@
     "core-js": "^2.5.4",
     "firebase": "^5.3.1",
     "font-awesome": "^4.7.0",
+    "jquery": "^3.3.1",
     "npm": "^6.3.0",
     "rxjs": "^6.2.2",
     "sonarqube-scanner": "^2.1.0",

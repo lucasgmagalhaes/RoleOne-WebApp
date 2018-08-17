@@ -1,7 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import { Router } from "@angular/router";
 import { AuthService } from "../../auth/services/auth.service";
-//import * as $ from "jquery";
+import * as $ from "jquery";
 @Component({
   selector: "ro1-header",
   templateUrl: "./header.component.html",
@@ -19,12 +19,12 @@ export class HeaderComponent implements OnInit {
    * @link https://bulma.io/documentation/components/navbar/
    */
   createNavBarEvent(): void {
-/*     // Check for click events on the navbar burger icon
+    // Check for click events on the navbar burger icon
     $(".navbar-burger").click(function() {
       // Toggle the "is-active" class on both the "navbar-burger" and the "navbar-menu"
       $(".navbar-burger").toggleClass("is-active");
       $(".navbar-menu").toggleClass("is-active");
-    }); */
+    });
   }
 
   get userName(): string {

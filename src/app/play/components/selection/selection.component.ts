@@ -1,15 +1,30 @@
-import { Component, OnInit } from '@angular/core';
-
+import { Component, OnInit } from "@angular/core";
+import * as $ from "jquery";
 @Component({
-  selector: 'ro1-selection',
-  templateUrl: './selection.component.html',
-  styleUrls: ['./selection.component.scss']
+  selector: "ro1-selection",
+  templateUrl: "./selection.component.html",
+  styleUrls: ["./selection.component.scss"]
 })
 export class SelectionComponent implements OnInit {
-
-  constructor() { }
+  constructor() {}
 
   ngOnInit() {
+    this.activateTab();
   }
 
+  /**
+   * Activate toggle of the tab component
+   * @link Code from https://jsfiddle.net/sol_b/L3wLe6h0/2/
+   */
+  activateTab(): void {
+    $("#tabs li").on("click", function() {
+      var tab = $(this).data("tab");
+
+      $("#tabs li").removeClass("is-active");
+      $(this).addClass("is-active");
+
+      $("#tab-content div").removeClass("is-active");
+      $('div[data-content="' + tab + '"]').addClass("is-active");
+    });
+  }
 }
