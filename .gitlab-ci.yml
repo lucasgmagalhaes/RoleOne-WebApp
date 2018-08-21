@@ -52,9 +52,6 @@ coverage:
     paths:
       - public
     expire_in: 30 days
-  only:
-    - master
-    - dev
 
 karma_test:
   image: trion/ng-cli-karma
@@ -66,18 +63,12 @@ karma_test:
   artifacts:
     paths:
       - coverage/
-  only:
-    - master
-    - dev
 
 end-to-end:
   stage: test
   script:
     - rm ./package-lock.json
     - ng e2e --progress false --watch=false
-  only:
-    - master
-    - dev
 
 #For final user tests
 deploy_firebase_dev:
@@ -100,18 +91,3 @@ deploy_firebase_prod:
     - npm run deploy
   only:
     - master
-
-# Used for test if application is building
-# Is used for branchs that are not 'dev' or 'master'
-firebase_build:
-  stage: build
-  environment: 
-    name: test
-  script:
-    - npm run builddev
-    - npm run usedefault
-    - npm run buildfire
-  except:
-    - master
-    - dev
-
