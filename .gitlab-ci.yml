@@ -17,70 +17,8 @@ before_script:
     - npm install
 
 stages:
-  - build
-  - test
   - deploy
 
-build_dev:
-  stage: build
-  environment:
-    name: dev
-  script:
-    - npm run builddev
-  only:
-    - dev
-
-build_master:
-  stage: build
-  environment:
-    name: production
-  script:
-    - npm run buildprod
-  only:
-    - master
-
-coverage:
-  image: alpine
-  stage: deploy
-  dependencies:
-    - karma_test
-  before_script:
-    - echo 'deploying code coverage stats'
-  script:
-    - mv coverage/ public/
-  artifacts:
-    paths:
-      - public
-    expire_in: 30 days
-
-karma_test:
-  image: trion/ng-cli-karma
-  stage: test
-  script:
-    - rm ./package-lock.json
-    - echo 'running tests with code coverage'
-    - ng test --watch=false --code-coverage
-  artifacts:
-    paths:
-      - coverage/
-
-protactor_test:
-  stage: test
-  script:
-    - rm ./package-lock.json
-    - ng e2e --progress false --watch=false
-
-#For final user tests
-deploy_firebase_dev:
-  stage: deploy
-  environment:
-    name: dev
-  script:
-    - npm run builddev
-    - npm run deploy
-  allow_failure: true
-  only:
-    - dev
 
 #Production application
 deploy_firebase_prod:
@@ -90,5 +28,3 @@ deploy_firebase_prod:
   script:
     - npm run build -- -e $CI_ENVIRONMENT_SLUG
     - npm run deploy
-  only:
-    - master
