@@ -106,7 +106,7 @@ deploy_firebase_prod:
 firebase_build:
   stage: build
   environment: 
-    name: dev
+    name: test
   script:
     - npm run buildfire
   except:
