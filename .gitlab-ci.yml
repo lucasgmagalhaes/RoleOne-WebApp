@@ -88,7 +88,7 @@ deploy_firebase_prod:
   environment:
     name: production
   script:
-    - npm run buildprod
+    - npm run build -- -e $CI_ENVIRONMENT_SLUG
     - npm run deploy
   only:
     - master
