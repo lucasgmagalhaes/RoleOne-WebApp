@@ -108,6 +108,7 @@ firebase_build:
   environment: 
     name: test
   script:
+    - npm run builddev
     - npm run usedefault
     - npm run buildfire
   except:
