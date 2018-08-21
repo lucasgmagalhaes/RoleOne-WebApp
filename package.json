@@ -12,7 +12,8 @@
     "builddev": "ng build --configuration=dev",
     "compodoc": "./node_modules/.bin/compodoc -p src/tsconfig.app.json",
     "predeploy": "firebase use --token $FIREBASE_DEPLOY_KEY $CI_ENVIRONMENT_SLUG",
-    "deploy": "firebase deploy --non-interactive --token $FIREBASE_DEPLOY_KEY"
+    "deploy": "firebase deploy --non-interactive --token $FIREBASE_DEPLOY_KEY",
+    "buildfire": "firebase serve"
   },
   "private": true,
   "dependencies": {

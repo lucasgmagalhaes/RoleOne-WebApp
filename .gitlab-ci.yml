@@ -70,7 +70,7 @@ karma_test:
     - master
     - dev
 
-protactor_test:
+end-to-end:
   stage: test
   script:
     - rm ./package-lock.json
@@ -87,7 +87,6 @@ deploy_firebase_dev:
   script:
     - npm run builddev
     - npm run deploy
-  allow_failure: true
   only:
     - dev
 
@@ -99,6 +98,18 @@ deploy_firebase_prod:
   script:
     - npm run buildprod
     - npm run deploy
-  allow_failure: true
   only:
     - master
+
+# Used for test if application is building
+# Is used for branchs that are not 'dev' or 'master'
+firebase_build:
+  stage: build
+  environment: 
+    name: dev
+  script:
+    - npm run buildfire
+  except:
+    - master
+    - dev
+
