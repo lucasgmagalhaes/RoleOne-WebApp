@@ -13,6 +13,7 @@ import { HomeContainerModule } from "./home-container/home-container.module";
 import { StaticModule } from "./static/static.module";
 import { DetailModule } from "./detail/detail.module";
 import { PlayModule } from "./play/play.module";
+import { GameModule } from "./game/game.module";
 
 @NgModule({
   declarations: [AppComponent],
@@ -24,7 +25,8 @@ import { PlayModule } from "./play/play.module";
     HomeContainerModule,
     StaticModule,
     DetailModule,
-    PlayModule
+    PlayModule,
+    GameModule
   ],
   providers: [{ provide: LocationStrategy, useClass: PathLocationStrategy }],
   bootstrap: [AppComponent]

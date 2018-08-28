@@ -1,5 +1,10 @@
 $img-achiev: 130px;
 $img-demo: 80px;
+
+@mixin alignOnCenter() {
+  align-content: center;
+}
+
 .is-hand {
   cursor: pointer;
 }
@@ -97,4 +102,13 @@ $img-demo: 80px;
 .tooltip:hover .tooltiptext {
   visibility: visible;
   opacity: 1;
+}
+
+.content-upload {
+  width: 100%;
+  @include alignOnCenter();
+}
+
+.center {
+  @include alignOnCenter();
 }
