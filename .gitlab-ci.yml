@@ -64,7 +64,7 @@ karma_test:
     paths:
       - coverage/
 
-protactor_test:
+end-to-end:
   stage: test
   script:
     - rm ./package-lock.json
@@ -78,9 +78,8 @@ deploy_firebase_dev:
   script:
     - npm run builddev
     - npm run deploy
-  allow_failure: true
   only:
-    - master
+    - dev
 
 #Production application
 deploy_firebase_prod:
@@ -90,6 +89,5 @@ deploy_firebase_prod:
   script:
     - npm run buildprod
     - npm run deploy
-  allow_failure: true
   only:
     - master
