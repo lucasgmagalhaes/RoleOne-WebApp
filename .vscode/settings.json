@@ -2,7 +2,7 @@
 	"editor.formatOnSave": true,
 	"vsicons.projectDetection.autoReload": true,
 	"workbench.activityBar.visible": true,
-	"workbench.statusBar.visible": false,
+	"workbench.statusBar.visible": true,
 	"files.autoSave": "afterDelay",
 	"typescript.updateImportsOnFileMove.enabled": "always"
 }
