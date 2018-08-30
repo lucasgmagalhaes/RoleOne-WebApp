@@ -1,0 +1,36 @@
+$sizes: (0, 5, 10, 15, 20, 25, 30, 50, 60, 70, 80, 90, 100);
+$map: (
+  t: "top",
+  b: "bottom",
+  l: "left",
+  r: "right"
+);
+
+@each $size in $sizes {
+  .m-#{$size} {
+    margin: $size + px;
+  }
+  .p-#{$size} {
+    padding: $size + px;
+  }
+  .p-p-#{$size} {
+    padding: $size * 1%;
+  }
+  .m-p-#{$size} {
+    margin: $size * 1%;
+  }
+  @each $char, $local in $map {
+    .m-#{$char}-#{$size} {
+      margin-#{$local}: $size;
+    }
+    .p-#{$char}-#{$size} {
+      padding-#{$local}: $size;
+    }
+    .m-p-#{$char}-#{$size} {
+      margin-#{$local}: $size;
+    }
+    .p-p-#{$char}-#{$size} {
+      padding-#{$local}: $size;
+    }
+  }
+}

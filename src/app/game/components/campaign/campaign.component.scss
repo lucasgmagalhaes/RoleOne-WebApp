@@ -4,3 +4,20 @@ $img_size: 90px;
   height: $img_size;
   width: $img_size;
 }
+
+textarea {
+  resize: none;
+}
+
+.group-header {
+  width: 100%;
+  display: inline-block;
+
+  .group-title {
+    float: left;
+  }
+
+  .group-button {
+    float: right;
+  }
+}
