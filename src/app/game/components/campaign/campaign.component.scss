@@ -11,6 +11,7 @@ textarea {
 
 .group-header {
   width: 100%;
+  height: 35px;
   display: inline-block;
 
   .group-title {
@@ -18,6 +19,44 @@ textarea {
   }
 
   .group-button {
+    float: right;
+  }
+}
+
+.image-upload > input {
+  display: none;
+}
+
+.image-upload img {
+  width: 80px;
+  height: 80px;
+  cursor: pointer;
+}
+
+.image-upload img:hover {
+  opacity: 0.5;
+  z-index: 501;
+}
+
+.image-upload img:hover + i {
+  display: block;
+  z-index: 500;
+}
+
+.img-container i {
+  display: none;
+  position: absolute;
+  margin-left: 20%;
+  margin-top: 20%;
+}
+
+.img-container img {
+  position: absolute;
+}
+
+.box-item {
+  button,
+  .item-button {
     float: right;
   }
 }

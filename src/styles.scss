@@ -115,11 +115,3 @@ $img-demo: 80px;
 .center {
   @include alignOnCenter();
 }
-
-.h-150 {
-  height: 150px;
-}
-
-.p-5 {
-  padding: 5px;
-}
