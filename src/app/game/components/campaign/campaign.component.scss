@@ -55,8 +55,13 @@ textarea {
 }
 
 .box-item {
+  margin: 5px;
   button,
   .item-button {
     float: right;
   }
+}
+
+.box-overflow {
+  overflow: auto;
 }

@@ -1,9 +1,8 @@
 .box-item {
   margin: 5px;
-  .item-buttons {
-    float: right;
-  }
-  button {
+  button,
+  .box-buttons {
     margin-left: 6px;
+    float: right;
   }
 }

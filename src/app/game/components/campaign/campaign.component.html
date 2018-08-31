@@ -8,7 +8,7 @@
         <div class="field">
           <label class="label">Name</label>
           <div class="control">
-            <input type="text" class="input">
+            <input type="text" class="input w-500">
           </div>
         </div>
 
@@ -50,12 +50,24 @@
       </div>
 
       <div class="column is-6">
-        <div class="field">
-          <label class="label">Tag</label>
-          <div class="control">
-            <input type="text" class="input">
-          </div>
+        <label class="label">Tags
+          <i class="fas fa-question-circle" title="Tags help your campaign to be searched. Tip thing that have something about your game!"></i>
+        </label>
+        <div class="field is-grouped">
+          <p class="control is-expanded">
+            <input class="input" type="text">
+          </p>
+          <p class="control">
+            <a class="button is-dark">
+              Insert
+            </a>
+          </p>
         </div>
+        <div class="tags">
+            <span class="tag">One</span>
+            <span class="tag">Two</span>
+            <span class="tag">Three</span>
+          </div>
       </div>
 
       <div class="column is-6">
@@ -63,7 +75,13 @@
           <label class="label group-title">Players</label>
           <button class="group-button is-small button is-dark w-100">Add</button>
         </div>
-        <div class="box h-150">
+        <div class="box h-150 box-overflow">
+          <ro1-player></ro1-player>
+          <ro1-player></ro1-player>
+          <ro1-player></ro1-player>
+          <ro1-player></ro1-player>
+          <ro1-player></ro1-player>
+          <ro1-player></ro1-player>
           <ro1-player></ro1-player>
           <ro1-player></ro1-player>
         </div>
@@ -71,23 +89,25 @@
 
       <div class="column is-6">
         <div class="group-header">
-          <label class="label group-title">Add Custons</label>
+          <label class="label group-title">Add Custons
+            <i class="fas fa-question-circle" title="Your must choose a theme for your campaign. But, you can also add monsters, itens or classes that you want, and that the theme haven't"></i>
+          </label>
         </div>
         <div class="box h-150">
 
           <div class="box-item">
             <label>Classes</label>
-            <button class="button is-small">Add</button>
+            <button class="button is-small is-dark">Add</button>
           </div>
 
           <div class="box-item">
             <label>Itens</label>
-            <button class="button is-small">Add</button>
+            <button class="button is-small is-dark">Add</button>
           </div>
 
           <div class="box-item">
             <label>Monsters</label>
-            <button class="button is-small">Add</button>
+            <button class="button is-small is-dark">Add</button>
           </div>
 
         </div>
@@ -95,21 +115,25 @@
 
       <div class="column is-6">
         <div class="group-header">
-          <label class="label group-title">Maps</label>
+          <label class="label group-title">Maps
+            <i class="fas fa-question-circle" title="Maps are your world. Here is where all your adventures will happen, and see warriors fighting against monsters to achive amazing rewards!"></i>
+          </label>
           <button class="group-button is-small button is-dark w-100">Add</button>
         </div>
-        <div class="box h-150">
-
+        <div class="box h-150 box-overflow">
+          <ro1-map></ro1-map>
         </div>
       </div>
 
       <div class="column is-6">
         <div class="group-header">
-          <label class="label group-title">Quests</label>
+          <label class="label group-title">Quests
+            <i class="fas fa-question-circle" title="Use quests to give players rewards after each campaign. You can put trigger to distribute itens and experiences to user that are in the current session."></i>
+          </label>
           <button class="group-button is-small button is-dark w-100">Create</button>
         </div>
-        <div class="box h-150">
-
+        <div class="box h-150 box-overflow">
+          <ro1-quest></ro1-quest>
         </div>
       </div>
 
