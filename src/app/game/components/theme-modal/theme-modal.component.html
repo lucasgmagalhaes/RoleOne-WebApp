@@ -1,0 +1,17 @@
+<div class="modal" [class.is-active]="activate">
+  <div class="modal-background z-index-modal">
+  </div>
+  <div class="modal-card" (clickedOut)="close()">
+    <header class="modal-card-head">
+      <p class="modal-card-title">Themes</p>
+      <button class="delete" aria-label="close" (click)="close()"></button>
+    </header>
+    <section class="modal-card-body">
+      <!-- Content ... -->
+    </section>
+    <footer class="modal-card-foot">
+      <button class="button is-dark">Select</button>
+      <button class="button" (click)="close()">Cancel</button>
+    </footer>
+  </div>
+</div>

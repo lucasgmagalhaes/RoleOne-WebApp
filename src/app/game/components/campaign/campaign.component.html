@@ -44,7 +44,7 @@
         <div class="field">
           <label class="label">Theme</label>
           <div class="control has-text-centered">
-            <button class="button is-dark w-300">Choose one</button>
+            <button class="button is-dark w-300" (click)="openThemeModal()">Choose one</button>
           </div>
         </div>
       </div>
@@ -64,10 +64,9 @@
           </p>
         </div>
         <div class="tags">
-            <span class="tag">One</span>
-            <span class="tag">Two</span>
-            <span class="tag">Three</span>
-          </div>
+          <a class="tag is-link">RPG</a>
+          <a class="tag is-link">Dungeons and Dragons</a>
+        </div>
       </div>
 
       <div class="column is-6">
@@ -122,6 +121,13 @@
         </div>
         <div class="box h-150 box-overflow">
           <ro1-map></ro1-map>
+          <ro1-map></ro1-map>
+          <ro1-map></ro1-map>
+          <ro1-map></ro1-map>
+          <ro1-map></ro1-map>
+          <ro1-map></ro1-map>
+          <ro1-map></ro1-map>
+          <ro1-map></ro1-map>
         </div>
       </div>
 
@@ -133,6 +139,15 @@
           <button class="group-button is-small button is-dark w-100">Create</button>
         </div>
         <div class="box h-150 box-overflow">
+          <ro1-quest></ro1-quest>
+          <ro1-quest></ro1-quest>
+          <ro1-quest></ro1-quest>
+          <ro1-quest></ro1-quest>
+          <ro1-quest></ro1-quest>
+          <ro1-quest></ro1-quest>
+          <ro1-quest></ro1-quest>
+          <ro1-quest></ro1-quest>
+          <ro1-quest></ro1-quest>
           <ro1-quest></ro1-quest>
         </div>
       </div>
@@ -157,3 +172,5 @@
 
   </div>
 </div>
+
+<ro1-theme-modal></ro1-theme-modal>

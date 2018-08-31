@@ -1,7 +1,7 @@
 .box-item {
   margin: 5px;
   label {
-    margin-right: 150px;
+    margin-right: 80px;
   }
   button,
   .box-buttons {
@@ -10,14 +10,7 @@
   }
 }
 
-.reward {
-  display: inline-block;
-  border-radius: 10px;
-  background-color: rgba(29, 29, 29, 0.333);
-  color: white;
-  height: 20px;
-  margin: 2px;
-  font-size: 13px;
-  padding: 0 3px;
-  cursor: pointer;
+span {
+  height: 19px;
+  margin-bottom: 0px;
 }
