@@ -18,7 +18,6 @@ export class ClickOutDirective {
   public onDocumentClick(event: MouseEvent): void {
     const targetElement = event.target as HTMLElement;
     // Check if the click was outside the element
-    console.log(event);
     if (
       targetElement &&
       !this.elementRef.nativeElement.contains(targetElement)

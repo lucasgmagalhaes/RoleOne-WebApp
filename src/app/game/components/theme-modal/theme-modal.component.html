@@ -1,13 +1,38 @@
 <div class="modal" [class.is-active]="activate">
-  <div class="modal-background z-index-modal">
+  <div class="modal-background" (click)="close()">
   </div>
-  <div class="modal-card" (clickedOut)="close()">
+  <div class="modal-card">
     <header class="modal-card-head">
       <p class="modal-card-title">Themes</p>
       <button class="delete" aria-label="close" (click)="close()"></button>
     </header>
     <section class="modal-card-body">
-      <!-- Content ... -->
+
+      <div class="control">
+        <label>Select </label>
+        <div class="select">
+          <select>
+            <option>D&D</option>
+            <option>Star Wars</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="control">
+        <div class="content">
+          <h4>Description</h4>
+          <p>
+            Lorem ipsum hendrerit dictumst taciti rhoncus vulputate faucibus rhoncus, proin ut suspendisse nunc nisi amet nunc ullamcorper,
+            suspendisse condimentum sodales quisque congue luctus etiam. dui augue in proin habitasse faucibus, lectus consectetur
+            eros fringilla inceptos suscipit, eget sollicitudin vitae facilisis. egestas quis donec vulputate dui habitant,
+            consequat aenean rhoncus amet fames fringilla, ultrices velit sed fames. vestibulum nibh etiam aliquam semper
+            aenean phasellus integer primis purus ipsum cursus sit integer, eleifend venenatis pulvinar laoreet feugiat diam
+            pharetra luctus vehicula elit velit. lacus dolor hac habitasse dapibus nulla lacinia quam diam, elit faucibus
+            iaculis himenaeos pharetra suspendisse metus integer, lectus dictumst hendrerit aptent posuere tellus tincidunt.
+          </p>
+        </div>
+      </div>
+
     </section>
     <footer class="modal-card-foot">
       <button class="button is-dark">Select</button>
