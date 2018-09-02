@@ -6,10 +6,11 @@ import { MapComponent } from './components/map/map.component';
 import { QuestComponent } from './components/quest/quest.component';
 import { ThemeModalComponent } from './components/theme-modal/theme-modal.component';
 import { SharedModule } from "../shared/shared.module";
+import { PlayerModalComponent } from './components/player-modal/player-modal.component';
 
 @NgModule({
   imports: [CommonModule, SharedModule],
-  declarations: [CampaignComponent, PlayerComponent, MapComponent, QuestComponent, ThemeModalComponent],
+  declarations: [CampaignComponent, PlayerComponent, MapComponent, QuestComponent, ThemeModalComponent, PlayerModalComponent],
   exports: [CampaignComponent]
 })
 export class GameModule {}

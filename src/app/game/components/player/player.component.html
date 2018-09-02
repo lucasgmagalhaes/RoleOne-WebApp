@@ -1,7 +1,7 @@
 <div class="box-item">
   <label>Callango</label>
   <div class="item-buttons">
-    <div class="select is-small">
+    <div *ngIf="!isForAdd" class="select is-small">
       <select>
         <option>Role</option>
         <option>Master</option>
@@ -10,6 +10,7 @@
         <option>Spector</option>
       </select>
     </div>
-    <button class="button is-small" title="remove">X</button>
+    <button *ngIf="!isForAdd" class="button is-small" title="remove">X</button>
+    <button *ngIf="isForAdd" class="button is-small" title="remove">add</button>
   </div>
 </div>

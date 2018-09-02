@@ -1,5 +1,4 @@
 import { Component, OnInit } from "@angular/core";
-import { BehaviorSubject } from "rxjs";
 import { ModalService } from "../../services/modal.service";
 
 @Component({
@@ -8,13 +7,15 @@ import { ModalService } from "../../services/modal.service";
   styleUrls: ["./campaign.component.scss"]
 })
 export class CampaignComponent implements OnInit {
-  canOpenThemeModal = new BehaviorSubject<boolean>(false);
-
   constructor(private modalService: ModalService) {}
 
   ngOnInit() {}
 
   openThemeModal() {
-    this.modalService.open();
+    this.modalService.open("themeModal");
+  }
+
+  openPlayerModal() {
+    this.modalService.open("playerModal");
   }
 }

@@ -1,22 +1,16 @@
 import { Injectable } from "@angular/core";
-import { BehaviorSubject, Observable } from "rxjs";
 
 @Injectable({
   providedIn: "root"
 })
 export class ModalService {
-  private isactive = new BehaviorSubject<boolean>(false);
   constructor() {}
 
-  open() {
-    this.isactive.next(true);
+  open(elementId: string) {
+    document.getElementById(elementId).classList.add("is-active");
   }
 
-  close() {
-    this.isactive.next(false);
-  }
-
-  status(): Observable<boolean> {
-    return this.isactive.asObservable();
+  close(elementId: string) {
+    document.getElementById(elementId).classList.remove("is-active");
   }
 }

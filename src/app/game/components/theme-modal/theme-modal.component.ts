@@ -1,5 +1,4 @@
-import { Component, OnInit, Input } from "@angular/core";
-import { BehaviorSubject } from "rxjs";
+import { Component, OnInit } from "@angular/core";
 import { ModalService } from "../../services/modal.service";
 import { Theme } from "../../models/theme.interface";
 
@@ -11,6 +10,7 @@ import { Theme } from "../../models/theme.interface";
 export class ThemeModalComponent implements OnInit {
   activate: boolean;
   selectedTheme: Theme;
+  id = "themeModal";
   themes: Theme[] = [
     {
       name: "d&d",
@@ -30,7 +30,6 @@ export class ThemeModalComponent implements OnInit {
     }
   ];
   constructor(private modalService: ModalService) {
-    this.modalService.status().subscribe(val => (this.activate = val));
     this.selectedTheme = this.themes[0];
   }
 
@@ -44,6 +43,6 @@ export class ThemeModalComponent implements OnInit {
   }
 
   close() {
-    this.modalService.close();
+    this.modalService.close(this.id);
   }
 }
