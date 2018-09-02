@@ -70,17 +70,6 @@ end-to-end:
     - rm ./package-lock.json
     - ng e2e --progress false --watch=false
 
-#For final user tests
-deploy_firebase_dev:
-  stage: deploy
-  environment:
-    name: dev
-  script:
-    - npm run builddev
-    - npm run deploy
-  only:
-    - dev
-
 #Production application
 deploy_firebase_prod:
   stage: deploy
