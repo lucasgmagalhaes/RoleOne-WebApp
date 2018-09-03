@@ -30,6 +30,6 @@ export class ExperiencePipe implements PipeTransform {
   }
 
   private roundNumber(divisor: number, dividend: number): string {
-    return (divisor / dividend).toPrecision(1);
+    return Math.round(divisor / dividend).toString();
   }
 }
