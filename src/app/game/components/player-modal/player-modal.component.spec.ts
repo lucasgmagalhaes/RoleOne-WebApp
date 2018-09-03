@@ -1,16 +1,16 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { async, ComponentFixture, TestBed } from "@angular/core/testing";
 
-import { PlayerModalComponent } from './player-modal.component';
+import { PlayerModalComponent } from "./player-modal.component";
+import { AppModuleForTest } from "../../../app.module";
 
-describe('PlayerModalComponent', () => {
+describe("PlayerModalComponent", () => {
   let component: PlayerModalComponent;
   let fixture: ComponentFixture<PlayerModalComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ PlayerModalComponent ]
-    })
-    .compileComponents();
+      imports: [AppModuleForTest]
+    }).compileComponents();
   }));
 
   beforeEach(() => {
@@ -19,7 +19,7 @@ describe('PlayerModalComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it("should create", () => {
     expect(component).toBeTruthy();
   });
 });

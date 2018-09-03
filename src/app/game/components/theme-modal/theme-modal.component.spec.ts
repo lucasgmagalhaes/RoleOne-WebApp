@@ -1,16 +1,16 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { async, ComponentFixture, TestBed } from "@angular/core/testing";
 
-import { ThemeModalComponent } from './theme-modal.component';
+import { ThemeModalComponent } from "./theme-modal.component";
+import { AppModuleForTest } from "../../../app.module";
 
-describe('ThemeModalComponent', () => {
+describe("ThemeModalComponent", () => {
   let component: ThemeModalComponent;
   let fixture: ComponentFixture<ThemeModalComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ThemeModalComponent ]
-    })
-    .compileComponents();
+      imports: [AppModuleForTest]
+    }).compileComponents();
   }));
 
   beforeEach(() => {
@@ -19,7 +19,7 @@ describe('ThemeModalComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it("should create", () => {
     expect(component).toBeTruthy();
   });
 });
