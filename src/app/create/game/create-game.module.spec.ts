@@ -1,10 +1,10 @@
-import { GameModule } from "./game.module";
+import { CreateGameModule } from "./create-game.module";
 
 describe("GameModule", () => {
-  let gameModule: GameModule;
+  let gameModule: CreateGameModule;
 
   beforeEach(() => {
-    gameModule = new GameModule();
+    gameModule = new CreateGameModule();
   });
 
   it("should create an instance", () => {

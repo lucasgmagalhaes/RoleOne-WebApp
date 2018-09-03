@@ -5,7 +5,7 @@ import { PlayerComponent } from "./components/player/player.component";
 import { MapComponent } from "./components/map/map.component";
 import { QuestComponent } from "./components/quest/quest.component";
 import { ThemeModalComponent } from "./components/theme-modal/theme-modal.component";
-import { SharedModule } from "../shared/shared.module";
+import { SharedModule } from "../../shared/shared.module";
 import { PlayerModalComponent } from "./components/player-modal/player-modal.component";
 
 @NgModule({
@@ -27,4 +27,4 @@ import { PlayerModalComponent } from "./components/player-modal/player-modal.com
     PlayerModalComponent
   ]
 })
-export class GameModule {}
+export class CreateGameModule {}
