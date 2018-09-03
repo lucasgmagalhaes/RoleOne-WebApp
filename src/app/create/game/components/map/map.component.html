@@ -1,11 +1,24 @@
 <div class="box-item">
   <label>Dungeon 1</label>
   <div class="box-buttons">
-    <a class="button is-small" title="view">
+
+    <a class="button is-small" title="edit">
+      <span class="icon  is-small">
+        <i class="far fa-edit"></i>
+      </span>
+    </a>
+
+    <a class="button is-small" title="visualize" (click)="openMapModal()">
       <span class="icon  is-small">
         <i class="far fa-eye"></i>
       </span>
     </a>
-    <button class="button is-small" title="remove">X</button>
+
+    <a class="button is-small" title="remove">
+      <span class="icon  is-small">
+        <i class="fas fa-times"></i>
+      </span>
+    </a>
+
   </div>
 </div>
