@@ -1,7 +1,7 @@
 import { async, ComponentFixture, TestBed } from "@angular/core/testing";
 
 import { PlayerModalComponent } from "./player-modal.component";
-import { AppModuleForTest } from "../../../app.module";
+import { AppModuleForTest } from "../../../../app.module";
 
 describe("PlayerModalComponent", () => {
   let component: PlayerModalComponent;

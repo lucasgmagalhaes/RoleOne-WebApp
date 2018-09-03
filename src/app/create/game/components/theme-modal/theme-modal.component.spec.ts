@@ -1,7 +1,7 @@
 import { async, ComponentFixture, TestBed } from "@angular/core/testing";
 
 import { ThemeModalComponent } from "./theme-modal.component";
-import { AppModuleForTest } from "../../../app.module";
+import { AppModuleForTest } from "../../../../app.module";
 
 describe("ThemeModalComponent", () => {
   let component: ThemeModalComponent;

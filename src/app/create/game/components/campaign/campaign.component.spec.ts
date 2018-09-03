@@ -1,7 +1,7 @@
 import { async, ComponentFixture, TestBed } from "@angular/core/testing";
 
 import { CampaignComponent } from "./campaign.component";
-import { AppModuleForTest } from "../../../app.module";
+import { AppModuleForTest } from "../../../../app.module";
 
 describe("CampaignComponent", () => {
   let component: CampaignComponent;
