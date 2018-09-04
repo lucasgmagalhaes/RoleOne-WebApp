@@ -1,16 +1,17 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { async, ComponentFixture, TestBed } from "@angular/core/testing";
 
-import { QuestComponent } from './quest.component';
+import { QuestComponent } from "./quest.component";
+import { PipesModule } from "../../../../pipes/pipes.module";
 
-describe('QuestComponent', () => {
+describe("QuestComponent", () => {
   let component: QuestComponent;
   let fixture: ComponentFixture<QuestComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ QuestComponent ]
-    })
-    .compileComponents();
+      declarations: [QuestComponent],
+      imports: [PipesModule]
+    }).compileComponents();
   }));
 
   beforeEach(() => {
@@ -19,7 +20,7 @@ describe('QuestComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it("should create", () => {
     expect(component).toBeTruthy();
   });
 });
