@@ -6,8 +6,10 @@ import { Pipe, PipeTransform } from "@angular/core";
 export class ExperiencePipe implements PipeTransform {
   transform(value: number | string): string {
     if (value === undefined || value === null) return "0";
+    if (isNaN(+value)) return "0";
+
     let number = +value;
-    if (number === NaN) return "0";
+
     if (number < 1000) return Math.round(number).toString();
     else if (number <= 999999) {
       if (number % 1000 > 0) {

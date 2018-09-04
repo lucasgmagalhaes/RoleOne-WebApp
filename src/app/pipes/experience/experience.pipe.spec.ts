@@ -6,6 +6,11 @@ describe("experiencePipe", () => {
     expect(pipe).toBeTruthy();
   });
 
+  it("should value 'NaN' return 0", () => {
+    let formated = pipe.transform(NaN);
+    expect(formated).toEqual("0");
+  });
+
   it("should value 'undefined' return 0", () => {
     let formated = pipe.transform(undefined);
     expect(formated).toEqual("0");
