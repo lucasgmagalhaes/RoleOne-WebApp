@@ -1,4 +1,4 @@
-import { ExperiencePipe } from "./pipes.pipe";
+import { ExperiencePipe } from "./experience.pipe";
 
 describe("experiencePipe", () => {
   const pipe = new ExperiencePipe();
