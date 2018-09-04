@@ -27,3 +27,11 @@ firebase server
 ```shell
 tslint --project tsconfig.json -c tslint.json 'src/**/*.ts'
 ```
+
+### Nice tools!
+
+Lines count:
+
+```shell
+sloc /src/app
+```

@@ -34,6 +34,7 @@
     "jquery": "^3.3.1",
     "npm": "^6.4.1",
     "rxjs": "^6.2.2",
+    "sloc": "^0.2.0",
     "sonarqube-scanner": "^2.1.1",
     "tslint-sonarts": "^1.7.0",
     "zone.js": "^0.8.26"
