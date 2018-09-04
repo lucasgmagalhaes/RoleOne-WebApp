@@ -5,13 +5,13 @@ import { PlayerComponent } from "./components/player/player.component";
 import { MapComponent } from "./components/map/map.component";
 import { QuestComponent } from "./components/quest/quest.component";
 import { ThemeModalComponent } from "./components/theme-modal/theme-modal.component";
-import { SharedModule } from "../../shared/shared.module";
 import { PlayerModalComponent } from "./components/player-modal/player-modal.component";
 import { MapModalComponent } from "./components/map-modal/map-modal.component";
-import { QuestModalComponent } from './components/quest-modal/quest-modal.component';
+import { QuestModalComponent } from "./components/quest-modal/quest-modal.component";
+import { PipesModule } from "../../pipes/pipes.module";
 
 @NgModule({
-  imports: [CommonModule, SharedModule],
+  imports: [CommonModule, PipesModule],
   declarations: [
     CampaignComponent,
     PlayerComponent,

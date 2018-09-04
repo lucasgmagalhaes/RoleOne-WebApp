@@ -1,8 +1,7 @@
 import { async, ComponentFixture, TestBed } from "@angular/core/testing";
 
 import { QuestModalComponent } from "./quest-modal.component";
-import { ExperiencePipe } from "../../../../shared/pipes/experience.pipe";
-import { SharedModule } from "../../../../shared/shared.module";
+import { PipesModule } from "../../../../pipes/pipes.module";
 
 describe("QuestModalComponent", () => {
   let component: QuestModalComponent;
@@ -11,7 +10,7 @@ describe("QuestModalComponent", () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [QuestModalComponent],
-      imports: [SharedModule]
+      imports: [PipesModule]
     }).compileComponents();
   }));
 

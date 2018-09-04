@@ -14,6 +14,8 @@ import { StaticModule } from "./static/static.module";
 import { DetailModule } from "./detail/detail.module";
 import { PlayModule } from "./play/play.module";
 import { CreateGameModule } from "./create/game/create-game.module";
+import { DirectivesModule } from "./directives/directives.module";
+import { PipesModule } from "./pipes/pipes.module";
 
 @NgModule({
   declarations: [AppComponent],
@@ -26,7 +28,9 @@ import { CreateGameModule } from "./create/game/create-game.module";
     StaticModule,
     DetailModule,
     PlayModule,
-    CreateGameModule
+    CreateGameModule,
+    DirectivesModule,
+    PipesModule
   ],
   providers: [{ provide: LocationStrategy, useClass: PathLocationStrategy }],
   bootstrap: [AppComponent]
