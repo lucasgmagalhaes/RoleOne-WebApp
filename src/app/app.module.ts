@@ -12,6 +12,10 @@ import { AuthModule } from "./auth/auth.module";
 import { HomeContainerModule } from "./home-container/home-container.module";
 import { StaticModule } from "./static/static.module";
 import { DetailModule } from "./detail/detail.module";
+import { PlayModule } from "./play/play.module";
+import { CreateGameModule } from "./create/game/create-game.module";
+import { DirectivesModule } from "./directives/directives.module";
+import { PipesModule } from "./pipes/pipes.module";
 
 @NgModule({
   declarations: [AppComponent],
@@ -22,7 +26,11 @@ import { DetailModule } from "./detail/detail.module";
     AppRoutesModule,
     HomeContainerModule,
     StaticModule,
-    DetailModule
+    DetailModule,
+    PlayModule,
+    CreateGameModule,
+    DirectivesModule,
+    PipesModule
   ],
   providers: [{ provide: LocationStrategy, useClass: PathLocationStrategy }],
   bootstrap: [AppComponent]

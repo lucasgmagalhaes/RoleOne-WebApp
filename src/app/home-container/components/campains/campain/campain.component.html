@@ -6,14 +6,18 @@
 
         <!--Campain name-->
         <div class="column">
-          <p class="has-text-grey is-size-6"> CAMPAIN_NAME</p>
+          <div class="centered-parent">
+            <div class="centered-child">
+              <p class="has-text-grey is-size-6"> CAMPAIN_NAME</p>
+            </div>
+          </div>
         </div>
 
         <!--Number of users-->
         <div class="column">
-          <div class="border has-text-centered tooltip">
+          <div class="border centered-parent tooltip">
             <span class="tooltiptext">Number of users</span>
-            <div class="no-selection">
+            <div class="no-selection centered-child">
               <span class="icon">
                 <i class="fa fa-user"></i>
               </span>
@@ -24,9 +28,9 @@
 
         <!--Time played-->
         <div class="column">
-          <div class="border has-text-centered tooltip">
+          <div class="border centered-parent tooltip">
             <span class="tooltiptext">Total time played</span>
-            <div class="no-selection">
+            <div class="no-selection centered-child">
               <span class="icon">
                 <i class="far fa-clock"></i>
               </span>
@@ -37,10 +41,18 @@
 
         <!--Online/Offline-->
         <div class="column">
-          <div class="border has-text-centered online tooltip">
+          <div class="border online tooltip centered-parent">
             <span class="tooltiptext">The campain is offline</span>
-            <div class="no-selection">
+            <div class="no-selection centered-child">
               <p class="acess-font no-selection is-size-6 field-padding">Online</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="column">
+          <div class="centered-parent">
+            <div class="no-selection centered-child">
+              <button class="button is-info">Play!</button>
             </div>
           </div>
         </div>

@@ -1,0 +1,60 @@
+<div class="modal" id="{{id}}" [class.is-active]="activate">
+  <div class="modal-background" (click)="close()">
+  </div>
+  <div class="modal-card min-601">
+    <header class="modal-card-head">
+      <p class="modal-card-title">Themes</p>
+      <button class="delete" aria-label="close" (click)="close()"></button>
+    </header>
+    <section class="modal-card-body">
+
+      <div class="control m-b-10">
+        <div class="select w-500">
+          <select class="w-500" (change)="selectValueHandle($event)">
+            <option value="{{theme.name}}" *ngFor="let theme of themes">{{theme.name}}</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="control m-b-10">
+        <div class="content">
+          <h4>Description</h4>
+          <div class="max-181 clearfix">
+            <p>
+              <figure class="image is-128x128">
+                <img src="https://bulma.io/images/placeholders/128x128.png">
+              </figure>{{selectedTheme.description}}
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="control flex">
+
+        <div class="info">
+          <label class="label">Classes</label>
+          <div class="box">
+            <ul>
+              <li *ngFor="let class of selectedTheme.classes">{{class}}</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="info">
+          <label class="label">Races</label>
+          <div class="box">
+            <ul>
+              <li *ngFor="let race of selectedTheme.races">{{race}}</li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+
+    </section>
+    <footer class="modal-card-foot">
+      <button class="button is-dark">Select</button>
+      <button class="button" (click)="close()">Cancel</button>
+    </footer>
+  </div>
+</div>
