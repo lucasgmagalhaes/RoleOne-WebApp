@@ -1,0 +1,31 @@
+<div class="modal is-active" id="{{id}}">
+  <div class="modal-background" (click)="close()"></div>
+  <div class="modal-card">
+
+    <header class="modal-card-head">
+      <p class="modal-card-title">New Quest</p>
+      <button class="delete" aria-label="close" (click)="close()"></button>
+    </header>
+
+    <section class="modal-card-body">
+
+      <div class="field">
+        <label class="label">Name</label>
+        <input type="text" class="input">
+      </div>
+
+      <div class="field">
+        <label class="label">Goal</label>
+        <input type="textarea" class="input">
+      </div>
+
+
+    </section>
+
+    <footer class="modal-card-foot">
+      <button class="button is-dark">Create</button>
+      <button class="button" (click)="close()">Cancel</button>
+    </footer>
+
+  </div>
+</div>

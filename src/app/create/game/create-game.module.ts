@@ -8,6 +8,7 @@ import { ThemeModalComponent } from "./components/theme-modal/theme-modal.compon
 import { SharedModule } from "../../shared/shared.module";
 import { PlayerModalComponent } from "./components/player-modal/player-modal.component";
 import { MapModalComponent } from "./components/map-modal/map-modal.component";
+import { QuestModalComponent } from './components/quest-modal/quest-modal.component';
 
 @NgModule({
   imports: [CommonModule, SharedModule],
@@ -18,7 +19,8 @@ import { MapModalComponent } from "./components/map-modal/map-modal.component";
     QuestComponent,
     ThemeModalComponent,
     PlayerModalComponent,
-    MapModalComponent
+    MapModalComponent,
+    QuestModalComponent
   ],
   exports: [
     CampaignComponent,

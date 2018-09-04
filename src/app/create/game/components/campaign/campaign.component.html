@@ -136,7 +136,7 @@
           <label class="label group-title">Quests
             <i class="fas fa-question-circle" title="Use quests to give players rewards after each campaign. You can put trigger to distribute itens and experiences to user that are in the current session."></i>
           </label>
-          <button class="group-button is-small button is-dark w-100">Create</button>
+          <button class="group-button is-small button is-dark w-100" (click)="openQuestModal()">Create</button>
         </div>
         <div class="box h-150 box-overflow">
           <ro1-quest></ro1-quest>
@@ -153,15 +153,22 @@
       </div>
 
       <div class="column is-2">
-        <label class="checkbox">
-          <input type="checkbox"> is private
-        </label>
-        <label class="checkbox">
-          <input type="checkbox"> has forum
-        </label>
-        <label class="checkbox">
-          <input type="checkbox"> can have spectors
-        </label>
+
+        <div class="field">
+          <input class="is-checkradio is-info" id="checkisPrivate" type="checkbox" name="exampleCheckboxDefault" checked="checked">
+          <label for="checkisPrivate">is private</label>
+        </div>
+
+        <div class="field">
+          <input class="is-checkradio is-info" id="checkhasForum" type="checkbox" name="exampleCheckboxDefault" checked="checked">
+          <label for="checkhasForum">has forum</label>
+        </div>
+
+        <div class="field">
+          <input class="is-checkradio is-info" id="checkcanHaveSpectors" type="checkbox" name="exampleCheckboxDefault">
+          <label for="checkcanHaveSpectors">can have spectors</label>
+        </div>
+
       </div>
 
       <div class="column is-3 is-offset-9">
@@ -176,3 +183,4 @@
 <ro1-theme-modal></ro1-theme-modal>
 <ro1-player-modal></ro1-player-modal>
 <ro1-map-modal></ro1-map-modal>
+<ro1-quest-modal></ro1-quest-modal>

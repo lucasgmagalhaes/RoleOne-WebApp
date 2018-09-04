@@ -18,4 +18,8 @@ export class CampaignComponent implements OnInit {
   openPlayerModal() {
     this.modalService.open("playerModal");
   }
+
+  openQuestModal() {
+    this.modalService.open("questModal");
+  }
 }
