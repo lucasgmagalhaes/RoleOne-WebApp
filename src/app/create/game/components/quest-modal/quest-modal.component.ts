@@ -8,6 +8,11 @@ import { ModalService } from "../../services/modal.service";
 })
 export class QuestModalComponent implements OnInit {
   id = "questModal";
+  //Image source => https://www.flaticon.com/free-icon/coin_138233#term=coin&page=1&position=17
+  gold_coin_path = "../../../../../assets/images/gold_coin.png";
+  silver_coin_path = "../../../../../assets/images/silver_coin.png";
+  bronze_coin_path = "../../../../../assets/images/bronze_coin.png";
+
   constructor(private modalService: ModalService) {}
 
   ngOnInit() {}

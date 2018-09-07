@@ -1,0 +1,19 @@
+$size: 15px;
+.coin {
+  margin: 0px 4px;
+  width: 48px;
+}
+
+img {
+  margin-top: 10px;
+  height: $size;
+  widows: $size;
+}
+
+.inline {
+  display: inline-block;
+}
+
+.flex {
+  display: inline-flex;
+}

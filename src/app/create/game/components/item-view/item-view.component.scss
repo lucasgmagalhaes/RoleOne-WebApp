@@ -1,0 +1,38 @@
+$itemSize: 120px;
+$imgItemSize: 60px;
+
+.item {
+  margin: 0 10px;
+  cursor: pointer;
+  height: $itemSize;
+  width: $itemSize;
+  border-radius: 3px;
+  border: 1px solid rgb(163, 163, 162);
+
+  .item-img {
+    width: 100%;
+    padding-top: 10px;
+    img {
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      border: 1px solid black;
+      border-radius: 4px;
+      height: $imgItemSize;
+      width: $imgItemSize;
+    }
+  }
+
+  .item-name {
+    margin-top: 9px;
+    text-align: center;
+    font-weight: 400;
+  }
+
+  .item-icon {
+    float: right;
+    margin-top: -10px;
+    margin-right: -10px;
+    vertical-align: top;
+  }
+}
