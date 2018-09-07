@@ -27,8 +27,8 @@ build_dev:
     name: dev
   script:
     - npm run builddev
-  only:
-    - dev
+  except:
+    - master
 
 build_master:
   stage: build
@@ -52,6 +52,8 @@ coverage:
     paths:
       - public
     expire_in: 30 days
+  only:
+    - master
 
 karma_test:
   image: trion/ng-cli-karma
