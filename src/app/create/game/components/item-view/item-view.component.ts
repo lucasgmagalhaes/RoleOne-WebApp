@@ -1,15 +1,17 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit } from "@angular/core";
 
 @Component({
-  selector: 'ro1-item-view',
-  templateUrl: './item-view.component.html',
-  styleUrls: ['./item-view.component.scss']
+  selector: "ro1-item-view",
+  templateUrl: "./item-view.component.html",
+  styleUrls: ["./item-view.component.scss"]
 })
 export class ItemViewComponent implements OnInit {
+  isSelected: boolean;
+  constructor() {}
 
-  constructor() { }
+  ngOnInit() {}
 
-  ngOnInit() {
+  select() {
+    this.isSelected = this.isSelected ? false : true;
   }
-
 }

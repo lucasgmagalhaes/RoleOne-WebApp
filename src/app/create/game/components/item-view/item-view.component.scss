@@ -31,8 +31,20 @@ $imgItemSize: 60px;
 
   .item-icon {
     float: right;
+    padding: 2px;
+    background-color: white;
+    border-radius: 12px;
+    border: 1px solid black;
     margin-top: -10px;
     margin-right: -10px;
     vertical-align: top;
+  }
+}
+
+.selected {
+  border-color: rgb(17, 163, 48);
+
+  .item-icon {
+    border-color: rgb(17, 163, 48);
   }
 }

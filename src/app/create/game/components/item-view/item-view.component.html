@@ -1,6 +1,6 @@
-<div class="item">
+<div class="item" [class.selected]="isSelected" (click)="select()">
 
-  <span class="icon item-icon">
+  <span *ngIf="isSelected" class="icon item-icon">
     <i class="fas fa-check"></i>
   </span>
 
