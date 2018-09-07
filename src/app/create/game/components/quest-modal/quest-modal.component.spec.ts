@@ -1,7 +1,7 @@
 import { async, ComponentFixture, TestBed } from "@angular/core/testing";
 
 import { QuestModalComponent } from "./quest-modal.component";
-import { PipesModule } from "../../../../pipes/pipes.module";
+import { AppModuleForTest } from "../../../../app.module";
 
 describe("QuestModalComponent", () => {
   let component: QuestModalComponent;
@@ -9,8 +9,7 @@ describe("QuestModalComponent", () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [QuestModalComponent],
-      imports: [PipesModule]
+      imports: [AppModuleForTest]
     }).compileComponents();
   }));
 

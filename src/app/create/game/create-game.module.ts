@@ -31,7 +31,8 @@ import { ItemViewComponent } from './components/item-view/item-view.component';
     QuestComponent,
     ThemeModalComponent,
     PlayerModalComponent,
-    MapModalComponent
+    MapModalComponent,
+    ItemViewComponent
   ]
 })
 export class CreateGameModule {}
