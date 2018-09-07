@@ -14,7 +14,6 @@ cache:
 before_script:
     - npm i -g @angular/cli
     - node -v
-    - npm install
 
 stages:
   - build
