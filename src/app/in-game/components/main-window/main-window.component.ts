@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'ro1-main-window',
+  selector: 'rol-main-window',
   templateUrl: './main-window.component.html',
   styleUrls: ['./main-window.component.scss']
 })

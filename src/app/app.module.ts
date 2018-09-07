@@ -12,6 +12,7 @@ import { AuthModule } from "./auth/auth.module";
 import { HomeContainerModule } from "./home-container/home-container.module";
 import { StaticModule } from "./static/static.module";
 import { DetailModule } from "./detail/detail.module";
+import { InGameModule } from "./in-game/in-game.module";
 
 @NgModule({
   declarations: [AppComponent],
@@ -22,7 +23,8 @@ import { DetailModule } from "./detail/detail.module";
     AppRoutesModule,
     HomeContainerModule,
     StaticModule,
-    DetailModule
+    DetailModule,
+    InGameModule
   ],
   providers: [{ provide: LocationStrategy, useClass: PathLocationStrategy }],
   bootstrap: [AppComponent]

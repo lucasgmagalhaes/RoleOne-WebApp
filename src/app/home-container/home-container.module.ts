@@ -7,6 +7,6 @@ import { CampainComponent } from "./components/campains/campain/campain.componen
 @NgModule({
   imports: [CommonModule],
   declarations: [HomeComponent, CampainsComponent, CampainComponent],
-  exports: [HomeComponent, CampainsComponent, CampainComponent]
+  exports: [HomeComponent, CampainsComponent, CampainComponent],
 })
-export class HomeContainerModule {}
+export class HomeContainerModule { }
