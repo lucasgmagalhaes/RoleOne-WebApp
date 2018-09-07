@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from "@angular/core";
-import { Quest } from "../../interfaces/Quest.interface";
+import { Quest } from "../../interfaces/quest.interface";
 
 @Component({
   selector: "ro1-quest",
