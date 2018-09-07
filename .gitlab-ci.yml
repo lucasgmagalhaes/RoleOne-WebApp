@@ -52,6 +52,8 @@ coverage:
     paths:
       - public
     expire_in: 30 days
+  only:
+    - master
 
 karma_test:
   image: trion/ng-cli-karma
