@@ -8,6 +8,6 @@ import { HomeContainerRoutesModule } from "./home-container-routing.module";
 @NgModule({
   imports: [CommonModule, HomeContainerRoutesModule],
   declarations: [HomeComponent, CampainsComponent, CampainComponent],
-  exports: [HomeComponent, CampainsComponent, CampainComponent]
+  exports: [HomeComponent, CampainsComponent, CampainComponent],
 })
-export class HomeContainerModule {}
+export class HomeContainerModule { }
