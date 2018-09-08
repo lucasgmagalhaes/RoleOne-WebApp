@@ -13,19 +13,19 @@
         <label class="label">Name</label>
         <input type="text" class="input">
       </div>
-      <!--
+
       <div class="field">
         <label class="label">Goal</label>
         <div class="control">
           <textarea class="textarea is-medium" type="text" rows="4"></textarea>
         </div>
       </div>
-    -->
+
       <div class="field">
 
         <label class="label">Rewards</label>
 
-        <!--        <div class="field">
+        <div class="field">
 
           <div class="box w-p-100 flex">
             <div class="control m-r-70">
@@ -49,11 +49,11 @@
           </div>
 
         </div>
- -->
+
         <div>
           <div class="box">
 
-            <div class="field has-addons">
+            <div class="control m-b-10 w-500">
               <div class="select">
                 <select>
                   <option>All</option>
@@ -69,27 +69,41 @@
                 </select>
               </div>
 
-              <div class="control">
-                <input class="input" type="text" placeholder="Find item by name">
-              </div>
-              <div class="control">
-                <a class="button is-info">
-                  Add
-                </a>
-              </div>
+              <input class="input m-l-15 w-300" type="text" placeholder="Filter item by name">
+
             </div>
 
-            <div class="field is-grouped">
-              <ro1-item-view></ro1-item-view>
-              <ro1-item-view></ro1-item-view>
-              <ro1-item-view></ro1-item-view>
-              <ro1-item-view></ro1-item-view>
-              <ro1-item-view></ro1-item-view>
-              <ro1-item-view></ro1-item-view>
-              <ro1-item-view></ro1-item-view>
-              <ro1-item-view></ro1-item-view>
-              <ro1-item-view></ro1-item-view>
-              <ro1-item-view></ro1-item-view>
+            <div class="flex">
+              <div class="itens-container">
+                <ro1-item-view></ro1-item-view>
+                <ro1-item-view></ro1-item-view>
+                <ro1-item-view></ro1-item-view>
+                <ro1-item-view></ro1-item-view>
+                <ro1-item-view></ro1-item-view>
+                <ro1-item-view></ro1-item-view>
+                <ro1-item-view></ro1-item-view>
+                <ro1-item-view></ro1-item-view>
+                <ro1-item-view></ro1-item-view>
+                <ro1-item-view></ro1-item-view>
+                <ro1-item-view></ro1-item-view>
+                <ro1-item-view></ro1-item-view>
+                <ro1-item-view></ro1-item-view>
+                <ro1-item-view></ro1-item-view>
+                <ro1-item-view></ro1-item-view>
+              </div>
+
+              <div class="item-add-container box">
+                <ro1-item-added></ro1-item-added>
+                <ro1-item-added></ro1-item-added>
+                <ro1-item-added></ro1-item-added>
+                <ro1-item-added></ro1-item-added>
+                <ro1-item-added></ro1-item-added>
+                <ro1-item-added></ro1-item-added>
+                <ro1-item-added></ro1-item-added>
+                <ro1-item-added></ro1-item-added>
+                <ro1-item-added></ro1-item-added>
+              </div>
+
             </div>
 
           </div>

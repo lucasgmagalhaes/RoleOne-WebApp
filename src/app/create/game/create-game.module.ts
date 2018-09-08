@@ -10,6 +10,7 @@ import { MapModalComponent } from "./components/map-modal/map-modal.component";
 import { QuestModalComponent } from "./components/quest-modal/quest-modal.component";
 import { PipesModule } from "../../pipes/pipes.module";
 import { ItemViewComponent } from './components/item-view/item-view.component';
+import { ItemAddedComponent } from './components/item-added/item-added.component';
 
 @NgModule({
   imports: [CommonModule, PipesModule],
@@ -22,7 +23,8 @@ import { ItemViewComponent } from './components/item-view/item-view.component';
     PlayerModalComponent,
     MapModalComponent,
     QuestModalComponent,
-    ItemViewComponent
+    ItemViewComponent,
+    ItemAddedComponent
   ],
   exports: [
     CampaignComponent,
@@ -32,7 +34,8 @@ import { ItemViewComponent } from './components/item-view/item-view.component';
     ThemeModalComponent,
     PlayerModalComponent,
     MapModalComponent,
-    ItemViewComponent
+    ItemViewComponent,
+    ItemAddedComponent
   ]
 })
 export class CreateGameModule {}
