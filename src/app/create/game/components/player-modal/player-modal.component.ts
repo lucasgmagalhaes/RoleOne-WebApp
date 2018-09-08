@@ -1,5 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { ModalService } from "../../services/modal.service";
+import { Modals } from "../../enums/modals.enum";
 
 @Component({
   selector: "ro1-player-modal",
@@ -8,7 +9,7 @@ import { ModalService } from "../../services/modal.service";
 })
 export class PlayerModalComponent implements OnInit {
   activate: boolean;
-  id = "playerModal";
+  id = Modals.PLAYER_MODAL;
   constructor(private modalService: ModalService) {}
 
   ngOnInit() {}

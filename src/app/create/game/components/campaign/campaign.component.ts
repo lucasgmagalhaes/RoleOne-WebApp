@@ -1,5 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { ModalService } from "../../services/modal.service";
+import { Modals } from "../../enums/modals.enum";
 
 @Component({
   selector: "ro1-campaign",
@@ -12,14 +13,14 @@ export class CampaignComponent implements OnInit {
   ngOnInit() {}
 
   openThemeModal() {
-    this.modalService.open("themeModal");
+    this.modalService.open(Modals.THEME_MODAL);
   }
 
   openPlayerModal() {
-    this.modalService.open("playerModal");
+    this.modalService.open(Modals.PLAYER_MODAL);
   }
 
   openQuestModal() {
-    this.modalService.open("questModal");
+    this.modalService.open(Modals.QUEST_MODAL);
   }
 }

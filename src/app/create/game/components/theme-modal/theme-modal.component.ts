@@ -1,6 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import { ModalService } from "../../services/modal.service";
 import { Theme } from "../../interfaces/theme.interface";
+import { Modals } from "../../enums/modals.enum";
 
 @Component({
   selector: "ro1-theme-modal",
@@ -10,7 +11,7 @@ import { Theme } from "../../interfaces/theme.interface";
 export class ThemeModalComponent implements OnInit {
   activate: boolean;
   selectedTheme: Theme;
-  id = "themeModal";
+  id = Modals.THEME_MODAL;
   themes: Theme[] = [
     {
       name: "d&d",

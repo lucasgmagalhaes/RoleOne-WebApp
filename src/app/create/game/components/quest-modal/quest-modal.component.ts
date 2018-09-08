@@ -1,5 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { ModalService } from "../../services/modal.service";
+import { Modals } from "../../enums/modals.enum";
 
 @Component({
   selector: "ro1-quest-modal",
@@ -7,7 +8,7 @@ import { ModalService } from "../../services/modal.service";
   styleUrls: ["./quest-modal.component.scss"]
 })
 export class QuestModalComponent implements OnInit {
-  id = "questModal";
+  id = Modals.QUEST_MODAL;
   //Image source => https://www.flaticon.com/free-icon/coin_138233#term=coin&page=1&position=17
   gold_coin_path = "../../../../../assets/images/gold_coin.png";
   silver_coin_path = "../../../../../assets/images/silver_coin.png";

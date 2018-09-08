@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ModalService } from '../../services/modal.service';
+import { Modals } from '../../enums/modals.enum';
 
 @Component({
   selector: 'ro1-map',
@@ -14,6 +15,6 @@ export class MapComponent implements OnInit {
   }
 
   openMapModal() {
-    this.modalService.open("mapModal");
+    this.modalService.open(Modals.MAP_MODAL);
   }
 }
