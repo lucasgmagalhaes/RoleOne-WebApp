@@ -16,6 +16,7 @@ import { PlayModule } from "./play/play.module";
 import { CreateGameModule } from "./create/game/create-game.module";
 import { DirectivesModule } from "./directives/directives.module";
 import { PipesModule } from "./pipes/pipes.module";
+import { InGameModule } from "./in-game/in-game.module";
 
 @NgModule({
   declarations: [AppComponent],
@@ -30,7 +31,8 @@ import { PipesModule } from "./pipes/pipes.module";
     PlayModule,
     CreateGameModule,
     DirectivesModule,
-    PipesModule
+    PipesModule,
+    InGameModule
   ],
   providers: [{ provide: LocationStrategy, useClass: PathLocationStrategy }],
   bootstrap: [AppComponent]
