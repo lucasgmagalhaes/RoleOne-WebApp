@@ -16,6 +16,32 @@
   <!--Right corner of the menu-->
   <div id="navbarBody" class="navbar-menu">
     <div class="navbar-start">
+      <div class="navbar-item has-dropdown is-hoverable">
+        <a class="navbar-link">
+          GAME
+        </a>
+
+        <div class="navbar-dropdown">
+          <a class="navbar-item" [routerLink]="['campaign']">
+            Campaign
+          </a>
+          <a class="navbar-item">
+            Maps
+          </a>
+          <a class="navbar-item">
+            Itens
+          </a>
+          <a class="navbar-item">
+            Monsters
+          </a>
+          <a class="navbar-item">
+            Classes
+          </a>
+          <a class="navbar-item">
+            Themes
+          </a>
+        </div>
+      </div>
 
       <a class="navbar-item" [routerLink]="['profile']">
         MY PROFILE

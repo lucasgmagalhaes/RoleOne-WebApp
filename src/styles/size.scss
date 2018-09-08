@@ -1,0 +1,61 @@
+$sizes: (
+  5,
+  10,
+  15,
+  20,
+  25,
+  30,
+  35,
+  40,
+  45,
+  50,
+  55,
+  60,
+  65,
+  70,
+  75,
+  80,
+  85,
+  90,
+  95,
+  100,
+  110,
+  120,
+  130,
+  140,
+  150,
+  160,
+  170,
+  180,
+  190,
+  200,
+  250,
+  300,
+  350,
+  400,
+  450,
+  500
+);
+
+@each $size in $sizes {
+  .h-#{$size} {
+    height: $size + px;
+  }
+  .w-#{$size} {
+    width: $size + px;
+  }
+  .size-#{$size} {
+    width: $size + px;
+    height: $size + px;
+  }
+  .h-p-#{$size} {
+    height: $size * 1%;
+  }
+  .w-p-#{$size} {
+    width: $size * 1%;
+  }
+  .size-p-#{$size} {
+    width: $size * 1%;
+    height: $size * 1%;
+  }
+}

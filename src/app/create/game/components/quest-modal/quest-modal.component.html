@@ -1,0 +1,108 @@
+<div class="modal is-active" id="{{id}}">
+  <div class="modal-background" (click)="close()"></div>
+  <div class="modal-card">
+
+    <header class="modal-card-head">
+      <p class="modal-card-title">New Quest</p>
+      <button class="delete" aria-label="close" (click)="close()"></button>
+    </header>
+
+    <section class="modal-card-body">
+
+      <div class="field">
+        <label class="label">Name</label>
+        <input type="text" class="input">
+      </div>
+      <!--
+      <div class="field">
+        <label class="label">Goal</label>
+        <div class="control">
+          <textarea class="textarea is-medium" type="text" rows="4"></textarea>
+        </div>
+      </div>
+    -->
+      <div class="field">
+
+        <label class="label">Rewards</label>
+
+        <!--        <div class="field">
+
+          <div class="box w-p-100 flex">
+            <div class="control m-r-70">
+              <label class="label">Money</label>
+
+              <img src="{{gold_coin_path}}" alt="gold coin">
+              <input type="text" maxlength="3" class="input coin has-text-right" value="0">
+
+              <img src="{{silver_coin_path}}" alt="silver coin">
+              <input type="text" maxlength="3" class="input coin has-text-right" value="0">
+
+              <img src="{{bronze_coin_path}}" alt=" bronze coin">
+              <input type="text" maxlength="3" class="input coin has-text-right" value="0">
+            </div>
+
+            <div class="control">
+              <label class="label">Experience</label>
+              <input type="text" class="input has-text-right" value="0">
+            </div>
+
+          </div>
+
+        </div>
+ -->
+        <div>
+          <div class="box">
+
+            <div class="field has-addons">
+              <div class="select">
+                <select>
+                  <option>All</option>
+                  <option>Weapon</option>
+                  <option>Shield</option>
+                  <option>Hat</option>
+                  <option>Cap</option>
+                  <option>Pants</option>
+                  <option>Ring</option>
+                  <option>Gloves</option>
+                  <option>Potion</option>
+                  <option>Munition</option>
+                </select>
+              </div>
+
+              <div class="control">
+                <input class="input" type="text" placeholder="Find item by name">
+              </div>
+              <div class="control">
+                <a class="button is-info">
+                  Add
+                </a>
+              </div>
+            </div>
+
+            <div class="field is-grouped">
+              <ro1-item-view></ro1-item-view>
+              <ro1-item-view></ro1-item-view>
+              <ro1-item-view></ro1-item-view>
+              <ro1-item-view></ro1-item-view>
+              <ro1-item-view></ro1-item-view>
+              <ro1-item-view></ro1-item-view>
+              <ro1-item-view></ro1-item-view>
+              <ro1-item-view></ro1-item-view>
+              <ro1-item-view></ro1-item-view>
+              <ro1-item-view></ro1-item-view>
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+
+    </section>
+
+    <footer class="modal-card-foot">
+      <button class="button is-dark">Create</button>
+      <button class="button" (click)="close()">Cancel</button>
+    </footer>
+
+  </div>
+</div>

@@ -1,0 +1,28 @@
+<div class="box-item">
+  <label>Callango</label>
+  <div class="item-buttons">
+
+    <div *ngIf="!isForAdd" class="select is-small">
+      <select>
+        <option>Role</option>
+        <option>Master</option>
+        <option>Admin</option>
+        <option>Player</option>
+        <option>Spector</option>
+      </select>
+    </div>
+
+    <a *ngIf="!isForAdd" class="button is-small" title="remove">
+      <span class="icon  is-small">
+        <i class="fas fa-times"></i>
+      </span>
+    </a>
+
+    <a *ngIf="isForAdd" class="button is-small" title="add">
+      <span class="icon  is-small">
+        <i class="fas fa-plus"></i>
+      </span>
+    </a>
+
+  </div>
+</div>

@@ -126,26 +126,6 @@ export class AuthService {
   }
 
   /**
-   * Find the loged user in database, returning his name.
-   * Throw an error in console if something wrong happen
-   * @param key user's key(id)
-   */
-  private getUserName(key: string): Promise<string> {
-    return new Promise<string>((resolve, reject) => {
-      this.db
-        .find(`users_detail/${key}`)
-        .valueChanges()
-        .subscribe((val: User) => {
-          resolve(val.username);
-        }),
-        error => {
-          console.log(error);
-          reject(error);
-        };
-    });
-  }
-
-  /**
    * Make login using the firebase authentication with email and password returning a promisse
    * of the login
    * @param email
