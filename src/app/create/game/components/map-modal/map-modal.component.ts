@@ -1,6 +1,6 @@
 import { Component, OnInit } from "@angular/core";
-import { ModalService } from "../../services/modal.service";
 import { Modals } from "../../enums/modals.enum";
+import { ModalService } from "../../../../shared/services/modal.service";
 
 @Component({
   selector: "ro1-map-modal",

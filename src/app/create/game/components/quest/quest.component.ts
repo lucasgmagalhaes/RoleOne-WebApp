@@ -8,7 +8,7 @@ import { Quest } from "../../interfaces/quest.interface";
 })
 export class QuestComponent implements OnInit {
   @Input()
-  quest: Quest;
+  public quest: Quest;
   constructor() {}
 
   ngOnInit() {}

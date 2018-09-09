@@ -7,8 +7,9 @@ import { Component, OnInit, Input } from "@angular/core";
 })
 export class PlayerComponent implements OnInit {
   /**
-   * Define if the componet will have options for choose the user's role and if the **remove** button is enabled
-   * If setted with TRUE, only the **add** button will be dislayed
+   * Define if the componet will have options for choose the user's role and
+   * if the **remove** button is enabled If setted with TRUE, only the **add**
+   * button will be dislayed
    */
   @Input()
   isForAdd: boolean;

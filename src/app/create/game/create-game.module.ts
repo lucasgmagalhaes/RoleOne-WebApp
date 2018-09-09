@@ -9,11 +9,13 @@ import { PlayerModalComponent } from "./components/player-modal/player-modal.com
 import { MapModalComponent } from "./components/map-modal/map-modal.component";
 import { QuestModalComponent } from "./components/quest-modal/quest-modal.component";
 import { PipesModule } from "../../pipes/pipes.module";
-import { ItemViewComponent } from './components/item-view/item-view.component';
-import { ItemAddedComponent } from './components/item-added/item-added.component';
+import { ItemViewComponent } from "./components/item-view/item-view.component";
+import { ItemAddedComponent } from "./components/item-added/item-added.component";
+import { CustomClassModalComponent } from "./components/custom-class-modal/custom-class-modal.component";
+import { SharedModule } from "../../shared/shared.module";
 
 @NgModule({
-  imports: [CommonModule, PipesModule],
+  imports: [CommonModule, PipesModule, SharedModule],
   declarations: [
     CampaignComponent,
     PlayerComponent,
@@ -24,7 +26,8 @@ import { ItemAddedComponent } from './components/item-added/item-added.component
     MapModalComponent,
     QuestModalComponent,
     ItemViewComponent,
-    ItemAddedComponent
+    ItemAddedComponent,
+    CustomClassModalComponent
   ],
   exports: [
     CampaignComponent,

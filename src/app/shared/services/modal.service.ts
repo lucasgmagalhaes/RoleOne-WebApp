@@ -1,5 +1,9 @@
 import { Injectable } from "@angular/core";
 
+/**
+ * @description Provides a simple utility for open and close modals.
+ * @since 1.0.0
+ */
 @Injectable({
   providedIn: "root"
 })
