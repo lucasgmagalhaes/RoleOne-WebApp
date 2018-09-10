@@ -23,4 +23,8 @@ export class CampaignComponent implements OnInit {
   openQuestModal() {
     this.modalService.open(Modals.QUEST_MODAL);
   }
+
+  openCustomClassModal() {
+    this.modalService.open(Modals.CUSTOM_QUEST_MODAL);
+  }
 }

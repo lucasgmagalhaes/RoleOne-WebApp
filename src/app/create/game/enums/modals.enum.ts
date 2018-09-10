@@ -5,5 +5,6 @@ export enum Modals {
   THEME_MODAL = "themeModal",
   PLAYER_MODAL = "playerModal",
   QUEST_MODAL = "questModal",
-  MAP_MODAL = "mapModal"
+  MAP_MODAL = "mapModal",
+  CUSTOM_QUEST_MODAL = "customQuestModal"
 }
