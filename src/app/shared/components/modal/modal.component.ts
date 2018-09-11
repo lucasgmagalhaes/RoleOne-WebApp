@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, Output, EventEmitter } from "@angular/core";
+import { Component, OnInit, Input } from "@angular/core";
 import { Color } from "../../enums/color.enum";
 import { ModalService } from "../../services/modal.service";
 /**
@@ -43,37 +43,21 @@ export class ModalComponent implements OnInit {
   @Input()
   public disabled: boolean;
 
-  @Output()
-  public saveClick = new EventEmitter<void>();
-  @Output()
-  public cancelClick = new EventEmitter<void>();
-  @Output()
-  public closes = new EventEmitter<void>();
-
   constructor(private modalService: ModalService) {}
 
   ngOnInit() {}
 
-  /**
-   * Emits the EventEmitter *saveClick*
-   */
   save() {
-    this.saveClick.emit();
+    this.modalService.onSave(this.id);
   }
 
-  /**
-   * Closes the modal and emits the EventEmitter *cancelClick*
-   */
   cancel() {
-    this.cancelClick.emit();
+    this.modalService.onCancel(this.id);
     this.modalService.close(this.id);
   }
 
-  /**
-   * Closes the modal and emits the EventEmitter *closes*
-   */
   close() {
     this.modalService.close(this.id);
-    this.closes.emit();
+    this.modalService.onClose(this.id);
   }
 }
