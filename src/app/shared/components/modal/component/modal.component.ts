@@ -1,6 +1,6 @@
 import { Component, OnInit, Input } from "@angular/core";
-import { Color } from "../../enums/color.enum";
-import { ModalService } from "../../services/modal.service";
+import { Color } from "../../../enums/color.enum";
+import { ModalService } from "../service/modal.service";
 /**
  * @see https://bulma.io/documentation/elements/button/
  * @description Contains the default structure of a model to be used in all aplication
