@@ -8,6 +8,12 @@
 npm install
 ```
 
+### Building Compodoc
+
+```shell
+npm run compodoc
+```
+
 ### Running in development
 
 ```shell
