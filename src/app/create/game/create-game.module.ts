@@ -12,10 +12,10 @@ import { PipesModule } from "../../pipes/pipes.module";
 import { ItemViewComponent } from "./components/item-view/item-view.component";
 import { ItemAddedComponent } from "./components/item-added/item-added.component";
 import { CustomClassModalComponent } from "./components/custom-class-modal/custom-class-modal.component";
-import { SharedModule } from "../../shared/shared.module";
+import { ModalModule } from "../../shared/components/modal/modal.module";
 
 @NgModule({
-  imports: [CommonModule, PipesModule, SharedModule],
+  imports: [CommonModule, PipesModule, ModalModule],
   declarations: [
     CampaignComponent,
     PlayerComponent,
