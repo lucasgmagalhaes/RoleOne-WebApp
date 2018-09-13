@@ -9,5 +9,5 @@ export enum Color {
   INFO = "is-info",
   SUCCESS = "is-success",
   WARNING = "is-warning",
-  DANGET = "is-danger"
+  DANGER = "is-danger"
 }

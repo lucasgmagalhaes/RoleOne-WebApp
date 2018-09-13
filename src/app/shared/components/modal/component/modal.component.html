@@ -2,12 +2,13 @@
 
   <div class="modal-background" (click)="close()"></div>
 
-  <div class="modal-card" style.width="{{width}}"
+  <div class="modal-card"
+  style.width="{{width}}"
   style.height="{{height}}"
   style.max-height="{{maxHeight}}"
   style.maxWidth="{{maxWidth}}">
 
-  <header class="modal-card-head">
+    <header class="modal-card-head">
       <p class="modal-card-title">{{name}}</p>
       <button class="delete" aria-label="close" (click)="close()"></button>
     </header>
@@ -16,21 +17,23 @@
       <ng-content></ng-content>
     </section>
 
-    <footer class="modal-card-foot">
+    <footer class="modal-card-foot buttons" [ngClass]="footerButtonAligment">
 
       <button (click)="save()"
       [class.is-outlined]="outlined"
       [class.is-inverted]="inverted"
       [class.is-loading]="loading"
       [class.is-rounded]="rounded"
-      [class.is-disabled]="disabled" class="button is-dark">{{saveValue}}</button>
+      [class.is-disabled]="disabled"
+      class="button" [ngClass]="saveColor">{{saveValue}}</button>
 
       <button (click)="cancel()"
       [class.is-outlined]="outlined"
       [class.is-inverted]="inverted"
       [class.is-loading]="loading"
       [class.is-rounded]="rounded"
-      [class.is-disabled]="disabled" class="button is-danger">{{cancelValue}}</button>
+      [class.is-disabled]="disabled"
+      class="button" [ngClass]="cancelColor">{{cancelValue}}</button>
 
     </footer>
   </div>
