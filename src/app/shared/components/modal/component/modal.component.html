@@ -19,14 +19,6 @@
 
     <footer class="modal-card-foot buttons" [ngClass]="footerButtonAligment">
 
-      <button (click)="save()"
-      [class.is-outlined]="outlined"
-      [class.is-inverted]="inverted"
-      [class.is-loading]="loading"
-      [class.is-rounded]="rounded"
-      [class.is-disabled]="disabled"
-      class="button" [ngClass]="saveColor">{{saveValue}}</button>
-
       <button (click)="cancel()"
       [class.is-outlined]="outlined"
       [class.is-inverted]="inverted"
@@ -34,6 +26,14 @@
       [class.is-rounded]="rounded"
       [class.is-disabled]="disabled"
       class="button" [ngClass]="cancelColor">{{cancelValue}}</button>
+      
+      <button (click)="save()"
+      [class.is-outlined]="outlined"
+      [class.is-inverted]="inverted"
+      [class.is-loading]="loading"
+      [class.is-rounded]="rounded"
+      [class.is-disabled]="disabled"
+      class="button" [ngClass]="saveColor">{{saveValue}}</button>
 
     </footer>
   </div>
