@@ -1,6 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { CustomClassModalComponent } from './custom-class-modal.component';
+import { ModalModule } from '../../../../shared/components/modal/modal.module';
 
 describe('CustomClassModalComponent', () => {
   let component: CustomClassModalComponent;
@@ -8,6 +9,7 @@ describe('CustomClassModalComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
+      imports: [ModalModule],
       declarations: [ CustomClassModalComponent ]
     })
     .compileComponents();
