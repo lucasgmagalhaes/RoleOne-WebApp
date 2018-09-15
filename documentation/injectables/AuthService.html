@@ -1,0 +1,1095 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>role-one documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	      <link rel="stylesheet" href="../styles/style.css">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+            <a href="../" class="navbar-brand">role-one documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search">
+</div>
+            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content injectable">
+                   <div class="content-data">
+
+
+
+
+
+
+
+<ol class="breadcrumb">
+  <li>Injectables</li>
+  <li>AuthService</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href="#info" role="tab" id="info-tab" data-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li >
+            <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="c-info">
+        <p class="comment">
+            <h3>File</h3>
+        </p>
+        <p class="comment">
+            <code>src/app/auth/services/auth.service.ts</code>
+        </p>
+
+
+
+            <section>
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#createNewUser">createNewUser</a>
+                            </li>
+                            <li>
+                                <a href="#createOrUpdateUserDetail">createOrUpdateUserDetail</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#createUserObject">createUserObject</a>
+                            </li>
+                            <li>
+                                <a href="#getFireAuth">getFireAuth</a>
+                            </li>
+                            <li>
+                                <a href="#getUserState">getUserState</a>
+                            </li>
+                            <li>
+                                <a href="#goToHomeScreen">goToHomeScreen</a>
+                            </li>
+                            <li>
+                                <a href="#login">login</a>
+                            </li>
+                            <li>
+                                <a href="#loginWithGoogle">loginWithGoogle</a>
+                            </li>
+                            <li>
+                                <a href="#logout">logout</a>
+                            </li>
+                            <li>
+                                <a href="#storeVariablesInSession">storeVariablesInSession</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+            <section>
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(db: <a href="../injectables/FireService.html">FireService</a>, router: <a href="https://angular.io/api/router/Router" target="_blank">Router</a>, location: <a href="../injectables/LocationService.html">LocationService</a>, auth: <a href="../injectables/FireAuthService.html">FireAuthService</a>)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="13" class="link-to-prism">src/app/auth/services/auth.service.ts:13</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>db</td>
+                                                  
+                                                        <td>
+                                                                    <code><a href="../injectables/FireService.html" target="_self" >FireService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>router</td>
+                                                  
+                                                        <td>
+                                                                    <code><a href="https://angular.io/api/router/Router" target="_blank" >Router</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>location</td>
+                                                  
+                                                        <td>
+                                                                    <code><a href="../injectables/LocationService.html" target="_self" >LocationService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>auth</td>
+                                                  
+                                                        <td>
+                                                                    <code><a href="../injectables/FireAuthService.html" target="_self" >FireAuthService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+            <section>
+    
+        <h3 id="methods">
+            Methods
+        </h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="createNewUser"></a>
+                        <span class="name">
+                            <b>
+                            createNewUser
+                            </b>
+                            <a href="#createNewUser"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+<code>createNewUser(user: <a href="../interfaces/User.html">User</a>)</code>
+                    </td>
+                </tr>
+
+
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="107" class="link-to-prism">src/app/auth/services/auth.service.ts:107</a></div>
+                            </td>
+                        </tr>
+
+
+                <tr>
+                    <td class="col-md-4">
+                            <div class="io-description"><p>Creates a new user IF his email be unique.
+When the user be created, this object will contain
+his generated key.</p>
+</div>
+
+                            <div class="io-description">
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>user</td>
+                                                        <td>
+                                                                    <code><a href="../interfaces/User.html" target="_self" >User</a></code>
+                                                        </td>
+                                                    
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                            <div>
+                            </div>
+                            <div class="io-description">
+                                <b>Returns : </b>    <code>Promise&lt;any&gt;</code>
+
+                            </div>
+                                <div class="io-description">
+                                    <p>Observable error message</p>
+
+                                </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="createOrUpdateUserDetail"></a>
+                        <span class="name">
+                            <b>
+                            createOrUpdateUserDetail
+                            </b>
+                            <a href="#createOrUpdateUserDetail"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+<code>createOrUpdateUserDetail(authUser: <a href="../interfaces/User.html">AuthUser</a>)</code>
+                    </td>
+                </tr>
+
+
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="36" class="link-to-prism">src/app/auth/services/auth.service.ts:36</a></div>
+                            </td>
+                        </tr>
+
+
+                <tr>
+                    <td class="col-md-4">
+                            <div class="io-description"><p>Gived a user, search for him at database, updating his email and username IF
+the user exists. If don&#39;t, create all information about him.</p>
+</div>
+
+                            <div class="io-description">
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>authUser</td>
+                                                        <td>
+                                                                    <code><a href="../interfaces/User.html" target="_self" >AuthUser</a></code>
+                                                        </td>
+                                                    
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                            <div>
+                            </div>
+                            <div class="io-description">
+                                <b>Returns : </b>    <code><a href="../interfaces/User.html" target="_self" >Promise&lt;User&gt;</a></code>
+
+                            </div>
+                                <div class="io-description">
+                                    <p>Conclusion of the operation</p>
+
+                                </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="createUserObject"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Private</span>
+                            createUserObject
+                            </b>
+                            <a href="#createUserObject"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                            <span class="modifier-icon icon ion-ios-reset"></span>
+                        <code>createUserObject(authUser: <a href="../interfaces/User.html">AuthUser</a>, location: <a href="../interfaces/Location.html">Location</a>)</code>
+                    </td>
+                </tr>
+
+
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="76" class="link-to-prism">src/app/auth/services/auth.service.ts:76</a></div>
+                            </td>
+                        </tr>
+
+
+                <tr>
+                    <td class="col-md-4">
+                            <div class="io-description"><p>Creates a user based of in the AuthUser and the location</p>
+</div>
+
+                            <div class="io-description">
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>authUser</td>
+                                                        <td>
+                                                                    <code><a href="../interfaces/User.html" target="_self" >AuthUser</a></code>
+                                                        </td>
+                                                    
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+
+                                                </tr>
+                                                <tr>
+                                                        <td>location</td>
+                                                        <td>
+                                                                    <code><a href="../interfaces/Location.html" target="_self" >Location</a></code>
+                                                        </td>
+                                                    
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                            <div>
+                            </div>
+                            <div class="io-description">
+                                <b>Returns : </b>    <code><a href="../interfaces/User.html" target="_self" >User</a></code>
+
+                            </div>
+                                <div class="io-description">
+                                    <p>user created</p>
+
+                                </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="getFireAuth"></a>
+                        <span class="name">
+                            <b>
+                            getFireAuth
+                            </b>
+                            <a href="#getFireAuth"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+<code>getFireAuth()</code>
+                    </td>
+                </tr>
+
+
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="26" class="link-to-prism">src/app/auth/services/auth.service.ts:26</a></div>
+                            </td>
+                        </tr>
+
+
+                <tr>
+                    <td class="col-md-4">
+
+                            <div>
+                            </div>
+                            <div class="io-description">
+                                <b>Returns : </b>    <code><a href="../injectables/FireAuthService.html" target="_self" >FireAuthService</a></code>
+
+                            </div>
+                                <div class="io-description">
+                                    <p>The super service of the AuthService</p>
+
+                                </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="getUserState"></a>
+                        <span class="name">
+                            <b>
+                            getUserState
+                            </b>
+                            <a href="#getUserState"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+<code>getUserState()</code>
+                    </td>
+                </tr>
+
+
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="124" class="link-to-prism">src/app/auth/services/auth.service.ts:124</a></div>
+                            </td>
+                        </tr>
+
+
+                <tr>
+                    <td class="col-md-4">
+                            <div class="io-description"><p>Returns the status of the authenticated user</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Returns : </b>    <code><a href="../interfaces/User.html" target="_self" >Observable&lt;firebase.User&gt;</a></code>
+
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="goToHomeScreen"></a>
+                        <span class="name">
+                            <b>
+                            goToHomeScreen
+                            </b>
+                            <a href="#goToHomeScreen"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+<code>goToHomeScreen()</code>
+                    </td>
+                </tr>
+
+
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="97" class="link-to-prism">src/app/auth/services/auth.service.ts:97</a></div>
+                            </td>
+                        </tr>
+
+
+                <tr>
+                    <td class="col-md-4">
+                            <div class="io-description"><p>Move to home screen</p>
+</div>
+
+                            <div>
+                            </div>
+                            <div class="io-description">
+                                <b>Returns : </b>    <code>Promise&lt;boolean&gt;</code>
+
+                            </div>
+                                <div class="io-description">
+                                    <p>promisse of the action</p>
+
+                                </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="login"></a>
+                        <span class="name">
+                            <b>
+                            login
+                            </b>
+                            <a href="#login"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+<code>login(email: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, senha: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                    </td>
+                </tr>
+
+
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="135" class="link-to-prism">src/app/auth/services/auth.service.ts:135</a></div>
+                            </td>
+                        </tr>
+
+
+                <tr>
+                    <td class="col-md-4">
+                            <div class="io-description"><p>Make login using the firebase authentication with email and password returning a promisse
+of the login</p>
+</div>
+
+                            <div class="io-description">
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>email</td>
+                                                        <td>
+                                                                    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                                        </td>
+                                                    
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+
+                                                </tr>
+                                                <tr>
+                                                        <td>senha</td>
+                                                        <td>
+                                                                    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                                        </td>
+                                                    
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                            <div>
+                            </div>
+                            <div class="io-description">
+                                <b>Returns : </b>    <code>Promise&lt;any&gt;</code>
+
+                            </div>
+                                <div class="io-description">
+                                    <p>Promisse of the login</p>
+
+                                </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="loginWithGoogle"></a>
+                        <span class="name">
+                            <b>
+                            loginWithGoogle
+                            </b>
+                            <a href="#loginWithGoogle"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+<code>loginWithGoogle()</code>
+                    </td>
+                </tr>
+
+
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="156" class="link-to-prism">src/app/auth/services/auth.service.ts:156</a></div>
+                            </td>
+                        </tr>
+
+
+                <tr>
+                    <td class="col-md-4">
+                            <div class="io-description"><p>Make login with a google account returning a error message in a Observable if some error appear.
+If the login was successfull, update the informations of the user and redirectione him to
+the hom page.</p>
+</div>
+
+                            <div>
+                            </div>
+                            <div class="io-description">
+                                <b>Returns : </b>    <code>Observable&lt;string&gt;</code>
+
+                            </div>
+                                <div class="io-description">
+                                    <p>Observable error message</p>
+
+                                </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="logout"></a>
+                        <span class="name">
+                            <b>
+                            logout
+                            </b>
+                            <a href="#logout"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+<code>logout()</code>
+                    </td>
+                </tr>
+
+
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="62" class="link-to-prism">src/app/auth/services/auth.service.ts:62</a></div>
+                            </td>
+                        </tr>
+
+
+                <tr>
+                    <td class="col-md-4">
+                            <div class="io-description"><p>Disconnect the logged user Returning him do the root page</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="storeVariablesInSession"></a>
+                        <span class="name">
+                            <b>
+                            storeVariablesInSession
+                            </b>
+                            <a href="#storeVariablesInSession"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+<code>storeVariablesInSession(name: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, uid: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                    </td>
+                </tr>
+
+
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="117" class="link-to-prism">src/app/auth/services/auth.service.ts:117</a></div>
+                            </td>
+                        </tr>
+
+
+                <tr>
+                    <td class="col-md-4">
+                            <div class="io-description"><p>Store the name and the id of the user in localSession
+using a framework for make the varable an observable</p>
+</div>
+
+                            <div class="io-description">
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                                    <td>Description</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>name</td>
+                                                        <td>
+                                                                    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                                        </td>
+                                                    
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+
+                                                        <td>
+                                                                <code><p>auhenticated user&#39;s name</p>
+</code>
+                                                        </td>
+                                                </tr>
+                                                <tr>
+                                                        <td>uid</td>
+                                                        <td>
+                                                                    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                                        </td>
+                                                    
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+
+                                                        <td>
+                                                                <code><p>authenticated user&#39;s id</p>
+</code>
+                                                        </td>
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                            <div>
+                            </div>
+                            <div class="io-description">
+                                <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                            </div>
+                                <div class="io-description">
+                                    
+                                </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+
+    </div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="c-source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { User, AuthUser } from &quot;../models/user.model&quot;;
+import { Injectable } from &quot;@angular/core&quot;;
+import { FireService } from &quot;../../core/firebase/database/fire.service&quot;;
+import { Router } from &quot;@angular/router&quot;;
+import { LocationService } from &quot;./location.service&quot;;
+import { FireError } from &quot;../models/fireError.model&quot;;
+import { Observable, BehaviorSubject } from &quot;rxjs&quot;;
+import { Location } from &quot;../models/location.model&quot;;
+import { FireAuthService } from &quot;../../core/firebase/auth/fireAuth.service&quot;;
+@Injectable({
+  providedIn: &quot;root&quot;
+})
+export class AuthService {
+  constructor(
+    private db: FireService,
+    private router: Router,
+    private location: LocationService,
+    private auth: FireAuthService
+  ) {
+    this.db.setResource(&quot;user_detail&quot;);
+  }
+
+  /**
+   * @returns The super service of the AuthService
+   */
+  getFireAuth(): FireAuthService {
+    return this.auth;
+  }
+
+  /**
+   * Gived a user, search for him at database, updating his email and username IF
+   * the user exists. If don&#x27;t, create all information about him.
+   * @param authUser
+   * @returns Conclusion of the operation
+   */
+  createOrUpdateUserDetail(authUser: AuthUser): Promise&lt;User&gt; {
+    return new Promise((resolve, reject) &#x3D;&gt; {
+      this.db.find(&#x60;users_detail/${authUser.id}&#x60;).valueChanges().subscribe((vals: User) &#x3D;&gt; {
+        if (vals &#x3D;&#x3D;&#x3D; null) {
+          //User do not exists. So is created a &#x27;user_detail&#x27; from scratch
+          this.location.getLocation().then(local &#x3D;&gt; {
+            let user &#x3D; this.createUserObject(authUser, local);
+            this.db
+              .set(user, &#x60;users_detail/${authUser.id}&#x60;)
+              .then(() &#x3D;&gt; resolve(user))
+              .catch(error &#x3D;&gt; reject(error));
+          });
+          //User exists. So is updated his email and name
+        } else {
+          this.db
+            .update({ email: authUser.email }, &#x60;users_detail/${authUser.id}&#x60;)
+            .then(() &#x3D;&gt; resolve(vals))
+            .catch(error &#x3D;&gt; reject(error));
+        }
+      });
+    });
+  }
+
+  /**
+   * Disconnect the logged user Returning him do the root page
+   */
+  logout() {
+    this.auth.logout().then(() &#x3D;&gt; {
+      localStorage.removeItem(&quot;uid&quot;);
+      localStorage.removeItem(&quot;username&quot;);
+      this.router.navigate([&quot;/&quot;]);
+    });
+  }
+
+  /**
+   * Creates a user based of in the AuthUser and the location
+   * @param authUser
+   * @param location
+   * @returns user created
+   */
+  private createUserObject(authUser: AuthUser, location: Location): User {
+    let email_verified &#x3D; authUser.verified_email;
+    if (authUser.verified_email &#x3D;&#x3D;&#x3D; undefined) {
+      email_verified &#x3D; false;
+    }
+    return {
+      username: authUser.name,
+      email: authUser.email,
+      level: 1,
+      experience: 0,
+      picture_url: &quot;&quot;,
+      country: location.country,
+      state: location.region,
+      verified_email: email_verified
+    };
+  }
+
+  /**
+   * Move to home screen
+   * @returns promisse of the action
+   */
+  goToHomeScreen(): Promise&lt;boolean&gt; {
+    return this.router.navigate([&quot;/home&quot;]);
+  }
+
+  /**
+   * Creates a new user IF his email be unique.
+   * When the user be created, this object will contain
+   * his generated key.
+   * @return Observable error message
+   */
+  createNewUser(user: User): Promise&lt;any&gt; {
+    return this.auth.signUpUserWithEmailPassword(user);
+  }
+
+  /**
+   * Store the name and the id of the user in localSession
+   * using a framework for make the varable an observable
+   * @param name auhenticated user&#x27;s name
+   * @param uid authenticated user&#x27;s id
+   */
+  storeVariablesInSession(name: string, uid: string) {
+    localStorage.setItem(&quot;username&quot;, name);
+    localStorage.setItem(&quot;uid&quot;, uid);
+  }
+  /**
+   * Returns the status of the authenticated user
+   */
+  getUserState(): Observable&lt;firebase.User&gt; {
+    return this.auth.getAuthState();
+  }
+
+  /**
+   * Make login using the firebase authentication with email and password returning a promisse
+   * of the login
+   * @param email
+   * @param senha
+   * @returns Promisse of the login
+   */
+  login(email: string, senha: string): Promise&lt;any&gt; {
+    return this.auth.signInWithEmailAndPassword(email, senha).then(() &#x3D;&gt; {
+      this.getUserState().subscribe(user &#x3D;&gt; {
+          this.createOrUpdateUserDetail({
+            id: user.uid,
+            name: user.displayName,
+            email: user.email
+          }).then(storeduser &#x3D;&gt; {
+            this.storeVariablesInSession(storeduser.username, user.uid);
+            this.goToHomeScreen();
+          });
+      });
+    });
+  }
+
+  /**
+   * Make login with a google account returning a error message in a Observable if some error appear.
+   * If the login was successfull, update the informations of the user and redirectione him to
+   * the hom page.
+   * @returns Observable error message
+   */
+  loginWithGoogle(): Observable&lt;string&gt; {
+    let errorReturn &#x3D; new BehaviorSubject&lt;string&gt;(undefined);
+    this.auth
+      .signInWithGoogle()
+      .then(() &#x3D;&gt; {
+        this.getUserState().subscribe(user &#x3D;&gt; {
+          if (user) {
+            // User is logged
+            this.createOrUpdateUserDetail({
+              id: user.uid,
+              name: user.displayName,
+              email: user.email
+            }).then(storeduser &#x3D;&gt; {
+              this.storeVariablesInSession(storeduser.username, user.uid);
+              this.goToHomeScreen();
+            });
+          } else {
+            throw new Error(&quot;Was not possible to get user state&quot;);
+          }
+        });
+      })
+      .catch((error: FireError) &#x3D;&gt; {
+        console.log(error);
+        errorReturn.next(
+          &quot;Was not possible to authenticate with Gooogle account&quot;
+        );
+      });
+    return errorReturn.asObservable();
+  }
+}
+</code></pre>
+    </div>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> result-matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'injectable';
+            var COMPODOC_CURRENT_PAGE_URL = 'AuthService.html';
+       </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+       <script src="../js/menu-wc.js"></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

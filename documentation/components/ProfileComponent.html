@@ -1,0 +1,448 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>role-one documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	      <link rel="stylesheet" href="../styles/style.css">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+            <a href="../" class="navbar-brand">role-one documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search">
+</div>
+            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li>Components</li>
+  <li>ProfileComponent</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href="#info" role="tab" id="info-tab" data-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li >
+            <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
+        </li>
+        <li >
+            <a href="#templateData" role="tab" id="templateData-tab" data-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li >
+            <a href="#tree" role="tab" id="tree-tab" data-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="c-info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>src/app/detail/components/profile/profile.component.ts</code>
+</p>
+
+
+
+    <p class="comment">
+        <h3>Implements</h3>
+    </p>
+    <p class="comment">
+                <code><a href="https://angular.io/api/core/OnInit" target="_blank" >OnInit</a></code>
+    </p>
+
+
+<section>
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover">
+        <tbody>
+
+
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>ro1-profile</code></td>
+            </tr>
+
+            <tr>
+                <td class="col-md-3">styleUrls</td>
+                <td class="col-md-9"><code>profile.component.scss</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./profile.component.html</code></td>
+            </tr>
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#ngOnInit">ngOnInit</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor()</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="8" class="link-to-prism">src/app/detail/components/profile/profile.component.ts:8</a></div>
+                            </td>
+                        </tr>
+
+            </tbody>
+        </table>
+</section>
+
+
+
+
+
+    <section>
+    
+        <h3 id="methods">
+            Methods
+        </h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="ngOnInit"></a>
+                        <span class="name">
+                            <b>
+                            ngOnInit
+                            </b>
+                            <a href="#ngOnInit"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+<code>ngOnInit()</code>
+                    </td>
+                </tr>
+
+
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="12" class="link-to-prism">src/app/detail/components/profile/profile.component.ts:12</a></div>
+                            </td>
+                        </tr>
+
+
+                <tr>
+                    <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+
+</div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="c-source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, OnInit } from &#x27;@angular/core&#x27;;
+
+@Component({
+  selector: &#x27;ro1-profile&#x27;,
+  templateUrl: &#x27;./profile.component.html&#x27;,
+  styleUrls: [&#x27;./profile.component.scss&#x27;]
+})
+export class ProfileComponent implements OnInit {
+
+  constructor() { }
+
+  ngOnInit() {
+  }
+
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-templateData">
+        <pre class="line-numbers"><code class="language-html">&lt;div class&#x3D;&quot;columns is-multiline&quot;&gt;
+  &lt;div class&#x3D;&quot;column is-3&quot;&gt;
+    &lt;div class&#x3D;&quot;card&quot;&gt;
+      &lt;a [routerLink]&#x3D;&quot;[&#x27;profileedition&#x27;]&quot;&gt;
+        &lt;span class&#x3D;&quot;icon edit is-hand&quot;&gt;
+          &lt;i class&#x3D;&quot;far fa-edit&quot;&gt;&lt;/i&gt;
+        &lt;/span&gt;
+      &lt;/a&gt;
+      &lt;div class&#x3D;&quot;center box-padding&quot;&gt;
+        &lt;div class&#x3D;&quot;media&quot;&gt;
+          &lt;figure class&#x3D;&quot;image image-max center-content&quot;&gt;
+            &lt;img class&#x3D;&quot;is-rounded&quot; src&#x3D;&quot;https://bulma.io/images/placeholders/48x48.png&quot; alt&#x3D;&quot;Placeholder image&quot;&gt;
+          &lt;/figure&gt;
+        &lt;/div&gt;
+
+        &lt;div class&#x3D;&quot;center-content leveling&quot;&gt;
+          &lt;label class&#x3D;&quot;label no-selection is-medium&quot;&gt;SieShow&lt;/label&gt;
+          &lt;label class&#x3D;&quot;has-text-grey no-selection&quot;&gt;Here is BATATA as lak q oais c ma sa qoiwe asld j&lt;/label&gt;
+        &lt;/div&gt;
+
+        &lt;div class&#x3D;&quot;center-content leveling&quot;&gt;
+          &lt;label class&#x3D;&quot;has-text-grey no-selection&quot;&gt;lucasgsm88@gmail.com&lt;/label&gt;
+        &lt;/div&gt;
+
+        &lt;div class&#x3D;&quot;center-content leveling&quot;&gt;
+          &lt;label class&#x3D;&quot;label no-selection&quot;&gt;1&lt;/label&gt;
+          &lt;progress class&#x3D;&quot;progress&quot; value&#x3D;&quot;30&quot; max&#x3D;&quot;100&quot;&gt;30%&lt;/progress&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+
+  &lt;/div&gt;
+  &lt;div class&#x3D;&quot;column is-9&quot;&gt;
+    &lt;div class&#x3D;&quot;columns is-multiline is-centered&quot;&gt;
+      &lt;div class&#x3D;&quot;column is-12&quot;&gt;
+        &lt;div class&#x3D;&quot;card&quot;&gt;
+          &lt;div class&#x3D;&quot;card-content&quot;&gt;
+
+            &lt;nav class&#x3D;&quot;level&quot;&gt;
+
+              &lt;div class&#x3D;&quot;level-item has-text-centered&quot;&gt;
+                &lt;div class&#x3D;&quot;no-selection&quot;&gt;
+                  &lt;p class&#x3D;&quot;heading&quot;&gt;Time Played&lt;/p&gt;
+                  &lt;p class&#x3D;&quot;title&quot;&gt;3,456&lt;/p&gt;
+                &lt;/div&gt;
+              &lt;/div&gt;
+
+              &lt;div class&#x3D;&quot;level-item has-text-centered&quot;&gt;
+                &lt;div class&#x3D;&quot;no-selection&quot;&gt;
+                  &lt;p class&#x3D;&quot;heading&quot;&gt;Campains&lt;/p&gt;
+                  &lt;p class&#x3D;&quot;title&quot;&gt;123&lt;/p&gt;
+                &lt;/div&gt;
+              &lt;/div&gt;
+
+              &lt;div class&#x3D;&quot;level-item has-text-centered&quot;&gt;
+                &lt;div class&#x3D;&quot;no-selection&quot;&gt;
+                  &lt;p class&#x3D;&quot;heading&quot;&gt;Custom Classes&lt;/p&gt;
+                  &lt;p class&#x3D;&quot;title&quot;&gt;789&lt;/p&gt;
+                &lt;/div&gt;
+              &lt;/div&gt;
+
+              &lt;div class&#x3D;&quot;level-item has-text-centered&quot;&gt;
+                &lt;div class&#x3D;&quot;no-selection&quot;&gt;
+                  &lt;p class&#x3D;&quot;heading&quot;&gt;Custom Itens&lt;/p&gt;
+                  &lt;p class&#x3D;&quot;title&quot;&gt;789&lt;/p&gt;
+                &lt;/div&gt;
+              &lt;/div&gt;
+
+              &lt;div class&#x3D;&quot;level-item has-text-centered&quot;&gt;
+                &lt;div class&#x3D;&quot;no-selection&quot;&gt;
+                  &lt;p class&#x3D;&quot;heading&quot;&gt;Custom Monsters&lt;/p&gt;
+                  &lt;p class&#x3D;&quot;title&quot;&gt;789&lt;/p&gt;
+                &lt;/div&gt;
+              &lt;/div&gt;
+
+            &lt;/nav&gt;
+
+          &lt;/div&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+      &lt;div class&#x3D;&quot;column is-12&quot;&gt;
+
+        &lt;div class&#x3D;&quot;card&quot;&gt;
+          &lt;div class&#x3D;&quot;card-content&quot;&gt;
+            &lt;a [routerLink]&#x3D;&quot;[&#x27;conquests&#x27;]&quot;&gt;
+              &lt;span class&#x3D;&quot;edit is-hand&quot;&gt;
+                See all
+              &lt;/span&gt;
+            &lt;/a&gt;
+            &lt;label class&#x3D;&quot;conquest-title&quot;&gt;
+              Conquests
+            &lt;/label&gt;
+            &lt;div class&#x3D;&quot;achiev-container&quot;&gt;
+              &lt;div class&#x3D;&quot;tooltip&quot;&gt;
+                &lt;figure class&#x3D;&quot;image achievement-demo&quot;&gt;
+                  &lt;span class&#x3D;&quot;tooltiptext&quot;&gt;CONQUEST DESCRIPTION&lt;/span&gt;
+                  &lt;img src&#x3D;&quot;https://cdn.pixabay.com/photo/2015/12/10/16/39/shield-1086702__340.png&quot; alt&#x3D;&quot;&quot;&gt;
+                &lt;/figure&gt;
+              &lt;/div&gt;
+
+            &lt;/div&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+
+      &lt;/div&gt;
+
+      &lt;div class&#x3D;&quot;column is-12&quot;&gt;
+        &lt;div class&#x3D;&quot;card&quot;&gt;
+          &lt;div class&#x3D;&quot;card-content&quot;&gt;
+            &lt;label class&#x3D;&quot;conquest-title&quot;&gt;
+              Public campains
+            &lt;/label&gt;
+            &lt;ro1-campain&gt;&lt;/ro1-campain&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><div class="columns is-multiline">  <div class="column is-3">    <div class="card">      <a [routerLink]="[\'profileedition\']">        <span class="icon edit is-hand">          <i class="far fa-edit"></i>        </span>      </a>      <div class="center box-padding">        <div class="media">          <figure class="image image-max center-content">            <img class="is-rounded" src="https://bulma.io/images/placeholders/48x48.png" alt="Placeholder image">          </figure>        </div>        <div class="center-content leveling">          <label class="label no-selection is-medium">SieShow</label>          <label class="has-text-grey no-selection">Here is BATATA as lak q oais c ma sa qoiwe asld j</label>        </div>        <div class="center-content leveling">          <label class="has-text-grey no-selection">lucasgsm88@gmail.com</label>        </div>        <div class="center-content leveling">          <label class="label no-selection">1</label>          <progress class="progress" value="30" max="100">30%</progress>        </div>      </div>    </div>  </div>  <div class="column is-9">    <div class="columns is-multiline is-centered">      <div class="column is-12">        <div class="card">          <div class="card-content">            <nav class="level">              <div class="level-item has-text-centered">                <div class="no-selection">                  <p class="heading">Time Played</p>                  <p class="title">3,456</p>                </div>              </div>              <div class="level-item has-text-centered">                <div class="no-selection">                  <p class="heading">Campains</p>                  <p class="title">123</p>                </div>              </div>              <div class="level-item has-text-centered">                <div class="no-selection">                  <p class="heading">Custom Classes</p>                  <p class="title">789</p>                </div>              </div>              <div class="level-item has-text-centered">                <div class="no-selection">                  <p class="heading">Custom Itens</p>                  <p class="title">789</p>                </div>              </div>              <div class="level-item has-text-centered">                <div class="no-selection">                  <p class="heading">Custom Monsters</p>                  <p class="title">789</p>                </div>              </div>            </nav>          </div>        </div>      </div>      <div class="column is-12">        <div class="card">          <div class="card-content">            <a [routerLink]="[\'conquests\']">              <span class="edit is-hand">                See all              </span>            </a>            <label class="conquest-title">              Conquests            </label>            <div class="achiev-container">              <div class="tooltip">                <figure class="image achievement-demo">                  <span class="tooltiptext">CONQUEST DESCRIPTION</span>                  <img src="https://cdn.pixabay.com/photo/2015/12/10/16/39/shield-1086702__340.png" alt="">                </figure>              </div>            </div>          </div>        </div>      </div>      <div class="column is-12">        <div class="card">          <div class="card-content">            <label class="conquest-title">              Public campains            </label>            <ro1-campain></ro1-campain>          </div>        </div>      </div>    </div>  </div></div></div>'
+    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'CampaignComponent', 'selector': 'ro1-campaign'},{'name': 'CampainComponent', 'selector': 'ro1-campain'},{'name': 'CampainsComponent', 'selector': 'ro1-campains'},{'name': 'ChatComponent', 'selector': 'ro1-chat'},{'name': 'ConquestComponent', 'selector': 'ro1-conquest'},{'name': 'ConquestsComponent', 'selector': 'ro1-conquests'},{'name': 'CustomClassModalComponent', 'selector': 'ro1-custom-class-modal'},{'name': 'FooterComponent', 'selector': 'ro1-footer'},{'name': 'ForgotPasswordComponent', 'selector': 'ro1-forgot-password'},{'name': 'HeaderComponent', 'selector': 'ro1-header'},{'name': 'HomeComponent', 'selector': 'ro1-home'},{'name': 'ItemAddedComponent', 'selector': 'ro1-item-added'},{'name': 'ItemViewComponent', 'selector': 'ro1-item-view'},{'name': 'LoginComponent', 'selector': 'ro1-login'},{'name': 'MainWindowComponent', 'selector': 'rol-main-window'},{'name': 'MapComponent', 'selector': 'ro1-map'},{'name': 'MapModalComponent', 'selector': 'ro1-map-modal'},{'name': 'ModalComponent', 'selector': 'ro1-modal'},{'name': 'NotificationComponent', 'selector': 'ro1-notification'},{'name': 'PlayerComponent', 'selector': 'ro1-player'},{'name': 'PlayerModalComponent', 'selector': 'ro1-player-modal'},{'name': 'ProfileComponent', 'selector': 'ro1-profile'},{'name': 'ProfileEditionComponent', 'selector': 'ro1-profile-edition'},{'name': 'QuestComponent', 'selector': 'ro1-quest'},{'name': 'QuestModalComponent', 'selector': 'ro1-quest-modal'},{'name': 'RegisterComponent', 'selector': 'ro1-register'},{'name': 'SelectionComponent', 'selector': 'ro1-selection'},{'name': 'ThemeModalComponent', 'selector': 'ro1-theme-modal'},{'name': 'ToolbarComponent', 'selector': 'ro1-tools'},{'name': 'UsersComponent', 'selector': 'ro1-users'}];
+    var DIRECTIVES = [{'name': 'ClickOutDirective', 'selector': '[clickedOut]'}];
+    var ACTUAL_COMPONENT = {'name': 'ProfileComponent'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> result-matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'ProfileComponent.html';
+       </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+       <script src="../js/menu-wc.js"></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

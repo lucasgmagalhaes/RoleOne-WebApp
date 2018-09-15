@@ -1,0 +1,36 @@
+figure {
+  float: right;
+}
+
+.clearfix {
+  overflow: auto;
+}
+
+.info {
+  width: 200px;
+  margin-right: 20px;
+}
+
+.flex {
+  display: flex;
+}
+
+.min-601 {
+  min-height: 601px;
+}
+
+$maxHeight: 200px;
+.max-181 {
+  height: $maxHeight;
+  max-height: $maxHeight;
+}
+
+.img-max-height {
+  height: 196px;
+}
+
+.detail {
+  strong {
+    margin-right: 4px;
+  }
+}
