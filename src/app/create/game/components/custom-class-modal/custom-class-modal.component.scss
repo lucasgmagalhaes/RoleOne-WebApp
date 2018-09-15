@@ -19,7 +19,18 @@ figure {
   min-height: 601px;
 }
 
+$maxHeight: 200px;
 .max-181 {
-  height: 181px;
-  max-height: 181px;
+  height: $maxHeight;
+  max-height: $maxHeight;
+}
+
+.img-max-height {
+  height: 196px;
+}
+
+.detail {
+  strong {
+    margin-right: 4px;
+  }
 }

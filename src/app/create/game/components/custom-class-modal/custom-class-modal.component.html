@@ -15,17 +15,26 @@
       <div class="max-181 clearfix">
         <p>
           <figure class="image is-128x128">
-            <img src="https://bulma.io/images/placeholders/128x128.png">
+            <img class="img-max-height" *ngIf="selectedClass.img_url === undefined" src="https://bulma.io/images/placeholders/128x128.png">
+            <img class="img-max-height" *ngIf="selectedClass.img_url !== undefined" src="{{selectedClass.img_url}}">
           </figure>{{selectedClass.description}}
         </p>
       </div>
     </div>
   </div>
 
+  <div class="control m-b-10 detail">
+    <strong>Hit die:</strong>{{selectedClass.lifeDice}}
+  </div>
+
+  <div class="control m-b-10 detail">
+    <strong>Primary Habilities:</strong>{{selectedClass.lifeDice}}
+  </div>
+
   <div class="control flex">
 
     <div class="info">
-      <label class="label">Classes</label>
+      <label class="label">Primary Habilities</label>
       <div class="box">
         <ul>
           <li *ngFor="let hability of selectedClass.primaryHability">{{hability}}</li>
@@ -34,10 +43,28 @@
     </div>
 
     <div class="info">
-      <label class="label">Races</label>
+      <label class="label">Resistence Proficience</label>
+      <div class="box">
+        <ul>
+          <li *ngFor="let proficience of selectedClass.resistenceProficience">{{proficience}}</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="info">
+      <label class="label">Weapons Proficience</label>
       <div class="box">
         <ul>
           <li *ngFor="let weapons of selectedClass.weaponsProficience">{{weapons}}</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="info">
+      <label class="label">Armo Proficience</label>
+      <div class="box">
+        <ul>
+          <li *ngFor="let armoProficience of selectedClass.armosProficience">{{armoProficience}}</li>
         </ul>
       </div>
     </div>

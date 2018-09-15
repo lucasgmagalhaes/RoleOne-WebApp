@@ -4,6 +4,7 @@ export interface ClassGame {
   primaryHability: string[];
   resistenceProficience: string[];
   weaponsProficience: string[];
-  armoProficience: string[];
+  armosProficience: string[];
   lifeDice: string;
+  img_url?: string;
 }
