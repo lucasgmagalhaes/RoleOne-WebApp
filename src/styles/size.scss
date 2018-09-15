@@ -68,4 +68,14 @@ $sizes: (
     width: $size * 1%;
     height: $size * 1%;
   }
+  .h-em-#{$size} {
+    height: $size + em;
+  }
+  .w-em-#{$size} {
+    width: $size + em;
+  }
+  .size-em-#{$size} {
+    width: $size + em;
+    height: $size + em;
+  }
 }

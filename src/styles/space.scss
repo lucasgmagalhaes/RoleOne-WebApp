@@ -22,6 +22,12 @@ $map: (
   .m-p-#{$size} {
     margin: $size * 1%;
   }
+  .p-em-#{$size} {
+    padding: $size + em;
+  }
+  .m-em-#{$size} {
+    margin: $size + em;
+  }
   @each $char, $local in $map {
     .m-#{$char}-#{$size} {
       margin-#{$local}: $size + px;
@@ -34,6 +40,12 @@ $map: (
     }
     .p-p-#{$char}-#{$size} {
       padding-#{$local}: $size * 1%;
+    }
+    .m-em-#{$char}-#{$size} {
+      margin-#{$local}: $size + em;
+    }
+    .p-em-#{$char}-#{$size} {
+      padding-#{$local}: $size + em;
     }
   }
 }
