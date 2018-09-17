@@ -1,0 +1,46 @@
+figure {
+  float: right;
+}
+
+.info {
+  width: 200px;
+  margin-right: 20px;
+}
+
+.flex {
+  display: flex;
+}
+
+.min-601 {
+  min-height: 601px;
+}
+
+$maxHeight: 200px;
+.max-181 {
+  height: $maxHeight;
+  max-height: $maxHeight;
+}
+
+$img_height: 280px;
+$img_width: 154px;
+
+.img-max-height {
+  height: $img_height;
+  width: $img_width;
+  margin-top: -38px;
+  img {
+    height: $img_height;
+    width: $img_width;
+  }
+}
+
+.detail {
+  strong {
+    margin-right: 4px;
+  }
+}
+
+.overflow {
+  overflow: auto;
+  max-height: 442px;
+}

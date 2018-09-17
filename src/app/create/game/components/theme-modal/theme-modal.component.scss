@@ -1,0 +1,25 @@
+figure {
+  float: right;
+}
+
+.clearfix {
+  overflow: auto;
+}
+
+.info {
+  width: 200px;
+  margin-right: 20px;
+}
+
+.flex {
+  display: flex;
+}
+
+.min-601 {
+  min-height: 601px;
+}
+
+.max-181 {
+  height: 181px;
+  max-height: 181px;
+}

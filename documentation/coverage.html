@@ -14,323 +14,20 @@
 
         <div class="navbar navbar-default navbar-fixed-top visible-xs">
             <a href="./" class="navbar-brand">role-one documentation</a>
-            <button type="button" class="btn btn-default btn-menu fa fa-bars" id="btn-menu"></button>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
         </div>
 
         <div class="xs-menu menu" id="mobile-menu">
-            <div id="book-search-input" role="search">
+                <div id="book-search-input" role="search">
     <input type="text" placeholder="Type to search">
 </div>
-            <nav>
-
-    <ul class="list">
-
-        <li class="title">
-            <a href="index.html" data-type="index-link">role-one documentation</a>
-        </li>
-
-        <li class="divider"></li>
-
-
-        <li class="chapter">
-            <a data-type="chapter-link" href="index.html"><span class="fa fa-home"></span>Getting started</a>
-            <ul class="links">
-                    <li class="link">
-                        <a 
-                            
-                             href="overview.html" 
-                             href="overview.html" 
-                            data-type="chapter-link">
-                            <span class="fa fa-fw fa-th"></span>Overview
-                        </a>
-                    </li>
-                    <li class="link">
-                      <a href="index.html" data-type="chapter-link"><span class="fa fa-file-text-o"></span>README</a>
-                    </li>
-                    <li class="link">
-                            <a href="license.html"
-                        data-type="chapter-link">
-                            <span class="fa fa-fw fa-file-text-o"></span>LICENSE
-                        </a>
-                    </li>
-                    <li class="link">
-                        <a href="dependencies.html"
-                            data-type="chapter-link">
-                            <span class="fa fa-fw fa-list"></span>Dependencies
-                        </a>
-                    </li>
-            </ul>
-        </li>
-
-
-        <li class="chapter modules">
-            <a data-type="chapter-link" href="modules.html">
-                <div class="menu-toggler linked" data-toggle="collapse"
-                        data-target="#xs-modules-links"
-                >
-                    <span class="fa fa-fw fa-archive"></span>
-                    <span class="link-name">Modules</span>
-                    <span class="fa fa-angle-down"></span>
-                </div>
-            </a>
-            <ul class="links collapse"
-                    id="xs-modules-links"
-                >
-                    <li class="link">
-                        <a href="modules/AppModule.html" data-type="entity-link">AppModule</a>
-                            <li class="chapter inner">
-                                <div class="simple menu-toggler" data-toggle="collapse"
-                                        data-target="#xs-components-links-module-AppModule-0dc4b6e3930cd8c89cab46575d327b57"
-                                    >
-                                    <span class="fa fa-fw fa-cogs"></span>
-                                    <span>Components</span>
-                                    <span class="fa fa-angle-down"></span>
-                                </div>
-                                <ul class="links collapse"
-                                        id="xs-components-links-module-AppModule-0dc4b6e3930cd8c89cab46575d327b57"
-                                    >
-                                        <li class="link">
-                                            <a href="components/AppComponent.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules">AppComponent</a>
-                                        </li>
-                                </ul>
-                            </li>
-                    </li>
-                    <li class="link">
-                        <a href="modules/ArchitectureModule.html" data-type="entity-link">ArchitectureModule</a>
-                    </li>
-            </ul>
-        </li>
-
-
-
-
-                <li class="chapter">
-                    <div class="simple menu-toggler" data-toggle="collapse"
-                            data-target="#xs-injectables-links"
-                        >
-                        <span class="fa fa-fw fa-long-arrow-down"></span>
-                        <span>Injectables</span>
-                        <span class="fa fa-angle-down"></span>
-                    </div>
-                    <ul class="links collapse"
-                            id="xs-injectables-links"
-                        >
-                            <li class="link">
-                                <a href="injectables/FireService.html" data-type="entity-link">FireService</a>
-                            </li>
-                    </ul>
-                </li>
-
-
-        <li class="chapter">
-            <div class="simple menu-toggler" data-toggle="collapse"
-                    data-target="#xs-interfaces-links"
-                >
-                <span class="fa fa-fw fa-info"></span>
-                <span>Interfaces</span>
-                <span class="fa fa-angle-down"></span>
-            </div>
-            <ul class="links collapse"
-                    id="xs-interfaces-links"
-                >
-                    <li class="link">
-                        <a href="interfaces/Entity.html" data-type="entity-link">Entity</a>
-                    </li>
-            </ul>
-        </li>
-
-
-        <li class="chapter">
-            <div class="simple menu-toggler" data-toggle="collapse"
-                    data-target="#xs-miscellaneous-links"
-                >
-                <span class="fa fa-fw fa-cubes"></span>
-                <span>Miscellaneous</span>
-                <span class="fa fa-angle-down"></span>
-            </div>
-            <ul class="links collapse"
-                    id="xs-miscellaneous-links"
-                >
-                    <li class="link">
-                      <a href="miscellaneous/variables.html" data-type="entity-link">Variables</a>
-                    </li>
-            </ul>
-        </li>
-
-
-        <li class="chapter">
-            <a data-type="chapter-link" href="coverage.html"><span class="fa fa-fw fa-tasks"></span>Documentation coverage</a>
-        </li>
-
-        <li class="divider"></li>
-        <li class="copyright">
-                Documentation generated using <a href="https://compodoc.github.io/website/" target="_blank">
-                            <img data-src="images/compodoc-vectorise.svg" class="img-responsive" data-type="compodoc-logo">
-                </a>
-        </li>
-
-    </ul>
-
-</nav>
+            <compodoc-menu></compodoc-menu>
         </div>
 
         <div class="container-fluid main">
            <div class="row main">
                <div class="hidden-xs menu">
-                   <nav>
-
-    <ul class="list">
-
-        <li class="title">
-            <a href="index.html" data-type="index-link">role-one documentation</a>
-        </li>
-
-        <li class="divider"></li>
-
-            <div id="book-search-input" role="search">
-    <input type="text" placeholder="Type to search">
-</div>
-
-        <li class="chapter">
-            <a data-type="chapter-link" href="index.html"><span class="fa fa-home"></span>Getting started</a>
-            <ul class="links">
-                    <li class="link">
-                        <a 
-                            
-                             href="overview.html" 
-                             href="overview.html" 
-                            data-type="chapter-link">
-                            <span class="fa fa-fw fa-th"></span>Overview
-                        </a>
-                    </li>
-                    <li class="link">
-                      <a href="index.html" data-type="chapter-link"><span class="fa fa-file-text-o"></span>README</a>
-                    </li>
-                    <li class="link">
-                            <a href="license.html"
-                        data-type="chapter-link">
-                            <span class="fa fa-fw fa-file-text-o"></span>LICENSE
-                        </a>
-                    </li>
-                    <li class="link">
-                        <a href="dependencies.html"
-                            data-type="chapter-link">
-                            <span class="fa fa-fw fa-list"></span>Dependencies
-                        </a>
-                    </li>
-            </ul>
-        </li>
-
-
-        <li class="chapter modules">
-            <a data-type="chapter-link" href="modules.html">
-                <div class="menu-toggler linked" data-toggle="collapse"
-                        data-target="#modules-links"
-                >
-                    <span class="fa fa-fw fa-archive"></span>
-                    <span class="link-name">Modules</span>
-                    <span class="fa fa-angle-down"></span>
-                </div>
-            </a>
-            <ul class="links collapse"
-                    id="modules-links"
->
-                    <li class="link">
-                        <a href="modules/AppModule.html" data-type="entity-link">AppModule</a>
-                            <li class="chapter inner">
-                                <div class="simple menu-toggler" data-toggle="collapse"
-                                        data-target="#components-links-module-AppModule-0dc4b6e3930cd8c89cab46575d327b57"
->
-                                    <span class="fa fa-fw fa-cogs"></span>
-                                    <span>Components</span>
-                                    <span class="fa fa-angle-down"></span>
-                                </div>
-                                <ul class="links collapse"
-                                        id="components-links-module-AppModule-0dc4b6e3930cd8c89cab46575d327b57"
->
-                                        <li class="link">
-                                            <a href="components/AppComponent.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules">AppComponent</a>
-                                        </li>
-                                </ul>
-                            </li>
-                    </li>
-                    <li class="link">
-                        <a href="modules/ArchitectureModule.html" data-type="entity-link">ArchitectureModule</a>
-                    </li>
-            </ul>
-        </li>
-
-
-
-
-                <li class="chapter">
-                    <div class="simple menu-toggler" data-toggle="collapse"
-                            data-target="#injectables-links"
->
-                        <span class="fa fa-fw fa-long-arrow-down"></span>
-                        <span>Injectables</span>
-                        <span class="fa fa-angle-down"></span>
-                    </div>
-                    <ul class="links collapse"
-                            id="injectables-links"
->
-                            <li class="link">
-                                <a href="injectables/FireService.html" data-type="entity-link">FireService</a>
-                            </li>
-                    </ul>
-                </li>
-
-
-        <li class="chapter">
-            <div class="simple menu-toggler" data-toggle="collapse"
-                    data-target="#interfaces-links"
->
-                <span class="fa fa-fw fa-info"></span>
-                <span>Interfaces</span>
-                <span class="fa fa-angle-down"></span>
-            </div>
-            <ul class="links collapse"
-                    id="interfaces-links"
->
-                    <li class="link">
-                        <a href="interfaces/Entity.html" data-type="entity-link">Entity</a>
-                    </li>
-            </ul>
-        </li>
-
-
-        <li class="chapter">
-            <div class="simple menu-toggler" data-toggle="collapse"
-                    data-target="#miscellaneous-links"
->
-                <span class="fa fa-fw fa-cubes"></span>
-                <span>Miscellaneous</span>
-                <span class="fa fa-angle-down"></span>
-            </div>
-            <ul class="links collapse"
-                    id="miscellaneous-links"
->
-                    <li class="link">
-                      <a href="miscellaneous/variables.html" data-type="entity-link">Variables</a>
-                    </li>
-            </ul>
-        </li>
-
-
-        <li class="chapter">
-            <a data-type="chapter-link" href="coverage.html"><span class="fa fa-fw fa-tasks"></span>Documentation coverage</a>
-        </li>
-
-        <li class="divider"></li>
-        <li class="copyright">
-                Documentation generated using <a href="https://compodoc.github.io/website/" target="_blank">
-                            <img data-src="images/compodoc-vectorise.svg" class="img-responsive" data-type="compodoc-logo">
-                </a>
-        </li>
-
-    </ul>
-
-</nav>
+                   <compodoc-menu mode="normal"></compodoc-menu>
                </div>
                <!-- START CONTENT -->
                <div class="content coverage">
@@ -349,12 +46,14 @@
 
 
 
+
+
 <ol class="breadcrumb">
-  <li>Documentation coverage</li>
+    <li>Documentation coverage</li>
 </ol>
 
 <div>
-    <img src="./images/coverage-badge.svg">
+    <img src="./images/coverage-badge-documentation.svg">
 </div>
 
 <table class="table table-bordered coverage" id="coverage-table">
@@ -370,7 +69,7 @@
         <tr class="low">
             <td>
                 <!-- miscellaneous -->
-                    <a href="./components/AppComponent.html">src/app/app.component.ts</a>
+                <a href="./components/AppComponent.html">src/app/app.component.ts</a>
             </td>
             <td>
                 component
@@ -380,29 +79,189 @@
             </td>
             <td align="right" data-sort="0">
                 <span class="coverage-percent">0 %</span>
-                <span class="coverage-count">(0/5)</span>
+                <span class="coverage-count">(0/2)</span>
             </td>
         </tr>
-        <tr class="medium">
+        <tr class="low">
             <td>
                 <!-- miscellaneous -->
-                    <a href="./interfaces/Entity.html">src/app/architecture/interfaces/entity.ts</a>
+                <a href="./components/ForgotPasswordComponent.html">src/app/auth/components/forgot-password/forgot-password.component.ts</a>
+            </td>
+            <td>
+                component
+            </td>
+            <td>
+                ForgotPasswordComponent
+            </td>
+            <td align="right" data-sort="0">
+                <span class="coverage-percent">0 %</span>
+                <span class="coverage-count">(0/3)</span>
+            </td>
+        </tr>
+        <tr class="low">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./components/LoginComponent.html">src/app/auth/components/login/login.component.ts</a>
+            </td>
+            <td>
+                component
+            </td>
+            <td>
+                LoginComponent
+            </td>
+            <td align="right" data-sort="0">
+                <span class="coverage-percent">0 %</span>
+                <span class="coverage-count">(0/15)</span>
+            </td>
+        </tr>
+        <tr class="low">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./components/RegisterComponent.html">src/app/auth/components/register/register.component.ts</a>
+            </td>
+            <td>
+                component
+            </td>
+            <td>
+                RegisterComponent
+            </td>
+            <td align="right" data-sort="0">
+                <span class="coverage-percent">0 %</span>
+                <span class="coverage-count">(0/12)</span>
+            </td>
+        </tr>
+        <tr class="low">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./interfaces/FireError.html">src/app/auth/models/fireError.model.ts</a>
             </td>
             <td>
                 interface
             </td>
             <td>
-                Entity
+                FireError
             </td>
-            <td align="right" data-sort="50">
-                <span class="coverage-percent">50 %</span>
-                <span class="coverage-count">(1/2)</span>
+            <td align="right" data-sort="0">
+                <span class="coverage-percent">0 %</span>
+                <span class="coverage-count">(0/3)</span>
+            </td>
+        </tr>
+        <tr class="low">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./interfaces/Location.html">src/app/auth/models/location.model.ts</a>
+            </td>
+            <td>
+                interface
+            </td>
+            <td>
+                Location
+            </td>
+            <td align="right" data-sort="0">
+                <span class="coverage-percent">0 %</span>
+                <span class="coverage-count">(0/15)</span>
+            </td>
+        </tr>
+        <tr class="low">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./interfaces/AuthUser.html">src/app/auth/models/user.model.ts</a>
+            </td>
+            <td>
+                interface
+            </td>
+            <td>
+                AuthUser
+            </td>
+            <td align="right" data-sort="14">
+                <span class="coverage-percent">14 %</span>
+                <span class="coverage-count">(1/7)</span>
+            </td>
+        </tr>
+        <tr class="low">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./interfaces/User.html">src/app/auth/models/user.model.ts</a>
+            </td>
+            <td>
+                interface
+            </td>
+            <td>
+                User
+            </td>
+            <td align="right" data-sort="9">
+                <span class="coverage-percent">9 %</span>
+                <span class="coverage-count">(1/11)</span>
             </td>
         </tr>
         <tr class="good">
             <td>
                 <!-- miscellaneous -->
-                    <a href="./injectables/FireService.html">src/app/architecture/services/fire.service.ts</a>
+                <a href="./injectables/AuthService.html">src/app/auth/services/auth.service.ts</a>
+            </td>
+            <td>
+                injectable
+            </td>
+            <td>
+                AuthService
+            </td>
+            <td align="right" data-sort="75">
+                <span class="coverage-percent">75 %</span>
+                <span class="coverage-count">(9/12)</span>
+            </td>
+        </tr>
+        <tr class="low">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./injectables/LocationService.html">src/app/auth/services/location.service.ts</a>
+            </td>
+            <td>
+                injectable
+            </td>
+            <td>
+                LocationService
+            </td>
+            <td align="right" data-sort="25">
+                <span class="coverage-percent">25 %</span>
+                <span class="coverage-count">(1/4)</span>
+            </td>
+        </tr>
+        <tr class="good">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./injectables/GlobalErrorHandle.html">src/app/core/exception/global-error-handle.ts</a>
+            </td>
+            <td>
+                injectable
+            </td>
+            <td>
+                GlobalErrorHandle
+            </td>
+            <td align="right" data-sort="66">
+                <span class="coverage-percent">66 %</span>
+                <span class="coverage-count">(2/3)</span>
+            </td>
+        </tr>
+        <tr class="low">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./injectables/FireAuthService.html">src/app/core/firebase/auth/fireAuth.service.ts</a>
+            </td>
+            <td>
+                injectable
+            </td>
+            <td>
+                FireAuthService
+            </td>
+            <td align="right" data-sort="0">
+                <span class="coverage-percent">0 %</span>
+                <span class="coverage-count">(0/16)</span>
+            </td>
+        </tr>
+        <tr class="medium">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./injectables/FireService.html">src/app/core/firebase/database/fire.service.ts</a>
             </td>
             <td>
                 injectable
@@ -410,15 +269,607 @@
             <td>
                 FireService
             </td>
-            <td align="right" data-sort="55">
-                <span class="coverage-percent">55 %</span>
-                <span class="coverage-count">(5/9)</span>
+            <td align="right" data-sort="47">
+                <span class="coverage-percent">47 %</span>
+                <span class="coverage-count">(10/21)</span>
             </td>
         </tr>
         <tr class="low">
             <td>
                 <!-- miscellaneous -->
-                    <a href="./miscellaneous/variables.html#environment">src/environments/environment.prod.ts</a>
+                <a href="./injectables/StorageService.html">src/app/core/firebase/storage/storage.service.ts</a>
+            </td>
+            <td>
+                injectable
+            </td>
+            <td>
+                StorageService
+            </td>
+            <td align="right" data-sort="0">
+                <span class="coverage-percent">0 %</span>
+                <span class="coverage-count">(0/6)</span>
+            </td>
+        </tr>
+        <tr class="medium">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./interfaces/NotificationStructure.html">src/app/core/interfaces/core.interfaces.ts</a>
+            </td>
+            <td>
+                interface
+            </td>
+            <td>
+                NotificationStructure
+            </td>
+            <td align="right" data-sort="33">
+                <span class="coverage-percent">33 %</span>
+                <span class="coverage-count">(1/3)</span>
+            </td>
+        </tr>
+        <tr class="low">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./components/NotificationComponent.html">src/app/core/notification/notification.component.ts</a>
+            </td>
+            <td>
+                component
+            </td>
+            <td>
+                NotificationComponent
+            </td>
+            <td align="right" data-sort="0">
+                <span class="coverage-percent">0 %</span>
+                <span class="coverage-count">(0/6)</span>
+            </td>
+        </tr>
+        <tr class="very-good">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./injectables/NotificationService.html">src/app/core/notification/notification.service.ts</a>
+            </td>
+            <td>
+                injectable
+            </td>
+            <td>
+                NotificationService
+            </td>
+            <td align="right" data-sort="80">
+                <span class="coverage-percent">80 %</span>
+                <span class="coverage-count">(4/5)</span>
+            </td>
+        </tr>
+        <tr class="low">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./components/CampaignComponent.html">src/app/create/game/components/campaign/campaign.component.ts</a>
+            </td>
+            <td>
+                component
+            </td>
+            <td>
+                CampaignComponent
+            </td>
+            <td align="right" data-sort="0">
+                <span class="coverage-percent">0 %</span>
+                <span class="coverage-count">(0/7)</span>
+            </td>
+        </tr>
+        <tr class="low">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./components/CustomClassModalComponent.html">src/app/create/game/components/custom-class-modal/custom-class-modal.component.ts</a>
+            </td>
+            <td>
+                component
+            </td>
+            <td>
+                CustomClassModalComponent
+            </td>
+            <td align="right" data-sort="0">
+                <span class="coverage-percent">0 %</span>
+                <span class="coverage-count">(0/4)</span>
+            </td>
+        </tr>
+        <tr class="low">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./interfaces/ClassGame.html">src/app/create/game/components/custom-class-modal/custom-class-modal.interface.ts</a>
+            </td>
+            <td>
+                interface
+            </td>
+            <td>
+                ClassGame
+            </td>
+            <td align="right" data-sort="0">
+                <span class="coverage-percent">0 %</span>
+                <span class="coverage-count">(0/8)</span>
+            </td>
+        </tr>
+        <tr class="low">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./components/ItemAddedComponent.html">src/app/create/game/components/item-added/item-added.component.ts</a>
+            </td>
+            <td>
+                component
+            </td>
+            <td>
+                ItemAddedComponent
+            </td>
+            <td align="right" data-sort="0">
+                <span class="coverage-percent">0 %</span>
+                <span class="coverage-count">(0/3)</span>
+            </td>
+        </tr>
+        <tr class="low">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./components/ItemViewComponent.html">src/app/create/game/components/item-view/item-view.component.ts</a>
+            </td>
+            <td>
+                component
+            </td>
+            <td>
+                ItemViewComponent
+            </td>
+            <td align="right" data-sort="0">
+                <span class="coverage-percent">0 %</span>
+                <span class="coverage-count">(0/5)</span>
+            </td>
+        </tr>
+        <tr class="low">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./components/MapModalComponent.html">src/app/create/game/components/map-modal/map-modal.component.ts</a>
+            </td>
+            <td>
+                component
+            </td>
+            <td>
+                MapModalComponent
+            </td>
+            <td align="right" data-sort="0">
+                <span class="coverage-percent">0 %</span>
+                <span class="coverage-count">(0/5)</span>
+            </td>
+        </tr>
+        <tr class="low">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./components/MapComponent.html">src/app/create/game/components/map/map.component.ts</a>
+            </td>
+            <td>
+                component
+            </td>
+            <td>
+                MapComponent
+            </td>
+            <td align="right" data-sort="0">
+                <span class="coverage-percent">0 %</span>
+                <span class="coverage-count">(0/4)</span>
+            </td>
+        </tr>
+        <tr class="low">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./components/PlayerModalComponent.html">src/app/create/game/components/player-modal/player-modal.component.ts</a>
+            </td>
+            <td>
+                component
+            </td>
+            <td>
+                PlayerModalComponent
+            </td>
+            <td align="right" data-sort="0">
+                <span class="coverage-percent">0 %</span>
+                <span class="coverage-count">(0/6)</span>
+            </td>
+        </tr>
+        <tr class="low">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./components/PlayerComponent.html">src/app/create/game/components/player/player.component.ts</a>
+            </td>
+            <td>
+                component
+            </td>
+            <td>
+                PlayerComponent
+            </td>
+            <td align="right" data-sort="25">
+                <span class="coverage-percent">25 %</span>
+                <span class="coverage-count">(1/4)</span>
+            </td>
+        </tr>
+        <tr class="low">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./components/QuestModalComponent.html">src/app/create/game/components/quest-modal/quest-modal.component.ts</a>
+            </td>
+            <td>
+                component
+            </td>
+            <td>
+                QuestModalComponent
+            </td>
+            <td align="right" data-sort="0">
+                <span class="coverage-percent">0 %</span>
+                <span class="coverage-count">(0/8)</span>
+            </td>
+        </tr>
+        <tr class="low">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./components/QuestComponent.html">src/app/create/game/components/quest/quest.component.ts</a>
+            </td>
+            <td>
+                component
+            </td>
+            <td>
+                QuestComponent
+            </td>
+            <td align="right" data-sort="0">
+                <span class="coverage-percent">0 %</span>
+                <span class="coverage-count">(0/4)</span>
+            </td>
+        </tr>
+        <tr class="low">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./components/ThemeModalComponent.html">src/app/create/game/components/theme-modal/theme-modal.component.ts</a>
+            </td>
+            <td>
+                component
+            </td>
+            <td>
+                ThemeModalComponent
+            </td>
+            <td align="right" data-sort="0">
+                <span class="coverage-percent">0 %</span>
+                <span class="coverage-count">(0/9)</span>
+            </td>
+        </tr>
+        <tr class="low">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./interfaces/Quest.html">src/app/create/game/interfaces/quest.interface.ts</a>
+            </td>
+            <td>
+                interface
+            </td>
+            <td>
+                Quest
+            </td>
+            <td align="right" data-sort="0">
+                <span class="coverage-percent">0 %</span>
+                <span class="coverage-count">(0/5)</span>
+            </td>
+        </tr>
+        <tr class="low">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./interfaces/Theme.html">src/app/create/game/interfaces/theme.interface.ts</a>
+            </td>
+            <td>
+                interface
+            </td>
+            <td>
+                Theme
+            </td>
+            <td align="right" data-sort="0">
+                <span class="coverage-percent">0 %</span>
+                <span class="coverage-count">(0/5)</span>
+            </td>
+        </tr>
+        <tr class="low">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./components/ConquestComponent.html">src/app/detail/components/conquests/conquest/conquest.component.ts</a>
+            </td>
+            <td>
+                component
+            </td>
+            <td>
+                ConquestComponent
+            </td>
+            <td align="right" data-sort="0">
+                <span class="coverage-percent">0 %</span>
+                <span class="coverage-count">(0/8)</span>
+            </td>
+        </tr>
+        <tr class="low">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./components/ConquestsComponent.html">src/app/detail/components/conquests/conquests.component.ts</a>
+            </td>
+            <td>
+                component
+            </td>
+            <td>
+                ConquestsComponent
+            </td>
+            <td align="right" data-sort="0">
+                <span class="coverage-percent">0 %</span>
+                <span class="coverage-count">(0/3)</span>
+            </td>
+        </tr>
+        <tr class="low">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./components/ProfileEditionComponent.html">src/app/detail/components/profile-edition/profile-edition.component.ts</a>
+            </td>
+            <td>
+                component
+            </td>
+            <td>
+                ProfileEditionComponent
+            </td>
+            <td align="right" data-sort="0">
+                <span class="coverage-percent">0 %</span>
+                <span class="coverage-count">(0/3)</span>
+            </td>
+        </tr>
+        <tr class="low">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./components/ProfileComponent.html">src/app/detail/components/profile/profile.component.ts</a>
+            </td>
+            <td>
+                component
+            </td>
+            <td>
+                ProfileComponent
+            </td>
+            <td align="right" data-sort="0">
+                <span class="coverage-percent">0 %</span>
+                <span class="coverage-count">(0/3)</span>
+            </td>
+        </tr>
+        <tr class="low">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./directives/ClickOutDirective.html">src/app/directives/click-out/click-out.directive.ts</a>
+            </td>
+            <td>
+                directive
+            </td>
+            <td>
+                ClickOutDirective
+            </td>
+            <td align="right" data-sort="0">
+                <span class="coverage-percent">0 %</span>
+                <span class="coverage-count">(0/4)</span>
+            </td>
+        </tr>
+        <tr class="medium">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./components/CampainComponent.html">src/app/home-container/components/campains/campain/campain.component.ts</a>
+            </td>
+            <td>
+                component
+            </td>
+            <td>
+                CampainComponent
+            </td>
+            <td align="right" data-sort="50">
+                <span class="coverage-percent">50 %</span>
+                <span class="coverage-count">(4/8)</span>
+            </td>
+        </tr>
+        <tr class="low">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./components/CampainsComponent.html">src/app/home-container/components/campains/campains.component.ts</a>
+            </td>
+            <td>
+                component
+            </td>
+            <td>
+                CampainsComponent
+            </td>
+            <td align="right" data-sort="0">
+                <span class="coverage-percent">0 %</span>
+                <span class="coverage-count">(0/3)</span>
+            </td>
+        </tr>
+        <tr class="low">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./components/HomeComponent.html">src/app/home-container/components/home/home.component.ts</a>
+            </td>
+            <td>
+                component
+            </td>
+            <td>
+                HomeComponent
+            </td>
+            <td align="right" data-sort="0">
+                <span class="coverage-percent">0 %</span>
+                <span class="coverage-count">(0/3)</span>
+            </td>
+        </tr>
+        <tr class="low">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./interfaces/Campain.html">src/app/home-container/models/campain.model.ts</a>
+            </td>
+            <td>
+                interface
+            </td>
+            <td>
+                Campain
+            </td>
+            <td align="right" data-sort="0">
+                <span class="coverage-percent">0 %</span>
+                <span class="coverage-count">(0/8)</span>
+            </td>
+        </tr>
+        <tr class="low">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./components/ChatComponent.html">src/app/in-game/components/chat/chat.component.ts</a>
+            </td>
+            <td>
+                component
+            </td>
+            <td>
+                ChatComponent
+            </td>
+            <td align="right" data-sort="0">
+                <span class="coverage-percent">0 %</span>
+                <span class="coverage-count">(0/3)</span>
+            </td>
+        </tr>
+        <tr class="low">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./components/MainWindowComponent.html">src/app/in-game/components/main-window/main-window.component.ts</a>
+            </td>
+            <td>
+                component
+            </td>
+            <td>
+                MainWindowComponent
+            </td>
+            <td align="right" data-sort="0">
+                <span class="coverage-percent">0 %</span>
+                <span class="coverage-count">(0/3)</span>
+            </td>
+        </tr>
+        <tr class="low">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./components/ToolbarComponent.html">src/app/in-game/components/tools/toolbar.component.ts</a>
+            </td>
+            <td>
+                component
+            </td>
+            <td>
+                ToolbarComponent
+            </td>
+            <td align="right" data-sort="0">
+                <span class="coverage-percent">0 %</span>
+                <span class="coverage-count">(0/3)</span>
+            </td>
+        </tr>
+        <tr class="low">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./components/UsersComponent.html">src/app/in-game/components/users/users.component.ts</a>
+            </td>
+            <td>
+                component
+            </td>
+            <td>
+                UsersComponent
+            </td>
+            <td align="right" data-sort="0">
+                <span class="coverage-percent">0 %</span>
+                <span class="coverage-count">(0/3)</span>
+            </td>
+        </tr>
+        <tr class="low">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./pipes/ExperiencePipe.html">src/app/pipes/experience/experience.pipe.ts</a>
+            </td>
+            <td>
+                pipe
+            </td>
+            <td>
+                ExperiencePipe
+            </td>
+            <td align="right" data-sort="0">
+                <span class="coverage-percent">0 %</span>
+                <span class="coverage-count">(0/1)</span>
+            </td>
+        </tr>
+        <tr class="low">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./components/SelectionComponent.html">src/app/play/components/selection/selection.component.ts</a>
+            </td>
+            <td>
+                component
+            </td>
+            <td>
+                SelectionComponent
+            </td>
+            <td align="right" data-sort="25">
+                <span class="coverage-percent">25 %</span>
+                <span class="coverage-count">(1/4)</span>
+            </td>
+        </tr>
+        <tr class="low">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./components/ModalComponent.html">src/app/shared/components/modal/modal.component.ts</a>
+            </td>
+            <td>
+                component
+            </td>
+            <td>
+                ModalComponent
+            </td>
+            <td align="right" data-sort="0">
+                <span class="coverage-percent">0 %</span>
+                <span class="coverage-count">(0/21)</span>
+            </td>
+        </tr>
+        <tr class="low">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./injectables/ModalService.html">src/app/shared/components/modal/modal.service.ts</a>
+            </td>
+            <td>
+                injectable
+            </td>
+            <td>
+                ModalService
+            </td>
+            <td align="right" data-sort="0">
+                <span class="coverage-percent">0 %</span>
+                <span class="coverage-count">(0/12)</span>
+            </td>
+        </tr>
+        <tr class="low">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./components/FooterComponent.html">src/app/static/footer/footer.component.ts</a>
+            </td>
+            <td>
+                component
+            </td>
+            <td>
+                FooterComponent
+            </td>
+            <td align="right" data-sort="0">
+                <span class="coverage-percent">0 %</span>
+                <span class="coverage-count">(0/3)</span>
+            </td>
+        </tr>
+        <tr class="medium">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./components/HeaderComponent.html">src/app/static/header/header.component.ts</a>
+            </td>
+            <td>
+                component
+            </td>
+            <td>
+                HeaderComponent
+            </td>
+            <td align="right" data-sort="33">
+                <span class="coverage-percent">33 %</span>
+                <span class="coverage-count">(2/6)</span>
+            </td>
+        </tr>
+        <tr class="low">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./miscellaneous/variables.html#environment">src/environments/environment.dev.ts</a>
             </td>
             <td>
                 variable
@@ -434,7 +885,7 @@
         <tr class="low">
             <td>
                 <!-- miscellaneous -->
-                    <a href="./miscellaneous/variables.html#environment">src/environments/environment.ts</a>
+                <a href="./miscellaneous/variables.html#environment">src/environments/environment.prod.ts</a>
             </td>
             <td>
                 variable
@@ -450,7 +901,23 @@
         <tr class="low">
             <td>
                 <!-- miscellaneous -->
-                    <a href="./miscellaneous/variables.html#context">src/test.ts</a>
+                <a href="./miscellaneous/variables.html#environment">src/environments/environment.ts</a>
+            </td>
+            <td>
+                variable
+            </td>
+            <td>
+                environment
+            </td>
+            <td align="right" data-sort="0">
+                <span class="coverage-percent">0 %</span>
+                <span class="coverage-count">(0/1)</span>
+            </td>
+        </tr>
+        <tr class="low">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./miscellaneous/variables.html#context">src/test.ts</a>
             </td>
             <td>
                 variable
@@ -466,7 +933,7 @@
         <tr class="low">
             <td>
                 <!-- miscellaneous -->
-                    <a href="./miscellaneous/variables.html#require">src/test.ts</a>
+                <a href="./miscellaneous/variables.html#require">src/test.ts</a>
             </td>
             <td>
                 variable
@@ -490,7 +957,7 @@
 
                    </div><div class="search-results">
     <div class="has-results">
-        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <h1 class="search-results-title"><span class='search-results-count'></span> result-matching "<span class='search-query'></span>"</h1>
         <ul class="search-results-list"></ul>
     </div>
     <div class="no-results">
@@ -502,6 +969,16 @@
            </div>
        </div>
 
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 0;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'coverage';
+            var COMPODOC_CURRENT_PAGE_URL = 'coverage.html';
+       </script>
+
+       <script src="./js/libs/custom-elements.min.js"></script>
+       <script src="./js/libs/lit-html.js"></script>
+       <script src="./js/menu-wc.js"></script>
+
        <script src="./js/libs/bootstrap-native.js"></script>
 
        <script src="./js/libs/es6-shim.min.js"></script>
@@ -511,21 +988,16 @@
 
        <script src="./js/compodoc.js"></script>
 
-        <script>
-            var COMPODOC_CURRENT_PAGE_DEPTH = 0;
-            var COMPODOC_CURRENT_PAGE_CONTEXT = 'coverage';
-            var COMPODOC_CURRENT_PAGE_URL = 'coverage.html';
-        </script>
-
-       <script src="./js/search/search.js"></script>
-       <script src="./js/search/lunr.min.js"></script>
-       <script src="./js/search/search-lunr.js"></script>
-
        <script src="./js/tabs.js"></script>
        <script src="./js/menu.js"></script>
+       <script src="./js/libs/clipboard.min.js"></script>
        <script src="./js/libs/prism.js"></script>
        <script src="./js/sourceCode.js"></script>
-       <script src="./js/search/search_index.js"></script>
+          <script src="./js/search/search.js"></script>
+          <script src="./js/search/lunr.min.js"></script>
+          <script src="./js/search/search-lunr.js"></script>
+          <script src="./js/search/search_index.js"></script>
+       <script src="./js/lazy-load-graphs.js"></script>
 
 
     </body>
