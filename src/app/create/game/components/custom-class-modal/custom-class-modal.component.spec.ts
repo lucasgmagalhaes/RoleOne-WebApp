@@ -1,18 +1,19 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { async, ComponentFixture, TestBed } from "@angular/core/testing";
 
-import { CustomClassModalComponent } from './custom-class-modal.component';
-import { ModalModule } from '../../../../shared/components/modal/modal.module';
+import { CustomClassModalComponent } from "./custom-class-modal.component";
+import { ModalModule } from "../../../../shared/components/modal/modal.module";
+import { CardClassComponent } from "../card-class/card-class.component";
+import { PipesModule } from "../../../../pipes/pipes.module";
 
-describe('CustomClassModalComponent', () => {
+describe("CustomClassModalComponent", () => {
   let component: CustomClassModalComponent;
   let fixture: ComponentFixture<CustomClassModalComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      imports: [ModalModule],
-      declarations: [ CustomClassModalComponent ]
-    })
-    .compileComponents();
+      imports: [ModalModule, PipesModule],
+      declarations: [CustomClassModalComponent, CardClassComponent]
+    }).compileComponents();
   }));
 
   beforeEach(() => {
@@ -21,7 +22,7 @@ describe('CustomClassModalComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it("should create", () => {
     expect(component).toBeTruthy();
   });
 });

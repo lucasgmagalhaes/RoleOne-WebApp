@@ -13,6 +13,7 @@ import { ItemViewComponent } from "./components/item-view/item-view.component";
 import { ItemAddedComponent } from "./components/item-added/item-added.component";
 import { CustomClassModalComponent } from "./components/custom-class-modal/custom-class-modal.component";
 import { ModalModule } from "../../shared/components/modal/modal.module";
+import { CardClassComponent } from './components/card-class/card-class.component';
 
 @NgModule({
   imports: [CommonModule, PipesModule, ModalModule],
@@ -27,7 +28,8 @@ import { ModalModule } from "../../shared/components/modal/modal.module";
     QuestModalComponent,
     ItemViewComponent,
     ItemAddedComponent,
-    CustomClassModalComponent
+    CustomClassModalComponent,
+    CardClassComponent
   ],
   exports: [
     CampaignComponent,
@@ -38,7 +40,8 @@ import { ModalModule } from "../../shared/components/modal/modal.module";
     PlayerModalComponent,
     MapModalComponent,
     ItemViewComponent,
-    ItemAddedComponent
+    ItemAddedComponent,
+    CardClassComponent
   ]
 })
 export class CreateGameModule {}

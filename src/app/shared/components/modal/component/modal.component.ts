@@ -29,15 +29,15 @@ export class ModalComponent implements OnInit {
   @Input()
   public height: string = "600px";
   /**
-   * @default 800px
+   * @default 100%
    */
   @Input()
-  public maxHeight: string = "800px";
+  public maxHeight: string = "100%";
   /**
-   * @default 900px
+   * @default 100%
    */
   @Input()
-  public maxWidth: string = "900px";
+  public maxWidth: string = "100%";
   /**
    * @default 400px
    */
@@ -108,7 +108,11 @@ export class ModalComponent implements OnInit {
    */
   @Input()
   public hasHeaderCloseButton: boolean = true;
-
+  /**
+   * @default false
+   */
+  @Input()
+  public isActive: boolean = false;
   constructor(private modalService: ModalService) {}
 
   ngOnInit() {}

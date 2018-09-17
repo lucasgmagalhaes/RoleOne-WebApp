@@ -1,9 +1,9 @@
-import { ClassGame } from "./custom-class-modal.interface";
+import { ClassGame } from "./class-modal.interface";
 export const CLASSES: ClassGame[] = [
   {
     name: "Warrior",
     description: "A combat master, expert on a wide range of weapons and armor",
-    primaryHability: ["Strength"],
+    primaryHabilities: ["Strength"],
     resistenceProficience: ["Strength", "Constitution"],
     weaponsProficience: ["Simple Weapons", "Martial weapons"],
     armosProficience: ["All armo"],
@@ -15,7 +15,7 @@ export const CLASSES: ClassGame[] = [
     name: "Mage",
     description:
       "A user of magic spelled, able to  manipulate the structures of reality",
-    primaryHability: ["Inteligence"],
+    primaryHabilities: ["Inteligence"],
     resistenceProficience: ["Inteligence", "Wisdom"],
     weaponsProficience: [
       "Daggers",
@@ -33,7 +33,7 @@ export const CLASSES: ClassGame[] = [
     name: "Monk",
     description:
       "A user of magic spelled, able to manipulate the structures of reality",
-    primaryHability: ["Dexterity", "Wisdom"],
+    primaryHabilities: ["Dexterity", "Wisdom"],
     resistenceProficience: ["Strength", "Dexterity"],
     weaponsProficience: ["Simple Weapons", "Short Swords"],
     armosProficience: [""],
@@ -44,7 +44,7 @@ export const CLASSES: ClassGame[] = [
     name: "Druid",
     description:
       "A priest of Ancient Belief, keeper of the powers of nature - light of the moon and plant growth, fire and lightning - and capable of adopting animals",
-    primaryHability: ["Wisdom"],
+    primaryHabilities: ["Wisdom"],
     resistenceProficience: ["Inteligence", "Wisdom"],
     weaponsProficience: [
       "Claves",

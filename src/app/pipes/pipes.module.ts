@@ -1,10 +1,9 @@
 import { NgModule } from "@angular/core";
-import { CommonModule } from "@angular/common";
 import { ExperiencePipe } from "./experience/experience.pipe";
+import { CommaSeparationPipe } from "./comma-separation/comma-separation.pipe";
 
 @NgModule({
-  imports: [CommonModule],
-  declarations: [ExperiencePipe],
-  exports: [ExperiencePipe]
+  declarations: [ExperiencePipe, CommaSeparationPipe],
+  exports: [ExperiencePipe, CommaSeparationPipe]
 })
 export class PipesModule {}

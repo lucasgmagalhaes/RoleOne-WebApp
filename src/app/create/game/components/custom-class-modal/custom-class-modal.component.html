@@ -1,72 +1,38 @@
-<ro1-modal id="{{id}}" width="600px" name="Custom Class">
+<ro1-modal id="{{id}}" width="90%" name="Custom Class" isActive="true" saveValue="Save">
 
+  <div class="columns">
 
-  <div class="control m-b-10">
-    <div class="select w-500">
-      <select class="w-500" (change)="selectValueHandle($event)">
-        <option value="{{clas.name}}" *ngFor="let clas of classes">{{clas.name}}</option>
-      </select>
-    </div>
-  </div>
-
-  <div class="control m-b-10">
-    <div class="content">
-      <h4>Description</h4>
-      <div class="max-181 clearfix">
-        <p>
-          <figure class="image is-128x128">
-            <img class="img-max-height" *ngIf="selectedClass.img_url === undefined" src="https://bulma.io/images/placeholders/128x128.png">
-            <img class="img-max-height" *ngIf="selectedClass.img_url !== undefined" src="{{selectedClass.img_url}}">
-          </figure>{{selectedClass.description}}
-        </p>
-      </div>
-    </div>
-  </div>
-
-  <div class="control m-b-10 detail">
-    <strong>Hit die:</strong>{{selectedClass.lifeDice}}
-  </div>
-
-  <div class="control m-b-10 detail">
-    <strong>Primary Habilities:</strong>{{selectedClass.lifeDice}}
-  </div>
-
-  <div class="control flex">
-
-    <div class="info">
-      <label class="label">Primary Habilities</label>
-      <div class="box">
-        <ul>
-          <li *ngFor="let hability of selectedClass.primaryHability">{{hability}}</li>
-        </ul>
-      </div>
+    <div class="column is-8 overflow">
+      <ro1-card-class (click)="setSelected(clazz)" *ngFor="let clazz of classes" [clazz]="clazz"></ro1-card-class>
     </div>
 
-    <div class="info">
-      <label class="label">Resistence Proficience</label>
-      <div class="box">
-        <ul>
-          <li *ngFor="let proficience of selectedClass.resistenceProficience">{{proficience}}</li>
-        </ul>
+    <div class="column is-4 overflow">
+      <div class="control m-b-10">
+        <div class="content">
+          <h4>Description</h4>
+          <div class="max-181 clearfix">
+            <p>
+              <figure class="img-max-height">
+                <img *ngIf="selectedClass.img_url === undefined" src="https://bulma.io/images/placeholders/128x128.png">
+                <img *ngIf="selectedClass.img_url !== undefined" src="{{selectedClass.img_url}}">
+              </figure>{{selectedClass.description}}
+            </p>
+          </div>
+        </div>
       </div>
-    </div>
 
-    <div class="info">
-      <label class="label">Weapons Proficience</label>
-      <div class="box">
-        <ul>
-          <li *ngFor="let weapons of selectedClass.weaponsProficience">{{weapons}}</li>
-        </ul>
+      <div class="control m-b-10 detail">
+        <strong>Hit die:</strong>{{selectedClass.lifeDice}}
+        <br>
+        <strong>Primary Habilities:</strong>{{selectedClass.primaryHabilities | commaSeparation}}
+        <br>
+        <strong>Resistence Proficience:</strong>{{selectedClass.resistenceProficience | commaSeparation}}
+        <br>
+        <strong>Weapons Proficience:</strong>{{selectedClass.weaponsProficience | commaSeparation}}
+        <br>
+        <strong>Armo Proficience:</strong>{{selectedClass.armosProficience | commaSeparation}}
       </div>
-    </div>
 
-    <div class="info">
-      <label class="label">Armo Proficience</label>
-      <div class="box">
-        <ul>
-          <li *ngFor="let armoProficience of selectedClass.armosProficience">{{armoProficience}}</li>
-        </ul>
-      </div>
     </div>
 
   </div>

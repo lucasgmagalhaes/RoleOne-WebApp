@@ -1,6 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { Modals } from "../../enums/modals.enum";
-import { ClassGame } from "./modals/custom-class-modal.interface";
+import { ClassGame } from "./modals/class-modal.interface";
 import { CLASSES } from "./modals/mock-class";
 @Component({
   selector: "ro1-custom-class-modal",
@@ -22,5 +22,9 @@ export class CustomClassModalComponent implements OnInit {
     this.selectedClass = this.classes.find(
       clazz => clazz.name == selectedValue
     );
+  }
+
+  setSelected(clazz: ClassGame) {
+    this.selectedClass = clazz;
   }
 }

@@ -2,10 +2,6 @@ figure {
   float: right;
 }
 
-.clearfix {
-  overflow: auto;
-}
-
 .info {
   width: 200px;
   margin-right: 20px;
@@ -25,12 +21,26 @@ $maxHeight: 200px;
   max-height: $maxHeight;
 }
 
+$img_height: 280px;
+$img_width: 154px;
+
 .img-max-height {
-  height: 196px;
+  height: $img_height;
+  width: $img_width;
+  margin-top: -38px;
+  img {
+    height: $img_height;
+    width: $img_width;
+  }
 }
 
 .detail {
   strong {
     margin-right: 4px;
   }
+}
+
+.overflow {
+  overflow: auto;
+  max-height: 442px;
 }

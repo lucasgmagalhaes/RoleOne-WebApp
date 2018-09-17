@@ -14,8 +14,6 @@ import { StaticModule } from "./static/static.module";
 import { DetailModule } from "./detail/detail.module";
 import { PlayModule } from "./play/play.module";
 import { CreateGameModule } from "./create/game/create-game.module";
-import { DirectivesModule } from "./directives/directives.module";
-import { PipesModule } from "./pipes/pipes.module";
 import { InGameModule } from "./in-game/in-game.module";
 
 @NgModule({
@@ -30,8 +28,6 @@ import { InGameModule } from "./in-game/in-game.module";
     DetailModule,
     PlayModule,
     CreateGameModule,
-    DirectivesModule,
-    PipesModule,
     InGameModule
   ],
   providers: [{ provide: LocationStrategy, useClass: PathLocationStrategy }],
