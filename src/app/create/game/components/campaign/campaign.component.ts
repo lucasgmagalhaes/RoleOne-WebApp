@@ -3,7 +3,7 @@ import { ModalService } from "../../../../core/components/modal/service/modal.se
 import { OnInit, Component } from "@angular/core";
 
 @Component({
-  selector: "ro1-campaign",
+  selector: "rpg-campaign",
   templateUrl: "./campaign.component.html",
   styleUrls: ["./campaign.component.scss"]
 })

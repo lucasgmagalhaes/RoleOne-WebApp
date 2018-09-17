@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'ro1-tools',
+  selector: 'rpg-tools',
   templateUrl: './toolbar.component.html',
   styleUrls: ['./toolbar.component.scss']
 })

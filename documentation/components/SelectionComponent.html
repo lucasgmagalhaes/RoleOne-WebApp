@@ -91,7 +91,7 @@
 
             <tr>
                 <td class="col-md-3">selector</td>
-                <td class="col-md-9"><code>ro1-selection</code></td>
+                <td class="col-md-9"><code>rpg-selection</code></td>
             </tr>
 
             <tr>
@@ -258,7 +258,7 @@
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, OnInit } from &quot;@angular/core&quot;;
 import * as $ from &quot;jquery&quot;;
 @Component({
-  selector: &quot;ro1-selection&quot;,
+  selector: &quot;rpg-selection&quot;,
   templateUrl: &quot;./selection.component.html&quot;,
   styleUrls: [&quot;./selection.component.scss&quot;]
 })
@@ -310,8 +310,8 @@ export class SelectionComponent implements OnInit {
       &lt;/span&gt;
     &lt;/p&gt;
     &lt;nav class&#x3D;&quot;games&quot;&gt;
-      &lt;ro1-campain&gt;&lt;/ro1-campain&gt;
-      &lt;ro1-campain&gt;&lt;/ro1-campain&gt;
+      &lt;rpg-campain&gt;&lt;/rpg-campain&gt;
+      &lt;rpg-campain&gt;&lt;/rpg-campain&gt;
     &lt;/nav&gt;
   &lt;/div&gt;
 
@@ -347,8 +347,8 @@ export class SelectionComponent implements OnInit {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><div class="tabs is-medium" id="tabs">  <ul>    <li class="is-active" data-tab="1">      <a>My Games</a>    </li>    <li data-tab="2">      <a>Find</a>    </li>  </ul></div><div id="tab-content">  <div data-content="1" class="is-active">    <p class="control has-icons-left">      <input class="input is-medium" type="text" placeholder="Filter your campains">      <span class="icon is-large is-left">        <i class="fas fa-search" aria-hidden="true"></i>      </span>    </p>    <nav class="games">      <ro1-campain></ro1-campain>      <ro1-campain></ro1-campain>    </nav>  </div>  <div data-content="2">    <input class="input" placeholder="Join public campains by the name or id">  </div></div></div>'
-    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'CampaignComponent', 'selector': 'ro1-campaign'},{'name': 'CampainComponent', 'selector': 'ro1-campain'},{'name': 'CampainsComponent', 'selector': 'ro1-campains'},{'name': 'ChatComponent', 'selector': 'ro1-chat'},{'name': 'ConquestComponent', 'selector': 'ro1-conquest'},{'name': 'ConquestsComponent', 'selector': 'ro1-conquests'},{'name': 'CustomClassModalComponent', 'selector': 'ro1-custom-class-modal'},{'name': 'FooterComponent', 'selector': 'ro1-footer'},{'name': 'ForgotPasswordComponent', 'selector': 'ro1-forgot-password'},{'name': 'HeaderComponent', 'selector': 'ro1-header'},{'name': 'HomeComponent', 'selector': 'ro1-home'},{'name': 'ItemAddedComponent', 'selector': 'ro1-item-added'},{'name': 'ItemViewComponent', 'selector': 'ro1-item-view'},{'name': 'LoginComponent', 'selector': 'ro1-login'},{'name': 'MainWindowComponent', 'selector': 'rol-main-window'},{'name': 'MapComponent', 'selector': 'ro1-map'},{'name': 'MapModalComponent', 'selector': 'ro1-map-modal'},{'name': 'ModalComponent', 'selector': 'ro1-modal'},{'name': 'NotificationComponent', 'selector': 'ro1-notification'},{'name': 'PlayerComponent', 'selector': 'ro1-player'},{'name': 'PlayerModalComponent', 'selector': 'ro1-player-modal'},{'name': 'ProfileComponent', 'selector': 'ro1-profile'},{'name': 'ProfileEditionComponent', 'selector': 'ro1-profile-edition'},{'name': 'QuestComponent', 'selector': 'ro1-quest'},{'name': 'QuestModalComponent', 'selector': 'ro1-quest-modal'},{'name': 'RegisterComponent', 'selector': 'ro1-register'},{'name': 'SelectionComponent', 'selector': 'ro1-selection'},{'name': 'ThemeModalComponent', 'selector': 'ro1-theme-modal'},{'name': 'ToolbarComponent', 'selector': 'ro1-tools'},{'name': 'UsersComponent', 'selector': 'ro1-users'}];
+        var COMPONENT_TEMPLATE = '<div><div class="tabs is-medium" id="tabs">  <ul>    <li class="is-active" data-tab="1">      <a>My Games</a>    </li>    <li data-tab="2">      <a>Find</a>    </li>  </ul></div><div id="tab-content">  <div data-content="1" class="is-active">    <p class="control has-icons-left">      <input class="input is-medium" type="text" placeholder="Filter your campains">      <span class="icon is-large is-left">        <i class="fas fa-search" aria-hidden="true"></i>      </span>    </p>    <nav class="games">      <rpg-campain></rpg-campain>      <rpg-campain></rpg-campain>    </nav>  </div>  <div data-content="2">    <input class="input" placeholder="Join public campains by the name or id">  </div></div></div>'
+    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'CampaignComponent', 'selector': 'rpg-campaign'},{'name': 'CampainComponent', 'selector': 'rpg-campain'},{'name': 'CampainsComponent', 'selector': 'rpg-campains'},{'name': 'ChatComponent', 'selector': 'rpg-chat'},{'name': 'ConquestComponent', 'selector': 'rpg-conquest'},{'name': 'ConquestsComponent', 'selector': 'rpg-conquests'},{'name': 'CustomClassModalComponent', 'selector': 'rpg-custom-class-modal'},{'name': 'FooterComponent', 'selector': 'rpg-footer'},{'name': 'ForgotPasswordComponent', 'selector': 'rpg-forgot-password'},{'name': 'HeaderComponent', 'selector': 'rpg-header'},{'name': 'HomeComponent', 'selector': 'rpg-home'},{'name': 'ItemAddedComponent', 'selector': 'rpg-item-added'},{'name': 'ItemViewComponent', 'selector': 'rpg-item-view'},{'name': 'LoginComponent', 'selector': 'rpg-login'},{'name': 'MainWindowComponent', 'selector': 'rol-main-window'},{'name': 'MapComponent', 'selector': 'rpg-map'},{'name': 'MapModalComponent', 'selector': 'rpg-map-modal'},{'name': 'ModalComponent', 'selector': 'rpg-modal'},{'name': 'NotificationComponent', 'selector': 'rpg-notification'},{'name': 'PlayerComponent', 'selector': 'rpg-player'},{'name': 'PlayerModalComponent', 'selector': 'rpg-player-modal'},{'name': 'ProfileComponent', 'selector': 'rpg-profile'},{'name': 'ProfileEditionComponent', 'selector': 'rpg-profile-edition'},{'name': 'QuestComponent', 'selector': 'rpg-quest'},{'name': 'QuestModalComponent', 'selector': 'rpg-quest-modal'},{'name': 'RegisterComponent', 'selector': 'rpg-register'},{'name': 'SelectionComponent', 'selector': 'rpg-selection'},{'name': 'ThemeModalComponent', 'selector': 'rpg-theme-modal'},{'name': 'ToolbarComponent', 'selector': 'rpg-tools'},{'name': 'UsersComponent', 'selector': 'rpg-users'}];
     var DIRECTIVES = [{'name': 'ClickOutDirective', 'selector': '[clickedOut]'}];
     var ACTUAL_COMPONENT = {'name': 'SelectionComponent'};
 </script>

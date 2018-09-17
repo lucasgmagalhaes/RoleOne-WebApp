@@ -2,7 +2,7 @@ import { Component, OnInit, Input } from "@angular/core";
 import { Quest } from "../../interfaces/quest.interface";
 
 @Component({
-  selector: "ro1-quest",
+  selector: "rpg-quest",
   templateUrl: "./quest.component.html",
   styleUrls: ["./quest.component.scss"]
 })

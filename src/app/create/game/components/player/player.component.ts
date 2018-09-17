@@ -1,7 +1,7 @@
 import { Component, OnInit, Input } from "@angular/core";
 
 @Component({
-  selector: "ro1-player",
+  selector: "rpg-player",
   templateUrl: "./player.component.html",
   styleUrls: ["./player.component.scss"]
 })

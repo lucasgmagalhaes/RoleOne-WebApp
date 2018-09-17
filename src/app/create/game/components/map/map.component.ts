@@ -3,7 +3,7 @@ import { Modals } from "../../enums/modals.enum";
 import { ModalService } from "../../../../core/components/modal/service/modal.service";
 
 @Component({
-  selector: "ro1-map",
+  selector: "rpg-map",
   templateUrl: "./map.component.html",
   styleUrls: ["./map.component.scss"]
 })

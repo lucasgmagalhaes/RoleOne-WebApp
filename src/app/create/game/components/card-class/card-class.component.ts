@@ -2,7 +2,7 @@ import { Component, OnInit, Input, Output } from "@angular/core";
 import { ClassGame } from "../custom-class-modal/modals/class-modal.interface";
 
 @Component({
-  selector: "ro1-card-class",
+  selector: "rpg-card-class",
   templateUrl: "./card-class.component.html",
   styleUrls: ["./card-class.component.scss"]
 })

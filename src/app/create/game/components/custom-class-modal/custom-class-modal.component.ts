@@ -3,7 +3,7 @@ import { Modals } from "../../enums/modals.enum";
 import { ClassGame } from "./modals/class-modal.interface";
 import { CLASSES } from "./modals/mock-class";
 @Component({
-  selector: "ro1-custom-class-modal",
+  selector: "rpg-custom-class-modal",
   templateUrl: "./custom-class-modal.component.html",
   styleUrls: ["./custom-class-modal.component.scss"]
 })

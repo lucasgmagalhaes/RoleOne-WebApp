@@ -91,7 +91,7 @@
 
             <tr>
                 <td class="col-md-3">selector</td>
-                <td class="col-md-9"><code>ro1-quest-modal</code></td>
+                <td class="col-md-9"><code>rpg-quest-modal</code></td>
             </tr>
 
             <tr>
@@ -467,7 +467,7 @@ import { Modals } from &quot;../../enums/modals.enum&quot;;
 import { ModalService } from &quot;../../../../shared/components/modal/modal.service&quot;;
 
 @Component({
-  selector: &quot;ro1-quest-modal&quot;,
+  selector: &quot;rpg-quest-modal&quot;,
   templateUrl: &quot;./quest-modal.component.html&quot;,
   styleUrls: [&quot;./quest-modal.component.scss&quot;]
 })
@@ -490,7 +490,7 @@ export class QuestModalComponent implements OnInit {
     </div>
 
     <div class="tab-pane fade " id="c-templateData">
-        <pre class="line-numbers"><code class="language-html">&lt;ro1-modal width&#x3D;&quot;824px&quot; id&#x3D;&quot;{{id}}&quot; name&#x3D;&quot;New Quest&quot;&gt;
+        <pre class="line-numbers"><code class="language-html">&lt;rpg-modal width&#x3D;&quot;824px&quot; id&#x3D;&quot;{{id}}&quot; name&#x3D;&quot;New Quest&quot;&gt;
 
   &lt;div class&#x3D;&quot;field&quot;&gt;
     &lt;label class&#x3D;&quot;label&quot;&gt;Name&lt;/label&gt;
@@ -558,33 +558,33 @@ export class QuestModalComponent implements OnInit {
 
         &lt;div class&#x3D;&quot;flex&quot;&gt;
           &lt;div class&#x3D;&quot;itens-container&quot;&gt;
-            &lt;ro1-item-view&gt;&lt;/ro1-item-view&gt;
-            &lt;ro1-item-view&gt;&lt;/ro1-item-view&gt;
-            &lt;ro1-item-view&gt;&lt;/ro1-item-view&gt;
-            &lt;ro1-item-view&gt;&lt;/ro1-item-view&gt;
-            &lt;ro1-item-view&gt;&lt;/ro1-item-view&gt;
-            &lt;ro1-item-view&gt;&lt;/ro1-item-view&gt;
-            &lt;ro1-item-view&gt;&lt;/ro1-item-view&gt;
-            &lt;ro1-item-view&gt;&lt;/ro1-item-view&gt;
-            &lt;ro1-item-view&gt;&lt;/ro1-item-view&gt;
-            &lt;ro1-item-view&gt;&lt;/ro1-item-view&gt;
-            &lt;ro1-item-view&gt;&lt;/ro1-item-view&gt;
-            &lt;ro1-item-view&gt;&lt;/ro1-item-view&gt;
-            &lt;ro1-item-view&gt;&lt;/ro1-item-view&gt;
-            &lt;ro1-item-view&gt;&lt;/ro1-item-view&gt;
-            &lt;ro1-item-view&gt;&lt;/ro1-item-view&gt;
+            &lt;rpg-item-view&gt;&lt;/rpg-item-view&gt;
+            &lt;rpg-item-view&gt;&lt;/rpg-item-view&gt;
+            &lt;rpg-item-view&gt;&lt;/rpg-item-view&gt;
+            &lt;rpg-item-view&gt;&lt;/rpg-item-view&gt;
+            &lt;rpg-item-view&gt;&lt;/rpg-item-view&gt;
+            &lt;rpg-item-view&gt;&lt;/rpg-item-view&gt;
+            &lt;rpg-item-view&gt;&lt;/rpg-item-view&gt;
+            &lt;rpg-item-view&gt;&lt;/rpg-item-view&gt;
+            &lt;rpg-item-view&gt;&lt;/rpg-item-view&gt;
+            &lt;rpg-item-view&gt;&lt;/rpg-item-view&gt;
+            &lt;rpg-item-view&gt;&lt;/rpg-item-view&gt;
+            &lt;rpg-item-view&gt;&lt;/rpg-item-view&gt;
+            &lt;rpg-item-view&gt;&lt;/rpg-item-view&gt;
+            &lt;rpg-item-view&gt;&lt;/rpg-item-view&gt;
+            &lt;rpg-item-view&gt;&lt;/rpg-item-view&gt;
           &lt;/div&gt;
 
           &lt;div class&#x3D;&quot;item-add-container box&quot;&gt;
-            &lt;ro1-item-added&gt;&lt;/ro1-item-added&gt;
-            &lt;ro1-item-added&gt;&lt;/ro1-item-added&gt;
-            &lt;ro1-item-added&gt;&lt;/ro1-item-added&gt;
-            &lt;ro1-item-added&gt;&lt;/ro1-item-added&gt;
-            &lt;ro1-item-added&gt;&lt;/ro1-item-added&gt;
-            &lt;ro1-item-added&gt;&lt;/ro1-item-added&gt;
-            &lt;ro1-item-added&gt;&lt;/ro1-item-added&gt;
-            &lt;ro1-item-added&gt;&lt;/ro1-item-added&gt;
-            &lt;ro1-item-added&gt;&lt;/ro1-item-added&gt;
+            &lt;rpg-item-added&gt;&lt;/rpg-item-added&gt;
+            &lt;rpg-item-added&gt;&lt;/rpg-item-added&gt;
+            &lt;rpg-item-added&gt;&lt;/rpg-item-added&gt;
+            &lt;rpg-item-added&gt;&lt;/rpg-item-added&gt;
+            &lt;rpg-item-added&gt;&lt;/rpg-item-added&gt;
+            &lt;rpg-item-added&gt;&lt;/rpg-item-added&gt;
+            &lt;rpg-item-added&gt;&lt;/rpg-item-added&gt;
+            &lt;rpg-item-added&gt;&lt;/rpg-item-added&gt;
+            &lt;rpg-item-added&gt;&lt;/rpg-item-added&gt;
           &lt;/div&gt;
 
         &lt;/div&gt;
@@ -593,7 +593,7 @@ export class QuestModalComponent implements OnInit {
 
     &lt;/div&gt;
   &lt;/div&gt;
-&lt;/ro1-modal&gt;
+&lt;/rpg-modal&gt;
 </code></pre>
     </div>
 
@@ -622,8 +622,8 @@ export class QuestModalComponent implements OnInit {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><ro1-modal width="824px" id="{{id}}" name="New Quest">  <div class="field">    <label class="label">Name</label>    <input type="text" class="input">  </div>  <div class="field">    <label class="label">Goal</label>    <div class="control">      <textarea class="textarea is-medium" type="text" rows="4"></textarea>    </div>  </div>  <div class="field">    <label class="label">Rewards</label>    <div class="field">      <div class="box w-p-100 flex">        <div class="control m-r-70">          <label class="label">Money</label>          <img src="{{gold_coin_path}}" alt="gold coin">          <input type="text" maxlength="3" class="input coin has-text-right" value="0">          <img src="{{silver_coin_path}}" alt="silver coin">          <input type="text" maxlength="3" class="input coin has-text-right" value="0">          <img src="{{bronze_coin_path}}" alt=" bronze coin">          <input type="text" maxlength="3" class="input coin has-text-right" value="0">        </div>        <div class="control">          <label class="label">Experience</label>          <input type="text" class="input has-text-right" value="0">        </div>      </div>    </div>    <div>      <div class="box">        <div class="control m-b-10 w-500">          <div class="select">            <select>              <option>All</option>              <option>Weapon</option>              <option>Shield</option>              <option>Hat</option>              <option>Cap</option>              <option>Pants</option>              <option>Ring</option>              <option>Gloves</option>              <option>Potion</option>              <option>Munition</option>            </select>          </div>          <input class="input m-l-15 w-300" type="text" placeholder="Filter item by name">        </div>        <div class="flex">          <div class="itens-container">            <ro1-item-view></ro1-item-view>            <ro1-item-view></ro1-item-view>            <ro1-item-view></ro1-item-view>            <ro1-item-view></ro1-item-view>            <ro1-item-view></ro1-item-view>            <ro1-item-view></ro1-item-view>            <ro1-item-view></ro1-item-view>            <ro1-item-view></ro1-item-view>            <ro1-item-view></ro1-item-view>            <ro1-item-view></ro1-item-view>            <ro1-item-view></ro1-item-view>            <ro1-item-view></ro1-item-view>            <ro1-item-view></ro1-item-view>            <ro1-item-view></ro1-item-view>            <ro1-item-view></ro1-item-view>          </div>          <div class="item-add-container box">            <ro1-item-added></ro1-item-added>            <ro1-item-added></ro1-item-added>            <ro1-item-added></ro1-item-added>            <ro1-item-added></ro1-item-added>            <ro1-item-added></ro1-item-added>            <ro1-item-added></ro1-item-added>            <ro1-item-added></ro1-item-added>            <ro1-item-added></ro1-item-added>            <ro1-item-added></ro1-item-added>          </div>        </div>      </div>    </div>  </div></ro1-modal></div>'
-    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'CampaignComponent', 'selector': 'ro1-campaign'},{'name': 'CampainComponent', 'selector': 'ro1-campain'},{'name': 'CampainsComponent', 'selector': 'ro1-campains'},{'name': 'ChatComponent', 'selector': 'ro1-chat'},{'name': 'ConquestComponent', 'selector': 'ro1-conquest'},{'name': 'ConquestsComponent', 'selector': 'ro1-conquests'},{'name': 'CustomClassModalComponent', 'selector': 'ro1-custom-class-modal'},{'name': 'FooterComponent', 'selector': 'ro1-footer'},{'name': 'ForgotPasswordComponent', 'selector': 'ro1-forgot-password'},{'name': 'HeaderComponent', 'selector': 'ro1-header'},{'name': 'HomeComponent', 'selector': 'ro1-home'},{'name': 'ItemAddedComponent', 'selector': 'ro1-item-added'},{'name': 'ItemViewComponent', 'selector': 'ro1-item-view'},{'name': 'LoginComponent', 'selector': 'ro1-login'},{'name': 'MainWindowComponent', 'selector': 'rol-main-window'},{'name': 'MapComponent', 'selector': 'ro1-map'},{'name': 'MapModalComponent', 'selector': 'ro1-map-modal'},{'name': 'ModalComponent', 'selector': 'ro1-modal'},{'name': 'NotificationComponent', 'selector': 'ro1-notification'},{'name': 'PlayerComponent', 'selector': 'ro1-player'},{'name': 'PlayerModalComponent', 'selector': 'ro1-player-modal'},{'name': 'ProfileComponent', 'selector': 'ro1-profile'},{'name': 'ProfileEditionComponent', 'selector': 'ro1-profile-edition'},{'name': 'QuestComponent', 'selector': 'ro1-quest'},{'name': 'QuestModalComponent', 'selector': 'ro1-quest-modal'},{'name': 'RegisterComponent', 'selector': 'ro1-register'},{'name': 'SelectionComponent', 'selector': 'ro1-selection'},{'name': 'ThemeModalComponent', 'selector': 'ro1-theme-modal'},{'name': 'ToolbarComponent', 'selector': 'ro1-tools'},{'name': 'UsersComponent', 'selector': 'ro1-users'}];
+        var COMPONENT_TEMPLATE = '<div><rpg-modal width="824px" id="{{id}}" name="New Quest">  <div class="field">    <label class="label">Name</label>    <input type="text" class="input">  </div>  <div class="field">    <label class="label">Goal</label>    <div class="control">      <textarea class="textarea is-medium" type="text" rows="4"></textarea>    </div>  </div>  <div class="field">    <label class="label">Rewards</label>    <div class="field">      <div class="box w-p-100 flex">        <div class="control m-r-70">          <label class="label">Money</label>          <img src="{{gold_coin_path}}" alt="gold coin">          <input type="text" maxlength="3" class="input coin has-text-right" value="0">          <img src="{{silver_coin_path}}" alt="silver coin">          <input type="text" maxlength="3" class="input coin has-text-right" value="0">          <img src="{{bronze_coin_path}}" alt=" bronze coin">          <input type="text" maxlength="3" class="input coin has-text-right" value="0">        </div>        <div class="control">          <label class="label">Experience</label>          <input type="text" class="input has-text-right" value="0">        </div>      </div>    </div>    <div>      <div class="box">        <div class="control m-b-10 w-500">          <div class="select">            <select>              <option>All</option>              <option>Weapon</option>              <option>Shield</option>              <option>Hat</option>              <option>Cap</option>              <option>Pants</option>              <option>Ring</option>              <option>Gloves</option>              <option>Potion</option>              <option>Munition</option>            </select>          </div>          <input class="input m-l-15 w-300" type="text" placeholder="Filter item by name">        </div>        <div class="flex">          <div class="itens-container">            <rpg-item-view></rpg-item-view>            <rpg-item-view></rpg-item-view>            <rpg-item-view></rpg-item-view>            <rpg-item-view></rpg-item-view>            <rpg-item-view></rpg-item-view>            <rpg-item-view></rpg-item-view>            <rpg-item-view></rpg-item-view>            <rpg-item-view></rpg-item-view>            <rpg-item-view></rpg-item-view>            <rpg-item-view></rpg-item-view>            <rpg-item-view></rpg-item-view>            <rpg-item-view></rpg-item-view>            <rpg-item-view></rpg-item-view>            <rpg-item-view></rpg-item-view>            <rpg-item-view></rpg-item-view>          </div>          <div class="item-add-container box">            <rpg-item-added></rpg-item-added>            <rpg-item-added></rpg-item-added>            <rpg-item-added></rpg-item-added>            <rpg-item-added></rpg-item-added>            <rpg-item-added></rpg-item-added>            <rpg-item-added></rpg-item-added>            <rpg-item-added></rpg-item-added>            <rpg-item-added></rpg-item-added>            <rpg-item-added></rpg-item-added>          </div>        </div>      </div>    </div>  </div></rpg-modal></div>'
+    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'CampaignComponent', 'selector': 'rpg-campaign'},{'name': 'CampainComponent', 'selector': 'rpg-campain'},{'name': 'CampainsComponent', 'selector': 'rpg-campains'},{'name': 'ChatComponent', 'selector': 'rpg-chat'},{'name': 'ConquestComponent', 'selector': 'rpg-conquest'},{'name': 'ConquestsComponent', 'selector': 'rpg-conquests'},{'name': 'CustomClassModalComponent', 'selector': 'rpg-custom-class-modal'},{'name': 'FooterComponent', 'selector': 'rpg-footer'},{'name': 'ForgotPasswordComponent', 'selector': 'rpg-forgot-password'},{'name': 'HeaderComponent', 'selector': 'rpg-header'},{'name': 'HomeComponent', 'selector': 'rpg-home'},{'name': 'ItemAddedComponent', 'selector': 'rpg-item-added'},{'name': 'ItemViewComponent', 'selector': 'rpg-item-view'},{'name': 'LoginComponent', 'selector': 'rpg-login'},{'name': 'MainWindowComponent', 'selector': 'rol-main-window'},{'name': 'MapComponent', 'selector': 'rpg-map'},{'name': 'MapModalComponent', 'selector': 'rpg-map-modal'},{'name': 'ModalComponent', 'selector': 'rpg-modal'},{'name': 'NotificationComponent', 'selector': 'rpg-notification'},{'name': 'PlayerComponent', 'selector': 'rpg-player'},{'name': 'PlayerModalComponent', 'selector': 'rpg-player-modal'},{'name': 'ProfileComponent', 'selector': 'rpg-profile'},{'name': 'ProfileEditionComponent', 'selector': 'rpg-profile-edition'},{'name': 'QuestComponent', 'selector': 'rpg-quest'},{'name': 'QuestModalComponent', 'selector': 'rpg-quest-modal'},{'name': 'RegisterComponent', 'selector': 'rpg-register'},{'name': 'SelectionComponent', 'selector': 'rpg-selection'},{'name': 'ThemeModalComponent', 'selector': 'rpg-theme-modal'},{'name': 'ToolbarComponent', 'selector': 'rpg-tools'},{'name': 'UsersComponent', 'selector': 'rpg-users'}];
     var DIRECTIVES = [{'name': 'ClickOutDirective', 'selector': '[clickedOut]'}];
     var ACTUAL_COMPONENT = {'name': 'QuestModalComponent'};
 </script>

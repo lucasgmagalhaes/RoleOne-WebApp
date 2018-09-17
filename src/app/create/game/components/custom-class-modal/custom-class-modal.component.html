@@ -1,9 +1,9 @@
-<ro1-modal id="{{id}}" width="90%" name="Custom Class" isActive="true" saveValue="Save">
+<rpg-modal id="{{id}}" width="90%" name="Custom Class" isActive="true" saveValue="Save">
 
   <div class="columns">
 
     <div class="column is-8 overflow">
-      <ro1-card-class (click)="setSelected(clazz)" *ngFor="let clazz of classes" [clazz]="clazz"></ro1-card-class>
+      <rpg-card-class (click)="setSelected(clazz)" *ngFor="let clazz of classes" [clazz]="clazz"></rpg-card-class>
     </div>
 
     <div class="column is-4 overflow">
@@ -37,4 +37,4 @@
 
   </div>
 
-</ro1-modal>
+</rpg-modal>

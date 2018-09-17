@@ -3,7 +3,7 @@ import { Modals } from "../../enums/modals.enum";
 import { ModalService } from "../../../../core/components/modal/service/modal.service";
 
 @Component({
-  selector: "ro1-player-modal",
+  selector: "rpg-player-modal",
   templateUrl: "./player-modal.component.html",
   styleUrls: ["./player-modal.component.scss"]
 })

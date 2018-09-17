@@ -91,7 +91,7 @@
 
             <tr>
                 <td class="col-md-3">selector</td>
-                <td class="col-md-9"><code>ro1-player-modal</code></td>
+                <td class="col-md-9"><code>rpg-player-modal</code></td>
             </tr>
 
             <tr>
@@ -378,7 +378,7 @@ import { Modals } from &quot;../../enums/modals.enum&quot;;
 import { ModalService } from &quot;../../../../shared/components/modal/modal.service&quot;;
 
 @Component({
-  selector: &quot;ro1-player-modal&quot;,
+  selector: &quot;rpg-player-modal&quot;,
   templateUrl: &quot;./player-modal.component.html&quot;,
   styleUrls: [&quot;./player-modal.component.scss&quot;]
 })
@@ -397,7 +397,7 @@ export class PlayerModalComponent implements OnInit {
     </div>
 
     <div class="tab-pane fade " id="c-templateData">
-        <pre class="line-numbers"><code class="language-html">&lt;ro1-modal [id]&#x3D;&quot;id&quot; height&#x3D;&quot;579px&quot; width&#x3D;&quot;300px&quot; name&#x3D;&quot;Add Players&quot;&gt;
+        <pre class="line-numbers"><code class="language-html">&lt;rpg-modal [id]&#x3D;&quot;id&quot; height&#x3D;&quot;579px&quot; width&#x3D;&quot;300px&quot; name&#x3D;&quot;Add Players&quot;&gt;
 
   &lt;div class&#x3D;&quot;control m-b-20&quot;&gt;
     &lt;p class&#x3D;&quot;control has-icons-left&quot;&gt;
@@ -409,24 +409,24 @@ export class PlayerModalComponent implements OnInit {
   &lt;/div&gt;
 
   &lt;div class&#x3D;&quot;control max-height&quot;&gt;
-    &lt;ro1-player [isForAdd]&#x3D;&quot;true&quot;&gt;&lt;/ro1-player&gt;
-    &lt;ro1-player [isForAdd]&#x3D;&quot;true&quot;&gt;&lt;/ro1-player&gt;
-    &lt;ro1-player [isForAdd]&#x3D;&quot;true&quot;&gt;&lt;/ro1-player&gt;
-    &lt;ro1-player [isForAdd]&#x3D;&quot;true&quot;&gt;&lt;/ro1-player&gt;
-    &lt;ro1-player [isForAdd]&#x3D;&quot;true&quot;&gt;&lt;/ro1-player&gt;
-    &lt;ro1-player [isForAdd]&#x3D;&quot;true&quot;&gt;&lt;/ro1-player&gt;
-    &lt;ro1-player [isForAdd]&#x3D;&quot;true&quot;&gt;&lt;/ro1-player&gt;
-    &lt;ro1-player [isForAdd]&#x3D;&quot;true&quot;&gt;&lt;/ro1-player&gt;
-    &lt;ro1-player [isForAdd]&#x3D;&quot;true&quot;&gt;&lt;/ro1-player&gt;
-    &lt;ro1-player [isForAdd]&#x3D;&quot;true&quot;&gt;&lt;/ro1-player&gt;
-    &lt;ro1-player [isForAdd]&#x3D;&quot;true&quot;&gt;&lt;/ro1-player&gt;
-    &lt;ro1-player [isForAdd]&#x3D;&quot;true&quot;&gt;&lt;/ro1-player&gt;
-    &lt;ro1-player [isForAdd]&#x3D;&quot;true&quot;&gt;&lt;/ro1-player&gt;
-    &lt;ro1-player [isForAdd]&#x3D;&quot;true&quot;&gt;&lt;/ro1-player&gt;
-    &lt;ro1-player [isForAdd]&#x3D;&quot;true&quot;&gt;&lt;/ro1-player&gt;
-    &lt;ro1-player [isForAdd]&#x3D;&quot;true&quot;&gt;&lt;/ro1-player&gt;
+    &lt;rpg-player [isForAdd]&#x3D;&quot;true&quot;&gt;&lt;/rpg-player&gt;
+    &lt;rpg-player [isForAdd]&#x3D;&quot;true&quot;&gt;&lt;/rpg-player&gt;
+    &lt;rpg-player [isForAdd]&#x3D;&quot;true&quot;&gt;&lt;/rpg-player&gt;
+    &lt;rpg-player [isForAdd]&#x3D;&quot;true&quot;&gt;&lt;/rpg-player&gt;
+    &lt;rpg-player [isForAdd]&#x3D;&quot;true&quot;&gt;&lt;/rpg-player&gt;
+    &lt;rpg-player [isForAdd]&#x3D;&quot;true&quot;&gt;&lt;/rpg-player&gt;
+    &lt;rpg-player [isForAdd]&#x3D;&quot;true&quot;&gt;&lt;/rpg-player&gt;
+    &lt;rpg-player [isForAdd]&#x3D;&quot;true&quot;&gt;&lt;/rpg-player&gt;
+    &lt;rpg-player [isForAdd]&#x3D;&quot;true&quot;&gt;&lt;/rpg-player&gt;
+    &lt;rpg-player [isForAdd]&#x3D;&quot;true&quot;&gt;&lt;/rpg-player&gt;
+    &lt;rpg-player [isForAdd]&#x3D;&quot;true&quot;&gt;&lt;/rpg-player&gt;
+    &lt;rpg-player [isForAdd]&#x3D;&quot;true&quot;&gt;&lt;/rpg-player&gt;
+    &lt;rpg-player [isForAdd]&#x3D;&quot;true&quot;&gt;&lt;/rpg-player&gt;
+    &lt;rpg-player [isForAdd]&#x3D;&quot;true&quot;&gt;&lt;/rpg-player&gt;
+    &lt;rpg-player [isForAdd]&#x3D;&quot;true&quot;&gt;&lt;/rpg-player&gt;
+    &lt;rpg-player [isForAdd]&#x3D;&quot;true&quot;&gt;&lt;/rpg-player&gt;
   &lt;/div&gt;
-&lt;/ro1-modal&gt;
+&lt;/rpg-modal&gt;
 </code></pre>
     </div>
 
@@ -455,8 +455,8 @@ export class PlayerModalComponent implements OnInit {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><ro1-modal [id]="id" height="579px" width="300px" name="Add Players">  <div class="control m-b-20">    <p class="control has-icons-left">      <input class="input" type="text" placeholder="Filter by name">      <span class="icon is-small is-left">        <i class="fas fa-search"></i>      </span>    </p>  </div>  <div class="control max-height">    <ro1-player [isForAdd]="true"></ro1-player>    <ro1-player [isForAdd]="true"></ro1-player>    <ro1-player [isForAdd]="true"></ro1-player>    <ro1-player [isForAdd]="true"></ro1-player>    <ro1-player [isForAdd]="true"></ro1-player>    <ro1-player [isForAdd]="true"></ro1-player>    <ro1-player [isForAdd]="true"></ro1-player>    <ro1-player [isForAdd]="true"></ro1-player>    <ro1-player [isForAdd]="true"></ro1-player>    <ro1-player [isForAdd]="true"></ro1-player>    <ro1-player [isForAdd]="true"></ro1-player>    <ro1-player [isForAdd]="true"></ro1-player>    <ro1-player [isForAdd]="true"></ro1-player>    <ro1-player [isForAdd]="true"></ro1-player>    <ro1-player [isForAdd]="true"></ro1-player>    <ro1-player [isForAdd]="true"></ro1-player>  </div></ro1-modal></div>'
-    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'CampaignComponent', 'selector': 'ro1-campaign'},{'name': 'CampainComponent', 'selector': 'ro1-campain'},{'name': 'CampainsComponent', 'selector': 'ro1-campains'},{'name': 'ChatComponent', 'selector': 'ro1-chat'},{'name': 'ConquestComponent', 'selector': 'ro1-conquest'},{'name': 'ConquestsComponent', 'selector': 'ro1-conquests'},{'name': 'CustomClassModalComponent', 'selector': 'ro1-custom-class-modal'},{'name': 'FooterComponent', 'selector': 'ro1-footer'},{'name': 'ForgotPasswordComponent', 'selector': 'ro1-forgot-password'},{'name': 'HeaderComponent', 'selector': 'ro1-header'},{'name': 'HomeComponent', 'selector': 'ro1-home'},{'name': 'ItemAddedComponent', 'selector': 'ro1-item-added'},{'name': 'ItemViewComponent', 'selector': 'ro1-item-view'},{'name': 'LoginComponent', 'selector': 'ro1-login'},{'name': 'MainWindowComponent', 'selector': 'rol-main-window'},{'name': 'MapComponent', 'selector': 'ro1-map'},{'name': 'MapModalComponent', 'selector': 'ro1-map-modal'},{'name': 'ModalComponent', 'selector': 'ro1-modal'},{'name': 'NotificationComponent', 'selector': 'ro1-notification'},{'name': 'PlayerComponent', 'selector': 'ro1-player'},{'name': 'PlayerModalComponent', 'selector': 'ro1-player-modal'},{'name': 'ProfileComponent', 'selector': 'ro1-profile'},{'name': 'ProfileEditionComponent', 'selector': 'ro1-profile-edition'},{'name': 'QuestComponent', 'selector': 'ro1-quest'},{'name': 'QuestModalComponent', 'selector': 'ro1-quest-modal'},{'name': 'RegisterComponent', 'selector': 'ro1-register'},{'name': 'SelectionComponent', 'selector': 'ro1-selection'},{'name': 'ThemeModalComponent', 'selector': 'ro1-theme-modal'},{'name': 'ToolbarComponent', 'selector': 'ro1-tools'},{'name': 'UsersComponent', 'selector': 'ro1-users'}];
+        var COMPONENT_TEMPLATE = '<div><rpg-modal [id]="id" height="579px" width="300px" name="Add Players">  <div class="control m-b-20">    <p class="control has-icons-left">      <input class="input" type="text" placeholder="Filter by name">      <span class="icon is-small is-left">        <i class="fas fa-search"></i>      </span>    </p>  </div>  <div class="control max-height">    <rpg-player [isForAdd]="true"></rpg-player>    <rpg-player [isForAdd]="true"></rpg-player>    <rpg-player [isForAdd]="true"></rpg-player>    <rpg-player [isForAdd]="true"></rpg-player>    <rpg-player [isForAdd]="true"></rpg-player>    <rpg-player [isForAdd]="true"></rpg-player>    <rpg-player [isForAdd]="true"></rpg-player>    <rpg-player [isForAdd]="true"></rpg-player>    <rpg-player [isForAdd]="true"></rpg-player>    <rpg-player [isForAdd]="true"></rpg-player>    <rpg-player [isForAdd]="true"></rpg-player>    <rpg-player [isForAdd]="true"></rpg-player>    <rpg-player [isForAdd]="true"></rpg-player>    <rpg-player [isForAdd]="true"></rpg-player>    <rpg-player [isForAdd]="true"></rpg-player>    <rpg-player [isForAdd]="true"></rpg-player>  </div></rpg-modal></div>'
+    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'CampaignComponent', 'selector': 'rpg-campaign'},{'name': 'CampainComponent', 'selector': 'rpg-campain'},{'name': 'CampainsComponent', 'selector': 'rpg-campains'},{'name': 'ChatComponent', 'selector': 'rpg-chat'},{'name': 'ConquestComponent', 'selector': 'rpg-conquest'},{'name': 'ConquestsComponent', 'selector': 'rpg-conquests'},{'name': 'CustomClassModalComponent', 'selector': 'rpg-custom-class-modal'},{'name': 'FooterComponent', 'selector': 'rpg-footer'},{'name': 'ForgotPasswordComponent', 'selector': 'rpg-forgot-password'},{'name': 'HeaderComponent', 'selector': 'rpg-header'},{'name': 'HomeComponent', 'selector': 'rpg-home'},{'name': 'ItemAddedComponent', 'selector': 'rpg-item-added'},{'name': 'ItemViewComponent', 'selector': 'rpg-item-view'},{'name': 'LoginComponent', 'selector': 'rpg-login'},{'name': 'MainWindowComponent', 'selector': 'rol-main-window'},{'name': 'MapComponent', 'selector': 'rpg-map'},{'name': 'MapModalComponent', 'selector': 'rpg-map-modal'},{'name': 'ModalComponent', 'selector': 'rpg-modal'},{'name': 'NotificationComponent', 'selector': 'rpg-notification'},{'name': 'PlayerComponent', 'selector': 'rpg-player'},{'name': 'PlayerModalComponent', 'selector': 'rpg-player-modal'},{'name': 'ProfileComponent', 'selector': 'rpg-profile'},{'name': 'ProfileEditionComponent', 'selector': 'rpg-profile-edition'},{'name': 'QuestComponent', 'selector': 'rpg-quest'},{'name': 'QuestModalComponent', 'selector': 'rpg-quest-modal'},{'name': 'RegisterComponent', 'selector': 'rpg-register'},{'name': 'SelectionComponent', 'selector': 'rpg-selection'},{'name': 'ThemeModalComponent', 'selector': 'rpg-theme-modal'},{'name': 'ToolbarComponent', 'selector': 'rpg-tools'},{'name': 'UsersComponent', 'selector': 'rpg-users'}];
     var DIRECTIVES = [{'name': 'ClickOutDirective', 'selector': '[clickedOut]'}];
     var ACTUAL_COMPONENT = {'name': 'PlayerModalComponent'};
 </script>

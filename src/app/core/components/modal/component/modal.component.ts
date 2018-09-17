@@ -9,7 +9,7 @@ import { Position } from "../../../../core/enums/position.enum";
  * @since 1.0.0
  */
 @Component({
-  selector: "ro1-modal",
+  selector: "rpg-modal",
   templateUrl: "./modal.component.html",
   styleUrls: ["./modal.component.scss"]
 })

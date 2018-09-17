@@ -1,7 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import * as $ from "jquery";
 @Component({
-  selector: "ro1-selection",
+  selector: "rpg-selection",
   templateUrl: "./selection.component.html",
   styleUrls: ["./selection.component.scss"]
 })
