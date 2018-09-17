@@ -12,8 +12,8 @@ import { PipesModule } from "../../pipes/pipes.module";
 import { ItemViewComponent } from "./components/item-view/item-view.component";
 import { ItemAddedComponent } from "./components/item-added/item-added.component";
 import { CustomClassModalComponent } from "./components/custom-class-modal/custom-class-modal.component";
-import { ModalModule } from "../../shared/components/modal/modal.module";
-import { CardClassComponent } from './components/card-class/card-class.component';
+import { CardClassComponent } from "./components/card-class/card-class.component";
+import { ModalModule } from "../../core/components/modal/modal.module";
 
 @NgModule({
   imports: [CommonModule, PipesModule, ModalModule],

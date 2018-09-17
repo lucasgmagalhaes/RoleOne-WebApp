@@ -1,5 +1,5 @@
 import { Modals } from "../../enums/modals.enum";
-import { ModalService } from "../../../../shared/components/modal/service/modal.service";
+import { ModalService } from "../../../../core/components/modal/service/modal.service";
 import { OnInit, Component } from "@angular/core";
 
 @Component({

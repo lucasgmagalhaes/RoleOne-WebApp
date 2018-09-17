@@ -22,7 +22,7 @@ import { Observable } from "rxjs";
  ***snapshotChanges()**: *Observable<FirebaseStorage.UploadTaskSnapshot>* -> Emits the raw UploadTaskSnapshot as the file upload progresses.
  ***percentageChanges()**: *Observable<number>* -> Emits the upload completion percentage.
  ***getDownloadURL()**: *Observable<any>* -> Emits the download url when available
- *
+ * @since 1.0.0
  */
 @Injectable({
   providedIn: "root"
