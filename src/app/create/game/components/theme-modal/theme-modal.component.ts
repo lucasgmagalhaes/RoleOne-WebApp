@@ -1,7 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import { Theme } from "../../interfaces/theme.interface";
 import { Modals } from "../../enums/modals.enum";
-import { ModalService } from "../../../../shared/components/modal/service/modal.service";
+import { ModalService } from "../../../../core/components/modal/service/modal.service";
 
 @Component({
   selector: "ro1-theme-modal",

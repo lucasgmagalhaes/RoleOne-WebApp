@@ -15,11 +15,12 @@ import { DetailModule } from "./detail/detail.module";
 import { PlayModule } from "./play/play.module";
 import { CreateGameModule } from "./create/game/create-game.module";
 import { InGameModule } from "./in-game/in-game.module";
-
+import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 @NgModule({
   declarations: [AppComponent],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     CoreModule,
     AuthModule,
     AppRoutesModule,

@@ -1,11 +1,12 @@
 import { Injectable } from "@angular/core";
 import { BehaviorSubject, Observable } from "rxjs";
-import { NotificationType } from "../enums/core.enums";
-import { NotificationStructure } from '../interfaces/core.interfaces';
+import { NotificationStructure } from "../../../interfaces/notification-structure.interface";
+import { NotificationType } from "../../../enums/notification-type.enum";
 
 /**
- * Responsable to send the messages to notification component
+ * @description Responsable to send the messages to notification component
  * @link https://gitlab.com/roleone/webapp/wikis/core/notifications
+ * @since 1.0.0
  */
 @Injectable({
   providedIn: "root"

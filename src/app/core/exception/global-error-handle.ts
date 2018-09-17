@@ -1,8 +1,9 @@
 import { ErrorHandler, Injectable } from "@angular/core";
-import { NotificationService } from "../notification/notification.service";
-import { NotificationType } from "../enums/core.enums";
+import { NotificationType } from "../enums/notification-type.enum";
+import { NotificationService } from "../components/notification/service/notification.service";
 /**
- * Responsable for the last treatment of erros invocation of the application.
+ * @since 1.0.0
+ * @description Responsable for the last treatment of erros invocation of the application.
  * Display the error component into the screen and or on console.
  * Component display can be disabled.
  */

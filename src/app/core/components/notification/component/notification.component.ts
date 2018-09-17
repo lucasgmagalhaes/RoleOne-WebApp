@@ -6,11 +6,12 @@ import {
   animate,
   transition
 } from "@angular/animations";
-import { NotificationService } from "./notification.service";
-import { NotificationStructure } from "../interfaces/core.interfaces";
+import { NotificationService } from "../service/notification.service";
+import { NotificationStructure } from "../../../interfaces/notification-structure.interface";
 /**
  * @constructor NotificationService
  * @description Responsable to display a message setted in NotificationService in the screen for the final user. Use AngularAnimations in notifications
+ * @since 1.0.0
  */
 @Component({
   selector: "ro1-notification",

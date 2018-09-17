@@ -10,6 +10,7 @@ import { User } from "../../../auth/models/user.model";
  * @link https://github.com/angular/angularfire2/blob/master/docs/auth/getting-started.md
  * @constructor AngularFire2 version: v5.0.0-rc.11
  * @description Encapsulation of AngularFireAuth to manage user authentications.
+ * @since 1.0.0
  * **Obs: This methods do not alter the primary methods of angularfire authentication.**
  */
 @Injectable({

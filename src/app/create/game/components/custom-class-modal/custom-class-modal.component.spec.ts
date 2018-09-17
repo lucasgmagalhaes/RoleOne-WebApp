@@ -1,9 +1,9 @@
 import { async, ComponentFixture, TestBed } from "@angular/core/testing";
 
 import { CustomClassModalComponent } from "./custom-class-modal.component";
-import { ModalModule } from "../../../../shared/components/modal/modal.module";
 import { CardClassComponent } from "../card-class/card-class.component";
 import { PipesModule } from "../../../../pipes/pipes.module";
+import { ModalModule } from "../../../../core/components/modal/modal.module";
 
 describe("CustomClassModalComponent", () => {
   let component: CustomClassModalComponent;

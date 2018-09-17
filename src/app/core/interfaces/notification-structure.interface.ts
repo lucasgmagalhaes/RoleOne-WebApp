@@ -1,4 +1,4 @@
-import { NotificationType } from "../enums/core.enums";
+import { NotificationType } from "../enums/notification-type.enum";
 
 /**
  * Comon used in notification component, service and GlobalErrorHandle
