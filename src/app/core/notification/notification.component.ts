@@ -13,7 +13,7 @@ import { NotificationStructure } from "../interfaces/core.interfaces";
  * @description Responsable to display a message setted in NotificationService in the screen for the final user. Use AngularAnimations in notifications
  */
 @Component({
-  selector: "ro1-notification",
+  selector: "rpg-notification",
   templateUrl: "./notification.component.html",
   styleUrls: ["./notification.component.scss"],
   animations: [

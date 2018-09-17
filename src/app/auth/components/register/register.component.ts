@@ -4,7 +4,7 @@ import { User } from "../../models/user.model";
 import { FormGroup, FormBuilder, Validators } from "@angular/forms";
 
 @Component({
-  selector: "ro1-register",
+  selector: "rpg-register",
   templateUrl: "./register.component.html",
   styleUrls: ["./register.component.scss"]
 })
