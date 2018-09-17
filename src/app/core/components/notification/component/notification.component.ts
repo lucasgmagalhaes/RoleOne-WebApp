@@ -14,7 +14,7 @@ import { NotificationStructure } from "../../../interfaces/notification-structur
  * @since 1.0.0
  */
 @Component({
-  selector: "ro1-notification",
+  selector: "rpg-notification",
   templateUrl: "./notification.component.html",
   styleUrls: ["./notification.component.scss"],
   animations: [

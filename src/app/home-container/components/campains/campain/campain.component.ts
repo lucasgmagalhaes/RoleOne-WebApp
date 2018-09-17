@@ -2,7 +2,7 @@ import { Component, OnInit, Input } from "@angular/core";
 import { Campain } from "../../../models/campain.model";
 
 @Component({
-  selector: "ro1-campain",
+  selector: "rpg-campain",
   templateUrl: "./campain.component.html",
   styleUrls: ["./campain.component.scss"]
 })

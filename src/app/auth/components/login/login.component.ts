@@ -5,7 +5,7 @@ import { User } from "../../models/user.model";
 import { FireError } from "../../models/fireError.model";
 
 @Component({
-  selector: "ro1-login",
+  selector: "rpg-login",
   templateUrl: "./login.component.html",
   styleUrls: ["./login.component.scss"]
 })

@@ -3,7 +3,7 @@ import { Router } from "@angular/router";
 import { AuthService } from "../../auth/services/auth.service";
 import * as $ from "jquery";
 @Component({
-  selector: "ro1-header",
+  selector: "rpg-header",
   templateUrl: "./header.component.html",
   styleUrls: ["./header.component.scss"]
 })

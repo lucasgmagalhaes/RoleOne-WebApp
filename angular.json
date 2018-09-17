@@ -7,7 +7,7 @@
       "root": "",
       "sourceRoot": "src",
       "projectType": "application",
-      "prefix": "ro1",
+      "prefix": "rpg",
       "schematics": {},
       "architect": {
         "build": {
