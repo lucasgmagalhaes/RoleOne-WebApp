@@ -12,17 +12,24 @@ import { AuthModule } from "./auth/auth.module";
 import { HomeContainerModule } from "./home-container/home-container.module";
 import { StaticModule } from "./static/static.module";
 import { DetailModule } from "./detail/detail.module";
-
+import { PlayModule } from "./play/play.module";
+import { CreateGameModule } from "./create/game/create-game.module";
+import { InGameModule } from "./in-game/in-game.module";
+import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 @NgModule({
   declarations: [AppComponent],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     CoreModule,
     AuthModule,
     AppRoutesModule,
     HomeContainerModule,
     StaticModule,
-    DetailModule
+    DetailModule,
+    PlayModule,
+    CreateGameModule,
+    InGameModule
   ],
   providers: [{ provide: LocationStrategy, useClass: PathLocationStrategy }],
   bootstrap: [AppComponent]

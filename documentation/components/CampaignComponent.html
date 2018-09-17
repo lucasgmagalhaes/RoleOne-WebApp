@@ -1,0 +1,724 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>role-one documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	      <link rel="stylesheet" href="../styles/style.css">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+            <a href="../" class="navbar-brand">role-one documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search">
+</div>
+            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li>Components</li>
+  <li>CampaignComponent</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href="#info" role="tab" id="info-tab" data-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li >
+            <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
+        </li>
+        <li >
+            <a href="#templateData" role="tab" id="templateData-tab" data-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li >
+            <a href="#tree" role="tab" id="tree-tab" data-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="c-info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>src/app/create/game/components/campaign/campaign.component.ts</code>
+</p>
+
+
+
+    <p class="comment">
+        <h3>Implements</h3>
+    </p>
+    <p class="comment">
+                <code><a href="https://angular.io/api/core/OnInit" target="_blank" >OnInit</a></code>
+    </p>
+
+
+<section>
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover">
+        <tbody>
+
+
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>rpg-campaign</code></td>
+            </tr>
+
+            <tr>
+                <td class="col-md-3">styleUrls</td>
+                <td class="col-md-9"><code>campaign.component.scss</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./campaign.component.html</code></td>
+            </tr>
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#ngOnInit">ngOnInit</a>
+                            </li>
+                            <li>
+                                <a href="#openCustomClassModal">openCustomClassModal</a>
+                            </li>
+                            <li>
+                                <a href="#openPlayerModal">openPlayerModal</a>
+                            </li>
+                            <li>
+                                <a href="#openQuestModal">openQuestModal</a>
+                            </li>
+                            <li>
+                                <a href="#openThemeModal">openThemeModal</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(modalService: <a href="../injectables/ModalService.html">ModalService</a>)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="10" class="link-to-prism">src/app/create/game/components/campaign/campaign.component.ts:10</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>modalService</td>
+                                                  
+                                                        <td>
+                                                                    <code><a href="../injectables/ModalService.html" target="_self" >ModalService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+
+
+
+
+    <section>
+    
+        <h3 id="methods">
+            Methods
+        </h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="ngOnInit"></a>
+                        <span class="name">
+                            <b>
+                            ngOnInit
+                            </b>
+                            <a href="#ngOnInit"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+<code>ngOnInit()</code>
+                    </td>
+                </tr>
+
+
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="13" class="link-to-prism">src/app/create/game/components/campaign/campaign.component.ts:13</a></div>
+                            </td>
+                        </tr>
+
+
+                <tr>
+                    <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="openCustomClassModal"></a>
+                        <span class="name">
+                            <b>
+                            openCustomClassModal
+                            </b>
+                            <a href="#openCustomClassModal"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+<code>openCustomClassModal()</code>
+                    </td>
+                </tr>
+
+
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="27" class="link-to-prism">src/app/create/game/components/campaign/campaign.component.ts:27</a></div>
+                            </td>
+                        </tr>
+
+
+                <tr>
+                    <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="openPlayerModal"></a>
+                        <span class="name">
+                            <b>
+                            openPlayerModal
+                            </b>
+                            <a href="#openPlayerModal"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+<code>openPlayerModal()</code>
+                    </td>
+                </tr>
+
+
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="19" class="link-to-prism">src/app/create/game/components/campaign/campaign.component.ts:19</a></div>
+                            </td>
+                        </tr>
+
+
+                <tr>
+                    <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="openQuestModal"></a>
+                        <span class="name">
+                            <b>
+                            openQuestModal
+                            </b>
+                            <a href="#openQuestModal"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+<code>openQuestModal()</code>
+                    </td>
+                </tr>
+
+
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="23" class="link-to-prism">src/app/create/game/components/campaign/campaign.component.ts:23</a></div>
+                            </td>
+                        </tr>
+
+
+                <tr>
+                    <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="openThemeModal"></a>
+                        <span class="name">
+                            <b>
+                            openThemeModal
+                            </b>
+                            <a href="#openThemeModal"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+<code>openThemeModal()</code>
+                    </td>
+                </tr>
+
+
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="15" class="link-to-prism">src/app/create/game/components/campaign/campaign.component.ts:15</a></div>
+                            </td>
+                        </tr>
+
+
+                <tr>
+                    <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+
+</div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="c-source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Modals } from &quot;../../enums/modals.enum&quot;;
+import { ModalService } from &quot;../../../../shared/components/modal/modal.service&quot;;
+import { OnInit, Component } from &quot;@angular/core&quot;;
+
+@Component({
+  selector: &quot;rpg-campaign&quot;,
+  templateUrl: &quot;./campaign.component.html&quot;,
+  styleUrls: [&quot;./campaign.component.scss&quot;]
+})
+export class CampaignComponent implements OnInit {
+  constructor(private modalService: ModalService) {}
+
+  ngOnInit() {}
+
+  openThemeModal() {
+    this.modalService.open(Modals.THEME_MODAL);
+  }
+
+  openPlayerModal() {
+    this.modalService.open(Modals.PLAYER_MODAL);
+  }
+
+  openQuestModal() {
+    this.modalService.open(Modals.QUEST_MODAL);
+  }
+
+  openCustomClassModal() {
+    this.modalService.open(Modals.CUSTOM_QUEST_MODAL);
+  }
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-templateData">
+        <pre class="line-numbers"><code class="language-html">&lt;div class&#x3D;&quot;card top-30&quot;&gt;
+  &lt;div class&#x3D;&quot;card-content&quot;&gt;
+
+    &lt;div class&#x3D;&quot;columns is-multiline&quot;&gt;
+
+      &lt;div class&#x3D;&quot;column is-10&quot;&gt;
+
+        &lt;div class&#x3D;&quot;field&quot;&gt;
+          &lt;label class&#x3D;&quot;label&quot;&gt;Name&lt;/label&gt;
+          &lt;div class&#x3D;&quot;control&quot;&gt;
+            &lt;input type&#x3D;&quot;text&quot; class&#x3D;&quot;input w-500&quot;&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+
+      &lt;/div&gt;
+
+      &lt;div class&#x3D;&quot;column is-2&quot;&gt;
+
+        &lt;div class&#x3D;&quot;field&quot;&gt;
+          &lt;div class&#x3D;&quot;image-upload&quot;&gt;
+            &lt;label for&#x3D;&quot;file-input&quot;&gt;
+              &lt;figure class&#x3D;&quot;image img-container&quot;&gt;
+                &lt;img class&#x3D;&quot;is-rounded img-small&quot; src&#x3D;&quot;https://bulma.io/images/placeholders/16x16.png&quot; alt&#x3D;&quot;Placeholder image&quot;&gt;
+                &lt;i class&#x3D;&quot;fa fa-upload&quot;&gt;&lt;/i&gt;
+              &lt;/figure&gt;
+            &lt;/label&gt;
+
+            &lt;input id&#x3D;&quot;file-input&quot; type&#x3D;&quot;file&quot; /&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+
+      &lt;/div&gt;
+
+      &lt;div class&#x3D;&quot;column is-12&quot;&gt;
+        &lt;div class&#x3D;&quot;field&quot;&gt;
+          &lt;label class&#x3D;&quot;label&quot;&gt; Description&lt;/label&gt;
+          &lt;div class&#x3D;&quot;control&quot;&gt;
+            &lt;textarea class&#x3D;&quot;textarea is-medium&quot; type&#x3D;&quot;text&quot; rows&#x3D;&quot;7&quot;&gt;&lt;/textarea&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+
+      &lt;div class&#x3D;&quot;column is-6&quot;&gt;
+        &lt;div class&#x3D;&quot;field&quot;&gt;
+          &lt;label class&#x3D;&quot;label&quot;&gt;Theme&lt;/label&gt;
+          &lt;div class&#x3D;&quot;control has-text-centered&quot;&gt;
+            &lt;button class&#x3D;&quot;button is-dark w-300&quot; (click)&#x3D;&quot;openThemeModal()&quot;&gt;Choose one&lt;/button&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+
+      &lt;div class&#x3D;&quot;column is-6&quot;&gt;
+        &lt;label class&#x3D;&quot;label&quot;&gt;Tags
+          &lt;i class&#x3D;&quot;fas fa-question-circle&quot; title&#x3D;&quot;Tags help your campaign to be searched. Tip thing that have something about your game!&quot;&gt;&lt;/i&gt;
+        &lt;/label&gt;
+        &lt;div class&#x3D;&quot;field is-grouped&quot;&gt;
+          &lt;p class&#x3D;&quot;control is-expanded&quot;&gt;
+            &lt;input class&#x3D;&quot;input&quot; type&#x3D;&quot;text&quot;&gt;
+          &lt;/p&gt;
+          &lt;p class&#x3D;&quot;control&quot;&gt;
+            &lt;a class&#x3D;&quot;button is-dark&quot;&gt;
+              Insert
+            &lt;/a&gt;
+          &lt;/p&gt;
+        &lt;/div&gt;
+        &lt;div class&#x3D;&quot;tags&quot;&gt;
+          &lt;a class&#x3D;&quot;tag is-link&quot;&gt;RPG&lt;/a&gt;
+          &lt;a class&#x3D;&quot;tag is-link&quot;&gt;Dungeons and Dragons&lt;/a&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+
+      &lt;div class&#x3D;&quot;column is-6&quot;&gt;
+        &lt;div class&#x3D;&quot;group-header&quot;&gt;
+          &lt;label class&#x3D;&quot;label group-title&quot;&gt;Players&lt;/label&gt;
+          &lt;button class&#x3D;&quot;group-button is-small button is-dark w-100&quot; (click)&#x3D;&quot;openPlayerModal()&quot;&gt;Add&lt;/button&gt;
+        &lt;/div&gt;
+        &lt;div class&#x3D;&quot;box h-150 box-overflow&quot;&gt;
+          &lt;rpg-player&gt;&lt;/rpg-player&gt;
+          &lt;rpg-player&gt;&lt;/rpg-player&gt;
+          &lt;rpg-player&gt;&lt;/rpg-player&gt;
+          &lt;rpg-player&gt;&lt;/rpg-player&gt;
+          &lt;rpg-player&gt;&lt;/rpg-player&gt;
+          &lt;rpg-player&gt;&lt;/rpg-player&gt;
+          &lt;rpg-player&gt;&lt;/rpg-player&gt;
+          &lt;rpg-player&gt;&lt;/rpg-player&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+
+      &lt;div class&#x3D;&quot;column is-6&quot;&gt;
+        &lt;div class&#x3D;&quot;group-header&quot;&gt;
+          &lt;label class&#x3D;&quot;label group-title&quot;&gt;Add Custons
+            &lt;i class&#x3D;&quot;fas fa-question-circle&quot; title&#x3D;&quot;Your must choose a theme for your campaign. But, you can also add monsters, itens or classes that you want, and that the theme haven&#x27;t&quot;&gt;&lt;/i&gt;
+          &lt;/label&gt;
+        &lt;/div&gt;
+        &lt;div class&#x3D;&quot;box h-150&quot;&gt;
+
+          &lt;div class&#x3D;&quot;box-item&quot;&gt;
+            &lt;label&gt;Classes&lt;/label&gt;
+            &lt;button class&#x3D;&quot;button is-small is-dark&quot; (click)&#x3D;&quot;openCustomClassModal()&quot;&gt;Add&lt;/button&gt;
+          &lt;/div&gt;
+
+          &lt;div class&#x3D;&quot;box-item&quot;&gt;
+            &lt;label&gt;Itens&lt;/label&gt;
+            &lt;button class&#x3D;&quot;button is-small is-dark&quot;&gt;Add&lt;/button&gt;
+          &lt;/div&gt;
+
+          &lt;div class&#x3D;&quot;box-item&quot;&gt;
+            &lt;label&gt;Monsters&lt;/label&gt;
+            &lt;button class&#x3D;&quot;button is-small is-dark&quot;&gt;Add&lt;/button&gt;
+          &lt;/div&gt;
+
+        &lt;/div&gt;
+      &lt;/div&gt;
+
+      &lt;div class&#x3D;&quot;column is-6&quot;&gt;
+        &lt;div class&#x3D;&quot;group-header&quot;&gt;
+          &lt;label class&#x3D;&quot;label group-title&quot;&gt;Maps
+            &lt;i class&#x3D;&quot;fas fa-question-circle&quot; title&#x3D;&quot;Maps are your world. Here is where all your adventures will happen, and see warriors fighting against monsters to achive amazing rewards!&quot;&gt;&lt;/i&gt;
+          &lt;/label&gt;
+          &lt;button class&#x3D;&quot;group-button is-small button is-dark w-100&quot;&gt;Add&lt;/button&gt;
+        &lt;/div&gt;
+        &lt;div class&#x3D;&quot;box h-150 box-overflow&quot;&gt;
+          &lt;rpg-map&gt;&lt;/rpg-map&gt;
+          &lt;rpg-map&gt;&lt;/rpg-map&gt;
+          &lt;rpg-map&gt;&lt;/rpg-map&gt;
+          &lt;rpg-map&gt;&lt;/rpg-map&gt;
+          &lt;rpg-map&gt;&lt;/rpg-map&gt;
+          &lt;rpg-map&gt;&lt;/rpg-map&gt;
+          &lt;rpg-map&gt;&lt;/rpg-map&gt;
+          &lt;rpg-map&gt;&lt;/rpg-map&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+
+      &lt;div class&#x3D;&quot;column is-6&quot;&gt;
+        &lt;div class&#x3D;&quot;group-header&quot;&gt;
+          &lt;label class&#x3D;&quot;label group-title&quot;&gt;Quests
+            &lt;i class&#x3D;&quot;fas fa-question-circle&quot; title&#x3D;&quot;Use quests to give players rewards after each campaign. You can put trigger to distribute itens and experiences to user that are in the current session.&quot;&gt;&lt;/i&gt;
+          &lt;/label&gt;
+          &lt;button class&#x3D;&quot;group-button is-small button is-dark w-100&quot; (click)&#x3D;&quot;openQuestModal()&quot;&gt;Create&lt;/button&gt;
+        &lt;/div&gt;
+        &lt;div class&#x3D;&quot;box h-150 box-overflow&quot;&gt;
+          &lt;rpg-quest&gt;&lt;/rpg-quest&gt;
+          &lt;rpg-quest&gt;&lt;/rpg-quest&gt;
+          &lt;rpg-quest&gt;&lt;/rpg-quest&gt;
+          &lt;rpg-quest&gt;&lt;/rpg-quest&gt;
+          &lt;rpg-quest&gt;&lt;/rpg-quest&gt;
+          &lt;rpg-quest&gt;&lt;/rpg-quest&gt;
+          &lt;rpg-quest&gt;&lt;/rpg-quest&gt;
+          &lt;rpg-quest&gt;&lt;/rpg-quest&gt;
+          &lt;rpg-quest&gt;&lt;/rpg-quest&gt;
+          &lt;rpg-quest&gt;&lt;/rpg-quest&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+
+      &lt;div class&#x3D;&quot;column is-2&quot;&gt;
+
+        &lt;div class&#x3D;&quot;field&quot;&gt;
+          &lt;input class&#x3D;&quot;is-checkradio is-info&quot; id&#x3D;&quot;checkisPrivate&quot; type&#x3D;&quot;checkbox&quot; name&#x3D;&quot;exampleCheckboxDefault&quot; checked&#x3D;&quot;checked&quot;&gt;
+          &lt;label for&#x3D;&quot;checkisPrivate&quot;&gt;is private&lt;/label&gt;
+        &lt;/div&gt;
+
+        &lt;div class&#x3D;&quot;field&quot;&gt;
+          &lt;input class&#x3D;&quot;is-checkradio is-info&quot; id&#x3D;&quot;checkhasForum&quot; type&#x3D;&quot;checkbox&quot; name&#x3D;&quot;exampleCheckboxDefault&quot; checked&#x3D;&quot;checked&quot;&gt;
+          &lt;label for&#x3D;&quot;checkhasForum&quot;&gt;has forum&lt;/label&gt;
+        &lt;/div&gt;
+
+        &lt;div class&#x3D;&quot;field&quot;&gt;
+          &lt;input class&#x3D;&quot;is-checkradio is-info&quot; id&#x3D;&quot;checkcanHaveSpectors&quot; type&#x3D;&quot;checkbox&quot; name&#x3D;&quot;exampleCheckboxDefault&quot;&gt;
+          &lt;label for&#x3D;&quot;checkcanHaveSpectors&quot;&gt;can have spectors&lt;/label&gt;
+        &lt;/div&gt;
+
+      &lt;/div&gt;
+
+      &lt;div class&#x3D;&quot;column is-3 is-offset-9&quot;&gt;
+        &lt;button class&#x3D;&quot;button m-5 is-danger w-100&quot;&gt;Cancel&lt;/button&gt;
+        &lt;button class&#x3D;&quot;button m-5 is-success w-100&quot;&gt;Create&lt;/button&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;rpg-theme-modal&gt;&lt;/rpg-theme-modal&gt;
+&lt;rpg-player-modal&gt;&lt;/rpg-player-modal&gt;
+&lt;rpg-map-modal&gt;&lt;/rpg-map-modal&gt;
+&lt;rpg-quest-modal&gt;&lt;/rpg-quest-modal&gt;
+&lt;rpg-custom-class-modal&gt;&lt;/rpg-custom-class-modal&gt;
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><div class="card top-30">  <div class="card-content">    <div class="columns is-multiline">      <div class="column is-10">        <div class="field">          <label class="label">Name</label>          <div class="control">            <input type="text" class="input w-500">          </div>        </div>      </div>      <div class="column is-2">        <div class="field">          <div class="image-upload">            <label for="file-input">              <figure class="image img-container">                <img class="is-rounded img-small" src="https://bulma.io/images/placeholders/16x16.png" alt="Placeholder image">                <i class="fa fa-upload"></i>              </figure>            </label>            <input id="file-input" type="file" />          </div>        </div>      </div>      <div class="column is-12">        <div class="field">          <label class="label"> Description</label>          <div class="control">            <textarea class="textarea is-medium" type="text" rows="7"></textarea>          </div>        </div>      </div>      <div class="column is-6">        <div class="field">          <label class="label">Theme</label>          <div class="control has-text-centered">            <button class="button is-dark w-300" (click)="openThemeModal()">Choose one</button>          </div>        </div>      </div>      <div class="column is-6">        <label class="label">Tags          <i class="fas fa-question-circle" title="Tags help your campaign to be searched. Tip thing that have something about your game!"></i>        </label>        <div class="field is-grouped">          <p class="control is-expanded">            <input class="input" type="text">          </p>          <p class="control">            <a class="button is-dark">              Insert            </a>          </p>        </div>        <div class="tags">          <a class="tag is-link">RPG</a>          <a class="tag is-link">Dungeons and Dragons</a>        </div>      </div>      <div class="column is-6">        <div class="group-header">          <label class="label group-title">Players</label>          <button class="group-button is-small button is-dark w-100" (click)="openPlayerModal()">Add</button>        </div>        <div class="box h-150 box-overflow">          <rpg-player></rpg-player>          <rpg-player></rpg-player>          <rpg-player></rpg-player>          <rpg-player></rpg-player>          <rpg-player></rpg-player>          <rpg-player></rpg-player>          <rpg-player></rpg-player>          <rpg-player></rpg-player>        </div>      </div>      <div class="column is-6">        <div class="group-header">          <label class="label group-title">Add Custons            <i class="fas fa-question-circle" title="Your must choose a theme for your campaign. But, you can also add monsters, itens or classes that you want, and that the theme haven\'t"></i>          </label>        </div>        <div class="box h-150">          <div class="box-item">            <label>Classes</label>            <button class="button is-small is-dark" (click)="openCustomClassModal()">Add</button>          </div>          <div class="box-item">            <label>Itens</label>            <button class="button is-small is-dark">Add</button>          </div>          <div class="box-item">            <label>Monsters</label>            <button class="button is-small is-dark">Add</button>          </div>        </div>      </div>      <div class="column is-6">        <div class="group-header">          <label class="label group-title">Maps            <i class="fas fa-question-circle" title="Maps are your world. Here is where all your adventures will happen, and see warriors fighting against monsters to achive amazing rewards!"></i>          </label>          <button class="group-button is-small button is-dark w-100">Add</button>        </div>        <div class="box h-150 box-overflow">          <rpg-map></rpg-map>          <rpg-map></rpg-map>          <rpg-map></rpg-map>          <rpg-map></rpg-map>          <rpg-map></rpg-map>          <rpg-map></rpg-map>          <rpg-map></rpg-map>          <rpg-map></rpg-map>        </div>      </div>      <div class="column is-6">        <div class="group-header">          <label class="label group-title">Quests            <i class="fas fa-question-circle" title="Use quests to give players rewards after each campaign. You can put trigger to distribute itens and experiences to user that are in the current session."></i>          </label>          <button class="group-button is-small button is-dark w-100" (click)="openQuestModal()">Create</button>        </div>        <div class="box h-150 box-overflow">          <rpg-quest></rpg-quest>          <rpg-quest></rpg-quest>          <rpg-quest></rpg-quest>          <rpg-quest></rpg-quest>          <rpg-quest></rpg-quest>          <rpg-quest></rpg-quest>          <rpg-quest></rpg-quest>          <rpg-quest></rpg-quest>          <rpg-quest></rpg-quest>          <rpg-quest></rpg-quest>        </div>      </div>      <div class="column is-2">        <div class="field">          <input class="is-checkradio is-info" id="checkisPrivate" type="checkbox" name="exampleCheckboxDefault" checked="checked">          <label for="checkisPrivate">is private</label>        </div>        <div class="field">          <input class="is-checkradio is-info" id="checkhasForum" type="checkbox" name="exampleCheckboxDefault" checked="checked">          <label for="checkhasForum">has forum</label>        </div>        <div class="field">          <input class="is-checkradio is-info" id="checkcanHaveSpectors" type="checkbox" name="exampleCheckboxDefault">          <label for="checkcanHaveSpectors">can have spectors</label>        </div>      </div>      <div class="column is-3 is-offset-9">        <button class="button m-5 is-danger w-100">Cancel</button>        <button class="button m-5 is-success w-100">Create</button>      </div>    </div>  </div></div><rpg-theme-modal></rpg-theme-modal><rpg-player-modal></rpg-player-modal><rpg-map-modal></rpg-map-modal><rpg-quest-modal></rpg-quest-modal><rpg-custom-class-modal></rpg-custom-class-modal></div>'
+    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'CampaignComponent', 'selector': 'rpg-campaign'},{'name': 'CampainComponent', 'selector': 'rpg-campain'},{'name': 'CampainsComponent', 'selector': 'rpg-campains'},{'name': 'ChatComponent', 'selector': 'rpg-chat'},{'name': 'ConquestComponent', 'selector': 'rpg-conquest'},{'name': 'ConquestsComponent', 'selector': 'rpg-conquests'},{'name': 'CustomClassModalComponent', 'selector': 'rpg-custom-class-modal'},{'name': 'FooterComponent', 'selector': 'rpg-footer'},{'name': 'ForgotPasswordComponent', 'selector': 'rpg-forgot-password'},{'name': 'HeaderComponent', 'selector': 'rpg-header'},{'name': 'HomeComponent', 'selector': 'rpg-home'},{'name': 'ItemAddedComponent', 'selector': 'rpg-item-added'},{'name': 'ItemViewComponent', 'selector': 'rpg-item-view'},{'name': 'LoginComponent', 'selector': 'rpg-login'},{'name': 'MainWindowComponent', 'selector': 'rol-main-window'},{'name': 'MapComponent', 'selector': 'rpg-map'},{'name': 'MapModalComponent', 'selector': 'rpg-map-modal'},{'name': 'ModalComponent', 'selector': 'rpg-modal'},{'name': 'NotificationComponent', 'selector': 'rpg-notification'},{'name': 'PlayerComponent', 'selector': 'rpg-player'},{'name': 'PlayerModalComponent', 'selector': 'rpg-player-modal'},{'name': 'ProfileComponent', 'selector': 'rpg-profile'},{'name': 'ProfileEditionComponent', 'selector': 'rpg-profile-edition'},{'name': 'QuestComponent', 'selector': 'rpg-quest'},{'name': 'QuestModalComponent', 'selector': 'rpg-quest-modal'},{'name': 'RegisterComponent', 'selector': 'rpg-register'},{'name': 'SelectionComponent', 'selector': 'rpg-selection'},{'name': 'ThemeModalComponent', 'selector': 'rpg-theme-modal'},{'name': 'ToolbarComponent', 'selector': 'rpg-tools'},{'name': 'UsersComponent', 'selector': 'rpg-users'}];
+    var DIRECTIVES = [{'name': 'ClickOutDirective', 'selector': '[clickedOut]'}];
+    var ACTUAL_COMPONENT = {'name': 'CampaignComponent'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> result-matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'CampaignComponent.html';
+       </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+       <script src="../js/menu-wc.js"></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

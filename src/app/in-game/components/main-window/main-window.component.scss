@@ -1,0 +1,21 @@
+.background-image {
+    background: linear-gradient(
+        rgba(0, 0, 0, 0.5),
+        rgba(0, 0, 0, 0.5)
+      ), url('http://filefile.us/wp-content/uploads/2018/03/rustic-world-map-download-copy-world-map-full-hd-wallpaper-and-background-image-of-rustic-world-map-download.jpg') no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    margin-left: -19%;
+    margin-right: -19%;
+    margin-top: -3%;
+    height: 90% !important;
+}
+
+.character-image-settings {
+    max-width: 5em;
+    margin: 0 0 10px 5px;
+    bottom: 1%;
+    left: 1%;
+}
