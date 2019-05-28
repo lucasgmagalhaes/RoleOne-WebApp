@@ -1,0 +1,40 @@
+$size: 15px;
+
+.coin {
+  margin: 0px 4px;
+  width: 48px;
+}
+
+img {
+  margin-top: 10px;
+  height: $size;
+  widows: $size;
+}
+
+.inline {
+  display: inline-block;
+}
+
+.flex {
+  display: inline-flex;
+}
+
+$item_max_height: 250px;
+
+.itens-container {
+  max-height: $item_max_height;
+  max-width: 528px;
+  width: 528px;
+  overflow: auto;
+}
+
+.flex {
+  display: flex;
+}
+
+.item-add-container {
+  width: 187px;
+  max-height: $item_max_height;
+  margin-left: 14px;
+  overflow: auto;
+}

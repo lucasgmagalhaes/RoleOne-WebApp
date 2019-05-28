@@ -1,0 +1,38 @@
+.clazz {
+  cursor: pointer;
+  width: 230px;
+  height: 330px;
+  display: inline-block;
+  margin-bottom: 20px;
+  margin-right: 20px;
+  position: relative;
+
+  .name {
+    font-size: 18px;
+  }
+  img {
+    height: 135px;
+    width: 88px;
+  }
+
+  .bottom {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 9px 24px;
+  }
+
+  .centered {
+    img {
+      margin: auto;
+    }
+  }
+
+  .detail {
+    font-size: 13px;
+    strong {
+      margin-right: 2px;
+    }
+  }
+}

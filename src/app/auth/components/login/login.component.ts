@@ -5,7 +5,7 @@ import { User } from "../../models/user.model";
 import { FireError } from "../../models/fireError.model";
 
 @Component({
-  selector: "ro1-login",
+  selector: "rpg-login",
   templateUrl: "./login.component.html",
   styleUrls: ["./login.component.scss"]
 })
@@ -37,7 +37,7 @@ export class LoginComponent implements OnInit {
       .catch((error: FireError) => {
         this.loading = false;
         if (error.code === "auth/wrong-password") {
-          this.passwordMessage = "Passwrod invalid";
+          this.passwordMessage = "Password invalid";
         } else if (error.code === "auth/too-many-requests") {
           this.blockAccountMessage = "Too many attemps to login. Try it late";
         } else if (error.code === "auth/user-not-found") {

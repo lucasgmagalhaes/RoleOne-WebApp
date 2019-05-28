@@ -1,11 +1,37 @@
+@import "~bulma";
+@import "./styles/size.scss";
+@import "./styles/space.scss";
+@import "./styles/bulma-extensions.scss";
+
 $img-achiev: 130px;
 $img-demo: 80px;
+
+@mixin alignOnCenter() {
+  align-content: center;
+}
+
 .is-hand {
   cursor: pointer;
 }
 
+.textarea {
+  resize: none;
+}
+
 .top-30p {
   margin-top: 30px;
+}
+
+.is-fixed {
+  position: fixed;
+}
+
+.is-relative {
+  position: relative;
+}
+
+.is-absolute {
+  position: absolute;
 }
 
 .height-110 {
@@ -97,4 +123,13 @@ $img-demo: 80px;
 .tooltip:hover .tooltiptext {
   visibility: visible;
   opacity: 1;
+}
+
+.content-upload {
+  width: 100%;
+  @include alignOnCenter();
+}
+
+.center {
+  @include alignOnCenter();
 }

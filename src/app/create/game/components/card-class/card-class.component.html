@@ -1,0 +1,23 @@
+<div class="box clazz">
+
+  <div class="control">
+    <strong class="name">{{clazz.name}}</strong>
+  </div>
+
+  <div class="control m-b-15  m-t-10 centered">
+    <figure class="image">
+      <img *ngIf="clazz.img_url === undefined" src="https://bulma.io/images/placeholders/128x128.png">
+      <img *ngIf="clazz.img_url !== undefined" src="{{clazz.img_url}}">
+    </figure>
+  </div>
+
+  <div class="control m-b-10 detail">
+    <strong>Hit die:</strong>{{clazz.lifeDice}}<br>
+    <strong>Primary Habilities:</strong>{{clazz.primaryHabilities | commaSeparation}}
+  </div>
+
+  <div class="bottom">
+    <button *ngIf="!added" class="button is-fullwidth is-primary">Add</button>
+    <button *ngIf="added" class="button is-fullwidth is-danger">Remove</button>
+  </div>
+</div>

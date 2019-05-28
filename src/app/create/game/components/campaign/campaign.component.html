@@ -1,0 +1,187 @@
+<div class="card top-30">
+  <div class="card-content">
+
+    <div class="columns is-multiline">
+
+      <div class="column is-10">
+
+        <div class="field">
+          <label class="label">Name</label>
+          <div class="control">
+            <input type="text" class="input w-500">
+          </div>
+        </div>
+
+      </div>
+
+      <div class="column is-2">
+
+        <div class="field">
+          <div class="image-upload">
+            <label for="file-input">
+              <figure class="image img-container">
+                <img class="is-rounded img-small" src="https://bulma.io/images/placeholders/16x16.png" alt="Placeholder image">
+                <i class="fa fa-upload"></i>
+              </figure>
+            </label>
+
+            <input id="file-input" type="file" />
+          </div>
+        </div>
+
+      </div>
+
+      <div class="column is-12">
+        <div class="field">
+          <label class="label"> Description</label>
+          <div class="control">
+            <textarea class="textarea is-medium" type="text" rows="7"></textarea>
+          </div>
+        </div>
+      </div>
+
+      <div class="column is-6">
+        <div class="field">
+          <label class="label">Theme</label>
+          <div class="control has-text-centered">
+            <button class="button is-dark w-300" (click)="openThemeModal()">Choose one</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="column is-6">
+        <label class="label">Tags
+          <i class="fas fa-question-circle" title="Tags help your campaign to be searched. Tip thing that have something about your game!"></i>
+        </label>
+        <div class="field is-grouped">
+          <p class="control is-expanded">
+            <input class="input" type="text">
+          </p>
+          <p class="control">
+            <a class="button is-dark">
+              Insert
+            </a>
+          </p>
+        </div>
+        <div class="tags">
+          <a class="tag is-link">RPG</a>
+          <a class="tag is-link">Dungeons and Dragons</a>
+        </div>
+      </div>
+
+      <div class="column is-6">
+        <div class="group-header">
+          <label class="label group-title">Players</label>
+          <button class="group-button is-small button is-dark w-100" (click)="openPlayerModal()">Add</button>
+        </div>
+        <div class="box h-150 box-overflow">
+          <rpg-player></rpg-player>
+          <rpg-player></rpg-player>
+          <rpg-player></rpg-player>
+          <rpg-player></rpg-player>
+          <rpg-player></rpg-player>
+          <rpg-player></rpg-player>
+          <rpg-player></rpg-player>
+          <rpg-player></rpg-player>
+        </div>
+      </div>
+
+      <div class="column is-6">
+        <div class="group-header">
+          <label class="label group-title">Add Custons
+            <i class="fas fa-question-circle" title="Your must choose a theme for your campaign. But, you can also add monsters, itens or classes that you want, and that the theme haven't"></i>
+          </label>
+        </div>
+        <div class="box h-150">
+
+          <div class="box-item">
+            <label>Classes</label>
+            <button class="button is-small is-dark" (click)="openCustomClassModal()">Add</button>
+          </div>
+
+          <div class="box-item">
+            <label>Itens</label>
+            <button class="button is-small is-dark">Add</button>
+          </div>
+
+          <div class="box-item">
+            <label>Monsters</label>
+            <button class="button is-small is-dark">Add</button>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="column is-6">
+        <div class="group-header">
+          <label class="label group-title">Maps
+            <i class="fas fa-question-circle" title="Maps are your world. Here is where all your adventures will happen, and see warriors fighting against monsters to achive amazing rewards!"></i>
+          </label>
+          <button class="group-button is-small button is-dark w-100">Add</button>
+        </div>
+        <div class="box h-150 box-overflow">
+          <rpg-map></rpg-map>
+          <rpg-map></rpg-map>
+          <rpg-map></rpg-map>
+          <rpg-map></rpg-map>
+          <rpg-map></rpg-map>
+          <rpg-map></rpg-map>
+          <rpg-map></rpg-map>
+          <rpg-map></rpg-map>
+        </div>
+      </div>
+
+      <div class="column is-6">
+        <div class="group-header">
+          <label class="label group-title">Quests
+            <i class="fas fa-question-circle" title="Use quests to give players rewards after each campaign. You can put trigger to distribute itens and experiences to user that are in the current session."></i>
+          </label>
+          <button class="group-button is-small button is-dark w-100" (click)="openQuestModal()">Create</button>
+        </div>
+        <div class="box h-150 box-overflow">
+          <rpg-quest></rpg-quest>
+          <rpg-quest></rpg-quest>
+          <rpg-quest></rpg-quest>
+          <rpg-quest></rpg-quest>
+          <rpg-quest></rpg-quest>
+          <rpg-quest></rpg-quest>
+          <rpg-quest></rpg-quest>
+          <rpg-quest></rpg-quest>
+          <rpg-quest></rpg-quest>
+          <rpg-quest></rpg-quest>
+        </div>
+      </div>
+
+      <div class="column is-2">
+
+        <div class="field">
+          <input class="is-checkradio is-info" id="checkisPrivate" type="checkbox" name="exampleCheckboxDefault" checked="checked">
+          <label for="checkisPrivate">is private</label>
+        </div>
+
+        <div class="field">
+          <input class="is-checkradio is-info" id="checkhasForum" type="checkbox" name="exampleCheckboxDefault" checked="checked">
+          <label for="checkhasForum">has forum</label>
+        </div>
+
+        <div class="field">
+          <input class="is-checkradio is-info" id="checkcanHaveSpectors" type="checkbox" name="exampleCheckboxDefault">
+          <label for="checkcanHaveSpectors">can have spectors</label>
+        </div>
+
+      </div>
+
+      <div class="column is-3 is-offset-9">
+        <button class="button m-5 is-danger w-100">Cancel</button>
+        <button class="button m-5 is-success w-100">Create</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<rpg-theme-modal></rpg-theme-modal>
+<rpg-player-modal></rpg-player-modal>
+<rpg-map-modal></rpg-map-modal>
+<rpg-quest-modal></rpg-quest-modal>
+<rpg-custom-class-modal></rpg-custom-class-modal>
